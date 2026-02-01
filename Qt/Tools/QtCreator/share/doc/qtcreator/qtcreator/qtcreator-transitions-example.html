@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- qtquick-app-tutorial.qdoc -->
+  <meta name="description" content="How to create a Qt Quick Application in the Edit mode.">
+  <title>Tutorial: Qt Quick application | Qt Creator Documentation</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="index.html">Qt Creator Documentation</a></li>
+<li>Tutorial: Qt Quick application</li>
+<li id="buildversion"><a href="index.html">Qt Creator 18.0.2</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+  <link rel="prev" href="creator-tutorial-python-application-qt-quick.html" />
+  <link rel="next" href="creator-qml-debugging-example.html" />
+<p class="naviNextPrevious headerNavi">
+<a class="prevPage" href="creator-tutorial-python-application-qt-quick.html">Tutorial: Qt Quick and Python</a>
+<span class="naviSeparator">  &#9702;  </span>
+<a class="nextPage" href="creator-qml-debugging-example.html">Tutorial: Qt Quick debugging</a>
+</p>
+<div class="sidebar">
+<div class="toc">
+<h3 id="toc">Contents</h3>
+<ul>
+<li class="level1"><a href="#create-the-project">Create the project</a></li>
+<li class="level1"><a href="#deploy-applications">Deploy applications</a></li>
+<li class="level1"><a href="#create-a-custom-qml-type">Create a custom QML type</a></li>
+<li class="level1"><a href="#connect-mouse-clicks-to-state-changes">Connect mouse clicks to state changes</a></li>
+<li class="level1"><a href="#add-page-to-the-main-view">Add Page to the main view</a></li>
+<li class="level1"><a href="#animate-transitions">Animate transitions</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Tutorial: Qt Quick application</h1>
+<!-- $$$transitions-brief -->
+<p>How to create a Qt Quick Application in the <b translate="no">Edit</b> mode.</p>
+<!-- @@@transitions -->
+<!-- $$$transitions-description -->
+<div class="descr" id="details">
+<p>This tutorial illustrates basic concepts of <a href="https://doc.qt.io/qt/qtquick-index.html">Qt Quick</a>. For more information about the UI choices you have, see <a href="https://doc.qt.io/qt/topics-ui.html">User Interfaces</a>.</p>
+<p>This tutorial describes how to use Qt Creator to implement <a href="https://doc.qt.io/qt/qtquick-statesanimations-states.html">states</a> and <a href="https://doc.qt.io/qt/qtquick-statesanimations-animations.html">transitions</a> when using Qt 6 as the minimum Qt version and CMake as the build system.</p>
+<p>You will use the <a href="creator-coding-navigating.html">Edit</a> mode to create an application that moves a Qt logo between three rectangles when you select them.</p>
+<p class="centerAlign"><img src="images/qtquick-tutorial.gif" alt="Transitions example" /></p><p>For more examples, see <a href="https://doc.qt.io/qt/qtquick-codesamples.html">Qt Quick Examples and Tutorials</a>.</p>
+<p>You can use a visual editor to develop Qt Quick applications in Qt Design Studio. For more information, see <a href="https://doc.qt.io/qtdesignstudio/index.html">Qt Design Studio documentation</a>.</p>
+<h4 id="create-the-project">Create the project</h4>
+<ol class="1" type="1"><li>Go to <b translate="no">File</b> &gt; <b translate="no">New Project</b> &gt; <b translate="no">Application (Qt)</b> &gt; <b translate="no">Qt Quick Application</b>.<p class="centerAlign"><img src="images/qtcreator-project-qt-quick.webp" alt="New Project dialog" /></p></li>
+<li>Select <b translate="no">Choose</b> to open the <b translate="no">Project Location</b> dialog.</li>
+<li>In <b translate="no">Name</b>, enter a name for the application. When naming your own projects, keep in mind that you cannot easily rename them later.</li>
+<li>In <b translate="no">Create in</b>, enter the path for the project files. You can move project folders later without problems.</li>
+<li>Select <b translate="no">Next</b> to open the <b translate="no">Define Project Details</b> dialog.<p class="centerAlign"><img src="images/qtcreator-project-qt-quick-details.webp" alt="Define Project Details dialog" /></p></li>
+<li>Select <b translate="no">Next</b> to open the <b translate="no">Kit Selection</b> dialog.</li>
+<li>Select Qt 6.5 or later <a href="creator-preferences-kits.html">kits</a> for the platforms that you want to build the application for. To build applications for mobile devices, select kits also for Android and iOS.<div class="admonition note">
+<p><b>Note: </b>The list shows kits that you specify in <a href="creator-how-to-find-preferences.html">Preferences</a> &gt; <b translate="no">Kits</b>. For more information, see <a href="creator-targets.html">Add kits</a> and <a href="creator-preferences-kits.html">Kits</a>.</p>
+</div>
+</li>
+<li>Select <b translate="no">Next</b> to open the <b translate="no">Project Management</b> dialog.</li>
+<li>Review the project settings, and select <b translate="no">Finish</b> (or <b translate="no">Done</b> on macOS) to create the project.</li>
+</ol>
+<p>Qt Creator generates a component file, <code translate="no">Main.qml</code>, and opens it in the <b translate="no">Edit</b> mode.</p>
+<h4 id="deploy-applications">Deploy applications</h4>
+<p>The main view of the application displays a Qt logo inside a rectangle in the top left corner of the view and two empty rectangles.</p>
+<p>For the image to appear when you run the application, you must specify it as a resource in the <code translate="no">RESOURCES</code> section of <code translate="no">CMakeLists.txt</code> file that the wizard created for you:</p>
+<pre class="cpp" translate="no">
+ qt_add_qml_module(apptransitions
+     URI transitions
+     VERSION 1.0
+     QML_FILES Main.qml Page.qml
+     RESOURCES qt-logo.png
+ )
+</pre>
+<h4 id="create-a-custom-qml-type">Create a custom QML type</h4>
+<p>Because the <a href="https://doc.qt.io/qt/qml-qtquick-window.html" translate="no">Window</a> QML type requires that you add states into child components, use the wizard to create a custom QML type called <i>Page</i> that you refer to from <code translate="no">Main.qml</code>.</p>
+<p>To create a custom QML type:</p>
+<ol class="1" type="1"><li>Go to <b translate="no">File</b> &gt; <b translate="no">New File</b>.</li>
+<li>Select <b translate="no">Qt</b> &gt; <b translate="no">QML File (Qt Quick 2)</b>.</li>
+<li>Select <b translate="no">Choose</b> to open the <b translate="no">Location</b> dialog.</li>
+<li>In <b translate="no">File name</b>, enter a name for the custom QML type: <i>Page</i>.</li>
+<li>Select <b translate="no">Next</b> to open the <b translate="no">Project Management</b> dialog.</li>
+<li>Select <b translate="no">Finish</b> to create <code translate="no">Page.qml</code>.</li>
+</ol>
+<p>Qt Creator opens <code translate="no">Page.qml</code> in the <b translate="no">Edit</b> mode. It has a root item of the type <a href="https://doc.qt.io/qt/qml-qtquick-item.html" translate="no">Item</a>. Replace it with a <a href="https://doc.qt.io/qt/qml-qtquick-rectangle.html" translate="no">Rectangle</a> type. Give the type the ID <i>page</i>, anchor it to the parent item on all sides, and set its color to white:</p>
+<pre class="cpp" translate="no">
+ import QtQuick
+
+ <span class="type"><a href="https://doc.qt.io/qt/qml-qtquick-rectangle.html" translate="no">Rectangle</a></span> {
+     <span class="name">id</span>: <span class="name">page</span>
+     <span class="name">anchors</span>.fill: <span class="name">parent</span>
+     <span class="name">color</span>: <span class="string">&quot;#ffffff&quot;</span>
+</pre>
+<p>When you start typing the QML type name, Qt Creator suggests available types and properties to <a href="creator-completing-code.html">complete the code</a>.</p>
+<p>Select the light bulb icon <img src="images/refactormarker.png" alt="Light bulb icon" /> next to the type name to open a <a href="qt-quick-toolbars.html#edit-rectangles">toolbar</a> that you can use to specify rectangle properties, such as color, transparency, and gradients.</p>
+<p class="centerAlign"><img src="images/qml-toolbar-rectangle.png" alt="Qt Quick toolbar for rectangles" /></p><p>Next, add an <a href="https://doc.qt.io/qt/stylesheet-reference.html#image">Image</a> type with <code translate="no">qt-logo.png</code> as the source. You can also use any other image or a component. Position the image in the top-left corner of the rectangle:</p>
+<pre class="cpp" translate="no">
+     <span class="type"><a href="https://doc.qt.io/qt/qml-qtquick-image.html" translate="no">Image</a></span> {
+         <span class="name">id</span>: <span class="name">icon</span>
+         <span class="name">x</span>: <span class="number">20</span>
+         <span class="name">y</span>: <span class="number">20</span>
+         <span class="name">source</span>: <span class="string">&quot;qt-logo.png&quot;</span>
+     }
+</pre>
+<p>Use a <a href="qt-quick-toolbars.html#preview-images">toolbar for images</a> to specify image properties, such as source file and fill mode.</p>
+<p class="centerAlign"><img src="images/qml-toolbar-image.png" alt="Logo visible in Qt Quick toolbar for images" /></p><p>Now, create the rectangles that the image will move between. Their size should match the image size and they should be transparent, so that the image is visible. Set the border color to light gray to make the rectangles visible:</p>
+<pre class="cpp" translate="no">
+     <span class="type"><a href="https://doc.qt.io/qt/qml-qtquick-rectangle.html" translate="no">Rectangle</a></span> {
+         <span class="name">id</span>: <span class="name">topLeftRect</span>
+         <span class="name">width</span>: <span class="number">55</span>
+         <span class="name">height</span>: <span class="number">41</span>
+         <span class="name">color</span>: <span class="string">&quot;#00ffffff&quot;</span>
+         <span class="name">border</span>.color: <span class="string">&quot;#808080&quot;</span>
+</pre>
+<p>Anchor the rectangles to their parent to position them in its top-left and bottom-left corners, as well as the vertical center of its right edge. The following code snippet anchors a rectangle to the top-left corner of its parent:</p>
+<pre class="cpp" translate="no">
+         <span class="name">anchors</span>.left: <span class="name">parent</span>.<span class="name">left</span>
+         <span class="name">anchors</span>.top: <span class="name">parent</span>.<span class="name">top</span>
+         <span class="name">anchors</span>.leftMargin: <span class="number">20</span>
+         <span class="name">anchors</span>.topMargin: <span class="number">20</span>
+</pre>
+<p>Add a <a href="https://doc.qt.io/qt/qml-qtquick-mousearea.html" translate="no">MouseArea</a> type to make the rectangle clickable by users:</p>
+<pre class="cpp" translate="no">
+         <span class="type"><a href="https://doc.qt.io/qt/qml-qtquick-mousearea.html" translate="no">MouseArea</a></span> {
+             <span class="name">id</span>: <span class="name">mouseArea</span>
+             <span class="name">anchors</span>.fill: <span class="name">parent</span>
+</pre>
+<p>To check your code, compare it with the <code translate="no">Page.qml</code> example file.</p>
+<p>Next, make the image move between the rectangles when users click them by adding states and by connecting mouse clicks to state changes.</p>
+<h4 id="connect-mouse-clicks-to-state-changes">Connect mouse clicks to state changes</h4>
+<p>To make the image move between the rectangles when users select them, add states to the Page component where you change the values of the <code translate="no">x</code> and <code translate="no">y</code> properties of <i>icon</i> to match those of the middle right and top left rectangles. To make sure that the image stays within the rectangle when the view is scaled on different sizes of screens, <i>bind</i> the values of the <code translate="no">x</code> and <code translate="no">y</code> properties of <i>icon</i> to those of the rectangles:</p>
+<pre class="cpp" translate="no">
+     ...
+     <span class="name">states</span>: [
+         <span class="type"><a href="https://doc.qt.io/qt/qml-qtquick-state.html" translate="no">State</a></span> {
+             <span class="name">name</span>: <span class="string">&quot;State1&quot;</span>
+         },
+         <span class="type"><a href="https://doc.qt.io/qt/qml-qtquick-state.html" translate="no">State</a></span> {
+             <span class="name">name</span>: <span class="string">&quot;State2&quot;</span>
+
+             <span class="type"><a href="https://doc.qt.io/qt/qml-qtquick-propertychanges.html" translate="no">PropertyChanges</a></span> {
+                 <span class="name">target</span>: <span class="name">icon</span>
+                 <span class="name">x</span>: <span class="name">middleRightRect</span>.<span class="name">x</span>
+                 <span class="name">y</span>: <span class="name">middleRightRect</span>.<span class="name">y</span>
+             }
+         },
+         <span class="type"><a href="https://doc.qt.io/qt/qml-qtquick-state.html" translate="no">State</a></span> {
+             <span class="name">name</span>: <span class="string">&quot;State3&quot;</span>
+
+             <span class="type"><a href="https://doc.qt.io/qt/qml-qtquick-propertychanges.html" translate="no">PropertyChanges</a></span> {
+                 <span class="name">target</span>: <span class="name">icon</span>
+                 <span class="name">x</span>: <span class="name">bottomLeftRect</span>.<span class="name">x</span>
+                 <span class="name">y</span>: <span class="name">bottomLeftRect</span>.<span class="name">y</span>
+             }
+         }
+     ]
+</pre>
+<p>Then, connect the <code translate="no">onClicked</code> signals of the mouse areas to the state changes:</p>
+<pre class="cpp" translate="no">
+             <span class="type"><a href="https://doc.qt.io/qt/qml-qtqml-connections.html" translate="no">Connections</a></span> {
+                 <span class="name">target</span>: <span class="name">mouseArea</span>
+                 <span class="keyword">function</span> <span class="name">onClicked</span>()
+                 {
+                     <span class="name">page</span>.<span class="name">state</span> <span class="operator">=</span> <span class="string">&quot;State1&quot;</span>
+                 }
+</pre>
+<p>Because you develop with Qt 6, you must specify the connections as functions.</p>
+<h4 id="add-page-to-the-main-view">Add Page to the main view</h4>
+<p>Open <code translate="no">Main.qml</code> for editing and add an instance of the Page custom component to it:</p>
+<pre class="cpp" translate="no">
+ import QtQuick
+
+ <span class="type"><a href="https://doc.qt.io/qt/qml-qtquick-window.html" translate="no">Window</a></span> {
+     <span class="name">width</span>: <span class="number">640</span>
+     <span class="name">height</span>: <span class="number">480</span>
+     <span class="name">visible</span>: <span class="number">true</span>
+     <span class="name">title</span>: <span class="name">qsTr</span>(<span class="string">&quot;Transitions&quot;</span>)
+
+     <span class="type"><a href="https://doc.qt.io/qt/qml-qtquick-controls-page.html" translate="no">Page</a></span> {
+         <span class="name">id</span>: <span class="name">page</span>
+         <span class="name">anchors</span>.fill: <span class="name">parent</span>
+     }
+ }
+</pre>
+<p>Select <b>Ctrl+R</b> to run the application, and then select the rectangles to move the Qt logo from one rectangle to another.</p>
+<h4 id="animate-transitions">Animate transitions</h4>
+<p>Create transitions to apply animation to the image. For example, the image bounces back when it moves to <i>middleRightRect</i> and eases into <i>bottomLeftRect</i>.</p>
+<p>Specify transitions for switching from each state to the other two states:</p>
+<pre class="cpp" translate="no">
+     <span class="name">transitions</span>: [
+         <span class="type"><a href="https://doc.qt.io/qt/qml-qtquick-transition.html" translate="no">Transition</a></span> {
+             <span class="name">id</span>: <span class="name">toState1</span>
+             <span class="type"><a href="https://doc.qt.io/qt/qml-qtquick-parallelanimation.html" translate="no">ParallelAnimation</a></span> {
+                 <span class="type"><a href="https://doc.qt.io/qt/qml-qtquick-sequentialanimation.html" translate="no">SequentialAnimation</a></span> {
+                     <span class="type"><a href="https://doc.qt.io/qt/qml-qtquick-pauseanimation.html" translate="no">PauseAnimation</a></span> {
+                         <span class="name">duration</span>: <span class="number">0</span>
+                     }
+
+                     <span class="type"><a href="https://doc.qt.io/qt/qml-qtquick-propertyanimation.html" translate="no">PropertyAnimation</a></span> {
+                         <span class="name">target</span>: <span class="name">icon</span>
+                         <span class="name">property</span>: <span class="string">&quot;y&quot;</span>
+                         <span class="name">duration</span>: <span class="number">200</span>
+                     }
+                 }
+
+                 <span class="type"><a href="https://doc.qt.io/qt/qml-qtquick-sequentialanimation.html" translate="no">SequentialAnimation</a></span> {
+                     <span class="type"><a href="https://doc.qt.io/qt/qml-qtquick-pauseanimation.html" translate="no">PauseAnimation</a></span> {
+                         <span class="name">duration</span>: <span class="number">0</span>
+                     }
+
+                     <span class="type"><a href="https://doc.qt.io/qt/qml-qtquick-propertyanimation.html" translate="no">PropertyAnimation</a></span> {
+                         <span class="name">target</span>: <span class="name">icon</span>
+                         <span class="name">property</span>: <span class="string">&quot;x&quot;</span>
+                         <span class="name">duration</span>: <span class="number">200</span>
+                     }
+                 }
+             }
+             <span class="name">to</span>: <span class="string">&quot;State1&quot;</span>
+             <span class="name">from</span>: <span class="string">&quot;State2,State3&quot;</span>
+         },
+</pre>
+<p>Change the easing curve type for transitions to <i>State2</i> from linear to <code translate="no">Easing.OutBounce</code> to create the bounce effect:</p>
+<pre class="cpp" translate="no">
+         <span class="type"><a href="https://doc.qt.io/qt/qml-qtquick-transition.html" translate="no">Transition</a></span> {
+             <span class="name">id</span>: <span class="name">toState2</span>
+             <span class="type"><a href="https://doc.qt.io/qt/qml-qtquick-parallelanimation.html" translate="no">ParallelAnimation</a></span> {
+                 <span class="type"><a href="https://doc.qt.io/qt/qml-qtquick-sequentialanimation.html" translate="no">SequentialAnimation</a></span> {
+                     <span class="type"><a href="https://doc.qt.io/qt/qml-qtquick-pauseanimation.html" translate="no">PauseAnimation</a></span> {
+                         <span class="name">duration</span>: <span class="number">0</span>
+                     }
+
+                     <span class="type"><a href="https://doc.qt.io/qt/qml-qtquick-propertyanimation.html" translate="no">PropertyAnimation</a></span> {
+                         <span class="name">target</span>: <span class="name">icon</span>
+                         <span class="name">property</span>: <span class="string">&quot;y&quot;</span>
+                         <span class="name">easing</span>.type: <span class="name">Easing</span>.<span class="name">OutBounce</span>
+                         <span class="name">duration</span>: <span class="number">1006</span>
+                     }
+                 }
+
+                 <span class="type"><a href="https://doc.qt.io/qt/qml-qtquick-sequentialanimation.html" translate="no">SequentialAnimation</a></span> {
+                     <span class="type"><a href="https://doc.qt.io/qt/qml-qtquick-pauseanimation.html" translate="no">PauseAnimation</a></span> {
+                         <span class="name">duration</span>: <span class="number">0</span>
+                     }
+
+                     <span class="type"><a href="https://doc.qt.io/qt/qml-qtquick-propertyanimation.html" translate="no">PropertyAnimation</a></span> {
+                         <span class="name">target</span>: <span class="name">icon</span>
+                         <span class="name">property</span>: <span class="string">&quot;x&quot;</span>
+                         <span class="name">easing</span>.type: <span class="name">Easing</span>.<span class="name">OutBounce</span>
+                         <span class="name">duration</span>: <span class="number">1006</span>
+                     }
+                 }
+             }
+             <span class="name">to</span>: <span class="string">&quot;State2&quot;</span>
+             <span class="name">from</span>: <span class="string">&quot;State1,State3&quot;</span>
+         },
+</pre>
+<div class="admonition note">
+<p><b>Note: </b>Use a <a href="qt-quick-toolbars.html#preview-animations">toolbar for animations</a> to specify the easing curve type and animation duration.</p>
+</div>
+<p class="centerAlign"><img src="images/qml-toolbar-animation.png" alt="Qt Quick Toolbar for animation" /></p><p>Then, change the easing curve type for transitions to <i>State2</i> from linear to <code translate="no">Easing.InOutQuad</code> to create the easing effect:</p>
+<pre class="cpp" translate="no">
+         <span class="type"><a href="https://doc.qt.io/qt/qml-qtquick-transition.html" translate="no">Transition</a></span> {
+             <span class="name">id</span>: <span class="name">toState3</span>
+             <span class="type"><a href="https://doc.qt.io/qt/qml-qtquick-parallelanimation.html" translate="no">ParallelAnimation</a></span> {
+                 <span class="type"><a href="https://doc.qt.io/qt/qml-qtquick-sequentialanimation.html" translate="no">SequentialAnimation</a></span> {
+                     <span class="type"><a href="https://doc.qt.io/qt/qml-qtquick-pauseanimation.html" translate="no">PauseAnimation</a></span> {
+                         <span class="name">duration</span>: <span class="number">0</span>
+                     }
+
+                     <span class="type"><a href="https://doc.qt.io/qt/qml-qtquick-propertyanimation.html" translate="no">PropertyAnimation</a></span> {
+                         <span class="name">target</span>: <span class="name">icon</span>
+                         <span class="name">property</span>: <span class="string">&quot;y&quot;</span>
+                         <span class="name">easing</span>.type: <span class="name">Easing</span>.<span class="name">InOutQuad</span>
+                         <span class="name">duration</span>: <span class="number">2000</span>
+                     }
+                 }
+
+                 <span class="type"><a href="https://doc.qt.io/qt/qml-qtquick-sequentialanimation.html" translate="no">SequentialAnimation</a></span> {
+                     <span class="type"><a href="https://doc.qt.io/qt/qml-qtquick-pauseanimation.html" translate="no">PauseAnimation</a></span> {
+                         <span class="name">duration</span>: <span class="number">0</span>
+                     }
+
+                     <span class="type"><a href="https://doc.qt.io/qt/qml-qtquick-propertyanimation.html" translate="no">PropertyAnimation</a></span> {
+                         <span class="name">target</span>: <span class="name">icon</span>
+                         <span class="name">property</span>: <span class="string">&quot;x&quot;</span>
+                         <span class="name">easing</span>.type: <span class="name">Easing</span>.<span class="name">InOutQuad</span>
+                         <span class="name">duration</span>: <span class="number">2000</span>
+                     }
+                 }
+             }
+             <span class="name">to</span>: <span class="string">&quot;State3&quot;</span>
+             <span class="name">from</span>: <span class="string">&quot;State1,State2&quot;</span>
+         }
+     ]
+ }
+</pre>
+<p>Select <b>Ctrl+R</b> to run the application, and then select the rectangles to view the animated transitions.</p>
+<p>Files:</p>
+<ul>
+<li><a href="qtcreator-transitions-cmakelists-txt.html" translate="no">transitions/CMakeLists.txt</a></li>
+<li><a href="qtcreator-transitions-page-qml.html" translate="no">transitions/Page.qml</a></li>
+<li><a href="qtcreator-transitions-main-qml.html" translate="no">transitions/main.qml</a></li>
+</ul>
+<p>Images:</p>
+<ul>
+<li><a href="images/used-in-examples/transitions/qt-logo.png" translate="no">transitions/qt-logo.png</a></li>
+</ul>
+</div>
+<!-- @@@transitions -->
+<p class="naviNextPrevious footerNavi">
+<a class="prevPage" href="creator-tutorial-python-application-qt-quick.html">Tutorial: Qt Quick and Python</a>
+<span class="naviSeparator">  &#9702;  </span>
+<a class="nextPage" href="creator-qml-debugging-example.html">Tutorial: Qt Quick debugging</a>
+</p>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   Copyright <acronym title="Copyright">&copy;</acronym> The Qt Company Ltd. and other contributors.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

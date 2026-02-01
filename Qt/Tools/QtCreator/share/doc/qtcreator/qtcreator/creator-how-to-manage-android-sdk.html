@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- androiddev.qdoc -->
+  <title>Manage Android SDK packages | Qt Creator Documentation</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="index.html">Qt Creator Documentation</a></li>
+<li>Manage Android SDK packages</li>
+<li id="buildversion"><a href="index.html">Qt Creator 18.0.2</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+  <link rel="prev" href="creator-how-to-manage-android-ndk.html" />
+  <link rel="next" href="creator-how-to-manage-winappsdk.html" />
+<p class="naviNextPrevious headerNavi">
+<a class="prevPage" href="creator-how-to-manage-android-ndk.html">Manage Android NDK packages</a>
+<span class="naviSeparator">  &#9702;  </span>
+<a class="nextPage" href="creator-how-to-manage-winappsdk.html">Manage Windows App SDK packages</a>
+</p>
+<div class="sidebar">
+<div class="toc">
+<h3 id="toc">Contents</h3>
+<ul>
+<li class="level1"><a href="#show-sdk-packages">Show SDK packages</a></li>
+<li class="level1"><a href="#update-sdk-packages">Update SDK packages</a></li>
+<li class="level1"><a href="#set-sdkmanager-options">Set sdkmanager options</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Manage Android SDK packages</h1>
+<!-- $$$creator-how-to-manage-android-sdk.html-description -->
+<div class="descr" id="details">
+<p>Since Android SDK Tools version 25.3.0, Android has only a command-line tool, <a href="https://developer.android.com/studio/command-line/sdkmanager.html">sdkmanager</a>, for SDK package management. To simplify SDK management, Qt Creator has an SDK Manager for installing, updating, and removing SDK packages. You can still use <code translate="no">sdkmanager</code> for advanced SDK management.</p>
+<p>To view the installed Android SDK packages, select <a href="creator-how-to-find-preferences.html">Preferences</a> &gt; <b translate="no">SDKs</b> &gt; <b translate="no">Android</b> &gt; <b translate="no">SDK Manager</b>.</p>
+<p class="centerAlign"><img src="images/qtcreator-android-sdk-manager.webp" alt="SDK Manager in the Android tab in SDKs preferences" /></p><h2 id="show-sdk-packages">Show SDK packages</h2>
+<p>To show packages for a release channel in <b translate="no">Package</b>, select the channel in <b translate="no">Show Packages</b> &gt; <b translate="no">Channel</b>. Common channel IDs include <b translate="no">Stable</b>, <b translate="no">Beta</b>, <b translate="no">Dev</b>, and <b translate="no">Canary</b>.</p>
+<p>To show obsolete packages, select <b translate="no">Include obsolete</b>.</p>
+<p>To filter packages, select <b translate="no">Available</b>, <b translate="no">Installed</b>, or <b translate="no">All</b>.</p>
+<h2 id="update-sdk-packages">Update SDK packages</h2>
+<p>To update the installed Android SDK packages:</p>
+<ol class="1" type="1"><li>Select <b translate="no">Update Installed</b>.</li>
+<li>Select the packages to update.</li>
+<li>Select <b translate="no">Apply</b>.</li>
+</ol>
+<h2 id="set-sdkmanager-options">Set sdkmanager options</h2>
+<p>To set advanced <code translate="no">sdkmanager</code> options:</p>
+<ol class="1" type="1"><li>Select <b translate="no">Advanced Options</b>.</li>
+<li>In <b translate="no">SDK Manager arguments</b>, enter sdkmanager options from <b translate="no">Available arguments</b>.<p class="centerAlign"><img src="images/qtcreator-android-sdk-manager-arguments.png" alt="Android SDK Manager Arguments dialog" /></p></li>
+</ol>
+</div>
+<p><b>See also </b><a href="creator-how-tos.html#android">How To: Develop for Android</a> and <a href="creator-developing-android.html">Developing for Android</a>.</p>
+<!-- @@@creator-how-to-manage-android-sdk.html -->
+<p class="naviNextPrevious footerNavi">
+<a class="prevPage" href="creator-how-to-manage-android-ndk.html">Manage Android NDK packages</a>
+<span class="naviSeparator">  &#9702;  </span>
+<a class="nextPage" href="creator-how-to-manage-winappsdk.html">Manage Windows App SDK packages</a>
+</p>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   Copyright <acronym title="Copyright">&copy;</acronym> The Qt Company Ltd. and other contributors.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

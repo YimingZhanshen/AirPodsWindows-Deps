@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- qtquick-creating.qdoc -->
+  <title>Create Qt Quick UI Prototypes | Qt Creator Documentation</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="index.html">Qt Creator Documentation</a></li>
+<li>Create Qt Quick UI Prototypes</li>
+<li id="buildversion"><a href="index.html">Qt Creator 18.0.2</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+  <link rel="prev" href="quick-projects.html" />
+  <link rel="next" href="creator-how-to-create-vcs-repositories.html" />
+<p class="naviNextPrevious headerNavi">
+<a class="prevPage" href="quick-projects.html">Create Qt Quick Applications</a>
+<span class="naviSeparator">  &#9702;  </span>
+<a class="nextPage" href="creator-how-to-create-vcs-repositories.html">Create VCS repositories for new projects</a>
+</p>
+<div class="sidebar"><div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Create Qt Quick UI Prototypes</h1>
+<!-- $$$creator-how-to-create-qtquick-ui-prototype.html-description -->
+<div class="descr" id="details">
+<p>Qt Quick UI Prototype projects are useful for testing or prototyping user interfaces, or for setting up a separate project just for QML editing, for example. You cannot use them for application development because they do not have:</p>
+<ul>
+<li>C++ code</li>
+<li>Resource files (<code translate="no">.qrc</code>)</li>
+<li>Code needed for deploying applications to <a href="creator-glossary.html#glossary-device">devices</a></li>
+</ul>
+<p>For more information about how to turn Qt Quick UI Prototype projects into Qt Quick Application projects, see <a href="quick-converting-ui-projects.html">Converting UI Projects to Applications</a>.</p>
+<p>To create a Qt Quick UI Prototype project:</p>
+<ol class="1" type="1"><li>Go to <b translate="no">File</b> &gt; <b translate="no">New Project</b> &gt; <b translate="no">Other Project</b> &gt; <b translate="no">Qt Quick UI Prototype</b>.</li>
+<li>Select <b translate="no">Choose</b> to open the <b translate="no">Project Location</b> dialog.</li>
+<li>In <b translate="no">Name</b>, enter a name for the application.</li>
+<li>In <b translate="no">Create in</b>, enter the path for the project files. Select <b translate="no">Use as default project location</b> to create new projects in this folder by default.</li>
+<li>Select <b translate="no">Next</b> (or <b translate="no">Continue</b> on macOS) to open the <b translate="no">Define Project Details</b> dialog.</li>
+<li>Select <b translate="no">Create a project that you can open in Qt Design Studio</b> to make the project compatible with Qt Design Studio.</li>
+<li>Select <b translate="no">Use Qt Virtual Keyboard</b> to add support for <a href="https://doc.qt.io/qt/qtvirtualkeyboard-index.html">Qt Virtual Keyboard</a> to the application.<div class="admonition note">
+<p><b>Note: </b>If you have not installed the Qt Virtual Keyboard module when you installed Qt, an error message will appear when you try to open <code translate="no">main.qml</code>.</p>
+</div>
+</li>
+<li>Select <b translate="no">Next</b> to open the <b translate="no">Kit Selection</b> dialog.</li>
+<li>Select <a href="creator-preferences-kits.html">kits</a> for the platforms that you want to build the application for.<div class="admonition note">
+<p><b>Note: </b>Kits are listed if they have been specified in <a href="creator-how-to-find-preferences.html">Preferences</a> &gt; <b translate="no">Kits</b>.</p>
+</div>
+</li>
+<li>Select <b translate="no">Next</b> to open the <b translate="no">Project Management</b> dialog.</li>
+<li>Review the project settings, and select <b translate="no">Finish</b> (on Windows and Linux) or <b translate="no">Done</b> (on macOS) to create the project.</li>
+</ol>
+<p>Qt Creator creates the following files:</p>
+<ul>
+<li><code translate="no">.qmlproject</code> project file defines that all QML, JavaScript, and image files in the project folder belong to the project. Therefore, you do not need to individually list all the files in the project.</li>
+<li><code translate="no">.qml</code> file defines a UI item, such as a component or the whole application UI.</li>
+<li><code translate="no">Screen01.ui.qml</code> file defines a custom QML type using instances of a Rectangle type that forms the background, a Button, and a Text component that displays some text. This file is created if you select <b translate="no">Create a project that you can open in Qt Design Studio</b>.</li>
+</ul>
+<p>To use JavaScript and image files in the application, copy them to the project folder.</p>
+</div>
+<p><b>See also </b><a href="quick-projects.html">Create Qt Quick Applications</a>, <a href="creator-how-tos.html#manage-kits">How To: Manage Kits</a>, and <a href="creator-project-creating.html">Creating Projects</a>.</p>
+<!-- @@@creator-how-to-create-qtquick-ui-prototype.html -->
+<p class="naviNextPrevious footerNavi">
+<a class="prevPage" href="quick-projects.html">Create Qt Quick Applications</a>
+<span class="naviSeparator">  &#9702;  </span>
+<a class="nextPage" href="creator-how-to-create-vcs-repositories.html">Create VCS repositories for new projects</a>
+</p>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   Copyright <acronym title="Copyright">&copy;</acronym> The Qt Company Ltd. and other contributors.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

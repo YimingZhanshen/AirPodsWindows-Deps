@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- creator-vcs-git.qdoc -->
+  <title>Create and apply patches | Qt Creator Documentation</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="index.html">Qt Creator Documentation</a></li>
+<li>Create and apply patches</li>
+<li id="buildversion"><a href="index.html">Qt Creator 18.0.2</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+  <link rel="prev" href="creator-how-to-git-log.html" />
+  <link rel="next" href="creator-how-to-git-interactive-rebase.html" />
+<p class="naviNextPrevious headerNavi">
+<a class="prevPage" href="creator-how-to-git-log.html">git log</a>
+<span class="naviSeparator">  &#9702;  </span>
+<a class="nextPage" href="creator-how-to-git-interactive-rebase.html">Interactive rebase</a>
+</p>
+<div class="sidebar"><div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Create and apply patches</h1>
+<!-- $$$creator-how-to-git-apply-patch.html-description -->
+<div class="descr" id="details">
+<p>Patches are rewriting instructions that Git can apply to a set of files.</p>
+<p>To generate patch files from local commits:</p>
+<ol class="1" type="1"><li>Go to <b translate="no">Tools</b> &gt; <b translate="no">Git</b> &gt; <b translate="no">Local Repository</b>.</li>
+<li>Select <b translate="no">Patch</b> &gt; <b translate="no">Create from Commits</b>.</li>
+<li>Select the commits for patch file creation in the dialog.</li>
+<li>Select <b translate="no">OK</b>.</li>
+</ol>
+<p>The patch files are generated in the root directory of the local repository and follow the scheme <i>NNNN-Title-of-Commit.patch</i>, where <i>NNNN</i> is a four digit number starting with <i>0000</i>.</p>
+<p>To apply a patch file that is open in Qt Creator, go to <b translate="no">Tools</b> &gt; <b translate="no">Git</b> &gt; <b translate="no">Local Repository</b> and select <b translate="no">Patch</b> &gt; <b translate="no">Apply from Editor</b>.</p>
+<p>To select the patch file to apply from the file system, select <b translate="no">Apply from File</b>.</p>
+<p>To apply a patch from the clipboard, select <b translate="no">Apply from Clipboard</b>.</p>
+</div>
+<p><b>See also </b><a href="creator-how-tos.html#use-git">How To: Use Git</a> and <a href="creator-vcs-git.html">Git</a>.</p>
+<!-- @@@creator-how-to-git-apply-patch.html -->
+<p class="naviNextPrevious footerNavi">
+<a class="prevPage" href="creator-how-to-git-log.html">git log</a>
+<span class="naviSeparator">  &#9702;  </span>
+<a class="nextPage" href="creator-how-to-git-interactive-rebase.html">Interactive rebase</a>
+</p>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   Copyright <acronym title="Copyright">&copy;</acronym> The Qt Company Ltd. and other contributors.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- creator-vcs-git.qdoc -->
+  <title>Show instant blame | Qt Creator Documentation</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="index.html">Qt Creator Documentation</a></li>
+<li>Show instant blame</li>
+<li id="buildversion"><a href="index.html">Qt Creator 18.0.2</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+  <link rel="prev" href="creator-how-to-use-common-vcs-functions.html" />
+  <link rel="next" href="creator-how-to-git-stage-changes.html" />
+<p class="naviNextPrevious headerNavi">
+<a class="prevPage" href="creator-how-to-use-common-vcs-functions.html">Use common VCS functions</a>
+<span class="naviSeparator">  &#9702;  </span>
+<a class="nextPage" href="creator-how-to-git-stage-changes.html">Stage changes</a>
+</p>
+<div class="sidebar"><div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Show instant blame</h1>
+<!-- $$$creator-how-to-git-instant-blame.html-description -->
+<div class="descr" id="details">
+<p>Instant blame annotates the current editor line with its author and the date this line was last changed. Optionally, the annotation shows the commit subject.</p>
+<p>To show instant blame for the current file, go to <b translate="no">Tools</b> &gt; <b translate="no">Git</b> &gt; <b translate="no">Current File</b> and select <b translate="no">Instant Blame for &lt;file&gt;</b>.</p>
+<div class="admonition note">
+<p><b>Note: </b>Instant blame is not available for unsaved files.</p>
+</div>
+<p>To show the latest real changes to the line, configure instant blame to ignore whitespace changes and line moves.</p>
+<p>When you hover over the annotation, a tooltip with additional information is shown. From the tooltip, the following actions are available:</p>
+<div class="table"><table class="generic">
+ <thead><tr class="qt-style"><th >Menu Item</th><th >Description</th></tr></thead>
+<tr valign="top" class="odd"><td >Blame &lt;hash&gt;</td><td >Opens the full file blame for the revision of <i>hash</i>.</td></tr>
+<tr valign="top" class="even"><td >Blame Parent</td><td >Opens the full file blame for the parent revision of <i>hash</i>.</td></tr>
+<tr valign="top" class="odd"><td >File at &lt;hash&gt;</td><td >Opens the file contents at the revision of <i>hash</i>.</td></tr>
+<tr valign="top" class="even"><td >Log for line &lt;line&gt;</td><td >Shows a log with all the commits that touched the <i>line</i>.</td></tr>
+<tr valign="top" class="odd"><td ><img src="images/copy.png" alt="Copy Hash to Clipboard" /> (<b translate="no">Copy Hash to Clipboard</b>)</td><td >Copies the full <i>hash</i> to the clipboard.</td></tr>
+<tr valign="top" class="even"><td >commit &lt;hash&gt;</td><td >Opens the commit <i>hash</i> with full description and diff.</td></tr>
+</table></div>
+<div class="admonition note">
+<p><b>Note: </b>Most of these actions have no meaning for uncommmited changes.</p>
+</div>
+</div>
+<p><b>See also </b><a href="creator-how-tos.html#use-git">How To: Use Git</a> and <a href="creator-vcs-git.html">Git</a>.</p>
+<!-- @@@creator-how-to-git-instant-blame.html -->
+<p class="naviNextPrevious footerNavi">
+<a class="prevPage" href="creator-how-to-use-common-vcs-functions.html">Use common VCS functions</a>
+<span class="naviSeparator">  &#9702;  </span>
+<a class="nextPage" href="creator-how-to-git-stage-changes.html">Stage changes</a>
+</p>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   Copyright <acronym title="Copyright">&copy;</acronym> The Qt Company Ltd. and other contributors.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

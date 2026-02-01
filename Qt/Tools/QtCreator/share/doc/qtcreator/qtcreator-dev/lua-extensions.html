@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- lua-extensions.qdoc -->
+  <title>Creating Lua-Based Extensions | Extending Qt Creator Manual</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="index.html">Extending Qt Creator Manual</a></li>
+<li>Creating Lua-Based Extensions</li>
+<li id="buildversion"><a href="index.html">Extending Qt Creator Manual 18.0.2</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar">
+<div class="toc">
+<h3 id="toc">Contents</h3>
+<ul>
+<li class="level1"><a href="#writing-lua-extensions">Writing Lua Extensions</a></li>
+<li class="level1"><a href="#lua-extension-specification">Lua Extension Specification</a></li>
+<li class="level1"><a href="#the-setup-function">The Setup Function</a></li>
+<li class="level1"><a href="#asynchronous-operations">Asynchronous Operations</a></li>
+<li class="level1"><a href="#interactive-help">Interactive Help</a></li>
+<li class="level1"><a href="#qt-creator-lua-api">Qt Creator Lua API</a></li>
+<li class="level1"><a href="#extending-the-lua-api-with-c">Extending the Lua API with C++</a></li>
+<li class="level1"><a href="#examples">Examples</a></li>
+<li class="level2"><a href="#language-server">Language Server</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Creating Lua-Based Extensions</h1>
+<!-- $$$lua-extensions.html-description -->
+<div class="descr" id="details">
+<p>Qt Creator can be extended with Lua scripts. The included Lua engine is based on Lua 5.4.6.</p>
+<h2 id="writing-lua-extensions">Writing Lua Extensions</h2>
+<p>To create a new Lua extension, choose <b translate="no">File</b> &gt; <b translate="no">New Project</b> &gt; <b translate="no">Library</b> &gt; <b translate="no">Qt Creator Lua Plugin</b>.</p>
+<p>To test your new extension, start your project. Your <b translate="no">Application Output</b> should show <i>Hello from Lua!</i>.</p>
+<h2 id="lua-extension-specification">Lua Extension Specification</h2>
+<p>A Lua extension consists of a Lua script with the same name as the folder it is in. This is necessary for the extension to be loaded.</p>
+<p>This script defines the specification of the extension, such as its display name, vendor, copyright.</p>
+<pre class="cpp" translate="no">
+ <span class="operator">-</span><span class="operator">-</span><span class="operator">-</span> MyExtension<span class="operator">.</span>lua
+ <span class="keyword">return</span> {
+     Id <span class="operator">=</span> <span class="string">&quot;myextension&quot;</span><span class="operator">,</span>
+     Name <span class="operator">=</span> <span class="string">&quot;MyExtension&quot;</span><span class="operator">,</span>
+     Version <span class="operator">=</span> <span class="string">&quot;1.0.0&quot;</span><span class="operator">,</span>
+     CompatVersion <span class="operator">=</span> <span class="string">&quot;1.0.0&quot;</span><span class="operator">,</span>
+     Vendor <span class="operator">=</span> <span class="string">&quot;My Company&quot;</span><span class="operator">,</span>
+     VendorId <span class="operator">=</span> <span class="string">&quot;mycompany&quot;</span><span class="operator">,</span>
+     Category <span class="operator">=</span> <span class="string">&quot;Tests&quot;</span><span class="operator">,</span>
+     Description <span class="operator">=</span> <span class="string">&quot;Describe what your extension does in a sentence.&quot;</span><span class="operator">,</span>
+     LongDescription <span class="operator">=</span> <span class="operator">[</span><span class="operator">[</span>
+         Tell users more about your extension<span class="operator">.</span> This text is rendered as Markdown<span class="operator">.</span>
+     <span class="operator">]</span><span class="operator">]</span><span class="operator">,</span>
+     Dependencies <span class="operator">=</span> {
+         { Name <span class="operator">=</span> <span class="string">&quot;Lua&quot;</span><span class="operator">,</span>  Version <span class="operator">=</span> <span class="string">&quot;15.0.0&quot;</span><span class="operator">,</span> Required <span class="operator">=</span> <span class="keyword">true</span> }
+     }<span class="operator">,</span>
+     setup <span class="operator">=</span> function() print(<span class="string">&quot;Hello from Lua!&quot;</span>) end<span class="operator">,</span>
+     printToOutputPane <span class="operator">=</span> <span class="keyword">true</span><span class="operator">,</span>
+ } <span class="operator">-</span><span class="operator">-</span><span class="operator">[</span><span class="operator">[</span>@as QtcPlugin<span class="operator">]</span><span class="operator">]</span>
+</pre>
+<h2 id="the-setup-function">The Setup Function</h2>
+<p>The setup function is called when the extension is loaded. This is where you can set up the functionality of your extension. Since the specification file is parsed with very limited permissions, you need to require a module where you implement the actual functionality.</p>
+<pre class="cpp" translate="no">
+ <span class="operator">-</span><span class="operator">-</span><span class="operator">-</span> MyExtension<span class="operator">.</span>lua
+ <span class="keyword">return</span> {
+     Name <span class="operator">=</span> <span class="string">&quot;MyExtension&quot;</span><span class="operator">,</span>
+     Version <span class="operator">=</span> <span class="string">&quot;1.0.0&quot;</span><span class="operator">,</span>
+     <span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">,</span>
+     <span class="operator">-</span><span class="operator">-</span><span class="operator">-</span> This is the setup function that is called when the extension is loaded<span class="operator">.</span>
+     <span class="operator">-</span><span class="operator">-</span><span class="operator">-</span> It requires the <span class="char">'init'</span> module <span class="keyword">and</span> calls the setup function from the returned table<span class="operator">.</span>
+     setup <span class="operator">=</span> function() require <span class="char">'init'</span><span class="operator">.</span>setup() end<span class="operator">,</span>
+ }
+</pre>
+<pre class="cpp" translate="no">
+ <span class="operator">-</span><span class="operator">-</span><span class="operator">-</span> init<span class="operator">.</span>lua
+ function setup()
+     print(<span class="string">&quot;Hello from Lua!&quot;</span>)
+ end
+
+ <span class="operator">-</span><span class="operator">-</span> Returns a table with a single field <span class="char">'setup'</span> that points to the setup function<span class="operator">.</span>
+ <span class="keyword">return</span> {
+     setup <span class="operator">=</span> setup
+ }
+</pre>
+<h2 id="asynchronous-operations">Asynchronous Operations</h2>
+<p>Some of the built-in operations work asynchronously. To handle this, use the Async module.</p>
+<pre class="cpp" translate="no">
+ local a <span class="operator">=</span> require <span class="char">'async'</span>
+ local u <span class="operator">=</span> require <span class="char">'Utils'</span>
+
+ a<span class="operator">.</span>sync(function()
+     print(<span class="string">&quot;Lets wait for 5 seconds ...&quot;</span>)
+     a<span class="operator">.</span>wait(u<span class="operator">.</span>waitms(<span class="number">5000</span>))
+     print(<span class="string">&quot;... done!&quot;</span>)
+ end)
+</pre>
+<h2 id="interactive-help">Interactive Help</h2>
+<p>When you open a .lua file in the editor the first time, you are asked to download the Lua Language Server. This is extremely useful as it gives you context sensitive help and auto-completion.</p>
+<h2 id="qt-creator-lua-api">Qt Creator Lua API</h2>
+<p>The Qt Creator Lua API is available to Lua extensions via a number of modules that you can import using the <code translate="no">require</code> function. C++ extensions may provide additional modules. One example of that is the LanguageServer Extension that provides a module for creating Language Server clients.</p>
+<p>You can find the API documentation files for the Lua modules in your Qt Creator installation. On macOS you can find them in <code translate="no">Qt Creator.app/Contents/Resources/lua/meta</code>.</p>
+<div class="table"><table class="annotated">
+<tr class="odd topAlign"><td class="tblName" translate="no"><p><a href="lua-extension-meta-core.html">Core.lua</a></p></td><td class="tblDescr"><p>Access and interact with the core functionality of Qt Creator.</p></td></tr>
+<tr class="even topAlign"><td class="tblName" translate="no"><p><a href="lua-extension-meta-action.html">action.lua</a></p></td><td class="tblDescr"><p>Create user interface actions in Qt Creator.</p></td></tr>
+<tr class="odd topAlign"><td class="tblName" translate="no"><p><a href="lua-extension-meta-async.html">async.lua</a></p></td><td class="tblDescr"><p>Handle asynchronouse operations with the async/await Lua API.</p></td></tr>
+<tr class="even topAlign"><td class="tblName" translate="no"><p><a href="lua-extension-meta-fetch.html">fetch.lua</a></p></td><td class="tblDescr"><p>Fetch data from the internet.</p></td></tr>
+<tr class="odd topAlign"><td class="tblName" translate="no"><p><a href="lua-extension-meta-gui.html">gui.lua</a></p></td><td class="tblDescr"><p>Create user interfaces.</p></td></tr>
+<tr class="even topAlign"><td class="tblName" translate="no"><p><a href="lua-extension-meta-lsp.html">lsp.lua</a></p></td><td class="tblDescr"><p>Register Language Server clients.</p></td></tr>
+<tr class="odd topAlign"><td class="tblName" translate="no"><p><a href="lua-extension-meta-messagemanager.html">messagemanager.lua</a></p></td><td class="tblDescr"><p>Display messages to the user.</p></td></tr>
+<tr class="even topAlign"><td class="tblName" translate="no"><p><a href="lua-extension-meta-process.html">process.lua</a></p></td><td class="tblDescr"><p>Run external processes.</p></td></tr>
+<tr class="odd topAlign"><td class="tblName" translate="no"><p><a href="lua-extension-meta-qt.html">qt.lua</a></p></td><td class="tblDescr"><p>Access Qt functionality.</p></td></tr>
+<tr class="even topAlign"><td class="tblName" translate="no"><p><a href="lua-extension-meta-qtc.html">qtc.lua</a></p></td><td class="tblDescr"><p>Access and extend Qt Creator.</p></td></tr>
+<tr class="odd topAlign"><td class="tblName" translate="no"><p><a href="lua-extension-meta-settings.html">settings.lua</a></p></td><td class="tblDescr"><p>Read and write settings.</p></td></tr>
+<tr class="even topAlign"><td class="tblName" translate="no"><p><a href="lua-extension-meta-simpletypes.html">simpletypes.lua</a></p></td><td class="tblDescr"><p>Access simple types.</p></td></tr>
+<tr class="odd topAlign"><td class="tblName" translate="no"><p><a href="lua-extension-meta-texteditor.html">texteditor.lua</a></p></td><td class="tblDescr"><p>Access and manipulate text editors.</p></td></tr>
+<tr class="even topAlign"><td class="tblName" translate="no"><p><a href="lua-extension-meta-utils.html">utils.lua</a></p></td><td class="tblDescr"><p>Common utility functions and classes.</p></td></tr>
+</table></div>
+<h2 id="extending-the-lua-api-with-c">Extending the Lua API with C++</h2>
+<p>To add functionality to the Lua Interface, you need to register a new module with the Lua Engine.</p>
+<pre class="cpp" translate="no">
+ <span class="preprocessor">#include &lt;lua/luaengine.h&gt;</span>
+
+ <span class="keyword">class</span> MyCppExtension final : <span class="keyword">public</span> ExtensionSystem<span class="operator">::</span>IPlugin
+ {
+     Q_OBJECT
+     Q_PLUGIN_METADATA(IID <span class="string">&quot;org.qt-project.Qt.QtCreatorPlugin&quot;</span> FILE <span class="string">&quot;MyCppExtension.json&quot;</span>)
+
+ <span class="keyword">public</span>:
+     MyCppExtension() {}
+
+ <span class="keyword">private</span>:
+     <span class="type">void</span> initialize() final {
+         <span class="comment">// The registered function will be called when the Lua module 'MyCppExtension' is required.</span>
+         <span class="comment">// The returned table will be returned from the require call in Lua.</span>
+         <span class="operator">::</span>Lua<span class="operator">::</span>registerProvider(<span class="string">&quot;MyCppExtension&quot;</span><span class="operator">,</span> <span class="operator">[</span><span class="operator">]</span>(sol<span class="operator">::</span>state_view lua) <span class="operator">-</span><span class="operator">&gt;</span> sol<span class="operator">::</span>object {
+             sol<span class="operator">::</span>table result <span class="operator">=</span> lua<span class="operator">.</span>create_table();
+             result<span class="operator">[</span><span class="string">&quot;myFunction&quot;</span><span class="operator">]</span> <span class="operator">=</span> <span class="operator">[</span><span class="operator">]</span>(<span class="type">int</span> a<span class="operator">,</span> <span class="type">int</span> b) { <span class="keyword">return</span> a <span class="operator">+</span> b; };
+             <span class="keyword">return</span> result;
+         });
+      }
+ };
+</pre>
+<p>You can then access <code translate="no">MyCppExtension.myFunction</code> from your Lua scripts like this:</p>
+<pre class="cpp" translate="no">
+ local MyCppExtension <span class="operator">=</span> require <span class="char">'MyCppExtension'</span>
+ <span class="operator">-</span><span class="operator">-</span><span class="operator">-</span> MyCppExtension is now a table with a single field <span class="char">'myFunction'</span><span class="operator">,</span> as it is returned from the
+ <span class="operator">-</span><span class="operator">-</span><span class="operator">-</span> C<span class="operator">+</span><span class="operator">+</span> function registered via <span class="char">'Lua::registerProvider(...)'</span><span class="operator">.</span>
+ print(MyCppExtension<span class="operator">.</span>myFunction(<span class="number">1</span><span class="operator">,</span> <span class="number">2</span>))
+</pre>
+<p>For more information on how to register C++ functionality, see <a href="https://sol2.readthedocs.io/en/latest/index.html">sol2</a>.</p>
+<h2 id="examples">Examples</h2>
+<h3 id="language-server">Language Server</h3>
+<p>The Qt Creator LuaLanguageClient Plugin provides support for registering your own Language Server clients. You can find an example of how to use this in the Qt Creator Extension &quot;Lua Language Server&quot; and &quot;Rust Language Server&quot;.</p>
+</div>
+<p><b>See also </b><a href="first-plugin.html">Creating C++-Based Plugins</a>.</p>
+<!-- @@@lua-extensions.html -->
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <abbr title="Copyright">&copy;</abbr> 2025 <span translate="no">The Qt Company Ltd.</span>
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br/>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the <span translate="no">Free Software Foundation</span>.<br/>    <span translate="no">Qt</span> and respective logos are <a href="https://doc.qt.io/qt/trademarks.html">    trademarks</a> of <span translate="no">The Qt Company Ltd.</span> in Finland and/or other countries
+   worldwide. All other trademarks are property of their respective owners. </p>
+</div>
+</body>
+</html>

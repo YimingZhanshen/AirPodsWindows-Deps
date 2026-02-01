@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- creator-debugger.qdoc -->
+  <title>Load core files to the debugger | Qt Creator Documentation</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="index.html">Qt Creator Documentation</a></li>
+<li>Load core files to the debugger</li>
+<li id="buildversion"><a href="index.html">Qt Creator 18.0.2</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+  <link rel="prev" href="creator-how-to-inspect-basic-qt-objects.html" />
+  <link rel="next" href="creator-how-to-manage-breakpoints.html" />
+<p class="naviNextPrevious headerNavi">
+<a class="prevPage" href="creator-how-to-inspect-basic-qt-objects.html">Inspect basic Qt objects</a>
+<span class="naviSeparator">  &#9702;  </span>
+<a class="nextPage" href="creator-how-to-manage-breakpoints.html">Manage breakpoints</a>
+</p>
+<div class="sidebar">
+<div class="toc">
+<h3 id="toc">Contents</h3>
+<ul>
+<li class="level1"><a href="#get-core-files">Get core files</a></li>
+<li class="level1"><a href="#attach-to-a-core-file">Attach to a core file</a></li>
+<li class="level1"><a href="#attach-to-the-latest-core-file">Attach to the latest core file</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Load core files to the debugger</h1>
+<!-- $$$creator-how-to-load-core-files-to-debugger.html-description -->
+<div class="descr" id="details">
+<p>Use the core mode to inspect <i>core</i> files (crash dumps) that are generated from crashed processes on Linux and Unix systems if the system is set up to allow this.</p>
+<h2 id="get-core-files">Get core files</h2>
+<p>To enable the dumping of core files on a Unix system, enter the following command in the shell from which the application is launched:</p>
+<pre class="cpp" translate="no">
+ ulimit <span class="operator">-</span>c unlimited
+</pre>
+<h2 id="attach-to-a-core-file">Attach to a core file</h2>
+<p>To launch the debugger in the core mode:</p>
+<ol class="1" type="1"><li>Go to <b translate="no">Debug</b> &gt; <b translate="no">Start Debugging</b>, and then select <b translate="no">Load Core File</b>.<p class="centerAlign"><img src="images/qtcreator-debugger-load-core-file.png" alt="Load Core File dialog" /></p></li>
+<li>In <b translate="no">Kit</b>, select a build and run kit that was used for building the binary for which the core file was created. If the core file stems from a binary not built by Qt Creator or a process not initiated by Qt Creator, select a kit that matches the setup used as closely as possible, in respect to the specified device, toolchain, debugger, and sysroot.</li>
+<li>In <b translate="no">Core file</b>, specify the core file to inspect.</li>
+<li>In <b translate="no">Executable of symbol file</b>, specify a file that has debug information corresponding to the core file. Typically, this is the executable file or a <code translate="no">.debug</code> file if the debug information is stored separately from the executable.</li>
+<li>In <b translate="no">Override start script</b>, specify a script file to run instead of the default start script.</li>
+<li>In <b translate="no">Override SysRoot</b>, specify the path to the <code translate="no">sysroot</code> to use instead of the default <code translate="no">sysroot</code>.</li>
+</ol>
+<p>For better results, use a properly configured project that has the sources of the crashed application.</p>
+<h2 id="attach-to-the-latest-core-file">Attach to the latest core file</h2>
+<p>On Linux systems, Qt Creator uses the <code translate="no">coredumpctl</code> command provided by the <code translate="no">systemd</code> crash handling to get core files. For more information, see <a href="https://www.freedesktop.org/software/systemd/man/latest/systemd-coredump.html">systemd-coredump</a>.</p>
+<p>To attach to the latest core file, go to <b translate="no">Debug</b> &gt; <b translate="no">Start Debugging</b>, and then select <b translate="no">Load Last Core File</b>.</p>
+</div>
+<p><b>See also </b><a href="creator-how-tos.html#debug">How To: Debug</a>, <a href="creator-debugging.html">Debugging</a>, <a href="creator-reference.html#debuggers">Debuggers</a>, <a href="creator-reference.html#debugger">Debugger</a>, and <a href="creator-preferences-kits.html">Kits</a>.</p>
+<!-- @@@creator-how-to-load-core-files-to-debugger.html -->
+<p class="naviNextPrevious footerNavi">
+<a class="prevPage" href="creator-how-to-inspect-basic-qt-objects.html">Inspect basic Qt objects</a>
+<span class="naviSeparator">  &#9702;  </span>
+<a class="nextPage" href="creator-how-to-manage-breakpoints.html">Manage breakpoints</a>
+</p>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   Copyright <acronym title="Copyright">&copy;</acronym> The Qt Company Ltd. and other contributors.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

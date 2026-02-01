@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- creator-sdk-tool.qdoc -->
+  <meta name="description" content="Configure CMake and set up compilers, debuggers, devices, Qt versions, and kits from the command line.">
+  <title>SDK Tool | Qt Creator Documentation</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="index.html">Qt Creator Documentation</a></li>
+<li>SDK Tool</li>
+<li id="buildversion"><a href="index.html">Qt Creator 18.0.2</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+  <link rel="prev" href="creator-acknowledgements.html" />
+  <link rel="next" href="technical-support.html" />
+<p class="naviNextPrevious headerNavi">
+<a class="prevPage" href="creator-acknowledgements.html">Licenses and acknowledgments</a>
+<span class="naviSeparator">  &#9702;  </span>
+<a class="nextPage" href="technical-support.html">Technical support</a>
+</p>
+<div class="sidebar">
+<div class="toc">
+<h3 id="toc">Contents</h3>
+<ul>
+<li class="level1"><a href="#value-types">Value Types</a></li>
+<li class="level1"><a href="#sdk-path">SDK Path</a></li>
+<li class="level1"><a href="#options">Options</a></li>
+<li class="level1"><a href="#operations">Operations</a></li>
+<li class="level1"><a href="#adding-a-system-architecture-abi">Adding a System Architecture (ABI)</a></li>
+<li class="level2"><a href="#addabiflavor">addAbiFlavor</a></li>
+<li class="level2"><a href="#addabiflavor-options">addAbiFlavor Options</a></li>
+<li class="level2"><a href="#abi-flavor-example">ABI Flavor Example</a></li>
+<li class="level1"><a href="#adding-cmake-tools">Adding CMake Tools</a></li>
+<li class="level2"><a href="#addcmake">addCMake</a></li>
+<li class="level2"><a href="#addcmake-options">addCMake Options</a></li>
+<li class="level2"><a href="#cmake-configuration-example">CMake Configuration Example</a></li>
+<li class="level1"><a href="#adding-compilers">Adding Compilers</a></li>
+<li class="level2"><a href="#addtc">addTC</a></li>
+<li class="level2"><a href="#addtc-options">addTC Options</a></li>
+<li class="level2"><a href="#compiler-example">Compiler Example</a></li>
+<li class="level1"><a href="#adding-debuggers">Adding Debuggers</a></li>
+<li class="level2"><a href="#adddebugger">addDebugger</a></li>
+<li class="level2"><a href="#adddebugger-options">addDebugger Options</a></li>
+<li class="level2"><a href="#debugger-example">Debugger Example</a></li>
+<li class="level1"><a href="#adding-devices">Adding Devices</a></li>
+<li class="level2"><a href="#adddev">addDev</a></li>
+<li class="level2"><a href="#adddev-options">addDev Options</a></li>
+<li class="level2"><a href="#linux-device-example">Linux Device Example</a></li>
+<li class="level1"><a href="#adding-qt-versions">Adding Qt Versions</a></li>
+<li class="level2"><a href="#addqt">addQt</a></li>
+<li class="level2"><a href="#addqt-options">addQt Options</a></li>
+<li class="level2"><a href="#qt-version-example">Qt Version Example</a></li>
+<li class="level1"><a href="#adding-kits">Adding Kits</a></li>
+<li class="level2"><a href="#addkit">addKit</a></li>
+<li class="level2"><a href="#addkit-options">addKit Options</a></li>
+<li class="level2"><a href="#kit-example">Kit Example</a></li>
+<li class="level1"><a href="#adding-getting-and-finding-keys">Adding, Getting, and Finding Keys</a></li>
+<li class="level1"><a href="#removing-configured-items">Removing Configured Items</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">SDK Tool</h1>
+<!-- $$$creator-sdk-tool.html-description -->
+<div class="descr" id="details">
+<p><a href="https://doc.qt.io/qt/get-and-install-qt.html">Qt Online Installer</a> uses the SDK Tool (<code translate="no">sdktool</code>) to configure CMake and set <a href="creator-preferences-kits.html">Kit</a> preferences, such as compilers, debuggers, devices, and Qt versions. You can use it from the command line to set Qt and Qt Creator preferences automatically for all users of a computer, for example. For a single user, it is usually easier to make changes in <a href="creator-how-to-find-preferences.html">Preferences</a> &gt; <b translate="no">Kits</b>.</p>
+<p>To use the SDK Tool, enter the following command in the <code translate="no">Tools\sdktool\bin</code> directory in the Qt installation directory:</p>
+<pre class="cpp plain" translate="no">
+ sdktool [OPTION] [OPERATION [OPTIONS]]
+</pre>
+<p>For information about the options and operations that your SDK Tool version supports, enter:</p>
+<pre class="cpp plain" translate="no">
+ sdktool --help
+</pre>
+<h2 id="value-types">Value Types</h2>
+<p>The operations add settings in the form <code translate="no">&lt;KEY&gt; &lt;TYPE&gt;:&lt;VALUE&gt;</code> to the configuration that they create. The supported <code translate="no">TYPE</code> values are:</p>
+<ul>
+<li><code translate="no">bool</code></li>
+<li><code translate="no">int</code></li>
+<li><a href="https://doc.qt.io/qt/qbytearray.html" translate="no">QByteArray</a></li>
+<li><a href="https://doc.qt.io/qt/qstring.html" translate="no">QString</a></li>
+<li><a href="https://doc.qt.io/qt/qvariant.html#QVariantList-typedef" translate="no">QVariantList</a></li>
+</ul>
+<h2 id="sdk-path">SDK Path</h2>
+<p>Qt Online Installer and the Qt Creator stand-alone installer both install <code translate="no">sdktool</code>. The <code translate="no">sdktool</code> from an installer defaults to the location from where the Qt Creator from the installer reads the information that the SDK Tool writes. To point <code translate="no">sdktool</code> to some other Qt Creator installation, set <code translate="no">--sdkpath</code> depending on whether you use Qt Online Installer or an offline installer.</p>
+<ul>
+<li>Qt Online Installer: <code translate="no">&lt;Qt_Online_Installer&gt;/Tools/sdktool</code></li>
+<li>Qt Creator stand-alone installer:<ul>
+<li>On Windows and Linux: <code translate="no">&lt;qtcreator&gt;/share/qtcreator/</code></li>
+<li>On macOS <code translate="no">Qt Creator.app/Contents/Resources/</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="options">Options</h2>
+<p>The following table summarizes the available options.</p>
+<div class="table"><table class="generic">
+ <thead><tr class="qt-style"><th >Option</th><th >Description</th></tr></thead>
+<tr valign="top" class="odd"><td ><code translate="no">--help | -h</code></td><td >Display help on SDK tool options.<p>Enter <code translate="no">--help &lt;OPERATION&gt;</code> to get help on the options required for the operation.</p>
+</td></tr>
+<tr valign="top" class="even"><td ><code translate="no">--sdkpath=&lt;PATH&gt; | -s &lt;PATH&gt;</code></td><td >Set the path to the files that the SDK tool writes.</td></tr>
+</table></div>
+<h2 id="operations">Operations</h2>
+<p>The following table summarizes the available operations.</p>
+<div class="table"><table class="generic">
+ <thead><tr class="qt-style"><th >Operation</th><th >Description</th></tr></thead>
+<tr valign="top" class="odd"><td ><a href="creator-sdk-tool.html#addabiflavor">addAbiFlavor</a></td><td >Add a system architecture (ABI).</td></tr>
+<tr valign="top" class="even"><td ><a href="creator-sdk-tool.html#addcmake">addCMake</a></td><td >Add the path to a CMake tool.</td></tr>
+<tr valign="top" class="odd"><td ><a href="creator-sdk-tool.html#adddebugger">addDebugger</a></td><td >Add a debugger.</td></tr>
+<tr valign="top" class="even"><td ><a href="creator-sdk-tool.html#adddev">addDev</a></td><td >Add a device.</td></tr>
+<tr valign="top" class="odd"><td ><code translate="no">addKeys</code></td><td >Add settings as <code translate="no">&lt;KEY&gt; &lt;TYPE&gt;:&lt;VALUE&gt;</code> key-value pairs.</td></tr>
+<tr valign="top" class="even"><td ><a href="creator-sdk-tool.html#addkit">addKit</a></td><td >Add a build and run kit.</td></tr>
+<tr valign="top" class="odd"><td ><a href="creator-sdk-tool.html#addqt">addQt</a></td><td >Add a Qt version.</td></tr>
+<tr valign="top" class="even"><td ><a href="creator-sdk-tool.html#addtc">addTC</a></td><td >Add a compiler.</td></tr>
+<tr valign="top" class="odd"><td ><code translate="no">find</code></td><td >Find a setting value.</td></tr>
+<tr valign="top" class="even"><td ><code translate="no">findKey</code></td><td >Find a setting key.</td></tr>
+<tr valign="top" class="odd"><td ><code translate="no">get</code></td><td >Get settings.</td></tr>
+<tr valign="top" class="even"><td ><code translate="no">rmCMake</code></td><td >Remove the path to a CMake tool.</td></tr>
+<tr valign="top" class="odd"><td ><code translate="no">rmDebugger</code></td><td >Remove a debugger.</td></tr>
+<tr valign="top" class="even"><td ><code translate="no">rmDev</code></td><td >Remove a device</td></tr>
+<tr valign="top" class="odd"><td ><code translate="no">rmKeys</code></td><td >Remove settings.</td></tr>
+<tr valign="top" class="even"><td ><code translate="no">rmQt</code></td><td >Remove a Qt version.</td></tr>
+<tr valign="top" class="odd"><td ><code translate="no">rmTC</code></td><td >Remove a compiler.</td></tr>
+</table></div>
+<h2 id="adding-a-system-architecture-abi">Adding a System Architecture (ABI)</h2>
+<h3 id="addabiflavor">addAbiFlavor</h3>
+<pre class="cpp plain" translate="no">
+ sdktool addAbiFlavor --flavor &lt;NAME&gt; --oses &lt;OS&gt;(,&lt;OS&gt;)*
+</pre>
+<h3 id="addabiflavor-options">addAbiFlavor Options</h3>
+<p>The following table summarizes the available options.</p>
+<div class="table"><table class="generic">
+ <thead><tr class="qt-style"><th >Option</th><th >Description</th><th >Required</th></tr></thead>
+<tr valign="top" class="odd"><td ><code translate="no">--flavor &lt;NAME&gt;</code></td><td >Name of the system architecture (ABI).</td><td ><img src="images/ok.png" alt="Yes" /></td></tr>
+<tr valign="top" class="even"><td ><code translate="no">--oses &lt;OS&gt;(,&lt;OS&gt;)*</code></td><td >Operating system that the ABI applies to.</td><td ><img src="images/ok.png" alt="Yes" /></td></tr>
+</table></div>
+<h3 id="abi-flavor-example">ABI Flavor Example</h3>
+<p>To add Yocto Poky on Linux, enter:</p>
+<pre class="cpp plain" translate="no">
+ ./sdktool addAbiFlavor \
+ --flavor poky \
+ --oses linux
+</pre>
+<h2 id="adding-cmake-tools">Adding CMake Tools</h2>
+<h3 id="addcmake">addCMake</h3>
+<pre class="cpp plain" translate="no">
+ sdktool addCMake --id &lt;ID&gt; --name &lt;NAME&gt; --path &lt;PATH&gt; [&lt;KEY&gt; &lt;TYPE:VALUE&gt;]
+</pre>
+<h3 id="addcmake-options">addCMake Options</h3>
+<p>The following table summarizes the available options.</p>
+<div class="table"><table class="generic">
+ <thead><tr class="qt-style"><th >Option</th><th >Description</th><th >Required</th></tr></thead>
+<tr valign="top" class="odd"><td ><code translate="no">--id &lt;ID&gt;</code></td><td >ID of the CMake installation. Can be any ASCII (7-bit) string.<p>If you do not use a version number in the string, the registered CMake keeps the ID when you update this CMake installation, and therefore, all kits are automatically updated to use the new version.</p>
+</td><td ><img src="images/ok.png" alt="Yes" /></td></tr>
+<tr valign="top" class="even"><td ><code translate="no">--name &lt;NAME&gt;</code></td><td >Name of the CMake installation.</td><td ><img src="images/ok.png" alt="Yes" /></td></tr>
+<tr valign="top" class="odd"><td ><code translate="no">--path &lt;PATH&gt;</code></td><td >Path to the CMake executable.</td><td ><img src="images/ok.png" alt="Yes" /></td></tr>
+<tr valign="top" class="even"><td ><code translate="no">&lt;KEY&gt; &lt;TYPE:VALUE&gt;</code></td><td >Additional settings as key-value pairs.</td><td ></td></tr>
+</table></div>
+<p>For more information, see <a href="creator-how-to-add-cmake-tools.html">Add CMake tools</a>.</p>
+<h3 id="cmake-configuration-example">CMake Configuration Example</h3>
+<p>To add a CMake tool on Windows, enter:</p>
+<pre class="cpp plain" translate="no">
+ sdktool addCMake \
+ --id &quot;my.custom.cmake&quot; \
+ --name &quot;Custom CMake&quot; \
+ --path &quot;C:\Program Files\CMake-3.30\bin\cmake.exe&quot;
+</pre>
+<h2 id="adding-compilers">Adding Compilers</h2>
+<h3 id="addtc">addTC</h3>
+<pre class="cpp plain" translate="no">
+ sdktool addTC --id &lt;ID&gt; --language &lt;ID&gt; --name &lt;NAME&gt; --path &lt;PATH&gt; --abi &lt;ABI STRING&gt; [OPTIONS]
+</pre>
+<h3 id="addtc-options">addTC Options</h3>
+<p>The following table summarizes the available options.</p>
+<div class="table"><table class="generic">
+ <thead><tr class="qt-style"><th >Option</th><th >Description</th><th >Required</th></tr></thead>
+<tr valign="top" class="odd"><td ><code translate="no">--abi &lt;ABI STRING&gt;</code></td><td >ABI of the compiler in a format that <code translate="no">ProjectExplorer::Abi::fromString()</code> can parse.</td><td ><img src="images/ok.png" alt="Yes" /></td></tr>
+<tr valign="top" class="even"><td ><code translate="no">--id &lt;ID&gt;</code></td><td >ID of the toolchain in the format <code translate="no">ToolChainType:some_unique_part</code>, where the toolchain type can be one of the following, or something else provided by a plugin:<ul>
+<li><code translate="no">ProjectExplorer.ToolChain.Msvc</code> for Microsoft MSVC compilers. This compiler is automatically detected, so you don't need to add it with the SDK tool.</li>
+<li><code translate="no">ProjectExplorer.ToolChain.Gcc</code> for GCC on Linux or macOS.</li>
+<li><code translate="no">ProjectExplorer.ToolChain.Clang</code> for Clang.</li>
+<li><code translate="no">ProjectExplorer.ToolChain.LinuxIcc</code> for LinuxICC.</li>
+<li><code translate="no">ProjectExplorer.ToolChain.Mingw</code> for MinGW.</li>
+<li><code translate="no">ProjectExplorer.ToolChain.ClangCl</code> for Clang/CL.</li>
+<li><code translate="no">ProjectExplorer.ToolChain.Custom</code> for a custom toolchain.</li>
+<li><code translate="no">Qt4ProjectManager.ToolChain.Android</code> for Android.</li>
+<li><code translate="no">Qnx.QccToolChain</code> for QNX QCC.</li>
+<li><code translate="no">WebAssembly.ToolChain.Emscripten</code> for Emscripten.</li>
+</ul>
+<p>Check the classes derived from <code translate="no">ProjectExplorer::ToolChain</code> for their IDs.</p>
+<p><code translate="no">some_unique_part</code> can be anything. Qt Creator uses GUIDs by default.</p>
+</td><td ><img src="images/ok.png" alt="Yes" /></td></tr>
+<tr valign="top" class="odd"><td ><code translate="no">--language &lt;ID&gt;</code></td><td >ID of the input language of the toolchain: <code translate="no">C</code> or <code translate="no">Cxx</code>. When you register a C or C++ compiler, make sure to register the corresponding C++ or C compiler as well.</td><td ><img src="images/ok.png" alt="Yes" /></td></tr>
+<tr valign="top" class="even"><td ><code translate="no">--name &lt;NAME&gt;</code></td><td >Name of the toolchain.</td><td ><img src="images/ok.png" alt="Yes" /></td></tr>
+<tr valign="top" class="odd"><td ><code translate="no">--path &lt;PATH&gt;</code></td><td >Path to the compiler executable.</td><td ><img src="images/ok.png" alt="Yes" /></td></tr>
+<tr valign="top" class="even"><td ><code translate="no">--supportedAbis &lt;ABI STRING&gt;,&lt;ABI STRING&gt;</code></td><td >List of ABIs that the compiler supports.</td><td ></td></tr>
+<tr valign="top" class="odd"><td ><code translate="no">&lt;KEY&gt; &lt;TYPE:VALUE&gt;</code></td><td >Additional settings as key-value pairs.</td><td ></td></tr>
+</table></div>
+<p>For more information, see <a href="creator-tool-chains.html">Add compilers</a>.</p>
+<h3 id="compiler-example">Compiler Example</h3>
+<p>To add a GCC compiler on Linux, enter:</p>
+<pre class="cpp plain" translate="no">
+ ./sdktool addTC \
+     --id &quot;ProjectExplorer.ToolChain.Gcc:company.product.toolchain.g++&quot; \
+     --language Cxx
+     --name &quot;GCC (C++, x86_64)&quot; \
+     --path /home/code/build/gcc-6.3/usr/bin/g++ \
+     --abi x86-linux-generic-elf-64bit \
+     --supportedAbis x86-linux-generic-elf-64bit,x86-linux-generic-elf-32bit \
+     ADDITIONAL_INTEGER_PARAMETER int:42 \
+     ADDITIONAL_STRING_PARAMETER &quot;QString:some string&quot; \
+</pre>
+<h2 id="adding-debuggers">Adding Debuggers</h2>
+<h3 id="adddebugger">addDebugger</h3>
+<pre class="cpp plain" translate="no">
+ sdktool addDebugger --id &lt;ID&gt; --name &lt;NAME&gt; [OPTIONS]
+</pre>
+<h3 id="adddebugger-options">addDebugger Options</h3>
+<p>The following table summarizes the available options.</p>
+<div class="table"><table class="generic">
+ <thead><tr class="qt-style"><th >Option</th><th >Description</th><th >Required</th></tr></thead>
+<tr valign="top" class="odd"><td ><code translate="no">--abis &lt;ABI,ABI&gt;</code></td><td >Comma-separated list of system architecture definitions.</td><td ></td></tr>
+<tr valign="top" class="even"><td ><code translate="no">--binary &lt;PATH&gt;</code></td><td >Path to the debugger executable. Can be an absolute path, the value <code translate="no">auto</code>, or an ABI. Finds the appropriate debugger for MSVC toolchains where Qt Creator does not know the binary path.</td><td ></td></tr>
+<tr valign="top" class="odd"><td ><code translate="no">--engine &lt;ENGINE&gt;</code></td><td >Debugger engine type:<ul>
+<li>1 for GDB</li>
+<li>4 for CDB</li>
+<li>8 for PDB</li>
+<li>256 for LLDB</li>
+<li>512 for GDB DAP</li>
+<li>1024 for LLDB DAP</li>
+<li>4096 for uVision Debugger</li>
+</ul>
+</td><td ></td></tr>
+<tr valign="top" class="even"><td ><code translate="no">--id &lt;ID&gt;</code></td><td >Unique ID of the debugger.</td><td ><img src="images/ok.png" alt="Yes" /></td></tr>
+<tr valign="top" class="odd"><td ><code translate="no">--name &lt;NAME&gt;</code></td><td >Name of the debugger.</td><td ><img src="images/ok.png" alt="Yes" /></td></tr>
+<tr valign="top" class="even"><td ><code translate="no">&lt;KEY&gt; &lt;TYPE:VALUE&gt;</code></td><td >Additional settings as key-value pairs.</td><td ></td></tr>
+</table></div>
+<p>For more information, see <a href="creator-debuggers.html">Add debuggers</a>.</p>
+<h3 id="debugger-example">Debugger Example</h3>
+<p>To add a GDB debugger on Linux, enter:</p>
+<pre class="cpp plain" translate="no">
+ ./sdktool addDebugger \
+     --id &quot;company.product.toolchain.gdb&quot; \
+     --name &quot;GDB (company, product)&quot; \
+     --engine 1 \
+     --binary /home/code/build/gdb-7.12/bin/gdb \
+     --abis arm-linux-generic-elf-32 \
+</pre>
+<h2 id="adding-devices">Adding Devices</h2>
+<h3 id="adddev">addDev</h3>
+<pre class="cpp plain" translate="no">
+ sdktool addDev --id &lt;ID&gt; --name &lt;NAME&gt; --type &lt;INT&gt; [OPTIONS]
+</pre>
+<h3 id="adddev-options">addDev Options</h3>
+<p>The following table summarizes the available options. The options to use depend on the device type.</p>
+<div class="table"><table class="generic">
+ <thead><tr class="qt-style"><th >Option</th><th >Description</th><th >Required</th></tr></thead>
+<tr valign="top" class="odd"><td ><code translate="no">--authentication &lt;INT&gt;</code></td><td >Authentication method:<ul>
+<li>0 for all authentication methods</li>
+<li>1 for SSH authentication using a public and private key pair</li>
+</ul>
+</td><td ></td></tr>
+<tr valign="top" class="even"><td ><code translate="no">--b2qHardware &lt;STRING&gt;</code></td><td >Boot to Qt platform info about hardware.</td><td ></td></tr>
+<tr valign="top" class="odd"><td ><code translate="no">--b2qSoftware &lt;STRING&gt;</code></td><td >Boot to Qt platform info about software.</td><td ></td></tr>
+<tr valign="top" class="even"><td ><code translate="no">--debugServerKey &lt;STRING&gt;</code></td><td >Debug server key.</td><td ></td></tr>
+<tr valign="top" class="odd"><td ><code translate="no">--dockerClangdExecutable &lt;STRING&gt;</code></td><td >Path to the Clangd executable in the Docker container.</td><td ></td></tr>
+<tr valign="top" class="even"><td ><code translate="no">--dockerMappedPaths &lt;STRING&gt;</code></td><td >Semicolon-separated list of Docker mapped paths.</td><td ></td></tr>
+<tr valign="top" class="odd"><td ><code translate="no">--dockerRepo &lt;STRING&gt;</code></td><td >Docker image repository.</td><td ></td></tr>
+<tr valign="top" class="even"><td ><code translate="no">--dockerTag &lt;STRING&gt;</code></td><td >Docker image tag.</td><td ></td></tr>
+<tr valign="top" class="odd"><td ><code translate="no">--freePorts &lt;STRING&gt;</code></td><td >Free ports.</td><td ></td></tr>
+<tr valign="top" class="even"><td ><code translate="no">--host &lt;STRING&gt;</code></td><td >Host name or IP address of the device.</td><td ></td></tr>
+<tr valign="top" class="odd"><td ><code translate="no">--id &lt;ID&gt;</code></td><td >Unique ID of the device.</td><td ><img src="images/ok.png" alt="Yes" /></td></tr>
+<tr valign="top" class="even"><td ><code translate="no">--keyFile &lt;STRING&gt;</code></td><td >Path to the user's private key file.</td><td ></td></tr>
+<tr valign="top" class="odd"><td ><code translate="no">--name &lt;NAME&gt;</code></td><td >Name of the device.</td><td ><img src="images/ok.png" alt="Yes" /></td></tr>
+<tr valign="top" class="even"><td ><code translate="no">--origin &lt;INT&gt;</code></td><td >Whether the device was detected automatically:<ul>
+<li>0 for a manually added device</li>
+<li>1 for an automatically detected device</li>
+</ul>
+</td><td ></td></tr>
+<tr valign="top" class="odd"><td ><code translate="no">--osType &lt;STRING&gt;</code></td><td >Operating system on the device:<ul>
+<li><code translate="no">Android.Device.Type</code></li>
+<li><code translate="no">BareMetalOsType</code></li>
+<li><code translate="no">QdbLinuxOsType</code></li>
+<li><code translate="no">DockerDeviceType</code></li>
+<li><code translate="no">Ios.Device.Type</code></li>
+<li><code translate="no">Ios.Simulator.Type</code></li>
+<li><code translate="no">McuSupport.DeviceType</code></li>
+<li><code translate="no">Desktop</code></li>
+<li><code translate="no">WebAssemblyDeviceType</code></li>
+<li><code translate="no">QnxOsType</code></li>
+<li><code translate="no">GenericLinuxOsType</code></li>
+</ul>
+</td><td ></td></tr>
+<tr valign="top" class="even"><td ><code translate="no">--password &lt;STRING&gt;</code></td><td >Password for password authentication.</td><td ></td></tr>
+<tr valign="top" class="odd"><td ><code translate="no">--sshPort &lt;INT&gt;</code></td><td >Port number for SSH connections.</td><td ></td></tr>
+<tr valign="top" class="even"><td ><code translate="no">--timeout &lt;INT&gt;</code></td><td >Timeout for reusing the SSH connection in seconds.</td><td ></td></tr>
+<tr valign="top" class="odd"><td ><code translate="no">--type &lt;INT&gt;</code></td><td >Device type:<ul>
+<li>0 for a hardware device</li>
+<li>1 for an emulator, simulator, or virtual device</li>
+</ul>
+</td><td ><img src="images/ok.png" alt="Yes" /></td></tr>
+<tr valign="top" class="even"><td ><code translate="no">--uname &lt;STRING&gt;</code></td><td >Username to access the device.</td><td ></td></tr>
+<tr valign="top" class="odd"><td ><code translate="no">&lt;KEY&gt; &lt;TYPE:VALUE&gt;</code></td><td >Additional settings as key-value pairs.</td><td ></td></tr>
+</table></div>
+<p>For more information, see <a href="creator-how-tos.html#develop-for-devices">How To: Develop for Devices</a>.</p>
+<h3 id="linux-device-example">Linux Device Example</h3>
+<p>To add a remote Linux device (hardware device) on Linux and use SSH keys to authenticate to the device, enter:</p>
+<pre class="cpp plain" translate="no">
+ ./sdktool addDev \
+     --id &quot; LinuxDevice1&quot; \
+     --name &quot;My Remote Linux Device&quot; \
+     --type 0 \
+     --authentication 1 \
+     --freePorts &quot;10000-10100&quot; \
+     --host &quot;10.10.10.15&quot; \
+     --keyFile &quot;/usr/.ssh/qtc_id&quot; \
+     --origin 0 \
+     --osType &quot;GenericLinuxOsType&quot; \
+     --sshPort 22 \
+     --timeout 10 \
+     --uname &quot;root&quot;
+</pre>
+<h2 id="adding-qt-versions">Adding Qt Versions</h2>
+<h3 id="addqt">addQt</h3>
+<pre class="cpp plain" translate="no">
+ sdktool addQt --id &lt;ID&gt; --name &lt;NAME&gt; --qmake &lt;PATH&gt; --type &lt;TYPE&gt; [OPTIONS]
+</pre>
+<h3 id="addqt-options">addQt Options</h3>
+<p>The following table summarizes the available options.</p>
+<div class="table"><table class="generic">
+ <thead><tr class="qt-style"><th >Option</th><th >Description</th><th >Required</th></tr></thead>
+<tr valign="top" class="odd"><td ><code translate="no">--abis &lt;ABI,ABI&gt;</code></td><td >Comma-separated list of system architecture definitions.</td><td ></td></tr>
+<tr valign="top" class="even"><td ><code translate="no">--id &lt;ID&gt;</code></td><td >ID of the Qt installation. Qt Creator automatically sets the ID when it detects Qt versions installed on the computer.</td><td ><img src="images/ok.png" alt="Yes" /></td></tr>
+<tr valign="top" class="odd"><td ><code translate="no">--name &lt;NAME&gt;</code></td><td >Name of the Qt installation.</td><td ><img src="images/ok.png" alt="Yes" /></td></tr>
+<tr valign="top" class="even"><td ><code translate="no">--qmake &lt;PATH&gt;</code></td><td >Path to the qmake executable in the Qt installation.</td><td ><img src="images/ok.png" alt="Yes" /></td></tr>
+<tr valign="top" class="odd"><td ><code translate="no">--type &lt;TYPE&gt;</code></td><td >The type of the Qt version:<ul>
+<li><code translate="no">Qt4ProjectManager.QtVersion.Android</code> for Android.</li>
+<li><code translate="no">Qt4ProjectManager.QtVersion.Desktop</code> for a desktop Qt.</li>
+<li><code translate="no">Qt4ProjectManager.QtVersion.Ios</code> for iOS.</li>
+<li><code translate="no">Qt4ProjectManager.QtVersion.QNX.QNX</code> for QNX.</li>
+<li><code translate="no">RemoteLinux.EmbeddedLinuxQt</code> for Embedded Linux.</li>
+<li><code translate="no">Qt4ProjectManager.QtVersion.WebAssembly</code> for WebAssembly.</li>
+</ul>
+<p>The string returned by <code translate="no">QtVersion::type()</code>.</p>
+</td><td ><img src="images/ok.png" alt="Yes" /></td></tr>
+<tr valign="top" class="even"><td ><code translate="no">&lt;KEY&gt; &lt;TYPE:VALUE&gt;</code></td><td >Additional settings as key-value pairs.</td><td ></td></tr>
+</table></div>
+<p>For more information, see <a href="creator-project-qmake.html">Add Qt versions</a>.</p>
+<h3 id="qt-version-example">Qt Version Example</h3>
+<p>To add a self-built Qt 6.8 version on Linux, enter:</p>
+<pre class="cpp plain" translate="no">
+ ./sdktool addQt \
+     --id &quot;company.product.qt&quot; \
+     --name &quot;Custom Qt&quot; \
+     --qmake /home/code/build/qt-6.8/bin/qmake \
+     --type Qt4ProjectManager.QtVersion.Desktop \
+</pre>
+<h2 id="adding-kits">Adding Kits</h2>
+<h3 id="addkit">addKit</h3>
+<pre class="cpp plain" translate="no">
+ sdktool addKit --id &lt;ID&gt; --name &lt;NAME&gt; --devicetype &lt;TYPE&gt; [OPTIONS]
+</pre>
+<h3 id="addkit-options">addKit Options</h3>
+<p>The following table summarizes the available options.</p>
+<div class="table"><table class="generic">
+ <thead><tr class="qt-style"><th >Option</th><th >Description</th><th >Required</th></tr></thead>
+<tr valign="top" class="odd"><td ><code translate="no">--builddevice &lt;ID&gt;</code></td><td >The ID of the device to build applications on.</td><td ></td></tr>
+<tr valign="top" class="even"><td ><code translate="no">--cmake &lt;ID&gt;</code></td><td >The ID of the CMake executable to use for building the project.</td><td ></td></tr>
+<tr valign="top" class="odd"><td ><code translate="no">--cmake-config &lt;KEY:TYPE=VALUE&gt;</code></td><td >Parameters for the CMake configuration of the kit. You can add multiple entries of this type.</td><td ></td></tr>
+<tr valign="top" class="even"><td ><code translate="no">--cmake-generator &lt;GEN&gt;:&lt;EXTRA&gt;:&lt;TOOLSET&gt;:&lt;PLATFORM&gt;</code></td><td >The CMake Generator to use for producing project files.</td><td ></td></tr>
+<tr valign="top" class="odd"><td ><code translate="no">--debugger &lt;PATH&gt;</code></td><td >Path to the debugger to use for the kit. Do not use this option with <code translate="no">--debuggerid</code>.</td><td ></td></tr>
+<tr valign="top" class="even"><td ><code translate="no">--debuggerengine &lt;ENGINE&gt;</code></td><td >The type of the debugger set with <code translate="no">--debugger</code>. Do not use this option with <code translate="no">--debuggerid</code>.</td><td ></td></tr>
+<tr valign="top" class="odd"><td ><code translate="no">--debuggerid &lt;ID&gt;</code></td><td >One of the IDs used when adding debuggers with the <code translate="no">addDebugger</code> operation. Do not use this option with <code translate="no">--debugger</code> and <code translate="no">--debuggerengine</code>.</td><td ></td></tr>
+<tr valign="top" class="even"><td ><code translate="no">--device &lt;ID&gt;</code></td><td >The device to run applications on.</td><td ></td></tr>
+<tr valign="top" class="odd"><td ><code translate="no">--devicetype &lt;TYPE&gt;</code></td><td >The type of the device to run applications on:<ul>
+<li><code translate="no">Android.Device.Type</code> for Android devices.</li>
+<li><code translate="no">Desktop</code> for code running on the local desktop.</li>
+<li><code translate="no">Ios.Device.Type</code> for iOS devices.</li>
+<li><code translate="no">Ios.Simulator.Type</code> for iOS simulators.</li>
+<li><code translate="no">GenericLinuxOsType</code> for embedded Linux devices.</li>
+<li><code translate="no">WebAssemblyDeviceType</code> for web browsers.</li>
+</ul>
+<p>The string returned by <code translate="no">IDevice::type()</code>.</p>
+</td><td ><img src="images/ok.png" alt="Yes" /></td></tr>
+<tr valign="top" class="even"><td ><code translate="no">--env &lt;VALUE&gt;</code></td><td >Environment variable values for the build environment. You can add multiple entries of this type.</td><td ></td></tr>
+<tr valign="top" class="odd"><td ><code translate="no">--run-env &lt;VALUE&gt;</code></td><td >Environment variable values for the run environment. You can add multiple entries of this type.</td><td ></td></tr>
+<tr valign="top" class="even"><td ><code translate="no">--icon &lt;PATH&gt;</code></td><td >Path to the image to use as an icon for the kit.</td><td ></td></tr>
+<tr valign="top" class="odd"><td ><code translate="no">--id &lt;ID&gt;</code></td><td >ID of the kit. Qt Creator automatically sets the ID when it detects Qt versions installed on the computer.</td><td ><img src="images/ok.png" alt="Yes" /></td></tr>
+<tr valign="top" class="even"><td ><code translate="no">--&lt;LANG&gt;toolchain &lt;ID&gt;</code></td><td >One of the IDs used when adding compilers with the <code translate="no">addTC</code> operation. &lt;LANG&gt; is: <code translate="no">C</code>, <code translate="no">Cxx</code>, <code translate="no">Nim</code>, or something set by a plugin.</td><td ></td></tr>
+<tr valign="top" class="odd"><td ><code translate="no">--mkspec &lt;PATH&gt;</code></td><td >The <code translate="no">mkspec</code> configuration that qmake uses. Omit this option to use the default <code translate="no">mkspec</code> of the set Qt version.</td><td ></td></tr>
+<tr valign="top" class="even"><td ><code translate="no">--name &lt;NAME&gt;</code></td><td >Name of the kit. You can use variables to generate the kit name based on the kit elements you set with the other operations, such as the Qt version.</td><td ><img src="images/ok.png" alt="Yes" /></td></tr>
+<tr valign="top" class="odd"><td ><code translate="no">--qt &lt;ID&gt;</code></td><td >One of the IDs used when adding Qt versions with the <code translate="no">addQt</code> operation.</td><td ></td></tr>
+<tr valign="top" class="even"><td ><code translate="no">&lt;KEY&gt; &lt;TYPE:VALUE&gt;</code></td><td >Additional settings as key-value pairs.</td><td ></td></tr>
+</table></div>
+<p>For more information, see <a href="creator-targets.html">Add kits</a>.</p>
+<h3 id="kit-example">Kit Example</h3>
+<p>To add a kit that uses the GCC compiler and the self-built Qt to build applications on Linux, enter:</p>
+<pre class="cpp plain" translate="no">
+ ./sdktool addKit \
+     --id &quot;company.product.kit&quot; \
+     --name &quot;Qt %{Qt:Version} (company, product)&quot; \
+     --debuggerid &quot;company.product.toolchain.gdb&quot; \
+     --devicetype GenericLinuxOsType \
+     --sysroot /tmp/sysroot \
+     --Ctoolchain &quot;ProjectExplorer.ToolChain.Gcc:company.product.toolchain.gcc&quot; \
+     --Cxxtoolchain &quot;ProjectExplorer.ToolChain.Gcc:company.product.toolchain.g++&quot; \
+     --qt &quot;company.product.qt&quot; \
+     --mkspec &quot;devices/linux-mipsel-broadcom-97425-g++&quot; \
+</pre>
+<h2 id="adding-getting-and-finding-keys">Adding, Getting, and Finding Keys</h2>
+<p>Enter the path to a file relative to the top-level settings directory and without <code translate="no">.xml</code> extension, followed by one or more <code translate="no">&lt;KEY&gt; &lt;TYPE&gt;:&lt;VALUE&gt;</code> key-value pairs.</p>
+<h2 id="removing-configured-items">Removing Configured Items</h2>
+<p>To remove a CMake tool, compiler, debugger, device, Qt version, or kit, enter:</p>
+<pre class="cpp plain" translate="no">
+ rm&lt;Item&gt; --id &lt;ID&gt;
+</pre>
+<p>Where <code translate="no">&lt;ID&gt;</code> is the ID of the item.</p>
+</div>
+<p><b>See also </b><a href="creator-how-tos.html#manage-kits">How To: Manage Kits</a>, <a href="creator-how-to-install.html">Installation</a>, and <a href="creator-preferences-kits.html">Kits</a>.</p>
+<!-- @@@creator-sdk-tool.html -->
+<p class="naviNextPrevious footerNavi">
+<a class="prevPage" href="creator-acknowledgements.html">Licenses and acknowledgments</a>
+<span class="naviSeparator">  &#9702;  </span>
+<a class="nextPage" href="technical-support.html">Technical support</a>
+</p>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   Copyright <acronym title="Copyright">&copy;</acronym> The Qt Company Ltd. and other contributors.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

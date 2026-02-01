@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- qtquick-live-preview-devices.qdoc -->
+  <title>Preview Qt Quick UIs on devices | Qt Creator Documentation</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="index.html">Qt Creator Documentation</a></li>
+<li>Preview Qt Quick UIs on devices</li>
+<li id="buildversion"><a href="index.html">Qt Creator 18.0.2</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+  <link rel="prev" href="creator-how-to-export-svg-images.html" />
+  <link rel="next" href="creator-live-preview-desktop.html" />
+<p class="naviNextPrevious headerNavi">
+<a class="prevPage" href="creator-how-to-export-svg-images.html">Create pixmaps from SVG images</a>
+<span class="naviSeparator">  &#9702;  </span>
+<a class="nextPage" href="creator-live-preview-desktop.html">Preview a QML file on desktop</a>
+</p>
+<div class="sidebar">
+<div class="toc">
+<h3 id="toc">Contents</h3>
+<ul>
+<li class="level2"><a href="#on-android">On Android</a></li>
+<li class="level2"><a href="#on-boot-to-qt">On Boot to Qt</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Preview Qt Quick UIs on devices</h1>
+<!-- $$$creator-live-preview-devices.html-description -->
+<div class="descr" id="details">
+<p>To preview a UI on an Android device, turn on USB debugging on the device and connect it to the computer with a USB cable.</p>
+<p>To preview a UI on a Boot to Qt device, connect the device to the computer with a USB cable, or a wired or wireless connection, depending on the device, and configure a connection to it. The necessary kits have been predefined, but you need to select the one appropriate for your current project.</p>
+<p><i>Deploy configurations</i> handle the packaging and copying of the necessary files to a location in a device where you want to run the executable at.</p>
+<div class="admonition note">
+<p><b>Note: </b>To preview on a wirelessly connected device, go to <a href="creator-how-to-find-preferences.html">Preferences</a> &gt; <b translate="no">Devices</b> and connect the device.</p>
+</div>
+<p>To preview a UI on a device:</p>
+<ol class="1" type="1"><li>Go to <b translate="no">Projects</b> &gt; <b translate="no">Build &amp; Run</b>.</li>
+<li>Activate the kit predefined for the device type (1).</li>
+<li>Select the kit for the device in the kit selector (2).<p class="centerAlign"><img src="images/qtcreator-kit-selector-devices.webp" alt="Kit selector" /></p></li>
+<li>Go to <b translate="no">Build</b>, and select <b translate="no">QML Preview</b> or <b>Alt+P</b>.</li>
+</ol>
+<h3 id="on-android">On Android</h3>
+<p>Use the USB debugging feature on an Android device to create a connection to the device from Qt Creator and run the preview utility on it.</p>
+<p>Debugging is turned on in different ways on different Android devices. Look for <b translate="no">USB Debugging</b> under <b translate="no">Developer Options</b>. Tap <b translate="no">Build number</b> in <b translate="no">Settings</b> &gt; <b translate="no">About</b> several times to show <b translate="no">Developer Options</b>.</p>
+<p>After you turn on debugging, connect the Android device to the system with a USB cable.</p>
+<p>The first time you preview a UI on a device, the preview utility is copied to it, which might take some time. Thereafter, previewing gets faster because only the UI files need to be copied to the device.</p>
+<h3 id="on-boot-to-qt">On Boot to Qt</h3>
+<p>Preview a UI on a supported Boot to Qt device that you configure as instructed in the Boot to Qt documentation.</p>
+</div>
+<p><b>See also </b><a href="https://doc.qt.io/Boot2Qt/index.html">Boot to Qt: Documentation</a>, <a href="https://doc.qt.io/qt/supported-platforms.html#support-levels-for-target-hardware">Support Levels for Target Hardware</a>, <a href="creator-how-tos.html#design-uis">How To: Design UIs</a>, and <a href="creator-reference.html#ui-design">UI Design</a>.</p>
+<!-- @@@creator-live-preview-devices.html -->
+<p class="naviNextPrevious footerNavi">
+<a class="prevPage" href="creator-how-to-export-svg-images.html">Create pixmaps from SVG images</a>
+<span class="naviSeparator">  &#9702;  </span>
+<a class="nextPage" href="creator-live-preview-desktop.html">Preview a QML file on desktop</a>
+</p>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   Copyright <acronym title="Copyright">&copy;</acronym> The Qt Company Ltd. and other contributors.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

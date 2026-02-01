@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- androiddev.qdoc -->
+  <title>Manage AVDs | Qt Creator Documentation</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="index.html">Qt Creator Documentation</a></li>
+<li>Manage AVDs</li>
+<li id="buildversion"><a href="index.html">Qt Creator 18.0.2</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+  <link rel="prev" href="creator-how-to-debug-android.html" />
+  <link rel="next" href="creator-how-to-manage-android-ndk.html" />
+<p class="naviNextPrevious headerNavi">
+<a class="prevPage" href="creator-how-to-debug-android.html">Debug on Android devices</a>
+<span class="naviSeparator">  &#9702;  </span>
+<a class="nextPage" href="creator-how-to-manage-android-ndk.html">Manage Android NDK packages</a>
+</p>
+<div class="sidebar">
+<div class="toc">
+<h3 id="toc">Contents</h3>
+<ul>
+<li class="level1"><a href="#start-avds">Start AVDs</a></li>
+<li class="level1"><a href="#set-preferences-for-starting-avds">Set preferences for starting AVDs</a></li>
+<li class="level1"><a href="#remove-avds">Remove AVDs</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Manage AVDs</h1>
+<!-- $$$creator-how-to-manage-avd.html-description -->
+<div class="descr" id="details">
+<p>To emulate Android devices on Linux, macOS, or Windows, use an Android Emulator. The Android Emulator runs the Android operating system in a virtual machine called an Android Virtual Device (AVD).</p>
+<p>To view and add AVDs, go to <a href="creator-how-to-find-preferences.html">Preferences</a> &gt; <b translate="no">Devices</b>.</p>
+<p class="centerAlign"><img src="images/qtcreator-android-avd-manager.webp" alt="Android device in Devices preferences" /></p><p>Select an AVD in <b translate="no">Device</b> to see its status in <b translate="no">Current state</b>.</p>
+<p>To update the status information, select <b translate="no">Refresh</b>.</p>
+<h2 id="start-avds">Start AVDs</h2>
+<p>To start an AVD, select <b translate="no">Start AVD</b>. Usually, Qt Creator starts an AVD when you select it in the <a href="creator-building-targets.html">kit selector</a> to <a href="creator-deploying-android.html">deploy applications</a> to it.</p>
+<h2 id="set-preferences-for-starting-avds">Set preferences for starting AVDs</h2>
+<p>To set preferences for starting an AVD, select <b translate="no">AVD Arguments</b>.</p>
+<p class="centerAlign"><img src="images/qtcreator-android-avd-arguments.png" alt="Startup options for AVDs" /></p><p>Set the preferences in <b translate="no">Emulator command-line startup options</b>. For available options, see <a href="https://developer.android.com/studio/run/emulator-commandline">Start the emulator from the command line</a>.</p>
+<p>To start the emulator manually from the terminal, enter:</p>
+<pre class="cpp plain" translate="no">
+ cd &lt;ANDROID_SDK_ROOT&gt;/emulator
+ ./emulator -avd &lt;AVD_NAME&gt;
+</pre>
+<h2 id="remove-avds">Remove AVDs</h2>
+<p>To remove an AVD from the list and the kit selector, select <b translate="no">Erase AVD</b>.</p>
+</div>
+<p><b>See also </b><a href="creator-how-tos.html#android">How To: Develop for Android</a> and <a href="creator-developing-android.html">Developing for Android</a>.</p>
+<!-- @@@creator-how-to-manage-avd.html -->
+<p class="naviNextPrevious footerNavi">
+<a class="prevPage" href="creator-how-to-debug-android.html">Debug on Android devices</a>
+<span class="naviSeparator">  &#9702;  </span>
+<a class="nextPage" href="creator-how-to-manage-android-ndk.html">Manage Android NDK packages</a>
+</p>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   Copyright <acronym title="Copyright">&copy;</acronym> The Qt Company Ltd. and other contributors.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

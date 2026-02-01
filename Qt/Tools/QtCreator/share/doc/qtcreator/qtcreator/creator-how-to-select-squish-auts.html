@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- creator-squish.qdoc -->
+  <title>Select Squish AUTs | Qt Creator Documentation</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="index.html">Qt Creator Documentation</a></li>
+<li>Select Squish AUTs</li>
+<li id="buildversion"><a href="index.html">Qt Creator 18.0.2</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+  <link rel="prev" href="creator-how-to-manage-squish-test-suites.html" />
+  <link rel="next" href="creator-how-to-git-first-commit.html" />
+<p class="naviNextPrevious headerNavi">
+<a class="prevPage" href="creator-how-to-manage-squish-test-suites.html">Manage Squish test suites and cases</a>
+<span class="naviSeparator">  &#9702;  </span>
+<a class="nextPage" href="creator-how-to-git-first-commit.html">Commit your first change</a>
+</p>
+<div class="sidebar">
+<div class="toc">
+<h3 id="toc">Contents</h3>
+<ul>
+<li class="level1"><a href="#map-auts">Map AUTs</a></li>
+<li class="level1"><a href="#specify-aut-paths">Specify AUT paths</a></li>
+<li class="level1"><a href="#add-attachable-auts">Add attachable AUTs</a></li>
+<li class="level1"><a href="#specify-settings-for-running-tests">Specify settings for running tests</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Select Squish AUTs</h1>
+<!-- $$$creator-how-to-select-squish-auts.html-description -->
+<div class="descr" id="details">
+<p>To select applications to test using Squish, go to <b translate="no">Tools</b> &gt; <b translate="no">Squish</b> &gt; <b translate="no">Server Settings</b>.</p>
+<p class="centerAlign"><img src="images/qtcreator-squish-server-settings.png" alt="Squish Server Settings dialog" /></p><p>When running test suites or cases, the Squish Runner instructs the Squish Server to start the application under test (AUT). The server can be running on multiple computers, and the AUT can be located on a different path on each of them. Therefore, you must either map AUTs to their corresponding paths or specify AUT paths to search from in the server settings.</p>
+<p>To test an already running application using a Squish Server running on another computer, attach to the application. You can attach only one server to your application at a time. The attached application is not closed when the test case is completed.</p>
+<h2 id="map-auts">Map AUTs</h2>
+<p>To specify the path to an AUT to run, select <b translate="no">Mapped AUTs</b> &gt; <b translate="no">Add</b> and locate the AUT.</p>
+<p>The Squish server checks whether the name of the AUT to run is mapped to a path and starts the AUT using the mapped path. This way, it does not need to search from all the specified AUT paths.</p>
+<p>Mapping AUTs prevents the server from accidentally executing the wrong AUT if two different executables have the same name, as the server executes the first matching AUT it finds in <b translate="no">AUT Paths</b>.</p>
+<p>To change the path to the selected AUT, select <b translate="no">Edit</b>.</p>
+<p>To remove the mapping to the selected AUT, select <b translate="no">Remove</b>.</p>
+<h2 id="specify-aut-paths">Specify AUT paths</h2>
+<p>To specify a path to search AUTs from, select <b translate="no">AUT Paths</b> &gt; <b translate="no">Add</b>.</p>
+<p>The Squish Server searches for the executable to run from the specified AUT paths and runs the first one with the specified name that it finds in any path.</p>
+<p>To change the selected AUT path, select <b translate="no">Edit</b>.</p>
+<p>To remove the selected AUT path, select <b translate="no">Remove</b>.</p>
+<h2 id="add-attachable-auts">Add attachable AUTs</h2>
+<p>To specify the path to a running AUT, select <b translate="no">Attachable AUTs</b> &gt; <b translate="no">Add</b>. In the <b translate="no">Add Attachable AUT</b> dialog, specify a connection to a running application to register an attachable AUT.</p>
+<p class="centerAlign"><img src="images/qtcreator-squish-server-settings-add-attachable-aut.png" alt="Add Attachable AUT dialog" /></p><p>To change the connection to the selected AUT, select <b translate="no">Edit</b>.</p>
+<p>To remove the connection to the selected AUT, select <b translate="no">Remove</b>.</p>
+<h2 id="specify-settings-for-running-tests">Specify settings for running tests</h2>
+<p>To specify settings for running tests:</p>
+<ul>
+<li>In <b translate="no">Maximum startup time</b>, set the maximum time to wait for the AUT to start before throwing an error.</li>
+<li>In <b translate="no">Maximum response time</b>, set the maximum time to wait for the AUT to respond before throwing an error.</li>
+<li>In <b translate="no">Maximum post-mortem wait time</b>, set the maximum time to wait after the main AUT has exited. This is useful for AUTs invoked through launcher applications, such as shell scripts or batch files.</li>
+<li>Select <b translate="no">Animate mouse cursor</b> to animate the mouse cursor when playing back a test.</li>
+</ul>
+</div>
+<p><b>See also </b><a href="creator-how-to-connect-squish-server.html">Connect to Squish Server</a>, <a href="creator-how-to-create-squish-test-suites.html">Create Squish test suites</a>, <a href="creator-how-to-enable-plugins.html">Enable and disable plugins</a>, <a href="creator-how-to-manage-squish-test-suites.html">Manage Squish test suites and cases</a>, and <a href="creator-reference-squish-output.html">Squish</a>.</p>
+<!-- @@@creator-how-to-select-squish-auts.html -->
+<p class="naviNextPrevious footerNavi">
+<a class="prevPage" href="creator-how-to-manage-squish-test-suites.html">Manage Squish test suites and cases</a>
+<span class="naviSeparator">  &#9702;  </span>
+<a class="nextPage" href="creator-how-to-git-first-commit.html">Commit your first change</a>
+</p>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   Copyright <acronym title="Copyright">&copy;</acronym> The Qt Company Ltd. and other contributors.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

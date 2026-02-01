@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- qtcreator-how-to-use-qtc-variables.qdoc -->
+  <title>Use Qt Creator variables | Qt Creator Documentation</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="index.html">Qt Creator Documentation</a></li>
+<li>Use Qt Creator variables</li>
+<li id="buildversion"><a href="index.html">Qt Creator 18.0.2</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+  <link rel="prev" href="creator-how-set-project-environment.html" />
+  <link rel="next" href="creator-project-qmake-libraries.html" />
+<p class="naviNextPrevious headerNavi">
+<a class="prevPage" href="creator-how-set-project-environment.html">Specify the environment for projects</a>
+<span class="naviSeparator">  &#9702;  </span>
+<a class="nextPage" href="creator-project-qmake-libraries.html">Add libraries to qmake projects</a>
+</p>
+<div class="sidebar">
+<div class="toc">
+<h3 id="toc">Contents</h3>
+<ul>
+<li class="level1"><a href="#pattern-substitution">Pattern substitution</a></li>
+<li class="level1"><a href="#use-default-values">Use default values</a></li>
+<li class="level1"><a href="#examples">Examples</a></li>
+<li class="level2"><a href="#current-document-variables">Current document variables</a></li>
+<li class="level2"><a href="#kit-and-build-configuration-variables">Kit and build configuration variables</a></li>
+<li class="level2"><a href="#qt-variables">Qt variables</a></li>
+<li class="level2"><a href="#device-variables">Device variables</a></li>
+<li class="level2"><a href="#git-variable">Git variable</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Use Qt Creator variables</h1>
+<!-- $$$creator-how-to-use-qtc-variables.html-description -->
+<div class="descr" id="details">
+<p>You can use Qt Creator variables in <b translate="no">Preferences</b>, <b translate="no">Build Settings</b>, and <b translate="no">Run Settings</b>, in fields that set arguments, executable paths, and working directories, for example. The variables take care of quoting their expansions, so you do not need to put them in quotes.</p>
+<p>Select the <img src="images/replace.png" alt="Variables" /> (<b translate="no">Variables</b>) button in a field to select from a list of variables that are available in a particular context. For more information about each variable, move the cursor over it in the list.</p>
+<p class="centerAlign"><img src="images/qtcreator-variables.png" alt="Qt Creator Variables dialog showing a tooltip" /></p><p>The following syntax enables you to use environment variables as Qt Creator variables: %{Env:VARNAME}.</p>
+<h2 id="pattern-substitution">Pattern substitution</h2>
+<p>Qt Creator uses pattern substitution when expanding variable names. To replace the first match of <i>pattern</i> within <i>variable</i> with <i>replacement</i>, use:</p>
+<pre class="cpp plain" translate="no">
+ %{variable/pattern/replacement}
+</pre>
+<p>To replace all matches of <i>pattern</i> within <i>variable</i> with <i>replacement</i>, use:</p>
+<pre class="cpp plain" translate="no">
+ %{variable//pattern/replacement}
+</pre>
+<p>The pattern can be a regular expression and the replacement can have backreferences. For example, if <code translate="no">%{variable}</code> is <code translate="no">my123var</code>, then <code translate="no">%{variable/(..)(\d+)/\2\1}</code> is expanded to <code translate="no">123myvar</code>.</p>
+<p>Instead of the forward slash, you can also use the number sign (<code translate="no">#</code>) as the substitution character. This can be helpful if the value is supposed to be a file path, in which case forward slashes might get translated to backslashes on Windows hosts.</p>
+<h2 id="use-default-values">Use default values</h2>
+<p>To use the default value if the variable is not set, use:</p>
+<pre class="cpp plain" translate="no">
+ %{variable:-default}
+</pre>
+<h2 id="examples">Examples</h2>
+<p>The following sections contain examples of using Qt Creator variables.</p>
+<h3 id="current-document-variables">Current document variables</h3>
+<p>The <code translate="no">%{CurrentDocument}</code> variable expands to information about the file that is currently open in the editor.</p>
+<p>For example:</p>
+<ul>
+<li><code translate="no">%{CurrentDocument:Project:Name}</code> expands to the name of the project containing the document.</li>
+<li><code translate="no">%{CurrentDocument:FileName}</code> expands to the name of the document.</li>
+<li><code translate="no">%{CurrentDocument:FilePath}</code> expands to the full path of the document including the filename.</li>
+<li><code translate="no">%{CurrentDocument:DirName}</code> expands to the name of the parent directory of the document.</li>
+</ul>
+<h3 id="kit-and-build-configuration-variables">Kit and build configuration variables</h3>
+<p>The <code translate="no">%{Project:DirName}</code> variable expands to the name of the project folder, <code translate="no">%{Kit:FileSystemName}</code> expands to information about a build and run kit, and <code translate="no">%{BuildConfig:Name}</code> expands to the name of the build configuration.</p>
+<p>You can combine them to set the <b translate="no">Default build directory</b> in <a href="creator-how-to-find-preferences.html">Preferences</a> &gt; <b translate="no">Build &amp; Run</b> &gt; <b translate="no">Default Build Properties</b>:</p>
+<pre class="cpp plain" translate="no">
+ ../build-%{Project:DirName}-%{Kit:FileSystemName}-%{BuildConfig:Name}
+</pre>
+<p class="centerAlign"><img src="images/qtcreator-build-settings-default.webp" alt="Default Build Properties tab in Build &amp; Run preferences" /></p><h3 id="qt-variables">Qt variables</h3>
+<p>The <code translate="no">%{Qt}</code> variable expands to information about a Qt installation.</p>
+<p><code translate="no">%{Qt:Version}</code> expands to the version number of a Qt installation. You can use it in kit names.</p>
+<h3 id="device-variables">Device variables</h3>
+<p>The <code translate="no">%{Device}</code> variable expands to information about the device where you run the project (<i>run device</i>).</p>
+<p>For example:</p>
+<ul>
+<li><code translate="no">%{Device:HostAddress}</code> expands to the host name or IP address of the device from the device configuration. You can use it for SSH authentication.</li>
+<li><code translate="no">%{Device:PrivateKeyFile}</code> expands to the filename and path of a private key file. You can use it for SSH authentication.</li>
+<li><code translate="no">%{Device:SshPort}</code> expands to the port number for SSH connections.</li>
+<li><code translate="no">%{Device:UserName}</code> expands to the username to log into the device. You can use it for custom connections when the device is not connected automatically.</li>
+</ul>
+<h3 id="git-variable">Git variable</h3>
+<p><code translate="no">%{Git:Config:user.name}</code> expands to the username from the Git configuration. You can use it in license header templates or in any field where you need the Git username.</p>
+</div>
+<p><b>See also </b><a href="creator-how-set-project-environment.html">Specify the environment for projects</a>, <a href="creator-build-settings.html">Configure projects for building</a>, and <a href="creator-run-settings.html">Configure projects for running</a>.</p>
+<!-- @@@creator-how-to-use-qtc-variables.html -->
+<p class="naviNextPrevious footerNavi">
+<a class="prevPage" href="creator-how-set-project-environment.html">Specify the environment for projects</a>
+<span class="naviSeparator">  &#9702;  </span>
+<a class="nextPage" href="creator-project-qmake-libraries.html">Add libraries to qmake projects</a>
+</p>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   Copyright <acronym title="Copyright">&copy;</acronym> The Qt Company Ltd. and other contributors.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

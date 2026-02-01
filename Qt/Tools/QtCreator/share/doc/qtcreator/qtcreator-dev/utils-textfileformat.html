@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- textfileformat.cpp -->
+  <meta name="description" content="The TextFileFormat class describes the format of a text file and provides autodetection.">
+  <title>Utils::TextFileFormat Class | Extending Qt Creator Manual</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="index.html">Extending Qt Creator Manual</a></li>
+<li><a href="qtcreator-module.html" translate="no">QtCreator</a></li>
+<li>TextFileFormat</li>
+<li id="buildversion"><a href="index.html">Extending Qt Creator Manual 18.0.2</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar">
+<div class="toc">
+<h3 id="toc">Contents</h3>
+<ul>
+<li class="level1"><a href="#public-functions">Public Functions</a></li>
+<li class="level1"><a href="#static-public-members">Static Public Members</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title" translate="no">Utils::TextFileFormat Class</h1>
+<span class="small-subtitle" translate="no">class <a href="utils.html" translate="no">Utils</a>::TextFileFormat</span>
+<!-- $$$TextFileFormat-brief -->
+<p>The TextFileFormat class describes the format of a text file and provides autodetection. <a href="#details">More...</a></p>
+<!-- @@@TextFileFormat -->
+<div class="table"><table class="alignedsummary requisites" translate="no">
+<tr><td class="memItemLeft rightAlign topAlign"> Header:</td><td class="memItemRight bottomAlign"> <code translate="no">#include &lt;TextFileFormat&gt;</code></td></tr>
+</table></div>
+<ul>
+<li><a href="utils-textfileformat-members.html">List of all members, including inherited members</a></li>
+</ul>
+<h2 id="public-functions">Public Functions</h2>
+<div class="table"><table class="alignedsummary" translate="no">
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="utils-textfileformat.html#decode" translate="no">decode</a></b>(const QByteArray &amp;<i>data</i>, QString *<i>target</i>) const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="utils-textfileformat.html#detectFromData" translate="no">detectFromData</a></b>(const QByteArray &amp;<i>data</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> Utils::TextFileFormat::ReadResult </td><td class="memItemRight bottomAlign"><b><a href="utils-textfileformat.html#readFile" translate="no">readFile</a></b>(const Utils::FilePath &amp;<i>filePath</i>, const Utils::TextEncoding &amp;<i>fallbackEncoding</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> Utils::Result&lt;&gt; </td><td class="memItemRight bottomAlign"><b><a href="utils-textfileformat.html#writeFile" translate="no">writeFile</a></b>(const Utils::FilePath &amp;<i>filePath</i>, QString <i>plainText</i>) const</td></tr>
+</table></div>
+<h2 id="static-public-members">Static Public Members</h2>
+<div class="table"><table class="alignedsummary" translate="no">
+<tr><td class="memItemLeft rightAlign topAlign"> QByteArray </td><td class="memItemRight bottomAlign"><b><a href="utils-textfileformat.html#decodingErrorSample" translate="no">decodingErrorSample</a></b>(const QByteArray &amp;<i>data</i>)</td></tr>
+</table></div>
+<!-- $$$TextFileFormat-description -->
+<div class="descr">
+<h2 id="details">Detailed Description</h2>
+<p>The format comprises</p>
+<ul>
+<li>Encoding represented by a the name of a codec</li>
+<li>Presence of an UTF8 Byte Order Marker (BOM)</li>
+<li>Line feed storage convention</li>
+</ul>
+<p>The class also provides convenience functions to read text files and return them as strings or string lists and to write out files.</p>
+</div>
+<!-- @@@TextFileFormat -->
+<div class="func">
+<h2>Member Function Documentation</h2>
+<!-- $$$decode[overload1]$$$decodeconstQByteArray&QString* -->
+<h3 class="fn" translate="no" id="decode"><span class="type">bool</span> TextFileFormat::<span class="name">decode</span>(const <span class="type"><a href="https://doc.qt.io/qt/qbytearray.html" translate="no">QByteArray</a></span> &amp;<i>data</i>, <span class="type"><a href="https://doc.qt.io/qt/qstring.html" translate="no">QString</a></span> *<i>target</i>) const</h3>
+<p>Returns <i translate="no">data</i> decoded to a string, <i translate="no">target</i>.</p>
+<!-- @@@decode -->
+<!-- $$$decodingErrorSample[overload1]$$$decodingErrorSampleconstQByteArray& -->
+<h3 class="fn" translate="no" id="decodingErrorSample"><code class="details extra" translate="no">[static]</code> <span class="type"><a href="https://doc.qt.io/qt/qbytearray.html" translate="no">QByteArray</a></span> TextFileFormat::<span class="name">decodingErrorSample</span>(const <span class="type"><a href="https://doc.qt.io/qt/qbytearray.html" translate="no">QByteArray</a></span> &amp;<i>data</i>)</h3>
+<p>Returns a piece of text specified by <i translate="no">data</i> suitable as display for an encoding error.</p>
+<!-- @@@decodingErrorSample -->
+<!-- $$$detectFromData[overload1]$$$detectFromDataconstQByteArray& -->
+<h3 class="fn" translate="no" id="detectFromData"><span class="type">void</span> TextFileFormat::<span class="name">detectFromData</span>(const <span class="type"><a href="https://doc.qt.io/qt/qbytearray.html" translate="no">QByteArray</a></span> &amp;<i>data</i>)</h3>
+<p>Detects the format of text <i translate="no">data</i>.</p>
+<!-- @@@detectFromData -->
+<!-- $$$readFile[overload1]$$$readFileconstUtils::FilePath&constUtils::TextEncoding& -->
+<h3 class="fn" translate="no" id="readFile"><span class="type">Utils::TextFileFormat::ReadResult</span> TextFileFormat::<span class="name">readFile</span>(const <span class="type"><a href="utils-filepath.html" translate="no">Utils::FilePath</a></span> &amp;<i>filePath</i>, const <span class="type">Utils::TextEncoding</span> &amp;<i>fallbackEncoding</i>)</h3>
+<p>Reads a text file from <i translate="no">filePath</i> into a string. It detects the codec to use from the BOM read file contents. If none is set, it uses <i translate="no">fallbackEncoding</i>. If the fallback is not set, it uses the text encoding set for the locale.</p>
+<p>Returns whether decoding was possible without errors. If an error occurs, it is returned together with a decoding error sample.</p>
+<!-- @@@readFile -->
+<!-- $$$writeFile[overload1]$$$writeFileconstUtils::FilePath&QString -->
+<h3 class="fn" translate="no" id="writeFile"><span class="type"><a href="utils-result.html" translate="no">Utils::Result</a></span>&lt;&gt; TextFileFormat::<span class="name">writeFile</span>(const <span class="type"><a href="utils-filepath.html" translate="no">Utils::FilePath</a></span> &amp;<i>filePath</i>, <span class="type"><a href="https://doc.qt.io/qt/qstring.html" translate="no">QString</a></span> <i>plainText</i>) const</h3>
+<p>Writes out a text file to <i translate="no">filePath</i> into a string, <i translate="no">plainText</i>.</p>
+<p>Returns whether decoding was possible without errors.</p>
+<!-- @@@writeFile -->
+</div>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <abbr title="Copyright">&copy;</abbr> 2025 <span translate="no">The Qt Company Ltd.</span>
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br/>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the <span translate="no">Free Software Foundation</span>.<br/>    <span translate="no">Qt</span> and respective logos are <a href="https://doc.qt.io/qt/trademarks.html">    trademarks</a> of <span translate="no">The Qt Company Ltd.</span> in Finland and/or other countries
+   worldwide. All other trademarks are property of their respective owners. </p>
+</div>
+</body>
+</html>

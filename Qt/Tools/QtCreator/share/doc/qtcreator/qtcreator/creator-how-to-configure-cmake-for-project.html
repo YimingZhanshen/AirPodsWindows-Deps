@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- creator-projects-settings-cmake.qdoc -->
+  <title>Override CMake settings for a project | Qt Creator Documentation</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="index.html">Qt Creator Documentation</a></li>
+<li>Override CMake settings for a project</li>
+<li id="buildversion"><a href="index.html">Qt Creator 18.0.2</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+  <link rel="prev" href="creator-project-opening.html" />
+  <link rel="next" href="creator-sharing-project-settings.html" />
+<p class="naviNextPrevious headerNavi">
+<a class="prevPage" href="creator-project-opening.html">Open projects</a>
+<span class="naviSeparator">  &#9702;  </span>
+<a class="nextPage" href="creator-sharing-project-settings.html">Share project settings</a>
+</p>
+<div class="sidebar"><div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Override CMake settings for a project</h1>
+<!-- $$$creator-how-to-configure-cmake-for-project.html-description -->
+<div class="descr" id="details">
+<p>To override CMake settings for the current project:</p>
+<ol class="1" type="1"><li>Go to <b translate="no">Projects</b> &gt; <b translate="no">Project Settings</b> &gt; <b translate="no">CMake</b>.<p class="centerAlign"><img src="images/qtcreator-project-settings-cmake.webp" alt="CMake settings for a project" /></p></li>
+<li>Clear <b translate="no">Use global settings</b>.</li>
+<li>Configure CMake for the project.</li>
+</ol>
+<p>Your choices override the values you set in <a href="creator-how-to-find-preferences.html">Preferences</a> &gt; <b translate="no">CMake</b> &gt; <b translate="no">General</b>.</p>
+<div class="table"><table class="generic">
+ <thead><tr class="qt-style"><th >Setting</th><th >Value</th><th >Read More</th></tr></thead>
+<tr valign="top" class="odd"><td >Autorun CMake</td><td >Runs CMake to refresh project information when you edit a <code translate="no">CMakeLists.txt</code> configuration file in a project. Also, refreshes project information when you build the project.</td><td ><a href="creator-how-to-view-cmake-project-contents.html">View CMake project contents</a></td></tr>
+<tr valign="top" class="even"><td >Package manager auto setup</td><td >Sets up the <a href="creator-project-conan.html">Conan</a> or <a href="creator-vcpkg.html">vcpkg</a> package manager for use with CMake.</td><td ><a href="creator-build-settings-cmake.html#using-cmake-with-package-managers">Using CMake with Package Managers</a></td></tr>
+<tr valign="top" class="odd"><td >Ask before re-configuring with initial parameters</td><td >Asks before acting when you select <b translate="no">Re-configure with Initial Variables</b>.</td><td ><a href="creator-build-settings-cmake.html#re-configuring-with-initial-variables">Re-configuring with Initial Variables</a></td></tr>
+<tr valign="top" class="even"><td >Ask before reloading CMake presets</td><td >Asks before acting when you go to <b translate="no">Build</b> and select <b translate="no">Reload CMake Presets</b>.</td><td ><a href="creator-build-settings-cmake-presets.html">CMake Presets</a></td></tr>
+<tr valign="top" class="odd"><td >Show subfolders inside source group folders</td><td >Hides subfolder names and arranges the files according to their source group in the <b translate="no">Projects</b> view.</td><td ><a href="creator-how-to-view-cmake-project-contents.html#hide-subfolder-names-in-projects-view">Hide subfolder names in Projects view</a></td></tr>
+<tr valign="top" class="even"><td >Show advanced options by default</td><td >Shows all CMake variables by default in <b translate="no">Initial Configuration</b> and <b translate="no">Current Configuration</b>.</td><td ><a href="creator-build-settings-cmake.html#viewing-advanced-variables">Viewing Advanced Variables</a></td></tr>
+<tr valign="top" class="odd"><td >Use junctions for CMake configuration and build operations</td><td >On Windows, uses junction points for CMake configure, build, and install operations.</td><td ><a href="creator-build-settings-cmake.html#using-junction-points-on-windows">Using Junction Points on Windows</a></td></tr>
+</table></div>
+<p>You can set these preferences as <a href="creator-build-settings-cmake-presets.html#configure-presets">CMake presets</a> or in a <a href="creator-sharing-project-settings.html"><code translate="no">CMakeLists.txt.shared</code></a> file.</p>
+</div>
+<p><b>See also </b><a href="creator-how-tos.html#build-with-cmake">How To: Build with CMake</a>, <a href="creator-project-cmake.html">CMake</a>, and <a href="creator-configuring-projects.html">Configuring Projects</a>.</p>
+<!-- @@@creator-how-to-configure-cmake-for-project.html -->
+<p class="naviNextPrevious footerNavi">
+<a class="prevPage" href="creator-project-opening.html">Open projects</a>
+<span class="naviSeparator">  &#9702;  </span>
+<a class="nextPage" href="creator-sharing-project-settings.html">Share project settings</a>
+</p>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   Copyright <acronym title="Copyright">&copy;</acronym> The Qt Company Ltd. and other contributors.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

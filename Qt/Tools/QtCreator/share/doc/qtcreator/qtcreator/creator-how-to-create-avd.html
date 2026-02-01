@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- androiddev.qdoc -->
+  <title>Create an Android Virtual Device (AVD) | Qt Creator Documentation</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="index.html">Qt Creator Documentation</a></li>
+<li>Create an Android Virtual Device (AVD)</li>
+<li id="buildversion"><a href="index.html">Qt Creator 18.0.2</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+  <link rel="prev" href="creator-how-to-view-images.html" />
+  <link rel="next" href="creator-how-to-debug-android.html" />
+<p class="naviNextPrevious headerNavi">
+<a class="prevPage" href="creator-how-to-view-images.html">View images</a>
+<span class="naviSeparator">  &#9702;  </span>
+<a class="nextPage" href="creator-how-to-debug-android.html">Debug on Android devices</a>
+</p>
+<div class="sidebar"><div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Create an Android Virtual Device (AVD)</h1>
+<!-- $$$creator-how-to-create-avd.html-description -->
+<div class="descr" id="details">
+<p>To emulate Android devices on Linux, macOS, or Windows, use an Android Emulator. The Android Emulator runs the Android operating system in a virtual machine called an Android Virtual Device (AVD).</p>
+<p>You can create AVDs for:</p>
+<ul>
+<li>Automotive</li>
+<li>Desktop</li>
+<li>Phone</li>
+<li>Tablet</li>
+<li>TV</li>
+<li>Wear</li>
+</ul>
+<p>To create a new AVD:</p>
+<ol class="1" type="1"><li>Go to <a href="creator-how-to-find-preferences.html">Preferences</a> &gt; <b translate="no">Devices</b>.</li>
+<li>Select <b translate="no">Add</b> &gt; <b translate="no">Android Device</b> &gt; <b translate="no">Start Wizard</b>.<p class="centerAlign"><img src="images/qtcreator-android-create-avd.webp" alt="Create New AVD dialog" /></p></li>
+<li>In <b translate="no">Name</b>, give the AVD a name.</li>
+<li>In <b translate="no">Target ABI / API</b>, select an Android system image architecture (ABI) and <a href="http://developer.android.com/guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level</a> that you installed on the computer.</li>
+<li>In <b translate="no">Skin definition</b>, select the AVD type, then select one of the predefined AVD skins or <b translate="no">Custom</b> for a custom AVD skin.</li>
+<li>In <b translate="no">SD card size</b>, set the size of the SD card for the AVD.</li>
+<li>Select <b translate="no">Override existing AVD name</b> to overwrite an existing AVD with a new AVD using the same name (<code translate="no">avdmanager</code> <code translate="no">-f</code> option).</li>
+<li>Select <b translate="no">OK</b> to create the AVD.</li>
+</ol>
+<p>For more advanced options for creating a new AVD, use the command-line tool <a href="https://developer.android.com/studio/command-line/avdmanager.html">avdmanager</a> or the Android Studio's native AVD Manager UI.</p>
+</div>
+<p><b>See also </b><a href="creator-how-tos.html#android">How To: Develop for Android</a>, <a href="creator-deploying-android.html">Android Deploy Configuration</a>, and <a href="creator-developing-android.html">Developing for Android</a>.</p>
+<!-- @@@creator-how-to-create-avd.html -->
+<p class="naviNextPrevious footerNavi">
+<a class="prevPage" href="creator-how-to-view-images.html">View images</a>
+<span class="naviSeparator">  &#9702;  </span>
+<a class="nextPage" href="creator-how-to-debug-android.html">Debug on Android devices</a>
+</p>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   Copyright <acronym title="Copyright">&copy;</acronym> The Qt Company Ltd. and other contributors.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

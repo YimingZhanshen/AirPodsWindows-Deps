@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- creator-vcs-git.qdoc -->
+  <title>git diff | Qt Creator Documentation</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="index.html">Qt Creator Documentation</a></li>
+<li>git diff</li>
+<li id="buildversion"><a href="index.html">Qt Creator 18.0.2</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+  <link rel="prev" href="creator-how-to-git-commit.html" />
+  <link rel="next" href="creator-how-to-git-log.html" />
+<p class="naviNextPrevious headerNavi">
+<a class="prevPage" href="creator-how-to-git-commit.html">git commit</a>
+<span class="naviSeparator">  &#9702;  </span>
+<a class="nextPage" href="creator-how-to-git-log.html">git log</a>
+</p>
+<div class="sidebar">
+<div class="toc">
+<h3 id="toc">Contents</h3>
+<ul>
+<li class="level1"><a href="#toggle-unified-and-side-by-side-views">Toggle unified and side-by-side views</a></li>
+<li class="level1"><a href="#show-git-status-in-the-projects-view">Show Git status in the Projects view</a></li>
+<li class="level1"><a href="#stage-and-unstage-changes">Stage and unstage changes</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">git diff</h1>
+<!-- $$$creator-how-to-git-diff.html-description -->
+<div class="descr" id="details">
+<p>You can <i>diff</i> the current file or project to compare it with the latest version stored in the repository and to display the differences.</p>
+<ul>
+<li>To view changes in the current file, go to <b translate="no">Tools</b> &gt; <b translate="no">Git</b> &gt; <b translate="no">Current File</b> and select <b translate="no">Diff of &lt;file&gt;</b>.</li>
+<li>To view changes in the current project directory, go to <b translate="no">Tools</b> &gt; <b translate="no">Git</b> &gt; <b translate="no">Current Project Directory</b> and select <b translate="no">Diff Directory of &lt;project directory&gt;</b>.</li>
+<li>To view changes in the local repository, go to <b translate="no">Tools</b> &gt; <b translate="no">Git</b> &gt; <b translate="no">Local Repository</b> and select <b translate="no">Diff</b>.</li>
+</ul>
+<p>The <b translate="no">Git Diff</b> view shows the diff in a read-only editor. If Qt Creator can access the file, you can double-click a diff chunk to open an editor that displays the file and line.</p>
+<p class="centerAlign"><img src="images/qtcreator-git-diff-repository.webp" alt="Git Diff Repository view" /></p><p class="figCaption">Git Diff Repository view</p>
+<h2 id="toggle-unified-and-side-by-side-views">Toggle unified and side-by-side views</h2>
+<p>The <b translate="no">Git Diff</b> view displays the diff side-by-side. To use the unified diff view instead, select the <b translate="no">Switch to Unified Diff Editor</b> (1) option from the toolbar.</p>
+<h2 id="show-git-status-in-the-projects-view">Show Git status in the Projects view</h2>
+<p>To show changed files in the <a href="creator-projects-view.html">Projects</a> view in a different color, go to <a href="creator-how-to-find-preferences.html">Preferences</a> &gt; <b translate="no">Version Control</b> &gt; <b translate="no">General</b> and select <b translate="no">Show VCS file status</b>.</p>
+<h2 id="stage-and-unstage-changes">Stage and unstage changes</h2>
+<p>Stage your changes to commit them, so that you can push them to the remote repository or send them to Gerrit for review. To stage changes for a commit chunk-by-chunk or line-by-line, right-click a chunk or line in the <b translate="no">Git Diff</b> view and select context menu commands to stage or unstage it.</p>
+<div class="table"><table class="generic">
+ <thead><tr class="qt-style"><th >Context Menu Item</th><th >Description</th></tr></thead>
+<tr valign="top" class="odd"><td ><b translate="no">Revert Chunk</b></td><td >Resets the changes in the chunk.</td></tr>
+<tr valign="top" class="even"><td ><b translate="no">Stage Chunk</b></td><td >Adds the chunk to the staging area.</td></tr>
+<tr valign="top" class="odd"><td ><b translate="no">Stage Selection</b></td><td >Adds the selected lines to the staging area.</td></tr>
+<tr valign="top" class="even"><td ><b translate="no">Unstage Chunk</b></td><td >Removes the chunk from the staging area.</td></tr>
+<tr valign="top" class="odd"><td ><b translate="no">Unstage Selection</b></td><td >Removes the selected lines from the staging area.</td></tr>
+</table></div>
+<p>To view a diff of staged changes:</p>
+<ul>
+<li>To view staged changes in the current file, go to <b translate="no">Tools</b> &gt; <b translate="no">Git</b> &gt; <b translate="no">Current File</b> and select <b translate="no">Diff Staged Changes in &lt;file&gt;</b>.</li>
+<li>To view staged changes in the current project directory, go to <b translate="no">Tools</b> &gt; <b translate="no">Git</b> &gt; <b translate="no">Current Project Directory</b> and select <b translate="no">Diff Staged Directory of &lt;project directory&gt; Changes</b>.</li>
+<li>To view staged changes in the local repository, go to <b translate="no">Tools</b> &gt; <b translate="no">Git</b> &gt; <b translate="no">Local Repository</b> and select <b translate="no">Diff Staged</b>.</li>
+</ul>
+</div>
+<p><b>See also </b><a href="creator-how-tos.html#use-git">How To: Use Git</a> and <a href="creator-vcs-git.html">Git</a>.</p>
+<!-- @@@creator-how-to-git-diff.html -->
+<p class="naviNextPrevious footerNavi">
+<a class="prevPage" href="creator-how-to-git-commit.html">git commit</a>
+<span class="naviSeparator">  &#9702;  </span>
+<a class="nextPage" href="creator-how-to-git-log.html">git log</a>
+</p>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   Copyright <acronym title="Copyright">&copy;</acronym> The Qt Company Ltd. and other contributors.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

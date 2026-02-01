@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- creator-debug-views.qdoc -->
+  <title>Add breakpoints | Qt Creator Documentation</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="index.html">Qt Creator Documentation</a></li>
+<li>Add breakpoints</li>
+<li id="buildversion"><a href="index.html">Qt Creator 18.0.2</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+  <link rel="prev" href="creator-how-to-create-state-charts.html" />
+  <link rel="next" href="creator-how-to-attach-debugger-to-running-apps.html" />
+<p class="naviNextPrevious headerNavi">
+<a class="prevPage" href="creator-how-to-create-state-charts.html">Create state charts</a>
+<span class="naviSeparator">  &#9702;  </span>
+<a class="nextPage" href="creator-how-to-attach-debugger-to-running-apps.html">Attach the debugger to running applications</a>
+</p>
+<div class="sidebar"><div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Add breakpoints</h1>
+<!-- $$$creator-how-to-add-breakpoints.html-description -->
+<div class="descr" id="details">
+<p>To add breakpoints:</p>
+<ol class="1" type="1"><li>Add a new breakpoint in one of the following ways:<ul>
+<li>In the code editor, click the left margin or select <b>F9</b> (<b>F8</b> on macOS) on a particular line where you want the application to stop.</li>
+<li>In the <b translate="no">Breakpoint Preset</b> view or the <b translate="no">Breakpoints</b> view:<ul>
+<li>Double-click the empty part of the view.<p class="centerAlign"><img src="images/qtcreator-debugger-breakpoint-preset.webp" alt="Breakpoint Preset view" /></p></li>
+<li>Right-click the view, and select <b translate="no">Add Breakpoint</b> in the context menu.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>In <b translate="no">Breakpoint type</b>, select the location in the application code where you want the application to stop.<p class="centerAlign"><img src="images/qtcreator-add-breakpoint.webp" alt="Add Breakpoints dialog" /></p></li>
+</ol>
+<p>Clear <b translate="no">Enabled</b> to make the breakpoint temporarily inoperative as if you had deleted it, but keep the information about the breakpoint, so that you can enable it again later.</p>
+<p>The other options to specify depend on the location you select, such as file name and line number, address, expression, or function name. The following table summarizes the advanced options.</p>
+<div class="table"><table class="generic">
+ <thead><tr class="qt-style"><th >Option</th><th >Value</th></tr></thead>
+<tr valign="top" class="odd"><td ><b translate="no">Condition</b></td><td >The condition to evaluate before stopping at the breakpoint if the condition evaluates as <code translate="no">true</code>.</td></tr>
+<tr valign="top" class="even"><td ><b translate="no">Ignore count</b></td><td >The number of times to ignore the breakpoint before the application stops.</td></tr>
+<tr valign="top" class="odd"><td ><b translate="no">Thread specification</b></td><td ></td></tr>
+<tr valign="top" class="even"><td ><b translate="no">Path</b></td><td >Determines how to specify the path when setting breakpoints:<ul>
+<li><b translate="no">Use Engine Default</b> is the preferred setting of the debugger engine.</li>
+<li><b translate="no">Use Full Path</b> passes the full path to avoid ambiguity if several modules contain files with the same name. This is the engine default for CDB and LLDB.</li>
+<li><b translate="no">Use File Name</b> passes the file name only. This is useful when the location of the source tree does not match the one used when building the modules. This is the engine default for GDB as using full paths can be slow with it.</li>
+</ul>
+</td></tr>
+<tr valign="top" class="odd"><td ><b translate="no">Module</b></td><td >Specify the module (base name of the library or executable) for function or file type breakpoints to speed up debugger startup (CDB, LLDB).</td></tr>
+<tr valign="top" class="even"><td ><b translate="no">Commands</b></td><td >Commands to execute when the application stops. List one command per line. GDB executes the commands in the order in which you specify them.</td></tr>
+<tr valign="top" class="odd"><td ><b translate="no">Tracepoint only</b></td><td >A <i>tracepoint</i> lets you log information about the application without adding log statements or otherwise modifying your code. You can set conditions for the tracepoint.</td></tr>
+<tr valign="top" class="even"><td ><b translate="no">Message</b></td><td >The tracepoint message to show in <a href="creator-reference-application-output-view.html">Application Output</a>.</td></tr>
+</table></div>
+</div>
+<p><b>See also </b><a href="creator-how-tos.html#debug">How To: Debug</a>, <a href="creator-debugging.html">Debugging</a>, <a href="creator-reference.html#debuggers">Debuggers</a>, <a href="creator-reference.html#debugger">Debugger</a>, and <a href="creator-breakpoints-view.html">Setting breakpoints</a>.</p>
+<!-- @@@creator-how-to-add-breakpoints.html -->
+<p class="naviNextPrevious footerNavi">
+<a class="prevPage" href="creator-how-to-create-state-charts.html">Create state charts</a>
+<span class="naviSeparator">  &#9702;  </span>
+<a class="nextPage" href="creator-how-to-attach-debugger-to-running-apps.html">Attach the debugger to running applications</a>
+</p>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   Copyright <acronym title="Copyright">&copy;</acronym> The Qt Company Ltd. and other contributors.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

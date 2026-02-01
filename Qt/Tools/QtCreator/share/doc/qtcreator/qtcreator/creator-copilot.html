@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- creator-copilot.qdoc -->
+  <title>Use GitHub Copilot | Qt Creator Documentation</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="index.html">Qt Creator Documentation</a></li>
+<li>Use GitHub Copilot</li>
+<li id="buildversion"><a href="index.html">Qt Creator 18.0.2</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+  <link rel="prev" href="creator-how-to-switch-to-edit-mode.html" />
+  <link rel="next" href="creator-qtaiassistant.html" />
+<p class="naviNextPrevious headerNavi">
+<a class="prevPage" href="creator-how-to-switch-to-edit-mode.html">Switch to Edit mode</a>
+<span class="naviSeparator">  &#9702;  </span>
+<a class="nextPage" href="creator-qtaiassistant.html">Use Qt AI Assistant</a>
+</p>
+<div class="sidebar">
+<div class="toc">
+<h3 id="toc">Contents</h3>
+<ul>
+<li class="level1"><a href="#requirements">Requirements</a></li>
+<li class="level1"><a href="#set-copilot-preferences">Set Copilot preferences</a></li>
+<li class="level1"><a href="#receive-suggestions">Receive suggestions</a></li>
+<li class="level1"><a href="#turn-suggestions-on-and-off">Turn suggestions on and off</a></li>
+<li class="level2"><a href="#toggle-copilot-suggestions">Toggle Copilot suggestions</a></li>
+<li class="level2"><a href="#turn-suggestions-on-or-off-for-a-project">Turn suggestions on or off for a project</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Use GitHub Copilot</h1>
+<!-- $$$creator-copilot.html-description -->
+<div class="descr" id="details">
+<p>The Copilot plugin (disabled by default) integrates <a href="https://github.com/features/copilot">GitHub Copilot</a> into Qt Creator. You can view suggestions from Copilot in the <b translate="no">Edit</b> mode.</p>
+<div class="admonition note">
+<p><b>Note: </b>If you enable the Copilot plugin, you must agree with and abide by the GitHub terms of use. It is your responsibility to know and accept the requirements and parameters of using Copilot, such as ensuring you have the rights to grant it access to your code. Also, you must understand the implications of using it and the suggestions it produces, such as code copyright and accuracy.</p>
+</div>
+<h2 id="requirements">Requirements</h2>
+<p>To use the Copilot plugin, you need:</p>
+<ul>
+<li>An active <a href="https://docs.github.com/en/billing/managing-billing-for-github-copilot/about-billing-for-github-copilot">GitHub Copilot subscription</a>.</li>
+<li>GitHub Copilot Neovim plugin installed (requires Node.js), as described in <a href="https://github.com/github/copilot.vim/blob/release/README.md">Copilot.vim/Readme.md</a>.</li>
+</ul>
+<h2 id="set-copilot-preferences">Set Copilot preferences</h2>
+<p>To set preferences for using Copilot:</p>
+<ol class="1" type="1"><li>Go to <a href="creator-how-to-find-preferences.html">Preferences</a> &gt; <b translate="no">AI</b> &gt; <b translate="no">Copilot</b>.<p class="centerAlign"><img src="images/qtcreator-preferences-copilot.webp" alt="Copilot tab in AI preferences" /></p></li>
+<li>Select <b translate="no">Enable Copilot</b> to use Copilot.</li>
+<li>Select <b translate="no">Sign In</b> to sign into your subscription, activate your device, and authorize the GitHub Copilot plugin.<p>The button turns into a <b translate="no">Sign Out</b> button.</p>
+</li>
+<li>In <b translate="no">Node.js path</b>, enter the full path to the Node.js executable.</li>
+<li>In <b translate="no">Path to language-server.js</b>, enter the path to <code translate="no">language-server.js</code> in the Copilot Neovim plugin installation folder.</li>
+<li>Select <b translate="no">Auto request</b> to receive suggestions for the current text cursor position when you make changes.</li>
+<li>In <b translate="no">GitHub Enterprise URL</b>, enter the URL to Copilot server that runs in the enterprise environment.</li>
+<li>In <b translate="no">Proxy</b>, enter the host name and port number of the proxy server to connect to Copilot servers.</li>
+<li>Select <b translate="no">Reject unauthorized</b> to prevent the security risk presented by accepting unauthorized certificates from the proxy server.</li>
+</ol>
+<h2 id="receive-suggestions">Receive suggestions</h2>
+<p>When you write code in the <a href="creator-coding-navigating.html">Edit</a> mode and <b translate="no">Auto request</b> is enabled, Copilot automatically makes suggestions when you type.</p>
+<p class="centerAlign"><img src="images/qtcreator-copilot.gif" alt="Receiving suggestions from Copilot in the editor" /></p><p>To manually request a suggestion at the current editor's cursor position, enter <b translate="no">t</b>, followed by <b>Space</b> to show <b translate="no">Request Copilot Suggestion</b> in the <a href="creator-editor-locator.html">locator</a>.</p>
+<p>Hover over a suggestion to show a toolbar with <img src="images/prev.png" alt="Previous" /> and <img src="images/next.png" alt="Next" /> buttons for cycling between Copilot suggestions.</p>
+<p>To apply a suggestion as a whole, select <b translate="no">Apply</b> or <b>Tab</b>.</p>
+<p>To apply a suggestion word-by-word, select <b translate="no">Apply Word</b> or <b>Alt+Right</b>.</p>
+<p>To reject a suggestion, select <b>Esc</b> or the arrow keys.</p>
+<h2 id="turn-suggestions-on-and-off">Turn suggestions on and off</h2>
+<p>You can turn the Copilot suggestions on and off either globally for all projects or at project level for a particular project.</p>
+<h3 id="toggle-copilot-suggestions">Toggle Copilot suggestions</h3>
+<p>To turn Copilot suggestions on or off globally, select <img src="images/copilot.png" alt="Toggle Copilot" /> (<b translate="no">Toggle Copilot</b>). This also sets the value of <b translate="no">Enable Copilot</b> in <a href="creator-how-to-find-preferences.html">Preferences</a> &gt; <b translate="no">Copilot</b> accordingly.</p>
+<h3 id="turn-suggestions-on-or-off-for-a-project">Turn suggestions on or off for a project</h3>
+<p>To turn Copilot suggestions on or off for a particular project:</p>
+<ol class="1" type="1"><li>Go to <b translate="no">Projects</b> &gt; <b translate="no">Project Settings</b> &gt; <b translate="no">Copilot</b>.<p class="centerAlign"><img src="images/qtcreator-project-settings-copilot.webp" alt="Copilot project settings" /></p></li>
+<li>Clear <b translate="no">Use global settings</b>.</li>
+<li>Select or clear <b translate="no">Enable Copilot</b>.</li>
+</ol>
+</div>
+<p><b>See also </b><a href="creator-how-to-enable-plugins.html">Enable and disable plugins</a> and <a href="creator-coding-navigating.html">Edit Mode</a>.</p>
+<!-- @@@creator-copilot.html -->
+<p class="naviNextPrevious footerNavi">
+<a class="prevPage" href="creator-how-to-switch-to-edit-mode.html">Switch to Edit mode</a>
+<span class="naviSeparator">  &#9702;  </span>
+<a class="nextPage" href="creator-qtaiassistant.html">Use Qt AI Assistant</a>
+</p>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   Copyright <acronym title="Copyright">&copy;</acronym> The Qt Company Ltd. and other contributors.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

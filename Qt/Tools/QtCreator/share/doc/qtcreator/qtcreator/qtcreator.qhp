@@ -1,0 +1,1772 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QtHelpProject version="1.0">
+    <namespace>org.qt-project.qtcreator.1802</namespace>
+    <virtualFolder>doc</virtualFolder>
+    <metaData name="version" value=""/>
+    <customFilter name="Qt Creator 18.0.2">
+        <filterAttribute>18.0.2</filterAttribute>
+        <filterAttribute>qtcreator</filterAttribute>
+    </customFilter>
+    <filterSection>
+        <filterAttribute>18.0.2</filterAttribute>
+        <filterAttribute>qtcreator</filterAttribute>
+        <toc>
+            <section ref="index.html" title="Qt Creator Documentation 18.0.2">
+                <section ref="creator-how-to-install.html" title="Installation"/>
+                <section ref="creator-getting-started.html" title="Getting Started">
+                    <section ref="creator-overview.html" title="Overview"/>
+                    <section ref="creator-quick-tour.html" title="User interface"/>
+                    <section ref="creator-configuring.html" title="Configuring Qt Creator"/>
+                </section>
+                <section ref="creator-project-creating.html" title="Creating Projects"/>
+                <section ref="creator-configuring-projects.html" title="Configuring Projects"/>
+                <section ref="creator-debugging.html" title="Debugging"/>
+                <section ref="creator-analyze-mode.html" title="Analyzing Code"/>
+                <section ref="creator-tutorials.html" title="Tutorials"/>
+                <section ref="creator-how-tos.html" title="How To"/>
+                <section ref="creator-reference.html" title="Reference"/>
+            </section>
+        </toc>
+        <keywords>
+            <keyword name="Activate custom output parsers" id="Activate custom output parsers" ref="creator-how-to-activate-custom-output-parsers.html"/>
+            <keyword name="Activate extensions" id="Activate extensions" ref="creator-how-to-load-extensions.html"/>
+            <keyword name="Activate kits for a project" id="Activate kits for a project" ref="creator-how-to-activate-kits.html"/>
+            <keyword name="Add Bare Metal devices" id="Add Bare Metal devices" ref="creator-how-to-add-bare-metal-devices.html"/>
+            <keyword name="Add Boot to Qt devices" id="Add Boot to Qt devices" ref="creator-how-to-add-b2qt.html"/>
+            <keyword name="Add CMake tools" id="Add CMake tools" ref="creator-how-to-add-cmake-tools.html"/>
+            <keyword name="Add Docker devices" id="Add Docker devices" ref="creator-adding-docker-devices.html"/>
+            <keyword name="Add MCU SDKs" id="Add MCU SDKs" ref="creator-how-to-add-mcu-kits.html"/>
+            <keyword name="Add MCU devices" id="Add MCU devices" ref="creator-how-to-add-mcu-devices.html"/>
+            <keyword name="Add Nim compilers" id="Add Nim compilers" ref="creator-how-to-add-nim-compilers.html"/>
+            <keyword name="Add Qt versions" id="Add Qt versions" ref="creator-project-qmake.html"/>
+            <keyword name="Add a Java language server" id="Add a Java language server" ref="creator-how-to-add-java-language-servers.html"/>
+            <keyword name="Add a QNX Neutrino device" id="Add a QNX Neutrino device" ref="creator-developing-qnx.html"/>
+            <keyword name="Add a license header template for C++ code" id="Add a license header template for C++ code" ref="creator-how-to-add-license-header-templates.html"/>
+            <keyword name="Add bookmarks to help pages" id="Add bookmarks to help pages" ref="creator-how-to-add-bookmarks-to-help-pages.html"/>
+            <keyword name="Add breakpoints" id="Add breakpoints" ref="creator-how-to-add-breakpoints.html"/>
+            <keyword name="Add code snippets to the auto-complete menu" id="Add code snippets to the auto-complete menu" ref="creator-how-to-add-code-snippets.html"/>
+            <keyword name="Add compilers" id="Add compilers" ref="creator-tool-chains.html"/>
+            <keyword name="Add custom compilers" id="Add custom compilers" ref="creator-how-to-add-custom-compilers.html"/>
+            <keyword name="Add custom output parsers" id="Add custom output parsers" ref="creator-custom-output-parsers.html"/>
+            <keyword name="Add debuggers" id="Add debuggers" ref="creator-debuggers.html"/>
+            <keyword name="Add external documentation" id="Add external documentation" ref="creator-how-to-add-external-documentation.html"/>
+            <keyword name="Add generic language servers" id="Add generic language servers" ref="creator-how-to-add-generic-language-servers.html"/>
+            <keyword name="Add kits" id="Add kits" ref="creator-targets.html"/>
+            <keyword name="Add libraries to CMake projects" id="Add libraries to CMake projects" ref="creator-how-to-add-external-libraries-to-cmake-projects.html"/>
+            <keyword name="Add libraries to qmake projects" id="Add libraries to qmake projects" ref="creator-project-qmake-libraries.html"/>
+            <keyword name="Add remote Linux devices" id="Add remote Linux devices" ref="creator-how-to-add-remote-linux.html"/>
+            <keyword name="Add subprojects to projects" id="Add subprojects to projects" ref="creator-how-to-add-subprojects-to-projects.html"/>
+            <keyword name="Add tests to existing test projects" id="Add tests to existing test projects" ref="creator-how-to-add-tests-to-projects.html"/>
+            <keyword name="Add translation files" id="Add translation files" ref="creator-how-to-add-ts-files.html"/>
+            <keyword name="Add wizards" id="Add wizards" ref="creator-how-to-add-wizards.html"/>
+            <keyword name="Adding Qt Widgets Designer Plugins" id="Adding Qt Widgets Designer Plugins" ref="adding-plugins.html"/>
+            <keyword name="All Topics" id="All Topics" ref="qtcreator-toc.html"/>
+            <keyword name="Analyze CPU usage" id="Analyze CPU usage" ref="creator-how-to-analyze-cpu-usage.html"/>
+            <keyword name="Analyze code with Clang-Tidy and Clazy" id="Analyze code with Clang-Tidy and Clazy" ref="creator-clang-tools.html"/>
+            <keyword name="Analyzing Code" id="Analyzing Code" ref="creator-analyze-mode.html"/>
+            <keyword name="Android Deploy Configuration" id="Android Deploy Configuration" ref="creator-deploying-android.html"/>
+            <keyword name="Android Run Settings" id="Android Run Settings" ref="creator-run-settings-android.html"/>
+            <keyword name="Apache Tika MimeType Definitions, version 019041117149667bc4d18fabf222a0670d407959" id="Apache Tika MimeType Definitions, version 019041117149667bc4d18fabf222a0670d407959" ref="qtcreator-attribution-tika-mimetypes.html"/>
+            <keyword name="Application Output" id="Application Output" ref="creator-reference-application-output-view.html"/>
+            <keyword name="Apply actions to commits" id="Apply actions to commits" ref="creator-how-to-git-commits.html"/>
+            <keyword name="Apply filters before scanning for tests" id="Apply filters before scanning for tests" ref="creator-how-to-limit-files-to-path-patterns.html"/>
+            <keyword name="Apply quick fixes" id="Apply quick fixes" ref="creator-editor-quick-fixes.html"/>
+            <keyword name="Assign keyboard shortcuts" id="Assign keyboard shortcuts" ref="creator-how-to-assign-keyboard-shortcuts.html"/>
+            <keyword name="Attach the debugger to running applications" id="Attach the debugger to running applications" ref="creator-how-to-attach-debugger-to-running-apps.html"/>
+            <keyword name="Attach the debugger to starting processes" id="Attach the debugger to starting processes" ref="creator-how-to-attach-debugger-to-starting-processes.html"/>
+            <keyword name="Automatically format QML/JS files" id="Automatically format QML/JS files" ref="creator-how-to-autoformat-qml-js.html"/>
+            <keyword name="Autotools" id="Autotools" ref="creator-projects-autotools.html"/>
+            <keyword name="Axivion" id="Axivion" ref="creator-preferences-axivion.html"/>
+            <keyword name="Bazaar and Breezy" id="Bazaar and Breezy" ref="creator-vcs-bazaar.html"/>
+            <keyword name="Beautifier" id="Beautifier" ref="creator-preferences-beautifier.html"/>
+            <keyword name="Beautify source code" id="Beautify source code" ref="creator-beautifier.html"/>
+            <keyword name="Behavior" id="Behavior" ref="creator-preferences-text-editor-behavior.html"/>
+            <keyword name="Bookmark code" id="Bookmark code" ref="creator-how-to-use-bookmarks.html"/>
+            <keyword name="Boot to Qt Deploy Configuration" id="Boot to Qt Deploy Configuration" ref="creator-deployment-b2qt.html"/>
+            <keyword name="Boot to Qt Run Settings" id="Boot to Qt Run Settings" ref="creator-run-settings-b2qt.html"/>
+            <keyword name="Build and run tests" id="Build and run tests" ref="creator-how-to-build-and-run-tests.html"/>
+            <keyword name="Build applications for the Web" id="Build applications for the Web" ref="creator-setup-webassembly.html"/>
+            <keyword name="Build applications on remote Linux devices" id="Build applications on remote Linux devices" ref="creator-how-to-build-on-remote-linux.html"/>
+            <keyword name="Build for and run on Docker devices" id="Build for and run on Docker devices" ref="creator-how-to-build-run-docker.html"/>
+            <keyword name="Build for many platforms" id="Build for many platforms" ref="creator-building-targets.html"/>
+            <keyword name="Build on Docker devices" id="Build on Docker devices" ref="creator-how-to-build-on-docker.html"/>
+            <keyword name="C++ Code Style" id="C++ Code Style" ref="creator-preferences-cpp-code-style.html"/>
+            <keyword name="C++ Quick Fixes" id="C++ Quick Fixes" ref="creator-reference-cpp-quick-fixes.html"/>
+            <keyword name="CDB" id="CDB" ref="creator-preferences-debugger-cdb.html"/>
+            <keyword name="CDB Paths" id="CDB Paths" ref="creator-preferences-debugger-cdb-paths.html"/>
+            <keyword name="CMake" id="CMake" ref="creator-project-cmake.html"/>
+            <keyword name="CMake Build Configuration" id="CMake Build Configuration" ref="creator-build-settings-cmake.html"/>
+            <keyword name="CMake Lexer" id="CMake Lexer" ref="qtcreator-attribution-cmake-lexer.html"/>
+            <keyword name="CMake Presets" id="CMake Presets" ref="creator-build-settings-cmake-presets.html"/>
+            <keyword name="CMake Qt Vendor Presets" id="CMake Qt Vendor Presets" ref="creator-build-settings-cmake-presets-qt-vendor.html"/>
+            <keyword name="CVS" id="CVS" ref="creator-vcs-cvs.html"/>
+            <keyword name="Call Hierarchy" id="Call Hierarchy" ref="creator-call-hierarchy-view.html"/>
+            <keyword name="Change editor colors" id="Change editor colors" ref="creator-how-to-change-editor-colors.html"/>
+            <keyword name="Change text encoding" id="Change text encoding" ref="creator-how-to-change-text-encoding.html"/>
+            <keyword name="Change the UI language" id="Change the UI language" ref="creator-how-to-change-ui-language.html"/>
+            <keyword name="Check code syntax" id="Check code syntax" ref="creator-checking-code-syntax.html"/>
+            <keyword name="Chrome Trace Format Visualizer" id="Chrome Trace Format Visualizer" ref="creator-ctf-visualizer.html"/>
+            <keyword name="Clang Code Model" id="Clang Code Model" ref="creator-clang-codemodel.html"/>
+            <keyword name="Clang Tools" id="Clang Tools" ref="creator-preferences-analyzer-clang-tools.html"/>
+            <keyword name="Clangd" id="Clangd" ref="creator-preferences-cpp-clangd.html"/>
+            <keyword name="Class View" id="Class View" ref="creator-class-view.html"/>
+            <keyword name="Clazy" id="Clazy" ref="qtcreator-binary-attribution-clazy.html"/>
+            <keyword name="ClearCase" id="ClearCase" ref="creator-vcs-clearcase.html"/>
+            <keyword name="Code Model" id="Code Model" ref="creator-preferences-cpp-code-model.html"/>
+            <keyword name="Collect usage statistics" id="Collect usage statistics" ref="creator-how-to-collect-usage-statistics.html"/>
+            <keyword name="Command-Line Options" id="Command-Line Options" ref="creator-cli.html"/>
+            <keyword name="Commit your first change" id="Commit your first change" ref="creator-how-to-git-first-commit.html"/>
+            <keyword name="Compare files" id="Compare files" ref="creator-diff-editor.html"/>
+            <keyword name="Compile Output" id="Compile Output" ref="creator-reference-compile-output-view.html"/>
+            <keyword name="Compilers" id="Compilers" ref="creator-preferences-kits-compilers.html"/>
+            <keyword name="Complete CMake code" id="Complete CMake code" ref="creator-how-to-complete-cmake-code.html"/>
+            <keyword name="Complete code" id="Complete code" ref="creator-completing-code.html"/>
+            <keyword name="Completion" id="Completion" ref="creator-preferences-text-editor-completion.html"/>
+            <keyword name="Conan Build Configuration" id="Conan Build Configuration" ref="creator-build-settings-conan.html"/>
+            <keyword name="Conan Package Manager" id="Conan Package Manager" ref="creator-project-conan.html"/>
+            <keyword name="Configure C++ code model" id="Configure C++ code model" ref="creator-how-to-cpp-code-model.html"/>
+            <keyword name="Configure Clang diagnostics" id="Configure Clang diagnostics" ref="creator-how-to-configure-clang-diagnostics.html"/>
+            <keyword name="Configure Python language servers" id="Configure Python language servers" ref="creator-how-to-configure-python-language-servers.html"/>
+            <keyword name="Configure QML Language Server" id="Configure QML Language Server" ref="creator-how-to-use-qml-language-server.html"/>
+            <keyword name="Configure SSH connections" id="Configure SSH connections" ref="creator-how-to-configure-ssh.html"/>
+            <keyword name="Configure development tools" id="Configure development tools" ref="creator-how-to-configure-tools-on-devices.html"/>
+            <keyword name="Configure language servers for projects" id="Configure language servers for projects" ref="creator-how-to-configure-lsp-workspace.html"/>
+            <keyword name="Configure projects for building" id="Configure projects for building" ref="creator-build-settings.html"/>
+            <keyword name="Configure projects for running" id="Configure projects for running" ref="creator-run-settings.html"/>
+            <keyword name="Configuring Projects" id="Configuring Projects" ref="creator-configuring-projects.html"/>
+            <keyword name="Configuring Qt Creator" id="Configuring Qt Creator" ref="creator-configuring.html"/>
+            <keyword name="Connect Boot to Qt devices" id="Connect Boot to Qt devices" ref="creator-how-to-connect-b2qt.html"/>
+            <keyword name="Connect iOS devices" id="Connect iOS devices" ref="creator-how-to-connect-ios-devices.html"/>
+            <keyword name="Connect remote Linux devices" id="Connect remote Linux devices" ref="creator-how-to-connect-remote-linux.html"/>
+            <keyword name="Connect to Squish Server" id="Connect to Squish Server" ref="creator-how-to-connect-squish-server.html"/>
+            <keyword name="Contact Qt" id="Contact Qt" ref="creator-how-to-contact-qt.html"/>
+            <keyword name="Converting UI Projects to Applications" id="Converting UI Projects to Applications" ref="quick-converting-ui-projects.html"/>
+            <keyword name="Create Boost tests" id="Create Boost tests" ref="creator-how-to-create-boost-tests.html"/>
+            <keyword name="Create C++ classes" id="Create C++ classes" ref="creator-how-to-create-cpp-classes.html"/>
+            <keyword name="Create CTest Based Tests" id="Create CTest Based Tests" ref="creator-how-to-create-ctests.html"/>
+            <keyword name="Create Catch2 tests" id="Create Catch2 tests" ref="creator-how-to-create-catch2-tests.html"/>
+            <keyword name="Create Google tests" id="Create Google tests" ref="creator-how-to-create-google-tests.html"/>
+            <keyword name="Create Lua scripts" id="Create Lua scripts" ref="creator-how-to-create-lua-scripts.html"/>
+            <keyword name="Create MCU projects" id="Create MCU projects" ref="creator-how-to-run-on-mcu-devices.html"/>
+            <keyword name="Create Nimble projects" id="Create Nimble projects" ref="creator-how-to-create-nimble.html"/>
+            <keyword name="Create OpenGL fragment and vertex shaders" id="Create OpenGL fragment and vertex shaders" ref="creator-how-to-create-opengl-shaders.html"/>
+            <keyword name="Create Qt Interface Framework projects" id="Create Qt Interface Framework projects" ref="creator-how-to-create-qtif.html"/>
+            <keyword name="Create Qt Quick Applications" id="Create Qt Quick Applications" ref="quick-projects.html"/>
+            <keyword name="Create Qt Quick UI Prototypes" id="Create Qt Quick UI Prototypes" ref="creator-how-to-create-qtquick-ui-prototype.html"/>
+            <keyword name="Create Qt Quick tests" id="Create Qt Quick tests" ref="creator-how-to-create-qtquick-tests.html"/>
+            <keyword name="Create Qt tests" id="Create Qt tests" ref="creator-how-to-create-qt-tests.html"/>
+            <keyword name="Create SSH connections to VxWorks devices" id="Create SSH connections to VxWorks devices" ref="creator-how-to-connect-vxworks-ssh.html"/>
+            <keyword name="Create Squish test suites" id="Create Squish test suites" ref="creator-how-to-create-squish-test-suites.html"/>
+            <keyword name="Create UML-style models" id="Create UML-style models" ref="creator-how-to-create-models.html"/>
+            <keyword name="Create VCS repositories for new projects" id="Create VCS repositories for new projects" ref="creator-how-to-create-vcs-repositories.html"/>
+            <keyword name="Create an Android Virtual Device (AVD)" id="Create an Android Virtual Device (AVD)" ref="creator-how-to-create-avd.html"/>
+            <keyword name="Create and apply patches" id="Create and apply patches" ref="creator-how-to-git-apply-patch.html"/>
+            <keyword name="Create class diagrams" id="Create class diagrams" ref="creator-how-to-create-class-diagrams.html"/>
+            <keyword name="Create compiler explorer sessions" id="Create compiler explorer sessions" ref="creator-how-to-create-compiler-explorer-sessions.html"/>
+            <keyword name="Create component diagrams" id="Create component diagrams" ref="creator-how-to-create-component-diagrams.html"/>
+            <keyword name="Create files" id="Create files" ref="creator-file-creating.html"/>
+            <keyword name="Create kits for QNX Neutrino devices" id="Create kits for QNX Neutrino devices" ref="creator-how-to-create-qnx-kits.html"/>
+            <keyword name="Create kits for VxWorks devices" id="Create kits for VxWorks devices" ref="creator-how-to-create-vxworks-kits.html"/>
+            <keyword name="Create package diagrams" id="Create package diagrams" ref="creator-how-to-create-package-diagrams.html"/>
+            <keyword name="Create pixmaps from SVG images" id="Create pixmaps from SVG images" ref="creator-how-to-export-svg-images.html"/>
+            <keyword name="Create resource files" id="Create resource files" ref="creator-how-to-create-resource-files.html"/>
+            <keyword name="Create state charts" id="Create state charts" ref="creator-how-to-create-state-charts.html"/>
+            <keyword name="Create vcpkg manifest files" id="Create vcpkg manifest files" ref="creator-how-to-create-vcpkg-manifest-files.html"/>
+            <keyword name="Creating Projects" id="Creating Projects" ref="creator-project-creating.html"/>
+            <keyword name="Custom Wizards" id="Custom Wizards" ref="creator-project-wizards.html"/>
+            <keyword name="Customize the build process" id="Customize the build process" ref="creator-build-process-customizing.html"/>
+            <keyword name="Debug C++ applications on VxWorks devices" id="Debug C++ applications on VxWorks devices" ref="creator-how-to-debug-vxworks.html"/>
+            <keyword name="Debug CMake project files" id="Debug CMake project files" ref="creator-how-to-debug-cmake-files.html"/>
+            <keyword name="Debug Mode Views" id="Debug Mode Views" ref="creator-debug-mode.html"/>
+            <keyword name="Debug crashed processes on Windows" id="Debug crashed processes on Windows" ref="creator-how-to-debug-post-mortem.html"/>
+            <keyword name="Debug on Android devices" id="Debug on Android devices" ref="creator-how-to-debug-android.html"/>
+            <keyword name="Debug remotely with CDB" id="Debug remotely with CDB" ref="creator-how-to-debug-remotely-cdb.html"/>
+            <keyword name="Debug remotely with GDB" id="Debug remotely with GDB" ref="creator-how-to-debug-remotely-gdb.html"/>
+            <keyword name="Debugger Log" id="Debugger Log" ref="creator-debugger-log-view.html"/>
+            <keyword name="Debugging" id="Debugging" ref="creator-debugging.html"/>
+            <keyword name="Debugging Helpers" id="Debugging Helpers" ref="creator-debugging-helpers.html"/>
+            <keyword name="Debugging Qt Quick projects" id="Debugging Qt Quick projects" ref="creator-debugging-qml.html"/>
+            <keyword name="Desktop Device Run Settings" id="Desktop Device Run Settings" ref="creator-run-settings-desktop-devices.html"/>
+            <keyword name="Desktop Platforms" id="Desktop Platforms" ref="creator-desktop-platforms.html"/>
+            <keyword name="Detach the help window" id="Detach the help window" ref="creator-how-to-detach-help-window.html"/>
+            <keyword name="Detach views" id="Detach views" ref="creator-how-to-detach-views.html"/>
+            <keyword name="Detect errors in C++ code with Cppcheck" id="Detect errors in C++ code with Cppcheck" ref="creator-cppcheck.html"/>
+            <keyword name="Detect memory leaks with Heob" id="Detect memory leaks with Heob" ref="creator-how-to-use-heob.html"/>
+            <keyword name="Detect memory leaks with Memcheck" id="Detect memory leaks with Memcheck" ref="creator-how-to-memcheck.html"/>
+            <keyword name="Develop Qt for Python applications" id="Develop Qt for Python applications" ref="creator-python-development.html"/>
+            <keyword name="Developing for Android" id="Developing for Android" ref="creator-developing-android.html"/>
+            <keyword name="Developing for Bare Metal Devices" id="Developing for Bare Metal Devices" ref="creator-developing-baremetal.html"/>
+            <keyword name="Developing for Boot to Qt Devices" id="Developing for Boot to Qt Devices" ref="creator-developing-b2qt.html"/>
+            <keyword name="Developing for MCUs" id="Developing for MCUs" ref="creator-developing-mcu.html"/>
+            <keyword name="Developing for Remote Linux Devices" id="Developing for Remote Linux Devices" ref="creator-developing-generic-linux.html"/>
+            <keyword name="Developing for iOS" id="Developing for iOS" ref="creator-developing-ios.html"/>
+            <keyword name="Document code" id="Document code" ref="creator-how-to-document-code.html"/>
+            <keyword name="Download highlight definitions" id="Download highlight definitions" ref="creator-highlighting.html"/>
+            <keyword name="Edit CMake configuration files" id="Edit CMake configuration files" ref="creator-how-to-edit-cmake-config-files.html"/>
+            <keyword name="Edit MIME types" id="Edit MIME types" ref="creator-mime-types.html"/>
+            <keyword name="Edit Markdown files" id="Edit Markdown files" ref="creator-markdown-editor.html"/>
+            <keyword name="Edit Mode" id="Edit Mode" ref="creator-coding-navigating.html"/>
+            <keyword name="Edit Qbs profiles" id="Edit Qbs profiles" ref="creator-how-to-edit-qbs-profiles.html"/>
+            <keyword name="Edit environment settings" id="Edit environment settings" ref="creator-how-to-edit-environment-settings.html"/>
+            <keyword name="Edit like in Vim" id="Edit like in Vim" ref="creator-how-to-edit-vim-style.html"/>
+            <keyword name="Edit properties of QML types" id="Edit properties of QML types" ref="qt-quick-toolbars.html"/>
+            <keyword name="Edit vcpkg manifest files" id="Edit vcpkg manifest files" ref="creator-how-to-edit-vcpkg-manifest-files.html"/>
+            <keyword name="Enable and disable plugins" id="Enable and disable plugins" ref="creator-how-to-enable-plugins.html"/>
+            <keyword name="Enable debugging" id="Enable debugging" ref="creator-how-to-enble-debugging.html"/>
+            <keyword name="Enclose code in brackets or quotes" id="Enclose code in brackets or quotes" ref="creator-enclose-code-in-characters.html"/>
+            <keyword name="Evaluating expressions" id="Evaluating expressions" ref="creator-expressions-view.html"/>
+            <keyword name="Examine complex values in Debug views" id="Examine complex values in Debug views" ref="creator-how-to-examine-complex-values.html"/>
+            <keyword name="Exclude files from to-do lists" id="Exclude files from to-do lists" ref="creator-how-to-excludes-files-from-to-do-lists.html"/>
+            <keyword name="Explore compiler code" id="Explore compiler code" ref="creator-how-to-explore-compiler-code.html"/>
+            <keyword name="FAQ" id="FAQ" ref="creator-faq.html"/>
+            <keyword name="FakeVim" id="FakeVim" ref="creator-reference-preferences-fakevim.html"/>
+            <keyword name="FakeVim Modes and Commands" id="FakeVim Modes and Commands" ref="creator-editor-fakevim.html"/>
+            <keyword name="File System" id="File System" ref="creator-file-system-view.html"/>
+            <keyword name="Filter documentation" id="Filter documentation" ref="creator-how-to-filter-documentation.html"/>
+            <keyword name="Find information in Qt documentation" id="Find information in Qt documentation" ref="creator-how-to-find-info-in-documentation.html"/>
+            <keyword name="Find keyboard shortcuts" id="Find keyboard shortcuts" ref="creator-how-to-find-keyboard-shortcuts.html"/>
+            <keyword name="Find preferences" id="Find preferences" ref="creator-how-to-find-preferences.html"/>
+            <keyword name="Find symbols" id="Find symbols" ref="creator-editor-how-to-find-symbols.html"/>
+            <keyword name="Font &amp; Colors" id="Font &amp; Colors" ref="creator-preferences-text-editor-font-colors.html"/>
+            <keyword name="Format CMake files" id="Format CMake files" ref="creator-how-to-format-cmake-files.html"/>
+            <keyword name="Fossil" id="Fossil" ref="creator-vcs-fossil.html"/>
+            <keyword name="GDB" id="GDB" ref="creator-preferences-debugger-gdb.html"/>
+            <keyword name="General" id="General" ref="creator-debugger-preferences.html"/>
+            <keyword name="Generate SSH keys" id="Generate SSH keys" ref="creator-how-to-generate-ssh-keys.html"/>
+            <keyword name="Get help" id="Get help" ref="creator-how-to-get-help.html"/>
+            <keyword name="Getting Started" id="Getting Started" ref="creator-getting-started.html"/>
+            <keyword name="Git" id="Git" ref="creator-vcs-git.html"/>
+            <keyword name="Git Tools" id="Git Tools" ref="creator-how-to-git-tools.html"/>
+            <keyword name="GitLab" id="GitLab" ref="creator-vcs-gitlab.html"/>
+            <keyword name="Glossary" id="Glossary" ref="creator-glossary.html"/>
+            <keyword name="Gumbo, version 0.10.1" id="Gumbo, version 0.10.1" ref="qtassistant-attribution-litehtml-gumbo.html"/>
+            <keyword name="Heob" id="Heob" ref="creator-heob.html"/>
+            <keyword name="Highlight code blocks" id="Highlight code blocks" ref="creator-how-to-use-code-blocks.html"/>
+            <keyword name="How To" id="How To" ref="creator-how-tos.html"/>
+            <keyword name="Import an existing project" id="Import an existing project" ref="creator-project-generic.html"/>
+            <keyword name="Import and export keyboard shortcuts" id="Import and export keyboard shortcuts" ref="creator-how-to-change-keyboard-shortcuts.html"/>
+            <keyword name="Include Hierarchy" id="Include Hierarchy" ref="creator-include-hierarchy-view.html"/>
+            <keyword name="IncrediBuild" id="IncrediBuild" ref="creator-project-incredibuild.html"/>
+            <keyword name="IncrediBuild Build Configuration" id="IncrediBuild Build Configuration" ref="creator-build-settings-incredibuild.html"/>
+            <keyword name="Indent text or code" id="Indent text or code" ref="creator-indenting-code.html"/>
+            <keyword name="Initialize Git repositories" id="Initialize Git repositories" ref="creator-how-to-initialize-git-repo.html"/>
+            <keyword name="Insert multiple cursors" id="Insert multiple cursors" ref="creator-how-to-insert-multiple-cursors.html"/>
+            <keyword name="Inspect basic Qt objects" id="Inspect basic Qt objects" ref="creator-how-to-inspect-basic-qt-objects.html"/>
+            <keyword name="Inspect internal logs" id="Inspect internal logs" ref="creator-logging-viewer.html"/>
+            <keyword name="Inspect language clients" id="Inspect language clients" ref="creator-how-to-inspect-language-clients.html"/>
+            <keyword name="Inspect the code model" id="Inspect the code model" ref="creator-how-to-inspect-code-model.html"/>
+            <keyword name="Install extensions" id="Install extensions" ref="creator-how-to-install-extensions.html"/>
+            <keyword name="Install plugins" id="Install plugins" ref="creator-how-to-install-plugins.html"/>
+            <keyword name="Installation" id="Installation" ref="creator-how-to-install.html"/>
+            <keyword name="Interactive rebase" id="Interactive rebase" ref="creator-how-to-git-interactive-rebase.html"/>
+            <keyword name="Issues" id="Issues" ref="creator-reference-issues-view.html"/>
+            <keyword name="JSON for Modern C++, version 3.11.2" id="JSON for Modern C++, version 3.11.2" ref="qtcreator-attribution-json-nlohmann.html"/>
+            <keyword name="JavaScript and QML Checks" id="JavaScript and QML Checks" ref="creator-reference-js-and-qml-error-codes.html"/>
+            <keyword name="KSyntaxHighlighting, version v5.103.0" id="KSyntaxHighlighting, version v5.103.0" ref="qtcreator-attribution-ksyntaxhighlighting.html"/>
+            <keyword name="KSyntaxHighlighting: alert.xml" id="KSyntaxHighlighting: alert.xml" ref="qtcreator-attribution-ksyntaxhighlighting-alert.html"/>
+            <keyword name="KSyntaxHighlighting: bash.xml" id="KSyntaxHighlighting: bash.xml" ref="qtcreator-attribution-ksyntaxhighlighting-bash.html"/>
+            <keyword name="KSyntaxHighlighting: cmake.xml" id="KSyntaxHighlighting: cmake.xml" ref="qtcreator-attribution-ksyntaxhighlighting-cmake.html"/>
+            <keyword name="KSyntaxHighlighting: css.xml" id="KSyntaxHighlighting: css.xml" ref="qtcreator-attribution-ksyntaxhighlighting-css.html"/>
+            <keyword name="KSyntaxHighlighting: doxygen.xml" id="KSyntaxHighlighting: doxygen.xml" ref="qtcreator-attribution-ksyntaxhighlighting-doxygen.html"/>
+            <keyword name="KSyntaxHighlighting: dtd.xml" id="KSyntaxHighlighting: dtd.xml" ref="qtcreator-attribution-ksyntaxhighlighting-dtd.html"/>
+            <keyword name="KSyntaxHighlighting: html.xml" id="KSyntaxHighlighting: html.xml" ref="qtcreator-attribution-ksyntaxhighlighting-html.html"/>
+            <keyword name="KSyntaxHighlighting: ini.xml" id="KSyntaxHighlighting: ini.xml" ref="qtcreator-attribution-ksyntaxhighlighting-ini.html"/>
+            <keyword name="KSyntaxHighlighting: java.xml" id="KSyntaxHighlighting: java.xml" ref="qtcreator-attribution-ksyntaxhighlighting-java.html"/>
+            <keyword name="KSyntaxHighlighting: javadoc.xml" id="KSyntaxHighlighting: javadoc.xml" ref="qtcreator-attribution-ksyntaxhighlighting-javadoc.html"/>
+            <keyword name="KSyntaxHighlighting: json.xml" id="KSyntaxHighlighting: json.xml" ref="qtcreator-attribution-ksyntaxhighlighting-json.html"/>
+            <keyword name="KSyntaxHighlighting: markdown.xml" id="KSyntaxHighlighting: markdown.xml" ref="qtcreator-attribution-ksyntaxhighlighting-markdown.html"/>
+            <keyword name="KSyntaxHighlighting: modelines.xml" id="KSyntaxHighlighting: modelines.xml" ref="qtcreator-attribution-ksyntaxhighlighting-modelines.html"/>
+            <keyword name="KSyntaxHighlighting: perl.xml" id="KSyntaxHighlighting: perl.xml" ref="qtcreator-attribution-ksyntaxhighlighting-perl.html"/>
+            <keyword name="KSyntaxHighlighting: perl6.xml" id="KSyntaxHighlighting: perl6.xml" ref="qtcreator-attribution-ksyntaxhighlighting-perl6.html"/>
+            <keyword name="KSyntaxHighlighting: powershell.xml" id="KSyntaxHighlighting: powershell.xml" ref="qtcreator-attribution-ksyntaxhighlighting-powershell.html"/>
+            <keyword name="KSyntaxHighlighting: qdocconf.xml" id="KSyntaxHighlighting: qdocconf.xml" ref="qtcreator-attribution-ksyntaxhighlighting-qdocconf.html"/>
+            <keyword name="KSyntaxHighlighting: ruby.xml" id="KSyntaxHighlighting: ruby.xml" ref="qtcreator-attribution-ksyntaxhighlighting-ruby.html"/>
+            <keyword name="KSyntaxHighlighting: toml.xml" id="KSyntaxHighlighting: toml.xml" ref="qtcreator-attribution-ksyntaxhighlighting-toml.html"/>
+            <keyword name="KSyntaxHighlighting: valgrind-suppression.xml" id="KSyntaxHighlighting: valgrind-suppression.xml" ref="qtcreator-attribution-ksyntaxhighlighting-valgrind-suppression.html"/>
+            <keyword name="KSyntaxHighlighting: xml.xml" id="KSyntaxHighlighting: xml.xml" ref="qtcreator-attribution-ksyntaxhighlighting-xml.html"/>
+            <keyword name="KSyntaxHighlighting: yacc.xml" id="KSyntaxHighlighting: yacc.xml" ref="qtcreator-attribution-ksyntaxhighlighting-yacc.html"/>
+            <keyword name="KSyntaxHighlighting: yaml.xml" id="KSyntaxHighlighting: yaml.xml" ref="qtcreator-attribution-ksyntaxhighlighting-yaml.html"/>
+            <keyword name="Keyboard Shortcuts" id="Keyboard Shortcuts" ref="creator-keyboard-shortcuts.html"/>
+            <keyword name="Kits" id="Kits" ref="creator-preferences-kits.html"/>
+            <keyword name="Known Issues" id="Known Issues" ref="creator-known-issues.html"/>
+            <keyword name="LLVM / Clang" id="LLVM / Clang" ref="qtcreator-binary-attribution-llvm.html"/>
+            <keyword name="LLVMPipe" id="LLVMPipe" ref="qtcreator-binary-attribution-llvmpipe.html"/>
+            <keyword name="Language Servers" id="Language Servers" ref="creator-language-servers.html"/>
+            <keyword name="Licenses and acknowledgments" id="Licenses and acknowledgments" ref="creator-acknowledgements.html"/>
+            <keyword name="Link projects with GitLab" id="Link projects with GitLab" ref="creator-how-to-link-with-gitlab.html"/>
+            <keyword name="Load core files to the debugger" id="Load core files to the debugger" ref="creator-how-to-load-core-files-to-debugger.html"/>
+            <keyword name="Local analysis with Axivion" id="Local analysis with Axivion" ref="creator-axivion-localanalysis.html"/>
+            <keyword name="Local variables and function parameters" id="Local variables and function parameters" ref="creator-locals-view.html"/>
+            <keyword name="Locate files using the keyboard" id="Locate files using the keyboard" ref="creator-how-to-locate-files-using-keyboard.html"/>
+            <keyword name="Locator" id="Locator" ref="creator-preferences-locator.html"/>
+            <keyword name="Lua, version 5.4.6" id="Lua, version 5.4.6" ref="qtcreator-attribution-lua.html"/>
+            <keyword name="Manage AVDs" id="Manage AVDs" ref="creator-how-to-manage-avd.html"/>
+            <keyword name="Manage Android NDK packages" id="Manage Android NDK packages" ref="creator-how-to-manage-android-ndk.html"/>
+            <keyword name="Manage Android SDK packages" id="Manage Android SDK packages" ref="creator-how-to-manage-android-sdk.html"/>
+            <keyword name="Manage MCU kits" id="Manage MCU kits" ref="creator-how-to-manage-mcu-kits.html"/>
+            <keyword name="Manage Squish test suites and cases" id="Manage Squish test suites and cases" ref="creator-how-to-manage-squish-test-suites.html"/>
+            <keyword name="Manage Windows App SDK packages" id="Manage Windows App SDK packages" ref="creator-how-to-manage-winappsdk.html"/>
+            <keyword name="Manage breakpoints" id="Manage breakpoints" ref="creator-how-to-manage-breakpoints.html"/>
+            <keyword name="Manage device processes" id="Manage device processes" ref="creator-how-to-manage-device-processes.html"/>
+            <keyword name="Manage extensions" id="Manage extensions" ref="creator-how-to-manage-extensions.html"/>
+            <keyword name="Manage files in CMake projects" id="Manage files in CMake projects" ref="creator-how-to-manage-files-in-cmake-projects.html"/>
+            <keyword name="Manage sessions" id="Manage sessions" ref="creator-project-managing-sessions.html"/>
+            <keyword name="Mercurial" id="Mercurial" ref="creator-vcs-mercurial.html"/>
+            <keyword name="Meson" id="Meson" ref="creator-project-meson.html"/>
+            <keyword name="Meson Build Configuration" id="Meson Build Configuration" ref="creator-build-settings-meson.html"/>
+            <keyword name="Model Editor" id="Model Editor" ref="creator-modeling.html"/>
+            <keyword name="Move between files" id="Move between files" ref="creator-how-to-move-between-open-files.html"/>
+            <keyword name="Move in QML code" id="Move in QML code" ref="creator-how-to-navigate-qml-code.html"/>
+            <keyword name="Move to symbols" id="Move to symbols" ref="creator-how-to-move-to-symbols.html"/>
+            <keyword name="Navigate with locator" id="Navigate with locator" ref="creator-editor-locator.html"/>
+            <keyword name="Nim" id="Nim" ref="creator-preferences-nim.html"/>
+            <keyword name="Nimble" id="Nimble" ref="creator-project-nimble.html"/>
+            <keyword name="Open Documents" id="Open Documents" ref="creator-open-documents-view.html"/>
+            <keyword name="Open Source Front-End for C++" id="Open Source Front-End for C++" ref="qtcreator-attribution-front-end-for-cpp.html"/>
+            <keyword name="Open Source Tool for Generating C++ Code That Classifies Keywords" id="Open Source Tool for Generating C++ Code That Classifies Keywords" ref="qtcreator-attribution-cpp-keywordgen.html"/>
+            <keyword name="Open projects" id="Open projects" ref="creator-project-opening.html"/>
+            <keyword name="Optimizing Applications for Mobile Devices" id="Optimizing Applications for Mobile Devices" ref="creator-usability.html"/>
+            <keyword name="Outline" id="Outline" ref="creator-outline-view.html"/>
+            <keyword name="Override CMake settings for a project" id="Override CMake settings for a project" ref="creator-how-to-configure-cmake-for-project.html"/>
+            <keyword name="Overview" id="Overview" ref="creator-overview.html"/>
+            <keyword name="Parse build output" id="Parse build output" ref="creator-how-to-parse-build-output.html"/>
+            <keyword name="Parse files" id="Parse files" ref="creator-how-to-reparse-files.html"/>
+            <keyword name="Paste and fetch code snippets" id="Paste and fetch code snippets" ref="creator-editor-codepasting.html"/>
+            <keyword name="Paste text from clipboard history" id="Paste text from clipboard history" ref="creator-how-to-paste-text-from-clipboard-history.html"/>
+            <keyword name="Perforce" id="Perforce" ref="creator-vcs-perforce.html"/>
+            <keyword name="Perform calculations" id="Perform calculations" ref="creator-how-to-perform-calculations.html"/>
+            <keyword name="Performance Analyzer" id="Performance Analyzer" ref="creator-cpu-usage-analyzer.html"/>
+            <keyword name="Peripheral Registers" id="Peripheral Registers" ref="creator-peripheral-registers-view.html"/>
+            <keyword name="Preview Qt Quick UIs on devices" id="Preview Qt Quick UIs on devices" ref="creator-live-preview-devices.html"/>
+            <keyword name="Preview a QML file on desktop" id="Preview a QML file on desktop" ref="creator-live-preview-desktop.html"/>
+            <keyword name="Profile CMake code" id="Profile CMake code" ref="creator-how-to-profile-cmake-code.html"/>
+            <keyword name="Profile QML applications" id="Profile QML applications" ref="creator-how-to-profile-qml.html"/>
+            <keyword name="Profile function execution" id="Profile function execution" ref="creator-cache-profiler.html"/>
+            <keyword name="Profiling QML applications" id="Profiling QML applications" ref="creator-qml-performance-monitor.html"/>
+            <keyword name="Projects" id="Projects" ref="creator-projects-view.html"/>
+            <keyword name="Pty-Qt, version 045ca5f09f" id="Pty-Qt, version 045ca5f09f" ref="qtcreator-attribution-ptyqt.html"/>
+            <keyword name="Pty-Qt/ConPty, version a38388615e" id="Pty-Qt/ConPty, version a38388615e" ref="qtcreator-attribution-ptyqt-conpty.html"/>
+            <keyword name="Python Run Settings" id="Python Run Settings" ref="creator-run-settings-python.html"/>
+            <keyword name="QML Quick Fixes" id="QML Quick Fixes" ref="creator-reference-qml-quick-fixes.html"/>
+            <keyword name="QNX Neutrino Deploy Configuration" id="QNX Neutrino Deploy Configuration" ref="creator-deployment-qnx.html"/>
+            <keyword name="QNX Run Settings" id="QNX Run Settings" ref="creator-run-settings-qnx.html"/>
+            <keyword name="Qbs" id="Qbs" ref="creator-preferences-qbs.html"/>
+            <keyword name="Qbs" id="Qbs" ref="creator-project-qbs.html"/>
+            <keyword name="Qbs" id="Qbs" ref="qtcreator-binary-attribution-qbs.html"/>
+            <keyword name="Qbs Build Configuration" id="Qbs Build Configuration" ref="creator-build-settings-qbs.html"/>
+            <keyword name="Qt Creator Documentation" id="Qt Creator Documentation" ref="index.html"/>
+            <keyword name="Qt QR Code Generator Library" id="Qt QR Code Generator Library" ref="qtcreator-attribution-qtqrcodegenerator.html"/>
+            <keyword name="Qt Quick Designer" id="Qt Quick Designer" ref="creator-qtquickdesigner-plugin.html"/>
+            <keyword name="Qt Quick UI Prototype Run Settings" id="Qt Quick UI Prototype Run Settings" ref="creator-run-settings-qtquick-ui-prototype.html"/>
+            <keyword name="Qt Widgets Designer" id="Qt Widgets Designer" ref="creator-using-qt-designer.html"/>
+            <keyword name="QtKeychain" id="QtKeychain" ref="qtcreator-attribution-qtkeychain.html"/>
+            <keyword name="Quick Fixes" id="Quick Fixes" ref="creator-reference-preferences-cpp-quick-fixes.html"/>
+            <keyword name="RSTParser" id="RSTParser" ref="qtcreator-attribution-vitaut-rstparser.html"/>
+            <keyword name="Read CMake documentation" id="Read CMake documentation" ref="creator-how-to-read-cmake-documentation.html"/>
+            <keyword name="Record screens" id="Record screens" ref="creator-how-to-record-screens.html"/>
+            <keyword name="Record text editing macros" id="Record text editing macros" ref="creator-macros.html"/>
+            <keyword name="Reference" id="Reference" ref="creator-reference.html"/>
+            <keyword name="Remote Linux Deploy Configuration" id="Remote Linux Deploy Configuration" ref="creator-deployment-embedded-linux.html"/>
+            <keyword name="Remote Linux Run Settings" id="Remote Linux Run Settings" ref="creator-run-settings-remote-linux.html"/>
+            <keyword name="Rename symbols" id="Rename symbols" ref="creator-how-to-rename-symbols.html"/>
+            <keyword name="Reset Qt Creator settings" id="Reset Qt Creator settings" ref="creator-how-to-find-settings-files.html"/>
+            <keyword name="Review code with Gerrit" id="Review code with Gerrit" ref="creator-how-to-gerrit.html"/>
+            <keyword name="Run Python applications" id="Run Python applications" ref="creator-how-to-run-python-apps.html"/>
+            <keyword name="Run QML files" id="Run QML files" ref="creator-how-to-run-qml-files.html"/>
+            <keyword name="Run Qt Creator from the command line" id="Run Qt Creator from the command line" ref="creator-how-to-run-from-cli.html"/>
+            <keyword name="Run Valgrind tools on external applications" id="Run Valgrind tools on external applications" ref="creator-running-valgrind-remotely.html"/>
+            <keyword name="Run applications in a web browser" id="Run applications in a web browser" ref="creator-how-to-run-webassembly.html"/>
+            <keyword name="Run in Qt Application Manager" id="Run in Qt Application Manager" ref="creator-how-to-run-in-app-manager.html"/>
+            <keyword name="Run on QNX devices" id="Run on QNX devices" ref="creator-how-to-run-on-qnx.html"/>
+            <keyword name="Run on many platforms" id="Run on many platforms" ref="creator-running-targets.html"/>
+            <keyword name="Run on remote Linux devices" id="Run on remote Linux devices" ref="creator-how-to-run-on-remote-linux.html"/>
+            <keyword name="Run qmake before building" id="Run qmake before building" ref="creator-how-to-run-qmake-before-building.html"/>
+            <keyword name="SCXML Editor" id="SCXML Editor" ref="creator-scxml.html"/>
+            <keyword name="SDK Tool" id="SDK Tool" ref="creator-sdk-tool.html"/>
+            <keyword name="SQLite, version 3.49.1" id="SQLite, version 3.49.1" ref="qtcreator-attribution-sqlite.html"/>
+            <keyword name="Screen Recording" id="Screen Recording" ref="creator-preferences-screen-recording.html"/>
+            <keyword name="Search Results View" id="Search Results View" ref="creator-reference-search-results-view.html"/>
+            <keyword name="Search and replace using a regular expression" id="Search and replace using a regular expression" ref="creator-how-to-search-and-replace-using-regexp.html"/>
+            <keyword name="Search from documentation" id="Search from documentation" ref="creator-how-to-search-from-docs.html"/>
+            <keyword name="Search in current file" id="Search in current file" ref="creator-editor-finding.html"/>
+            <keyword name="Search in projects or file systems" id="Search in projects or file systems" ref="creator-how-to-advanced-search.html"/>
+            <keyword name="Select Squish AUTs" id="Select Squish AUTs" ref="creator-how-to-select-squish-auts.html"/>
+            <keyword name="Select line ending style" id="Select line ending style" ref="creator-how-to-select-line-endings.html"/>
+            <keyword name="Select the build system" id="Select the build system" ref="creator-how-to-select-build-system.html"/>
+            <keyword name="Select the current code block" id="Select the current code block" ref="creator-how-to-select-enclosing-block.html"/>
+            <keyword name="Select the help start page" id="Select the help start page" ref="creator-how-to-set-help-start-page.html"/>
+            <keyword name="Set C++ file naming preferences" id="Set C++ file naming preferences" ref="creator-how-to-set-cpp-file-naming.html"/>
+            <keyword name="Set data breakpoints" id="Set data breakpoints" ref="creator-how-to-set-data-breakpoints.html"/>
+            <keyword name="Set high DPI scaling" id="Set high DPI scaling" ref="creator-how-to-set-high-dpi-scaling.html"/>
+            <keyword name="Set preferences for Docker devices" id="Set preferences for Docker devices" ref="creator-preferences-docker.html"/>
+            <keyword name="Set the default build and run directories" id="Set the default build and run directories" ref="creator-how-to-set-build-run-directory.html"/>
+            <keyword name="Set the number of recent files shown" id="Set the number of recent files shown" ref="creator-how-to-set-recent-files.html"/>
+            <keyword name="Set up Android development environment" id="Set up Android development environment" ref="creator-how-to-set-android-preferences.html"/>
+            <keyword name="Set up EBlink" id="Set up EBlink" ref="creator-how-to-eblink.html"/>
+            <keyword name="Set up J-Link" id="Set up J-Link" ref="creator-how-to-jlink.html"/>
+            <keyword name="Set up OpenOCD" id="Set up OpenOCD" ref="creator-how-to-openocd.html"/>
+            <keyword name="Set up St-Link" id="Set up St-Link" ref="creator-how-to-stlink.html"/>
+            <keyword name="Set up code coverage from Coco" id="Set up code coverage from Coco" ref="creator-coco.html"/>
+            <keyword name="Set up the uVision IDE" id="Set up the uVision IDE" ref="creator-how-to-uvision.html"/>
+            <keyword name="Set up version control systems" id="Set up version control systems" ref="creator-how-to-set-up-vcs.html"/>
+            <keyword name="Setting breakpoints" id="Setting breakpoints" ref="creator-breakpoints-view.html"/>
+            <keyword name="Share project settings" id="Share project settings" ref="creator-sharing-project-settings.html"/>
+            <keyword name="Shellintegrations, version 463d9933a4" id="Shellintegrations, version 463d9933a4" ref="qtcreator-attribution-terminal-shellintegrations.html"/>
+            <keyword name="Shellintegrations/Clink, version 680716f3d9" id="Shellintegrations/Clink, version 680716f3d9" ref="qtcreator-attribution-terminal-shellintegrations-clink.html"/>
+            <keyword name="Show and hide sidebars" id="Show and hide sidebars" ref="creator-how-to-show-and-hide-sidebars.html"/>
+            <keyword name="Show and hide the main menu" id="Show and hide the main menu" ref="creator-how-to-show-and-hide-main-menu.html"/>
+            <keyword name="Show instant blame" id="Show instant blame" ref="creator-how-to-git-instant-blame.html"/>
+            <keyword name="Show task list files in issues" id="Show task list files in issues" ref="creator-task-lists.html"/>
+            <keyword name="Show tooltips for simple values" id="Show tooltips for simple values" ref="creator-debugger-examining-data.html"/>
+            <keyword name="Snippets" id="Snippets" ref="creator-preferences-text-editor-shippets.html"/>
+            <keyword name="Source Code Pro Font" id="Source Code Pro Font" ref="qtcreator-attribution-source-code-pro-font.html"/>
+            <keyword name="Specify Clang tools settings" id="Specify Clang tools settings" ref="creator-how-to-override-clang-tools-preferences.html"/>
+            <keyword name="Specify Qt Quick code style" id="Specify Qt Quick code style" ref="creator-preferences-qtquick-code-style.html"/>
+            <keyword name="Specify Valgrind settings for a project" id="Specify Valgrind settings for a project" ref="creator-run-settings-valgrind.html"/>
+            <keyword name="Specify a custom executable to run" id="Specify a custom executable to run" ref="creator-how-to-run-custom-executables.html"/>
+            <keyword name="Specify build and run settings" id="Specify build and run settings" ref="creator-building-running-settings.html"/>
+            <keyword name="Specify clangd settings" id="Specify clangd settings" ref="creator-how-to-override-clangd-preferences.html"/>
+            <keyword name="Specify code style" id="Specify code style" ref="creator-code-style-settings.html"/>
+            <keyword name="Specify dependencies" id="Specify dependencies" ref="creator-build-dependencies.html"/>
+            <keyword name="Specify editor settings" id="Specify editor settings" ref="creator-editor-settings.html"/>
+            <keyword name="Specify project contents" id="Specify project contents" ref="creator-how-to-specify-project-contents.html"/>
+            <keyword name="Specify settings for quick fixes" id="Specify settings for quick fixes" ref="creator-how-to-specify-settings-for-quick-fixes.html"/>
+            <keyword name="Specify the environment for projects" id="Specify the environment for projects" ref="creator-how-set-project-environment.html"/>
+            <keyword name="Split the editor view" id="Split the editor view" ref="creator-how-to-split-editor-views.html"/>
+            <keyword name="Squish" id="Squish" ref="creator-reference-squish-output.html"/>
+            <keyword name="Stage changes" id="Stage changes" ref="creator-how-to-git-stage-changes.html"/>
+            <keyword name="Start and debug an external application" id="Start and debug an external application" ref="creator-how-to-debug-external-apps.html"/>
+            <keyword name="Start debugging" id="Start debugging" ref="creator-how-to-start-debugging.html"/>
+            <keyword name="Start debugging from the command line" id="Start debugging from the command line" ref="creator-how-to-start-debugger-from-cli.html"/>
+            <keyword name="Step through code" id="Step through code" ref="creator-how-to-step-through-code.html"/>
+            <keyword name="Subversion" id="Subversion" ref="creator-vcs-subversion.html"/>
+            <keyword name="Supported Debuggers" id="Supported Debuggers" ref="creator-debugger-engines.html"/>
+            <keyword name="Supported Platforms" id="Supported Platforms" ref="creator-os-supported-platforms.html"/>
+            <keyword name="Switch UI themes" id="Switch UI themes" ref="creator-how-to-switch-ui-themes.html"/>
+            <keyword name="Switch between modes" id="Switch between modes" ref="creator-how-to-switch-between-modes.html"/>
+            <keyword name="Switch to Edit mode" id="Switch to Edit mode" ref="creator-how-to-switch-to-edit-mode.html"/>
+            <keyword name="TOML C++ Parser, version 4.3.0" id="TOML C++ Parser, version 4.3.0" ref="qtcreator-attribution-toml11.html"/>
+            <keyword name="TartanLlama/expected" id="TartanLlama/expected" ref="qtcreator-attribution-tartanllama-expected.html"/>
+            <keyword name="Technical support" id="Technical support" ref="technical-support.html"/>
+            <keyword name="Terminal" id="Terminal" ref="creator-reference-terminal-view.html"/>
+            <keyword name="Test Results" id="Test Results" ref="creator-test-results.html"/>
+            <keyword name="Test on iOS Simulator" id="Test on iOS Simulator" ref="creator-how-to-test-on-ios-simulator.html"/>
+            <keyword name="Testing" id="Testing" ref="creator-preferences-testing.html"/>
+            <keyword name="To-Do" id="To-Do" ref="creator-reference-preferences-to-do.html"/>
+            <keyword name="To-Do Entries" id="To-Do Entries" ref="creator-reference-to-do-entries-view.html"/>
+            <keyword name="Troubleshooting Debugger" id="Troubleshooting Debugger" ref="creator-troubleshooting-debugging.html"/>
+            <keyword name="Turn on Silver Searcher" id="Turn on Silver Searcher" ref="creator-how-to-silver-searcher.html"/>
+            <keyword name="Turn on crash reports" id="Turn on crash reports" ref="creator-how-to-turn-on-crash-reports.html"/>
+            <keyword name="Tutorial: Build and run" id="Tutorial: Build and run" ref="creator-build-example-application.html"/>
+            <keyword name="Tutorial: C++ debugging" id="Tutorial: C++ debugging" ref="creator-debugging-example.html"/>
+            <keyword name="Tutorial: Qt Quick and Python" id="Tutorial: Qt Quick and Python" ref="creator-tutorial-python-application-qt-quick.html"/>
+            <keyword name="Tutorial: Qt Quick debugging" id="Tutorial: Qt Quick debugging" ref="creator-qml-debugging-example.html"/>
+            <keyword name="Tutorial: Qt Widgets UI and Python" id="Tutorial: Qt Widgets UI and Python" ref="creator-tutorial-python-application-qt-widgets-ui.html"/>
+            <keyword name="Tutorial: Qt Widgets and Python" id="Tutorial: Qt Widgets and Python" ref="creator-tutorial-python-application-qt-widgets.html"/>
+            <keyword name="Tutorial: Qt Widgets application" id="Tutorial: Qt Widgets application" ref="creator-writing-program.html"/>
+            <keyword name="Tutorial: Use internal libraries with qmake" id="Tutorial: Use internal libraries with qmake" ref="creator-tutorial-adding-internal-libraries-to-projects.html"/>
+            <keyword name="Tutorials" id="Tutorials" ref="creator-tutorials.html"/>
+            <keyword name="Type Hierarchy" id="Type Hierarchy" ref="creator-type-hierarchy.html"/>
+            <keyword name="UI Watchdog, version master" id="UI Watchdog, version master" ref="qtcreator-attribution-ui-watchdog.html"/>
+            <keyword name="UI files" id="UI files" ref="creator-quick-ui-forms.html"/>
+            <keyword name="Use Git for Windows" id="Use Git for Windows" ref="creator-how-to-use-git-on-windows.html"/>
+            <keyword name="Use Git with Subversion" id="Use Git with Subversion" ref="creator-how-to-git-with-subversion.html"/>
+            <keyword name="Use GitHub Copilot" id="Use GitHub Copilot" ref="creator-copilot.html"/>
+            <keyword name="Use Qt AI Assistant" id="Use Qt AI Assistant" ref="creator-qtaiassistant.html"/>
+            <keyword name="Use Qt Creator variables" id="Use Qt Creator variables" ref="creator-how-to-use-qtc-variables.html"/>
+            <keyword name="Use Qt Linguist" id="Use Qt Linguist" ref="creator-how-to-use-qtlinguist.html"/>
+            <keyword name="Use common VCS functions" id="Use common VCS functions" ref="creator-how-to-use-common-vcs-functions.html"/>
+            <keyword name="Use compilation databases" id="Use compilation databases" ref="creator-how-to-use-compilation-databases.html"/>
+            <keyword name="Use external text editors" id="Use external text editors" ref="creator-how-to-use-external-text-editors.html"/>
+            <keyword name="Use external tools" id="Use external tools" ref="creator-editor-external.html"/>
+            <keyword name="Use info bars instead of pop-ups" id="Use info bars instead of pop-ups" ref="creator-how-to-use-info-bars.html"/>
+            <keyword name="Use project wizards" id="Use project wizards" ref="creator-how-to-use-project-wizards.html"/>
+            <keyword name="User interface" id="User interface" ref="creator-quick-tour.html"/>
+            <keyword name="Using QML modules with plugins" id="Using QML modules with plugins" ref="creator-qml-modules-with-plugins.html"/>
+            <keyword name="Valgrind Callgrind" id="Valgrind Callgrind" ref="creator-preferences-callgrind.html"/>
+            <keyword name="Valgrind Memcheck" id="Valgrind Memcheck" ref="creator-preferences-memcheck.html"/>
+            <keyword name="Version Control Systems" id="Version Control Systems" ref="creator-version-control.html"/>
+            <keyword name="View Axivion static code analysis results" id="View Axivion static code analysis results" ref="creator-axivion.html"/>
+            <keyword name="View CMake project contents" id="View CMake project contents" ref="creator-how-to-view-cmake-project-contents.html"/>
+            <keyword name="View code coverage reports from Coco" id="View code coverage reports from Coco" ref="creator-how-to-view-code-coverage-with-coco.html"/>
+            <keyword name="View images" id="View images" ref="creator-how-to-view-images.html"/>
+            <keyword name="View output" id="View output" ref="creator-how-to-view-output.html"/>
+            <keyword name="Viewing Disassembled Code" id="Viewing Disassembled Code" ref="creator-disassembler-view.html"/>
+            <keyword name="Viewing Modules" id="Viewing Modules" ref="creator-modules-view.html"/>
+            <keyword name="Viewing Source Files" id="Viewing Source Files" ref="creator-source-files-view.html"/>
+            <keyword name="Viewing Threads" id="Viewing Threads" ref="creator-threads-view.html"/>
+            <keyword name="Viewing and Editing Register State" id="Viewing and Editing Register State" ref="creator-registers-view.html"/>
+            <keyword name="Viewing call stack trace" id="Viewing call stack trace" ref="creator-stack-view.html"/>
+            <keyword name="WinPty, version 7e59fe2d09" id="WinPty, version 7e59fe2d09" ref="qtcreator-attribution-winpty.html"/>
+            <keyword name="Write down notes" id="Write down notes" ref="creator-how-to-write-notes.html"/>
+            <keyword name="YAML C++ Parser, version 0.8.0" id="YAML C++ Parser, version 0.8.0" ref="qtcreator-attribution-yaml-cpp.html"/>
+            <keyword name="ZLib, version 1.3.1" id="ZLib, version 1.3.1" ref="qtcreator-attribution-zlib.html"/>
+            <keyword name="bzip2, version 1.0.8" id="bzip2, version 1.0.8" ref="qtcreator-attribution-bzip2.html"/>
+            <keyword name="conan.cmake" id="conan.cmake" ref="qtcreator-attribution-conan-cmake.html"/>
+            <keyword name="git am" id="git am" ref="creator-how-to-git-am.html"/>
+            <keyword name="git blame" id="git blame" ref="creator-how-to-git-blame.html"/>
+            <keyword name="git branch" id="git branch" ref="creator-how-to-git-branch.html"/>
+            <keyword name="git clean" id="git clean" ref="creator-how-to-git-clean.html"/>
+            <keyword name="git commit" id="git commit" ref="creator-how-to-git-commit.html"/>
+            <keyword name="git diff" id="git diff" ref="creator-how-to-git-diff.html"/>
+            <keyword name="git fetch" id="git fetch" ref="creator-how-to-git-fetch.html"/>
+            <keyword name="git log" id="git log" ref="creator-how-to-git-log.html"/>
+            <keyword name="git merge" id="git merge" ref="creator-how-to-git-merge.html"/>
+            <keyword name="git pull" id="git pull" ref="creator-how-to-git-pull.html"/>
+            <keyword name="git push" id="git push" ref="creator-how-to-git-push.html"/>
+            <keyword name="git reflog" id="git reflog" ref="creator-how-to-git-reflog.html"/>
+            <keyword name="git reset" id="git reset" ref="creator-how-to-git-reset.html"/>
+            <keyword name="git stash" id="git stash" ref="creator-how-to-git-stash.html"/>
+            <keyword name="git status" id="git status" ref="creator-how-to-git-status.html"/>
+            <keyword name="kikito/inspect.lua" id="kikito/inspect.lua" ref="qtcreator-attribution-kikito-inspect-lua.html"/>
+            <keyword name="libarchive, version 3.7.8" id="libarchive, version 3.7.8" ref="qtcreator-attribution-libarchive.html"/>
+            <keyword name="libvterm, version 0.3.3" id="libvterm, version 0.3.3" ref="qtcreator-attribution-libvterm.html"/>
+            <keyword name="litehtml, version 0.9" id="litehtml, version 0.9" ref="qtassistant-attribution-litehtml.html"/>
+            <keyword name="ms-jpq/lua-async-await" id="ms-jpq/lua-async-await" ref="qtcreator-attribution-ms-jpq-lua-async-await.html"/>
+            <keyword name="pyprof2calltree" id="pyprof2calltree" ref="qtcreator-attribution-pyprof2calltree.html"/>
+            <keyword name="qmake Build Configuration" id="qmake Build Configuration" ref="creator-build-settings-qmake.html"/>
+            <keyword name="sol2, version 3.3.1 (revision 9c882a28)" id="sol2, version 3.3.1 (revision 9c882a28)" ref="qtcreator-attribution-sol2.html"/>
+            <keyword name="std::span Implementation for C++11 and Later, version 00afc28" id="std::span Implementation for C++11 and Later, version 00afc28" ref="qtcreator-attribution-std-span-martinmoene.html"/>
+            <keyword name="vcpkg Package Manager" id="vcpkg Package Manager" ref="creator-vcpkg.html"/>
+            <keyword name="xz, version 5.6.3" id="xz, version 5.6.3" ref="qtcreator-attribution-xz.html"/>
+            <keyword name="{Building and Running an Example}" id="{Building and Running an Example}" ref="creator-build-example-application.html"/>
+            <keyword name="{Creating a Qt Widget Based Application}" id="{Creating a Qt Widget Based Application}" ref="creator-writing-program.html"/>
+            <keyword name="{Creating a Qt for Python Application with Qt Quick}" id="{Creating a Qt for Python Application with Qt Quick}" ref="creator-tutorial-python-application-qt-quick.html"/>
+            <keyword name="{Creating a Qt for Python Application with Qt Widgets}" id="{Creating a Qt for Python Application with Qt Widgets}" ref="creator-tutorial-python-application-qt-widgets.html"/>
+            <keyword name="{Debugging a C++ Application}" id="{Debugging a C++ Application}" ref="creator-debugging-example.html"/>
+            <keyword name="{Debugging a Qt Quick Application}" id="{Debugging a Qt Quick Application}" ref="creator-qml-debugging-example.html"/>
+            <keyword name="{Qt Creator Manual}" id="{Qt Creator Manual}" ref="index.html"/>
+        </keywords>
+        <files>
+            <file>adding-plugins.html</file>
+            <file>creator-acknowledgements.html</file>
+            <file>creator-adding-docker-devices.html</file>
+            <file>creator-analyze-mode.html</file>
+            <file>creator-axivion-localanalysis.html</file>
+            <file>creator-axivion.html</file>
+            <file>creator-beautifier.html</file>
+            <file>creator-breakpoints-view.html</file>
+            <file>creator-build-dependencies.html</file>
+            <file>creator-build-example-application.html</file>
+            <file>creator-build-process-customizing.html</file>
+            <file>creator-build-settings-cmake-presets-qt-vendor.html</file>
+            <file>creator-build-settings-cmake-presets.html</file>
+            <file>creator-build-settings-cmake.html</file>
+            <file>creator-build-settings-conan.html</file>
+            <file>creator-build-settings-incredibuild.html</file>
+            <file>creator-build-settings-meson.html</file>
+            <file>creator-build-settings-qbs.html</file>
+            <file>creator-build-settings-qmake.html</file>
+            <file>creator-build-settings.html</file>
+            <file>creator-building-running-settings.html</file>
+            <file>creator-building-targets.html</file>
+            <file>creator-cache-profiler.html</file>
+            <file>creator-call-hierarchy-view.html</file>
+            <file>creator-checking-code-syntax.html</file>
+            <file>creator-clang-codemodel.html</file>
+            <file>creator-clang-tools.html</file>
+            <file>creator-class-view.html</file>
+            <file>creator-cli.html</file>
+            <file>creator-coco.html</file>
+            <file>creator-code-style-settings.html</file>
+            <file>creator-coding-navigating.html</file>
+            <file>creator-completing-code.html</file>
+            <file>creator-configuring-projects.html</file>
+            <file>creator-configuring.html</file>
+            <file>creator-copilot.html</file>
+            <file>creator-cppcheck.html</file>
+            <file>creator-cpu-usage-analyzer.html</file>
+            <file>creator-ctf-visualizer.html</file>
+            <file>creator-custom-output-parsers.html</file>
+            <file>creator-debug-mode.html</file>
+            <file>creator-debugger-engines.html</file>
+            <file>creator-debugger-examining-data.html</file>
+            <file>creator-debugger-log-view.html</file>
+            <file>creator-debugger-preferences.html</file>
+            <file>creator-debuggers.html</file>
+            <file>creator-debugging-example.html</file>
+            <file>creator-debugging-helpers.html</file>
+            <file>creator-debugging-qml.html</file>
+            <file>creator-debugging.html</file>
+            <file>creator-deploying-android.html</file>
+            <file>creator-deployment-b2qt.html</file>
+            <file>creator-deployment-embedded-linux.html</file>
+            <file>creator-deployment-qnx.html</file>
+            <file>creator-desktop-platforms.html</file>
+            <file>creator-developing-android.html</file>
+            <file>creator-developing-b2qt.html</file>
+            <file>creator-developing-baremetal.html</file>
+            <file>creator-developing-generic-linux.html</file>
+            <file>creator-developing-ios.html</file>
+            <file>creator-developing-mcu.html</file>
+            <file>creator-developing-qnx.html</file>
+            <file>creator-diff-editor.html</file>
+            <file>creator-disassembler-view.html</file>
+            <file>creator-editor-codepasting.html</file>
+            <file>creator-editor-external.html</file>
+            <file>creator-editor-fakevim.html</file>
+            <file>creator-editor-finding.html</file>
+            <file>creator-editor-how-to-find-symbols.html</file>
+            <file>creator-editor-locator.html</file>
+            <file>creator-editor-quick-fixes.html</file>
+            <file>creator-editor-settings.html</file>
+            <file>creator-enclose-code-in-characters.html</file>
+            <file>creator-expressions-view.html</file>
+            <file>creator-faq.html</file>
+            <file>creator-file-creating.html</file>
+            <file>creator-file-system-view.html</file>
+            <file>creator-getting-started.html</file>
+            <file>creator-glossary.html</file>
+            <file>creator-heob.html</file>
+            <file>creator-highlighting.html</file>
+            <file>creator-how-set-project-environment.html</file>
+            <file>creator-how-to-activate-custom-output-parsers.html</file>
+            <file>creator-how-to-activate-kits.html</file>
+            <file>creator-how-to-add-b2qt.html</file>
+            <file>creator-how-to-add-bare-metal-devices.html</file>
+            <file>creator-how-to-add-bookmarks-to-help-pages.html</file>
+            <file>creator-how-to-add-breakpoints.html</file>
+            <file>creator-how-to-add-cmake-tools.html</file>
+            <file>creator-how-to-add-code-snippets.html</file>
+            <file>creator-how-to-add-custom-compilers.html</file>
+            <file>creator-how-to-add-external-documentation.html</file>
+            <file>creator-how-to-add-external-libraries-to-cmake-projects.html</file>
+            <file>creator-how-to-add-generic-language-servers.html</file>
+            <file>creator-how-to-add-java-language-servers.html</file>
+            <file>creator-how-to-add-license-header-templates.html</file>
+            <file>creator-how-to-add-mcu-devices.html</file>
+            <file>creator-how-to-add-mcu-kits.html</file>
+            <file>creator-how-to-add-nim-compilers.html</file>
+            <file>creator-how-to-add-remote-linux.html</file>
+            <file>creator-how-to-add-subprojects-to-projects.html</file>
+            <file>creator-how-to-add-tests-to-projects.html</file>
+            <file>creator-how-to-add-ts-files.html</file>
+            <file>creator-how-to-add-wizards.html</file>
+            <file>creator-how-to-advanced-search.html</file>
+            <file>creator-how-to-analyze-cpu-usage.html</file>
+            <file>creator-how-to-assign-keyboard-shortcuts.html</file>
+            <file>creator-how-to-attach-debugger-to-running-apps.html</file>
+            <file>creator-how-to-attach-debugger-to-starting-processes.html</file>
+            <file>creator-how-to-autoformat-qml-js.html</file>
+            <file>creator-how-to-build-and-run-tests.html</file>
+            <file>creator-how-to-build-on-docker.html</file>
+            <file>creator-how-to-build-on-remote-linux.html</file>
+            <file>creator-how-to-build-run-docker.html</file>
+            <file>creator-how-to-change-editor-colors.html</file>
+            <file>creator-how-to-change-keyboard-shortcuts.html</file>
+            <file>creator-how-to-change-text-encoding.html</file>
+            <file>creator-how-to-change-ui-language.html</file>
+            <file>creator-how-to-collect-usage-statistics.html</file>
+            <file>creator-how-to-complete-cmake-code.html</file>
+            <file>creator-how-to-configure-clang-diagnostics.html</file>
+            <file>creator-how-to-configure-cmake-for-project.html</file>
+            <file>creator-how-to-configure-lsp-workspace.html</file>
+            <file>creator-how-to-configure-python-language-servers.html</file>
+            <file>creator-how-to-configure-ssh.html</file>
+            <file>creator-how-to-configure-tools-on-devices.html</file>
+            <file>creator-how-to-connect-b2qt.html</file>
+            <file>creator-how-to-connect-ios-devices.html</file>
+            <file>creator-how-to-connect-remote-linux.html</file>
+            <file>creator-how-to-connect-squish-server.html</file>
+            <file>creator-how-to-connect-vxworks-ssh.html</file>
+            <file>creator-how-to-contact-qt.html</file>
+            <file>creator-how-to-cpp-code-model.html</file>
+            <file>creator-how-to-create-avd.html</file>
+            <file>creator-how-to-create-boost-tests.html</file>
+            <file>creator-how-to-create-catch2-tests.html</file>
+            <file>creator-how-to-create-class-diagrams.html</file>
+            <file>creator-how-to-create-compiler-explorer-sessions.html</file>
+            <file>creator-how-to-create-component-diagrams.html</file>
+            <file>creator-how-to-create-cpp-classes.html</file>
+            <file>creator-how-to-create-ctests.html</file>
+            <file>creator-how-to-create-google-tests.html</file>
+            <file>creator-how-to-create-lua-scripts.html</file>
+            <file>creator-how-to-create-models.html</file>
+            <file>creator-how-to-create-nimble.html</file>
+            <file>creator-how-to-create-opengl-shaders.html</file>
+            <file>creator-how-to-create-package-diagrams.html</file>
+            <file>creator-how-to-create-qnx-kits.html</file>
+            <file>creator-how-to-create-qt-tests.html</file>
+            <file>creator-how-to-create-qtif.html</file>
+            <file>creator-how-to-create-qtquick-tests.html</file>
+            <file>creator-how-to-create-qtquick-ui-prototype.html</file>
+            <file>creator-how-to-create-resource-files.html</file>
+            <file>creator-how-to-create-squish-test-suites.html</file>
+            <file>creator-how-to-create-state-charts.html</file>
+            <file>creator-how-to-create-vcpkg-manifest-files.html</file>
+            <file>creator-how-to-create-vcs-repositories.html</file>
+            <file>creator-how-to-create-vxworks-kits.html</file>
+            <file>creator-how-to-debug-android.html</file>
+            <file>creator-how-to-debug-cmake-files.html</file>
+            <file>creator-how-to-debug-external-apps.html</file>
+            <file>creator-how-to-debug-post-mortem.html</file>
+            <file>creator-how-to-debug-remotely-cdb.html</file>
+            <file>creator-how-to-debug-remotely-gdb.html</file>
+            <file>creator-how-to-debug-vxworks.html</file>
+            <file>creator-how-to-detach-help-window.html</file>
+            <file>creator-how-to-detach-views.html</file>
+            <file>creator-how-to-document-code.html</file>
+            <file>creator-how-to-eblink.html</file>
+            <file>creator-how-to-edit-cmake-config-files.html</file>
+            <file>creator-how-to-edit-environment-settings.html</file>
+            <file>creator-how-to-edit-qbs-profiles.html</file>
+            <file>creator-how-to-edit-vcpkg-manifest-files.html</file>
+            <file>creator-how-to-edit-vim-style.html</file>
+            <file>creator-how-to-enable-plugins.html</file>
+            <file>creator-how-to-enble-debugging.html</file>
+            <file>creator-how-to-examine-complex-values.html</file>
+            <file>creator-how-to-excludes-files-from-to-do-lists.html</file>
+            <file>creator-how-to-explore-compiler-code.html</file>
+            <file>creator-how-to-export-svg-images.html</file>
+            <file>creator-how-to-filter-documentation.html</file>
+            <file>creator-how-to-find-info-in-documentation.html</file>
+            <file>creator-how-to-find-keyboard-shortcuts.html</file>
+            <file>creator-how-to-find-preferences.html</file>
+            <file>creator-how-to-find-settings-files.html</file>
+            <file>creator-how-to-format-cmake-files.html</file>
+            <file>creator-how-to-generate-ssh-keys.html</file>
+            <file>creator-how-to-gerrit.html</file>
+            <file>creator-how-to-get-help.html</file>
+            <file>creator-how-to-git-am.html</file>
+            <file>creator-how-to-git-apply-patch.html</file>
+            <file>creator-how-to-git-blame.html</file>
+            <file>creator-how-to-git-branch.html</file>
+            <file>creator-how-to-git-clean.html</file>
+            <file>creator-how-to-git-commit.html</file>
+            <file>creator-how-to-git-commits.html</file>
+            <file>creator-how-to-git-diff.html</file>
+            <file>creator-how-to-git-fetch.html</file>
+            <file>creator-how-to-git-first-commit.html</file>
+            <file>creator-how-to-git-instant-blame.html</file>
+            <file>creator-how-to-git-interactive-rebase.html</file>
+            <file>creator-how-to-git-log.html</file>
+            <file>creator-how-to-git-merge.html</file>
+            <file>creator-how-to-git-pull.html</file>
+            <file>creator-how-to-git-push.html</file>
+            <file>creator-how-to-git-reflog.html</file>
+            <file>creator-how-to-git-reset.html</file>
+            <file>creator-how-to-git-stage-changes.html</file>
+            <file>creator-how-to-git-stash.html</file>
+            <file>creator-how-to-git-status.html</file>
+            <file>creator-how-to-git-tools.html</file>
+            <file>creator-how-to-git-with-subversion.html</file>
+            <file>creator-how-to-initialize-git-repo.html</file>
+            <file>creator-how-to-insert-multiple-cursors.html</file>
+            <file>creator-how-to-inspect-basic-qt-objects.html</file>
+            <file>creator-how-to-inspect-code-model.html</file>
+            <file>creator-how-to-inspect-language-clients.html</file>
+            <file>creator-how-to-install-extensions.html</file>
+            <file>creator-how-to-install-plugins.html</file>
+            <file>creator-how-to-install.html</file>
+            <file>creator-how-to-jlink.html</file>
+            <file>creator-how-to-limit-files-to-path-patterns.html</file>
+            <file>creator-how-to-link-with-gitlab.html</file>
+            <file>creator-how-to-load-core-files-to-debugger.html</file>
+            <file>creator-how-to-load-extensions.html</file>
+            <file>creator-how-to-locate-files-using-keyboard.html</file>
+            <file>creator-how-to-manage-android-ndk.html</file>
+            <file>creator-how-to-manage-android-sdk.html</file>
+            <file>creator-how-to-manage-avd.html</file>
+            <file>creator-how-to-manage-breakpoints.html</file>
+            <file>creator-how-to-manage-device-processes.html</file>
+            <file>creator-how-to-manage-extensions.html</file>
+            <file>creator-how-to-manage-files-in-cmake-projects.html</file>
+            <file>creator-how-to-manage-mcu-kits.html</file>
+            <file>creator-how-to-manage-squish-test-suites.html</file>
+            <file>creator-how-to-manage-winappsdk.html</file>
+            <file>creator-how-to-memcheck.html</file>
+            <file>creator-how-to-move-between-open-files.html</file>
+            <file>creator-how-to-move-to-symbols.html</file>
+            <file>creator-how-to-navigate-qml-code.html</file>
+            <file>creator-how-to-openocd.html</file>
+            <file>creator-how-to-override-clang-tools-preferences.html</file>
+            <file>creator-how-to-override-clangd-preferences.html</file>
+            <file>creator-how-to-parse-build-output.html</file>
+            <file>creator-how-to-paste-text-from-clipboard-history.html</file>
+            <file>creator-how-to-perform-calculations.html</file>
+            <file>creator-how-to-profile-cmake-code.html</file>
+            <file>creator-how-to-profile-qml.html</file>
+            <file>creator-how-to-read-cmake-documentation.html</file>
+            <file>creator-how-to-record-screens.html</file>
+            <file>creator-how-to-rename-symbols.html</file>
+            <file>creator-how-to-reparse-files.html</file>
+            <file>creator-how-to-run-custom-executables.html</file>
+            <file>creator-how-to-run-from-cli.html</file>
+            <file>creator-how-to-run-in-app-manager.html</file>
+            <file>creator-how-to-run-on-mcu-devices.html</file>
+            <file>creator-how-to-run-on-qnx.html</file>
+            <file>creator-how-to-run-on-remote-linux.html</file>
+            <file>creator-how-to-run-python-apps.html</file>
+            <file>creator-how-to-run-qmake-before-building.html</file>
+            <file>creator-how-to-run-qml-files.html</file>
+            <file>creator-how-to-run-webassembly.html</file>
+            <file>creator-how-to-search-and-replace-using-regexp.html</file>
+            <file>creator-how-to-search-from-docs.html</file>
+            <file>creator-how-to-select-build-system.html</file>
+            <file>creator-how-to-select-enclosing-block.html</file>
+            <file>creator-how-to-select-line-endings.html</file>
+            <file>creator-how-to-select-squish-auts.html</file>
+            <file>creator-how-to-set-android-preferences.html</file>
+            <file>creator-how-to-set-build-run-directory.html</file>
+            <file>creator-how-to-set-cpp-file-naming.html</file>
+            <file>creator-how-to-set-data-breakpoints.html</file>
+            <file>creator-how-to-set-help-start-page.html</file>
+            <file>creator-how-to-set-high-dpi-scaling.html</file>
+            <file>creator-how-to-set-recent-files.html</file>
+            <file>creator-how-to-set-up-vcs.html</file>
+            <file>creator-how-to-show-and-hide-main-menu.html</file>
+            <file>creator-how-to-show-and-hide-sidebars.html</file>
+            <file>creator-how-to-silver-searcher.html</file>
+            <file>creator-how-to-specify-project-contents.html</file>
+            <file>creator-how-to-specify-settings-for-quick-fixes.html</file>
+            <file>creator-how-to-split-editor-views.html</file>
+            <file>creator-how-to-start-debugger-from-cli.html</file>
+            <file>creator-how-to-start-debugging.html</file>
+            <file>creator-how-to-step-through-code.html</file>
+            <file>creator-how-to-stlink.html</file>
+            <file>creator-how-to-switch-between-modes.html</file>
+            <file>creator-how-to-switch-to-edit-mode.html</file>
+            <file>creator-how-to-switch-ui-themes.html</file>
+            <file>creator-how-to-test-on-ios-simulator.html</file>
+            <file>creator-how-to-turn-on-crash-reports.html</file>
+            <file>creator-how-to-use-bookmarks.html</file>
+            <file>creator-how-to-use-code-blocks.html</file>
+            <file>creator-how-to-use-common-vcs-functions.html</file>
+            <file>creator-how-to-use-compilation-databases.html</file>
+            <file>creator-how-to-use-external-text-editors.html</file>
+            <file>creator-how-to-use-git-on-windows.html</file>
+            <file>creator-how-to-use-heob.html</file>
+            <file>creator-how-to-use-info-bars.html</file>
+            <file>creator-how-to-use-project-wizards.html</file>
+            <file>creator-how-to-use-qml-language-server.html</file>
+            <file>creator-how-to-use-qtc-variables.html</file>
+            <file>creator-how-to-use-qtlinguist.html</file>
+            <file>creator-how-to-uvision.html</file>
+            <file>creator-how-to-view-cmake-project-contents.html</file>
+            <file>creator-how-to-view-code-coverage-with-coco.html</file>
+            <file>creator-how-to-view-images.html</file>
+            <file>creator-how-to-view-output.html</file>
+            <file>creator-how-to-write-notes.html</file>
+            <file>creator-how-tos.html</file>
+            <file>creator-include-hierarchy-view.html</file>
+            <file>creator-indenting-code.html</file>
+            <file>creator-keyboard-shortcuts.html</file>
+            <file>creator-known-issues.html</file>
+            <file>creator-language-servers.html</file>
+            <file>creator-live-preview-desktop.html</file>
+            <file>creator-live-preview-devices.html</file>
+            <file>creator-locals-view.html</file>
+            <file>creator-logging-viewer.html</file>
+            <file>creator-macros.html</file>
+            <file>creator-markdown-editor.html</file>
+            <file>creator-mime-types.html</file>
+            <file>creator-modeling.html</file>
+            <file>creator-modules-view.html</file>
+            <file>creator-open-documents-view.html</file>
+            <file>creator-os-supported-platforms.html</file>
+            <file>creator-outline-view.html</file>
+            <file>creator-overview.html</file>
+            <file>creator-peripheral-registers-view.html</file>
+            <file>creator-preferences-analyzer-clang-tools.html</file>
+            <file>creator-preferences-axivion.html</file>
+            <file>creator-preferences-beautifier.html</file>
+            <file>creator-preferences-callgrind.html</file>
+            <file>creator-preferences-cpp-clangd.html</file>
+            <file>creator-preferences-cpp-code-model.html</file>
+            <file>creator-preferences-cpp-code-style.html</file>
+            <file>creator-preferences-debugger-cdb-paths.html</file>
+            <file>creator-preferences-debugger-cdb.html</file>
+            <file>creator-preferences-debugger-gdb.html</file>
+            <file>creator-preferences-docker.html</file>
+            <file>creator-preferences-kits-compilers.html</file>
+            <file>creator-preferences-kits.html</file>
+            <file>creator-preferences-locator.html</file>
+            <file>creator-preferences-memcheck.html</file>
+            <file>creator-preferences-nim.html</file>
+            <file>creator-preferences-qbs.html</file>
+            <file>creator-preferences-qtquick-code-style.html</file>
+            <file>creator-preferences-screen-recording.html</file>
+            <file>creator-preferences-testing.html</file>
+            <file>creator-preferences-text-editor-behavior.html</file>
+            <file>creator-preferences-text-editor-completion.html</file>
+            <file>creator-preferences-text-editor-font-colors.html</file>
+            <file>creator-preferences-text-editor-shippets.html</file>
+            <file>creator-project-cmake.html</file>
+            <file>creator-project-conan.html</file>
+            <file>creator-project-creating.html</file>
+            <file>creator-project-generic.html</file>
+            <file>creator-project-incredibuild.html</file>
+            <file>creator-project-managing-sessions.html</file>
+            <file>creator-project-meson.html</file>
+            <file>creator-project-nimble.html</file>
+            <file>creator-project-opening.html</file>
+            <file>creator-project-qbs.html</file>
+            <file>creator-project-qmake-libraries.html</file>
+            <file>creator-project-qmake.html</file>
+            <file>creator-project-wizards.html</file>
+            <file>creator-projects-autotools.html</file>
+            <file>creator-projects-view.html</file>
+            <file>creator-python-development.html</file>
+            <file>creator-qml-debugging-example.html</file>
+            <file>creator-qml-modules-with-plugins.html</file>
+            <file>creator-qml-performance-monitor.html</file>
+            <file>creator-qtaiassistant.html</file>
+            <file>creator-qtquickdesigner-plugin.html</file>
+            <file>creator-quick-tour.html</file>
+            <file>creator-quick-ui-forms.html</file>
+            <file>creator-reference-application-output-view.html</file>
+            <file>creator-reference-compile-output-view.html</file>
+            <file>creator-reference-cpp-quick-fixes.html</file>
+            <file>creator-reference-issues-view.html</file>
+            <file>creator-reference-js-and-qml-error-codes.html</file>
+            <file>creator-reference-preferences-cpp-quick-fixes.html</file>
+            <file>creator-reference-preferences-fakevim.html</file>
+            <file>creator-reference-preferences-to-do.html</file>
+            <file>creator-reference-qml-quick-fixes.html</file>
+            <file>creator-reference-search-results-view.html</file>
+            <file>creator-reference-squish-output.html</file>
+            <file>creator-reference-terminal-view.html</file>
+            <file>creator-reference-to-do-entries-view.html</file>
+            <file>creator-reference.html</file>
+            <file>creator-registers-view.html</file>
+            <file>creator-run-settings-android.html</file>
+            <file>creator-run-settings-b2qt.html</file>
+            <file>creator-run-settings-desktop-devices.html</file>
+            <file>creator-run-settings-python.html</file>
+            <file>creator-run-settings-qnx.html</file>
+            <file>creator-run-settings-qtquick-ui-prototype.html</file>
+            <file>creator-run-settings-remote-linux.html</file>
+            <file>creator-run-settings-valgrind.html</file>
+            <file>creator-run-settings.html</file>
+            <file>creator-running-targets.html</file>
+            <file>creator-running-valgrind-remotely.html</file>
+            <file>creator-scxml.html</file>
+            <file>creator-sdk-tool.html</file>
+            <file>creator-setup-webassembly.html</file>
+            <file>creator-sharing-project-settings.html</file>
+            <file>creator-source-files-view.html</file>
+            <file>creator-stack-view.html</file>
+            <file>creator-targets.html</file>
+            <file>creator-task-lists.html</file>
+            <file>creator-test-results.html</file>
+            <file>creator-threads-view.html</file>
+            <file>creator-tool-chains.html</file>
+            <file>creator-troubleshooting-debugging.html</file>
+            <file>creator-tutorial-adding-internal-libraries-to-projects.html</file>
+            <file>creator-tutorial-python-application-qt-quick.html</file>
+            <file>creator-tutorial-python-application-qt-widgets-ui.html</file>
+            <file>creator-tutorial-python-application-qt-widgets.html</file>
+            <file>creator-tutorials.html</file>
+            <file>creator-type-hierarchy.html</file>
+            <file>creator-usability.html</file>
+            <file>creator-using-qt-designer.html</file>
+            <file>creator-vcpkg.html</file>
+            <file>creator-vcs-bazaar.html</file>
+            <file>creator-vcs-clearcase.html</file>
+            <file>creator-vcs-cvs.html</file>
+            <file>creator-vcs-fossil.html</file>
+            <file>creator-vcs-git.html</file>
+            <file>creator-vcs-gitlab.html</file>
+            <file>creator-vcs-mercurial.html</file>
+            <file>creator-vcs-perforce.html</file>
+            <file>creator-vcs-subversion.html</file>
+            <file>creator-version-control.html</file>
+            <file>creator-writing-program.html</file>
+            <file>images/01.png</file>
+            <file>images/02.png</file>
+            <file>images/03.png</file>
+            <file>images/04.png</file>
+            <file>images/05.png</file>
+            <file>images/06.png</file>
+            <file>images/07.png</file>
+            <file>images/5OiIqFTjUZI.jpg</file>
+            <file>images/EhJ1eV_6RH8.jpg</file>
+            <file>images/ai-assistant.png</file>
+            <file>images/api-reference.png</file>
+            <file>images/app-development.png</file>
+            <file>images/arrow_bc.png</file>
+            <file>images/arrowdown.png</file>
+            <file>images/arrowup.png</file>
+            <file>images/ax-dashboard.png</file>
+            <file>images/ax-localbuild.png</file>
+            <file>images/axivion-av.png</file>
+            <file>images/axivion-cl.png</file>
+            <file>images/axivion-cy.png</file>
+            <file>images/axivion-de.png</file>
+            <file>images/axivion-mv.png</file>
+            <file>images/axivion-sv.png</file>
+            <file>images/beautifier_editor.png</file>
+            <file>images/beautifier_options.png</file>
+            <file>images/bgrContent.png</file>
+            <file>images/bookmark.png</file>
+            <file>images/btn_next.png</file>
+            <file>images/btn_prev.png</file>
+            <file>images/build-32x32.png</file>
+            <file>images/build.png</file>
+            <file>images/buildstepdisable.png</file>
+            <file>images/bullet_dn.png</file>
+            <file>images/bullet_sq.png</file>
+            <file>images/camera.png</file>
+            <file>images/cancel-build.png</file>
+            <file>images/class.png</file>
+            <file>images/clean_pane_small.png</file>
+            <file>images/close.png</file>
+            <file>images/cmake.png</file>
+            <file>images/coco-coveragebrowser-load-execution-report.png</file>
+            <file>images/collapse.png</file>
+            <file>images/commercial.png</file>
+            <file>images/copilot.png</file>
+            <file>images/copy.png</file>
+            <file>images/create-tracepoint.png</file>
+            <file>images/creator-diff-editor.png</file>
+            <file>images/creator-git-commit-actions.png</file>
+            <file>images/creator-qbs-build-clean.png</file>
+            <file>images/creator-qbs-profiles.png</file>
+            <file>images/creator_android_tutorial_ex_app.png</file>
+            <file>images/debugger_singleinstructionmode.png</file>
+            <file>images/debugger_stepinto_small.png</file>
+            <file>images/debugger_stepout_small.png</file>
+            <file>images/debugger_stepover_small.png</file>
+            <file>images/demo-32x32.png</file>
+            <file>images/detach-view.png</file>
+            <file>images/element.png</file>
+            <file>images/enum.png</file>
+            <file>images/enumerator.png</file>
+            <file>images/expand.png</file>
+            <file>images/export.png</file>
+            <file>images/filesave.png</file>
+            <file>images/filtericon.png</file>
+            <file>images/final.png</file>
+            <file>images/fittoview.png</file>
+            <file>images/func.png</file>
+            <file>images/func_priv.png</file>
+            <file>images/func_prot.png</file>
+            <file>images/getting-started.png</file>
+            <file>images/heartgame-start.webp</file>
+            <file>images/history.png</file>
+            <file>images/home.png</file>
+            <file>images/ico_out.png</file>
+            <file>images/icon-export-canvas.png</file>
+            <file>images/ide.png</file>
+            <file>images/info.png</file>
+            <file>images/installation.png</file>
+            <file>images/jumpto.png</file>
+            <file>images/kcachegrind.png</file>
+            <file>images/keyword.png</file>
+            <file>images/languageclient.png</file>
+            <file>images/leafsort.png</file>
+            <file>images/leftsidebaricon.png</file>
+            <file>images/linkicon.png</file>
+            <file>images/live-preview.png</file>
+            <file>images/location.png</file>
+            <file>images/logo.png</file>
+            <file>images/macro.png</file>
+            <file>images/magnifier.png</file>
+            <file>images/message.png</file>
+            <file>images/minus.png</file>
+            <file>images/namespace.png</file>
+            <file>images/navigator.png</file>
+            <file>images/next.png</file>
+            <file>images/objectsmap.png</file>
+            <file>images/ok.png</file>
+            <file>images/online.png</file>
+            <file>images/open.png</file>
+            <file>images/original-size.png</file>
+            <file>images/output-pane-menu.png</file>
+            <file>images/pan.png</file>
+            <file>images/parallel.png</file>
+            <file>images/pause-icon.png</file>
+            <file>images/pin.png</file>
+            <file>images/platform-and-toolchain.png</file>
+            <file>images/plus.png</file>
+            <file>images/prev.png</file>
+            <file>images/qcreator-debugger-select-start-address.webp</file>
+            <file>images/qml-code-completion.png</file>
+            <file>images/qml-code-snippet.png</file>
+            <file>images/qml-observer-view.png</file>
+            <file>images/qml-profiler-flamegraph.png</file>
+            <file>images/qml-profiler-settings.png</file>
+            <file>images/qml-profiler-start-dialog.png</file>
+            <file>images/qml-profiler-statistics.png</file>
+            <file>images/qml-script-console.png</file>
+            <file>images/qml-snippet-editor.png</file>
+            <file>images/qml-syntax-check.png</file>
+            <file>images/qml-toolbar-animation.png</file>
+            <file>images/qml-toolbar-image-preview.png</file>
+            <file>images/qml-toolbar-image.png</file>
+            <file>images/qml-toolbar-rectangle.png</file>
+            <file>images/qml-toolbar-text.png</file>
+            <file>images/qmldesigner-code-completion.png</file>
+            <file>images/qmlsnippet.png</file>
+            <file>images/qt-app-dev-flow.webp</file>
+            <file>images/qt-creator-android-build-aar.webp</file>
+            <file>images/qt-online-installer.webp</file>
+            <file>images/qt-tools.webp</file>
+            <file>images/qtaiassistant-codecompletion.webp</file>
+            <file>images/qtaiassistant-codecompletionbar.webp</file>
+            <file>images/qtcreator-add-breakpoint.webp</file>
+            <file>images/qtcreator-add-library-external.webp</file>
+            <file>images/qtcreator-add-library-internal-project-details.webp</file>
+            <file>images/qtcreator-add-library-internal-project-location.webp</file>
+            <file>images/qtcreator-add-library-internal.webp</file>
+            <file>images/qtcreator-add-library-wizard.png</file>
+            <file>images/qtcreator-add-online-doc.webp</file>
+            <file>images/qtcreator-add-resource.png</file>
+            <file>images/qtcreator-analyze-start-button.png</file>
+            <file>images/qtcreator-analyzer-settings.png</file>
+            <file>images/qtcreator-android-avd-arguments.png</file>
+            <file>images/qtcreator-android-avd-manager.webp</file>
+            <file>images/qtcreator-android-build-steps.png</file>
+            <file>images/qtcreator-android-certificate.png</file>
+            <file>images/qtcreator-android-cmake-settings.png</file>
+            <file>images/qtcreator-android-create-avd.webp</file>
+            <file>images/qtcreator-android-create-template.png</file>
+            <file>images/qtcreator-android-deployment-settings.webp</file>
+            <file>images/qtcreator-android-manifest-editor-app-icon.webp</file>
+            <file>images/qtcreator-android-manifest-editor-package.webp</file>
+            <file>images/qtcreator-android-manifest-editor-permissions.webp</file>
+            <file>images/qtcreator-android-manifest-editor-splash-screen.webp</file>
+            <file>images/qtcreator-android-run-settings.webp</file>
+            <file>images/qtcreator-android-sdk-manager-arguments.png</file>
+            <file>images/qtcreator-android-sdk-manager.webp</file>
+            <file>images/qtcreator-application-output.webp</file>
+            <file>images/qtcreator-appman-deploy-settings.webp</file>
+            <file>images/qtcreator-appman-kit-selector.webp</file>
+            <file>images/qtcreator-appman-run-settings.webp</file>
+            <file>images/qtcreator-attach-views.webp</file>
+            <file>images/qtcreator-autotests.png</file>
+            <file>images/qtcreator-autotools-buildrun.webp</file>
+            <file>images/qtcreator-autotools-buildsettings.webp</file>
+            <file>images/qtcreator-axivion-annotation.webp</file>
+            <file>images/qtcreator-axivion-issue-search.webp</file>
+            <file>images/qtcreator-axivion-localbuild-progress.webp</file>
+            <file>images/qtcreator-axivion-localbuild.webp</file>
+            <file>images/qtcreator-axivion-view-rule.webp</file>
+            <file>images/qtcreator-baremetal-devices.png</file>
+            <file>images/qtcreator-baremetal-eblink.webp</file>
+            <file>images/qtcreator-baremetal-jlink.webp</file>
+            <file>images/qtcreator-baremetal-openocd.webp</file>
+            <file>images/qtcreator-baremetal-stlink.webp</file>
+            <file>images/qtcreator-baremetal-uvision-simulator.png</file>
+            <file>images/qtcreator-baremetal-uvision-st-link.png</file>
+            <file>images/qtcreator-beautifier-options-clangformat.png</file>
+            <file>images/qtcreator-blockhighlighting.png</file>
+            <file>images/qtcreator-bookmarks-view.webp</file>
+            <file>images/qtcreator-boot2qt-deployment-steps.png</file>
+            <file>images/qtcreator-boot2qt-device-configurations.webp</file>
+            <file>images/qtcreator-boot2qt-flashing-wizard.png</file>
+            <file>images/qtcreator-build-cmake-output.webp</file>
+            <file>images/qtcreator-build-configuration-set-clicolor-force.webp</file>
+            <file>images/qtcreator-build-environment.webp</file>
+            <file>images/qtcreator-build-settings-android-apk.webp</file>
+            <file>images/qtcreator-build-settings-cmake-configure.webp</file>
+            <file>images/qtcreator-build-settings-cmake-current.webp</file>
+            <file>images/qtcreator-build-settings-cmake-initial.webp</file>
+            <file>images/qtcreator-build-settings-default.webp</file>
+            <file>images/qtcreator-build-settings-ios.png</file>
+            <file>images/qtcreator-build-settings-qbs.webp</file>
+            <file>images/qtcreator-build-steps-conan-install.png</file>
+            <file>images/qtcreator-build-steps-custom.png</file>
+            <file>images/qtcreator-build-steps.png</file>
+            <file>images/qtcreator-call-hierarchy-view.webp</file>
+            <file>images/qtcreator-clang-copy-diagnostic-configuration.png</file>
+            <file>images/qtcreator-clang-diagnostic-configurations.webp</file>
+            <file>images/qtcreator-clang-diagnostics-in-editor-and-issues.webp</file>
+            <file>images/qtcreator-clang-tidy-view.webp</file>
+            <file>images/qtcreator-clang-tidy.png</file>
+            <file>images/qtcreator-clang-tools-diagnostics-configuration.png</file>
+            <file>images/qtcreator-clang-tools-filter-diagnostics.webp</file>
+            <file>images/qtcreator-clang-tools-settings.webp</file>
+            <file>images/qtcreator-class-view.webp</file>
+            <file>images/qtcreator-clazy.webp</file>
+            <file>images/qtcreator-cmake-build-steps.webp</file>
+            <file>images/qtcreator-cmake-clean-steps.webp</file>
+            <file>images/qtcreator-cmake-generator.webp</file>
+            <file>images/qtcreator-cmake-kit-configuration.png</file>
+            <file>images/qtcreator-cmake-presets-configure.webp</file>
+            <file>images/qtcreator-cmake-presets-environment.webp</file>
+            <file>images/qtcreator-cmake-profiler.webp</file>
+            <file>images/qtcreator-coco.png</file>
+            <file>images/qtcreator-code-model-inspector.webp</file>
+            <file>images/qtcreator-code-pasting-options.png</file>
+            <file>images/qtcreator-code-style-alignment.png</file>
+            <file>images/qtcreator-code-style-braces.png</file>
+            <file>images/qtcreator-code-style-built-in-indenter.webp</file>
+            <file>images/qtcreator-code-style-clang-format-global.webp</file>
+            <file>images/qtcreator-code-style-clang-format-project.webp</file>
+            <file>images/qtcreator-code-style-content.png</file>
+            <file>images/qtcreator-code-style-switch.png</file>
+            <file>images/qtcreator-codecompletion.png</file>
+            <file>images/qtcreator-compile-output.webp</file>
+            <file>images/qtcreator-compiler-explorer-options.webp</file>
+            <file>images/qtcreator-compiler-explorer.webp</file>
+            <file>images/qtcreator-configure-project.webp</file>
+            <file>images/qtcreator-context-sensitive-help.webp</file>
+            <file>images/qtcreator-copilot.gif</file>
+            <file>images/qtcreator-cpp-class-wizard.webp</file>
+            <file>images/qtcreator-cppcheck-run-configuration.png</file>
+            <file>images/qtcreator-cpu-usage-analyzer-load-perf-trace.png</file>
+            <file>images/qtcreator-create-new-kit-vxworks.webp</file>
+            <file>images/qtcreator-crop-and-trim.webp</file>
+            <file>images/qtcreator-ctf-visualizer-statistics.png</file>
+            <file>images/qtcreator-ctf-visualizer-timeline.webp</file>
+            <file>images/qtcreator-custom-parser-options.png</file>
+            <file>images/qtcreator-custom-parser.png</file>
+            <file>images/qtcreator-custom-wizard.webp</file>
+            <file>images/qtcreator-debug-breakpoints.webp</file>
+            <file>images/qtcreator-debug-button-stop.png</file>
+            <file>images/qtcreator-debug-button.png</file>
+            <file>images/qtcreator-debug-stack.png</file>
+            <file>images/qtcreator-debugger-attach-to-process-not-yet-started.png</file>
+            <file>images/qtcreator-debugger-attach-to-running-debug-server.png</file>
+            <file>images/qtcreator-debugger-attach-to-running.png</file>
+            <file>images/qtcreator-debugger-breakpoint-preset.webp</file>
+            <file>images/qtcreator-debugger-cdb-paths.png</file>
+            <file>images/qtcreator-debugger-cmake.webp</file>
+            <file>images/qtcreator-debugger-disassembler-view.webp</file>
+            <file>images/qtcreator-debugger-expressions.webp</file>
+            <file>images/qtcreator-debugger-load-core-file.png</file>
+            <file>images/qtcreator-debugger-log-view.webp</file>
+            <file>images/qtcreator-debugger-memory-editor.webp</file>
+            <file>images/qtcreator-debugger-modules.webp</file>
+            <file>images/qtcreator-debugger-new-evaluated-expression.webp</file>
+            <file>images/qtcreator-debugger-peripheral-registers-view.webp</file>
+            <file>images/qtcreator-debugger-registers-view.webp</file>
+            <file>images/qtcreator-debugger-source-files.webp</file>
+            <file>images/qtcreator-debugger-start-external.png</file>
+            <file>images/qtcreator-debugger-threads.webp</file>
+            <file>images/qtcreator-debugger-value-tooltips.webp</file>
+            <file>images/qtcreator-debugger-views-initial.webp</file>
+            <file>images/qtcreator-debugger-views.webp</file>
+            <file>images/qtcreator-debugging-continue.png</file>
+            <file>images/qtcreator-debugging-helper-options.webp</file>
+            <file>images/qtcreator-desktopdevice-button.png</file>
+            <file>images/qtcreator-devices-boot2qt.png</file>
+            <file>images/qtcreator-devices-qnx.webp</file>
+            <file>images/qtcreator-docker-image-selection.webp</file>
+            <file>images/qtcreator-edit-cmake-configuration-self-built-qt.webp</file>
+            <file>images/qtcreator-edit-cmake-configuration.webp</file>
+            <file>images/qtcreator-edit-code-snippets.png</file>
+            <file>images/qtcreator-edit-dashboard-configuration.webp</file>
+            <file>images/qtcreator-edit-environment.webp</file>
+            <file>images/qtcreator-editor-multicursor.webp</file>
+            <file>images/qtcreator-editor-open-files.webp</file>
+            <file>images/qtcreator-editor-settings.webp</file>
+            <file>images/qtcreator-editor-symbols.webp</file>
+            <file>images/qtcreator-editor-toolbar-qml.webp</file>
+            <file>images/qtcreator-editor-toolbar.webp</file>
+            <file>images/qtcreator-embedded-linux-deployment-details.png</file>
+            <file>images/qtcreator-environment-settings-hierarchy.webp</file>
+            <file>images/qtcreator-examples-kit-selector.webp</file>
+            <file>images/qtcreator-examples-open.webp</file>
+            <file>images/qtcreator-expand.png</file>
+            <file>images/qtcreator-extension-activate.webp</file>
+            <file>images/qtcreator-extension-check-archive.webp</file>
+            <file>images/qtcreator-extension-mode.webp</file>
+            <file>images/qtcreator-external-tools.webp</file>
+            <file>images/qtcreator-fakevim-options-ex-command-mapping.png</file>
+            <file>images/qtcreator-fakevim-options-user-command-mapping.png</file>
+            <file>images/qtcreator-file-new-file-vcpkg-manifest-file.webp</file>
+            <file>images/qtcreator-files-to-analyze.webp</file>
+            <file>images/qtcreator-filesystem-view.webp</file>
+            <file>images/qtcreator-find-from-current-file.webp</file>
+            <file>images/qtcreator-find-references-to-symbol-under-cursor.webp</file>
+            <file>images/qtcreator-font-colors.png</file>
+            <file>images/qtcreator-formedit.png</file>
+            <file>images/qtcreator-gerrit-push.png</file>
+            <file>images/qtcreator-gerrit.png</file>
+            <file>images/qtcreator-git-add-branch.webp</file>
+            <file>images/qtcreator-git-amend.webp</file>
+            <file>images/qtcreator-git-blame.webp</file>
+            <file>images/qtcreator-git-branches.webp</file>
+            <file>images/qtcreator-git-clean-repository.webp</file>
+            <file>images/qtcreator-git-commit.webp</file>
+            <file>images/qtcreator-git-diff-repository.webp</file>
+            <file>images/qtcreator-git-instant-blame.webp</file>
+            <file>images/qtcreator-git-log.webp</file>
+            <file>images/qtcreator-git-uncommitted-changes-found.webp</file>
+            <file>images/qtcreator-gitlab-clone-repository.png</file>
+            <file>images/qtcreator-gitlab-preferences-add-server.png</file>
+            <file>images/qtcreator-gitlab-preferences-project.png</file>
+            <file>images/qtcreator-gitlab-preferences.png</file>
+            <file>images/qtcreator-gitlab-project-list.png</file>
+            <file>images/qtcreator-help-add-bookmark-dlg.png</file>
+            <file>images/qtcreator-help-filter-attributes.png</file>
+            <file>images/qtcreator-help-filters.png</file>
+            <file>images/qtcreator-help-search.png</file>
+            <file>images/qtcreator-heob-in-terminal.webp</file>
+            <file>images/qtcreator-heob-output.png</file>
+            <file>images/qtcreator-heob-settings.png</file>
+            <file>images/qtcreator-image-viewer.png</file>
+            <file>images/qtcreator-import-color-scheme.png</file>
+            <file>images/qtcreator-include-hierarchy-view.webp</file>
+            <file>images/qtcreator-incredibuild-build-steps-general.png</file>
+            <file>images/qtcreator-incredibuild-build-steps-linux.png</file>
+            <file>images/qtcreator-incredibuild-build-steps-windows.png</file>
+            <file>images/qtcreator-install-packages.webp</file>
+            <file>images/qtcreator-install-plugin-accept-terms-and-conditions.webp</file>
+            <file>images/qtcreator-install-plugin-location.webp</file>
+            <file>images/qtcreator-install-plugin-source.webp</file>
+            <file>images/qtcreator-install-plugin-summary.png</file>
+            <file>images/qtcreator-installed-plugins.webp</file>
+            <file>images/qtcreator-ios-add-kit.png</file>
+            <file>images/qtcreator-ios-device-configurations.png</file>
+            <file>images/qtcreator-ios-simulator-deploy.png</file>
+            <file>images/qtcreator-issues.webp</file>
+            <file>images/qtcreator-keyboard-shortcuts.png</file>
+            <file>images/qtcreator-kit-nimble.png</file>
+            <file>images/qtcreator-kit-selector-devices.webp</file>
+            <file>images/qtcreator-kit-selector-run-targets.png</file>
+            <file>images/qtcreator-kit-selector.webp</file>
+            <file>images/qtcreator-kit-webassembly.webp</file>
+            <file>images/qtcreator-kits-meson.png</file>
+            <file>images/qtcreator-language-client-inspector-capabilities.webp</file>
+            <file>images/qtcreator-language-client-inspector-log.webp</file>
+            <file>images/qtcreator-language-client-inspector-memory-usage.webp</file>
+            <file>images/qtcreator-language-client-options-java.png</file>
+            <file>images/qtcreator-language-server-generic-stdio.png</file>
+            <file>images/qtcreator-language-server-json.webp</file>
+            <file>images/qtcreator-link-with-qt.png</file>
+            <file>images/qtcreator-live-preview.webp</file>
+            <file>images/qtcreator-locals.png</file>
+            <file>images/qtcreator-locator-bookmark-filtering.png</file>
+            <file>images/qtcreator-locator-customize.webp</file>
+            <file>images/qtcreator-locator-example.webp</file>
+            <file>images/qtcreator-locator-filter-edit-ai.webp</file>
+            <file>images/qtcreator-locator-filter-edit-md.webp</file>
+            <file>images/qtcreator-locator-filter-t.webp</file>
+            <file>images/qtcreator-locator-generic-directory-filter.png</file>
+            <file>images/qtcreator-locator-m-filter.webp</file>
+            <file>images/qtcreator-locator-open.webp</file>
+            <file>images/qtcreator-locator.webp</file>
+            <file>images/qtcreator-logging-category-viewer.webp</file>
+            <file>images/qtcreator-markdown-editor.webp</file>
+            <file>images/qtcreator-mcu-device.webp</file>
+            <file>images/qtcreator-mcu-new-kit.webp</file>
+            <file>images/qtcreator-mcu-new-project.webp</file>
+            <file>images/qtcreator-meson-build-settings.png</file>
+            <file>images/qtcreator-meson-build-steps.png</file>
+            <file>images/qtcreator-meson-clean-steps.png</file>
+            <file>images/qtcreator-mesonexecutable.png</file>
+            <file>images/qtcreator-mime-types-magic-header.png</file>
+            <file>images/qtcreator-mime-types.png</file>
+            <file>images/qtcreator-mode-selector.webp</file>
+            <file>images/qtcreator-model-editor-component-diagram.webp</file>
+            <file>images/qtcreator-modeleditor-classes.webp</file>
+            <file>images/qtcreator-modeleditor-packages.webp</file>
+            <file>images/qtcreator-modeleditor.webp</file>
+            <file>images/qtcreator-move-class-to-separate-files.webp</file>
+            <file>images/qtcreator-move-component-into-separate-file.png</file>
+            <file>images/qtcreator-new-file-qrc.webp</file>
+            <file>images/qtcreator-new-file-qrc1.webp</file>
+            <file>images/qtcreator-new-file-qrc2.webp</file>
+            <file>images/qtcreator-new-file-test-case.webp</file>
+            <file>images/qtcreator-new-file-ts.webp</file>
+            <file>images/qtcreator-new-file.webp</file>
+            <file>images/qtcreator-new-opengl-file.png</file>
+            <file>images/qtcreator-new-project-boost-test.webp</file>
+            <file>images/qtcreator-new-project-build-system.webp</file>
+            <file>images/qtcreator-new-project-catch2-test.webp</file>
+            <file>images/qtcreator-new-project-class-info.webp</file>
+            <file>images/qtcreator-new-project-compiler-explorer.webp</file>
+            <file>images/qtcreator-new-project-google-test.webp</file>
+            <file>images/qtcreator-new-project-kit-selection.webp</file>
+            <file>images/qtcreator-new-project-location-qt-widgets.webp</file>
+            <file>images/qtcreator-new-project-python-window-ui-define-class.webp</file>
+            <file>images/qtcreator-new-project-python-window-ui-define-python-interpreter.webp</file>
+            <file>images/qtcreator-new-project-python-window-ui-ready.webp</file>
+            <file>images/qtcreator-new-project-python-window-ui-widgets.webp</file>
+            <file>images/qtcreator-new-project-python-window-ui.webp</file>
+            <file>images/qtcreator-new-project-qt-for-python-kit-selection.webp</file>
+            <file>images/qtcreator-new-project-qt-test.webp</file>
+            <file>images/qtcreator-new-project-qt-widgets.webp</file>
+            <file>images/qtcreator-new-project-qtif.webp</file>
+            <file>images/qtcreator-new-project-qtquick-test.webp</file>
+            <file>images/qtcreator-new-project-summary.webp</file>
+            <file>images/qtcreator-new-project-translation-file.webp</file>
+            <file>images/qtcreator-new-project.webp</file>
+            <file>images/qtcreator-new-qt-for-python-app-project-details.webp</file>
+            <file>images/qtcreator-new-qt-for-python-app-qt-quick-empty-project-location.webp</file>
+            <file>images/qtcreator-new-qt-for-python-app-qt-quick-empty-project-ready.webp</file>
+            <file>images/qtcreator-new-qt-for-python-app-widgets-define-class.webp</file>
+            <file>images/qtcreator-new-qt-for-python-app-widgets-project-location.webp</file>
+            <file>images/qtcreator-new-qt-for-python-app-widgets-ready.webp</file>
+            <file>images/qtcreator-new-search-icon.png</file>
+            <file>images/qtcreator-open-documents-view.webp</file>
+            <file>images/qtcreator-options-cpp-files.png</file>
+            <file>images/qtcreator-options-qbs.png</file>
+            <file>images/qtcreator-options-texteditor-behavior-file-encodings.png</file>
+            <file>images/qtcreator-outline-view.webp</file>
+            <file>images/qtcreator-output-panes-taskbar.webp</file>
+            <file>images/qtcreator-output-terminal.webp</file>
+            <file>images/qtcreator-parse-build-output.png</file>
+            <file>images/qtcreator-performance-analyzer-create-memory-trace-points.png</file>
+            <file>images/qtcreator-performance-analyzer-flamegraph.png</file>
+            <file>images/qtcreator-performance-analyzer-settings.png</file>
+            <file>images/qtcreator-performance-analyzer-statistics.png</file>
+            <file>images/qtcreator-performance-analyzer-timeline.webp</file>
+            <file>images/qtcreator-performance-analyzer-toolbar.webp</file>
+            <file>images/qtcreator-personalize-learning.webp</file>
+            <file>images/qtcreator-plugin-details.webp</file>
+            <file>images/qtcreator-pointers-references.png</file>
+            <file>images/qtcreator-preferences-ai-custom-language-models.webp</file>
+            <file>images/qtcreator-preferences-analyzer-clang-tools.webp</file>
+            <file>images/qtcreator-preferences-android.webp</file>
+            <file>images/qtcreator-preferences-application-output.webp</file>
+            <file>images/qtcreator-preferences-axivion.webp</file>
+            <file>images/qtcreator-preferences-beautifier-general.webp</file>
+            <file>images/qtcreator-preferences-build-run-custom-output-parsers.webp</file>
+            <file>images/qtcreator-preferences-build-run-general.webp</file>
+            <file>images/qtcreator-preferences-build-run-qmake.png</file>
+            <file>images/qtcreator-preferences-clangd.webp</file>
+            <file>images/qtcreator-preferences-cmake-formatter.webp</file>
+            <file>images/qtcreator-preferences-cmake-general.webp</file>
+            <file>images/qtcreator-preferences-cmake-tools.webp</file>
+            <file>images/qtcreator-preferences-cmake-vcpkg.webp</file>
+            <file>images/qtcreator-preferences-code-model.webp</file>
+            <file>images/qtcreator-preferences-compile-output.webp</file>
+            <file>images/qtcreator-preferences-compilers-clang-cl.webp</file>
+            <file>images/qtcreator-preferences-compilers-clang.webp</file>
+            <file>images/qtcreator-preferences-compilers-custom.webp</file>
+            <file>images/qtcreator-preferences-compilers-qcc.webp</file>
+            <file>images/qtcreator-preferences-compilers.webp</file>
+            <file>images/qtcreator-preferences-copilot.webp</file>
+            <file>images/qtcreator-preferences-debugger-cdb.webp</file>
+            <file>images/qtcreator-preferences-debugger-gdb.webp</file>
+            <file>images/qtcreator-preferences-debugger-general.webp</file>
+            <file>images/qtcreator-preferences-devices-desktop-tools.webp</file>
+            <file>images/qtcreator-preferences-devices-docker-build-run.webp</file>
+            <file>images/qtcreator-preferences-devices-docker-device.webp</file>
+            <file>images/qtcreator-preferences-devices-docker.webp</file>
+            <file>images/qtcreator-preferences-devices-remote-linux-connection.webp</file>
+            <file>images/qtcreator-preferences-devices-remote-linux-key-deployment.webp</file>
+            <file>images/qtcreator-preferences-devices-remote-linux.webp</file>
+            <file>images/qtcreator-preferences-devices-vxworks.webp</file>
+            <file>images/qtcreator-preferences-documentation-comments.webp</file>
+            <file>images/qtcreator-preferences-environment-interface.webp</file>
+            <file>images/qtcreator-preferences-environment-system.webp</file>
+            <file>images/qtcreator-preferences-extensions.webp</file>
+            <file>images/qtcreator-preferences-fakevim-general.webp</file>
+            <file>images/qtcreator-preferences-help-documentation.webp</file>
+            <file>images/qtcreator-preferences-help-general.webp</file>
+            <file>images/qtcreator-preferences-kits-baremetal.webp</file>
+            <file>images/qtcreator-preferences-kits-debuggers.webp</file>
+            <file>images/qtcreator-preferences-kits-mcu.webp</file>
+            <file>images/qtcreator-preferences-kits.webp</file>
+            <file>images/qtcreator-preferences-language-client-qmlls.webp</file>
+            <file>images/qtcreator-preferences-mcu.webp</file>
+            <file>images/qtcreator-preferences-nim-code-style.webp</file>
+            <file>images/qtcreator-preferences-nim-tools.webp</file>
+            <file>images/qtcreator-preferences-qnx.webp</file>
+            <file>images/qtcreator-preferences-qtaiassistant-advanced.webp</file>
+            <file>images/qtcreator-preferences-qtaiassistant-general.webp</file>
+            <file>images/qtcreator-preferences-qtquick-code-style-custom-formatter.webp</file>
+            <file>images/qtcreator-preferences-qtquick-code-style-qmlformat.webp</file>
+            <file>images/qtcreator-preferences-qtquick-code-style.webp</file>
+            <file>images/qtcreator-preferences-qtquick-qmljs-editing.webp</file>
+            <file>images/qtcreator-preferences-quick-fixes-function-locations.webp</file>
+            <file>images/qtcreator-preferences-screen-recording.webp</file>
+            <file>images/qtcreator-preferences-sdks-webassembly.webp</file>
+            <file>images/qtcreator-preferences-sort.webp</file>
+            <file>images/qtcreator-preferences-telemetry-usage-statistics.webp</file>
+            <file>images/qtcreator-preferences-terminal.webp</file>
+            <file>images/qtcreator-preferences-testing-boosttest.webp</file>
+            <file>images/qtcreator-preferences-testing-catchtest.webp</file>
+            <file>images/qtcreator-preferences-testing-ctest.webp</file>
+            <file>images/qtcreator-preferences-testing-general.webp</file>
+            <file>images/qtcreator-preferences-testing-googletest.webp</file>
+            <file>images/qtcreator-preferences-testing-qttest.webp</file>
+            <file>images/qtcreator-preferences-text-editor-display.webp</file>
+            <file>images/qtcreator-preferences-texteditor-behavior-indentation.webp</file>
+            <file>images/qtcreator-preferences-texteditor-behavior.webp</file>
+            <file>images/qtcreator-preferences-texteditor-completion.webp</file>
+            <file>images/qtcreator-preferences-texteditor-macros.webp</file>
+            <file>images/qtcreator-preferences-vcs-bazaar.webp</file>
+            <file>images/qtcreator-preferences-vcs-clearcase.webp</file>
+            <file>images/qtcreator-preferences-vcs-cvs.webp</file>
+            <file>images/qtcreator-preferences-vcs-fossil.webp</file>
+            <file>images/qtcreator-preferences-vcs-general.webp</file>
+            <file>images/qtcreator-preferences-vcs-gerrit.webp</file>
+            <file>images/qtcreator-preferences-vcs-git.webp</file>
+            <file>images/qtcreator-preferences-vcs-mercurial.webp</file>
+            <file>images/qtcreator-preferences-vcs-perforce.webp</file>
+            <file>images/qtcreator-preferences-vcs-subversion.webp</file>
+            <file>images/qtcreator-preferences-windows-app-sdk.webp</file>
+            <file>images/qtcreator-preferences.webp</file>
+            <file>images/qtcreator-project-nimble.png</file>
+            <file>images/qtcreator-project-qt-quick-details.webp</file>
+            <file>images/qtcreator-project-qt-quick.webp</file>
+            <file>images/qtcreator-project-settings-cmake.webp</file>
+            <file>images/qtcreator-project-settings-copilot.webp</file>
+            <file>images/qtcreator-projectpane.webp</file>
+            <file>images/qtcreator-projects-build-dependencies.webp</file>
+            <file>images/qtcreator-projects-building-and-running-settings.webp</file>
+            <file>images/qtcreator-projects-cpp-code-model.webp</file>
+            <file>images/qtcreator-projects-environment.webp</file>
+            <file>images/qtcreator-projects-kits.webp</file>
+            <file>images/qtcreator-projects-settings-build-coco.webp</file>
+            <file>images/qtcreator-projects-settings-clangd.webp</file>
+            <file>images/qtcreator-projects-settings-coco.webp</file>
+            <file>images/qtcreator-projects-settings-cpp-file-naming.webp</file>
+            <file>images/qtcreator-projects-settings-language-server.webp</file>
+            <file>images/qtcreator-projects-settings-testing.webp</file>
+            <file>images/qtcreator-projects-vanished-targets.webp</file>
+            <file>images/qtcreator-projects-view.webp</file>
+            <file>images/qtcreator-python-advanced.png</file>
+            <file>images/qtcreator-python-install.webp</file>
+            <file>images/qtcreator-python-interpreter-edit-mode.webp</file>
+            <file>images/qtcreator-python-interpreters.webp</file>
+            <file>images/qtcreator-python-plugins.png</file>
+            <file>images/qtcreator-python-run-settings-custom-executable.webp</file>
+            <file>images/qtcreator-python-run-settings.webp</file>
+            <file>images/qtcreator-python-update-language-server.webp</file>
+            <file>images/qtcreator-qbs-build-steps.webp</file>
+            <file>images/qtcreator-qbs-profile-settings.png</file>
+            <file>images/qtcreator-qml-js-editing.webp</file>
+            <file>images/qtcreator-qml-profiler-toolbar.webp</file>
+            <file>images/qtcreator-qml-profiler.webp</file>
+            <file>images/qtcreator-qnx-deployment.png</file>
+            <file>images/qtcreator-qt-versions.png</file>
+            <file>images/qtcreator-record-screen.webp</file>
+            <file>images/qtcreator-refactoring-constructor.png</file>
+            <file>images/qtcreator-refactoring-find.webp</file>
+            <file>images/qtcreator-refactoring-getters-and-setters.png</file>
+            <file>images/qtcreator-refactoring-member-function-implementations.png</file>
+            <file>images/qtcreator-refactoring-options-generation.png</file>
+            <file>images/qtcreator-refactoring-options-locations.png</file>
+            <file>images/qtcreator-refactoring-options-namespaces.png</file>
+            <file>images/qtcreator-refactoring-options-templates.webp</file>
+            <file>images/qtcreator-refactoring-replace.webp</file>
+            <file>images/qtcreator-refactoring-virtual-function-dialog.png</file>
+            <file>images/qtcreator-remove-file.webp</file>
+            <file>images/qtcreator-run-environment.webp</file>
+            <file>images/qtcreator-run-failed-tests.png</file>
+            <file>images/qtcreator-run-selected-tests.png</file>
+            <file>images/qtcreator-run-settings-custom-executable.webp</file>
+            <file>images/qtcreator-run-settings-remote-linux.webp</file>
+            <file>images/qtcreator-run-settings-vxworks.webp</file>
+            <file>images/qtcreator-run-tests-in-current-file.png</file>
+            <file>images/qtcreator-scratch-buffer.webp</file>
+            <file>images/qtcreator-screen-recording-options.webp</file>
+            <file>images/qtcreator-scxml-editor-state-toolbar.webp</file>
+            <file>images/qtcreator-scxml-editor.webp</file>
+            <file>images/qtcreator-search-all-projects.webp</file>
+            <file>images/qtcreator-search-cpp-symbols.webp</file>
+            <file>images/qtcreator-search-file-system.webp</file>
+            <file>images/qtcreator-search-reg-exp.webp</file>
+            <file>images/qtcreator-search-results-matches.webp</file>
+            <file>images/qtcreator-search-results-reg-exp.webp</file>
+            <file>images/qtcreator-search-single-projects.webp</file>
+            <file>images/qtcreator-semanticerror.png</file>
+            <file>images/qtcreator-send-to-codepaster.webp</file>
+            <file>images/qtcreator-session-manager.png</file>
+            <file>images/qtcreator-set-compiler-explorer-url.webp</file>
+            <file>images/qtcreator-setting-breakpoint1.webp</file>
+            <file>images/qtcreator-setting-breakpoint2.png</file>
+            <file>images/qtcreator-settings-build.webp</file>
+            <file>images/qtcreator-settings-deploy.webp</file>
+            <file>images/qtcreator-settings-run-desktop.webp</file>
+            <file>images/qtcreator-settings-run-webassembly.png</file>
+            <file>images/qtcreator-show-subprojects.png</file>
+            <file>images/qtcreator-sidebar-help-mode.webp</file>
+            <file>images/qtcreator-sidebar.webp</file>
+            <file>images/qtcreator-snippet-modifiers.png</file>
+            <file>images/qtcreator-spliteditorview.png</file>
+            <file>images/qtcreator-squish-control-bar-record-test-case.png</file>
+            <file>images/qtcreator-squish-control-bar-run-test-case.png</file>
+            <file>images/qtcreator-squish-create-test-suite-aut.png</file>
+            <file>images/qtcreator-squish-create-test-suite-language.png</file>
+            <file>images/qtcreator-squish-create-test-suite-location.png</file>
+            <file>images/qtcreator-squish-create-test-suite-setup.png</file>
+            <file>images/qtcreator-squish-create-test-suite.png</file>
+            <file>images/qtcreator-squish-debugging-view.png</file>
+            <file>images/qtcreator-squish-locals.png</file>
+            <file>images/qtcreator-squish-output-runner-server-log.webp</file>
+            <file>images/qtcreator-squish-output-test-results.png</file>
+            <file>images/qtcreator-squish-preferences.png</file>
+            <file>images/qtcreator-squish-server-settings-add-attachable-aut.png</file>
+            <file>images/qtcreator-squish-server-settings.png</file>
+            <file>images/qtcreator-squish-symbolic-names.png</file>
+            <file>images/qtcreator-squish-test-script-edit.png</file>
+            <file>images/qtcreator-squish-view-open-squish-suites.png</file>
+            <file>images/qtcreator-squish-view.png</file>
+            <file>images/qtcreator-ssh-key-configuration.png</file>
+            <file>images/qtcreator-ssh-options.png</file>
+            <file>images/qtcreator-syntax-highlighter.png</file>
+            <file>images/qtcreator-syntaxerror.png</file>
+            <file>images/qtcreator-tabs-in-editor.webp</file>
+            <file>images/qtcreator-terminal-python.webp</file>
+            <file>images/qtcreator-test-results.webp</file>
+            <file>images/qtcreator-tests-view.png</file>
+            <file>images/qtcreator-text-encoding.png</file>
+            <file>images/qtcreator-textfinder-contents.webp</file>
+            <file>images/qtcreator-textfinder-filter.png</file>
+            <file>images/qtcreator-textfinder-objectname.png</file>
+            <file>images/qtcreator-textfinder-screenshot.png</file>
+            <file>images/qtcreator-textfinder-ui-horizontal-layout.png</file>
+            <file>images/qtcreator-textfinder-ui-widgets.png</file>
+            <file>images/qtcreator-textfinder-ui.png</file>
+            <file>images/qtcreator-to-do-entries.webp</file>
+            <file>images/qtcreator-todo-excluded-files.png</file>
+            <file>images/qtcreator-todo-options.png</file>
+            <file>images/qtcreator-toggle-progress-bar.webp</file>
+            <file>images/qtcreator-togglebookmark.png</file>
+            <file>images/qtcreator-type-hierarchy-view.webp</file>
+            <file>images/qtcreator-typo-clang.png</file>
+            <file>images/qtcreator-unclaimed-breakpoint-icon.png</file>
+            <file>images/qtcreator-valgrind-callgrind-options.png</file>
+            <file>images/qtcreator-valgrind-callgrind-toolbar.webp</file>
+            <file>images/qtcreator-valgrind-callgrind.png</file>
+            <file>images/qtcreator-valgrind-memcheck-options.png</file>
+            <file>images/qtcreator-valgrind-memcheck.webp</file>
+            <file>images/qtcreator-valgrind-remote-settings.png</file>
+            <file>images/qtcreator-variables.png</file>
+            <file>images/qtcreator-vcpkg-cmake-config.webp</file>
+            <file>images/qtcreator-vcpkg-manifest-file-editor.webp</file>
+            <file>images/qtcreator-vcpkg-package-selector.webp</file>
+            <file>images/qtcreator-vcs-pane.webp</file>
+            <file>images/qtcreator-vcs-show.png</file>
+            <file>images/qtcreator-watcher.png</file>
+            <file>images/qtcreator-welcome-open-projects.webp</file>
+            <file>images/qtcreator-welcome-overview.webp</file>
+            <file>images/qtcreator-welcome-session.webp</file>
+            <file>images/qtcreator-without-menubar.webp</file>
+            <file>images/qtdesigner-add-profile.png</file>
+            <file>images/qtdesigner-embedded-design.png</file>
+            <file>images/qtlogo-16.png</file>
+            <file>images/qtquick-debugger-settings.webp</file>
+            <file>images/qtquick-designer.webp</file>
+            <file>images/qtquick-example-qml-inspector.png</file>
+            <file>images/qtquick-example-setting-breakpoint1.webp</file>
+            <file>images/qtquick-example-setting-breakpoint2.webp</file>
+            <file>images/qtquick-example-setting-breakpoint3.webp</file>
+            <file>images/qtquick-example-stack.webp</file>
+            <file>images/qtquick-mobile-tutorial-manifest.png</file>
+            <file>images/qtquick-tutorial.gif</file>
+            <file>images/qtquick-ui-prototype-run-settings.webp</file>
+            <file>images/recordfill.png</file>
+            <file>images/redo.png</file>
+            <file>images/refactormarker.png</file>
+            <file>images/reload_gray.png</file>
+            <file>images/replace.png</file>
+            <file>images/reset.png</file>
+            <file>images/rightsidebaricon.png</file>
+            <file>images/run_small.png</file>
+            <file>images/samegame.png</file>
+            <file>images/savefile.png</file>
+            <file>images/settings-32x32.png</file>
+            <file>images/settings.png</file>
+            <file>images/shortcuts.png</file>
+            <file>images/sidebysidediff.png</file>
+            <file>images/signal.png</file>
+            <file>images/slot.png</file>
+            <file>images/slot_priv.png</file>
+            <file>images/slot_prot.png</file>
+            <file>images/snapshot.png</file>
+            <file>images/snippet.png</file>
+            <file>images/sort_alphabetically.png</file>
+            <file>images/splitbutton_closetop.png</file>
+            <file>images/splitbutton_horizontal.png</file>
+            <file>images/state.png</file>
+            <file>images/statistics.png</file>
+            <file>images/stop_small.png</file>
+            <file>images/stopwatch.png</file>
+            <file>images/switch-outline.png</file>
+            <file>images/terminal-close.png</file>
+            <file>images/terminal-create.png</file>
+            <file>images/text.png</file>
+            <file>images/transition.png</file>
+            <file>images/tutorials.png</file>
+            <file>images/unifieddiff.png</file>
+            <file>images/used-in-examples/transitions/qt-logo.png</file>
+            <file>images/var.png</file>
+            <file>images/var_priv.png</file>
+            <file>images/var_prot.png</file>
+            <file>images/vcpkg.png</file>
+            <file>images/warning.png</file>
+            <file>images/xmark.png</file>
+            <file>images/zoom-in.png</file>
+            <file>images/zoom-out.png</file>
+            <file>images/zoom.png</file>
+            <file>index.html</file>
+            <file>qt-quick-toolbars.html</file>
+            <file>qtassistant-attribution-litehtml-gumbo.html</file>
+            <file>qtassistant-attribution-litehtml.html</file>
+            <file>qtcreator-accelbubble-bluebubble-svg.html</file>
+            <file>qtcreator-accelbubble-cmakelists-txt.html</file>
+            <file>qtcreator-accelbubble-example.html</file>
+            <file>qtcreator-accelbubble-main-qml.html</file>
+            <file>qtcreator-attribution-bzip2.html</file>
+            <file>qtcreator-attribution-cmake-lexer.html</file>
+            <file>qtcreator-attribution-conan-cmake.html</file>
+            <file>qtcreator-attribution-cpp-keywordgen.html</file>
+            <file>qtcreator-attribution-front-end-for-cpp.html</file>
+            <file>qtcreator-attribution-json-nlohmann.html</file>
+            <file>qtcreator-attribution-kikito-inspect-lua.html</file>
+            <file>qtcreator-attribution-ksyntaxhighlighting-alert.html</file>
+            <file>qtcreator-attribution-ksyntaxhighlighting-bash.html</file>
+            <file>qtcreator-attribution-ksyntaxhighlighting-cmake.html</file>
+            <file>qtcreator-attribution-ksyntaxhighlighting-css.html</file>
+            <file>qtcreator-attribution-ksyntaxhighlighting-doxygen.html</file>
+            <file>qtcreator-attribution-ksyntaxhighlighting-dtd.html</file>
+            <file>qtcreator-attribution-ksyntaxhighlighting-html.html</file>
+            <file>qtcreator-attribution-ksyntaxhighlighting-ini.html</file>
+            <file>qtcreator-attribution-ksyntaxhighlighting-java.html</file>
+            <file>qtcreator-attribution-ksyntaxhighlighting-javadoc.html</file>
+            <file>qtcreator-attribution-ksyntaxhighlighting-json.html</file>
+            <file>qtcreator-attribution-ksyntaxhighlighting-markdown.html</file>
+            <file>qtcreator-attribution-ksyntaxhighlighting-modelines.html</file>
+            <file>qtcreator-attribution-ksyntaxhighlighting-perl.html</file>
+            <file>qtcreator-attribution-ksyntaxhighlighting-perl6.html</file>
+            <file>qtcreator-attribution-ksyntaxhighlighting-powershell.html</file>
+            <file>qtcreator-attribution-ksyntaxhighlighting-qdocconf.html</file>
+            <file>qtcreator-attribution-ksyntaxhighlighting-ruby.html</file>
+            <file>qtcreator-attribution-ksyntaxhighlighting-toml.html</file>
+            <file>qtcreator-attribution-ksyntaxhighlighting-valgrind-suppression.html</file>
+            <file>qtcreator-attribution-ksyntaxhighlighting-xml.html</file>
+            <file>qtcreator-attribution-ksyntaxhighlighting-yacc.html</file>
+            <file>qtcreator-attribution-ksyntaxhighlighting-yaml.html</file>
+            <file>qtcreator-attribution-ksyntaxhighlighting.html</file>
+            <file>qtcreator-attribution-libarchive.html</file>
+            <file>qtcreator-attribution-libvterm.html</file>
+            <file>qtcreator-attribution-lua.html</file>
+            <file>qtcreator-attribution-ms-jpq-lua-async-await.html</file>
+            <file>qtcreator-attribution-ptyqt-conpty.html</file>
+            <file>qtcreator-attribution-ptyqt.html</file>
+            <file>qtcreator-attribution-pyprof2calltree.html</file>
+            <file>qtcreator-attribution-qtkeychain.html</file>
+            <file>qtcreator-attribution-qtqrcodegenerator.html</file>
+            <file>qtcreator-attribution-sol2.html</file>
+            <file>qtcreator-attribution-source-code-pro-font.html</file>
+            <file>qtcreator-attribution-sqlite.html</file>
+            <file>qtcreator-attribution-std-span-martinmoene.html</file>
+            <file>qtcreator-attribution-tartanllama-expected.html</file>
+            <file>qtcreator-attribution-terminal-shellintegrations-clink.html</file>
+            <file>qtcreator-attribution-terminal-shellintegrations.html</file>
+            <file>qtcreator-attribution-tika-mimetypes.html</file>
+            <file>qtcreator-attribution-toml11.html</file>
+            <file>qtcreator-attribution-ui-watchdog.html</file>
+            <file>qtcreator-attribution-vitaut-rstparser.html</file>
+            <file>qtcreator-attribution-winpty.html</file>
+            <file>qtcreator-attribution-xz.html</file>
+            <file>qtcreator-attribution-yaml-cpp.html</file>
+            <file>qtcreator-attribution-zlib.html</file>
+            <file>qtcreator-binary-attribution-clazy.html</file>
+            <file>qtcreator-binary-attribution-llvm.html</file>
+            <file>qtcreator-binary-attribution-llvmpipe.html</file>
+            <file>qtcreator-binary-attribution-qbs.html</file>
+            <file>qtcreator-toc.html</file>
+            <file>qtcreator-transitions-cmakelists-txt.html</file>
+            <file>qtcreator-transitions-example.html</file>
+            <file>qtcreator-transitions-main-qml.html</file>
+            <file>qtcreator-transitions-page-qml.html</file>
+            <file>quick-converting-ui-projects.html</file>
+            <file>quick-projects.html</file>
+            <file>style/offline-dark.css</file>
+            <file>style/offline-simple.css</file>
+            <file>style/offline.css</file>
+            <file>style/tech_preview.svg</file>
+            <file>technical-support.html</file>
+        </files>
+    </filterSection>
+</QtHelpProject>

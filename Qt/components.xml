@@ -1,0 +1,444 @@
+<Packages>
+    <ApplicationName>Qt</ApplicationName>
+    <ApplicationVersion>1.0.0</ApplicationVersion>
+    <Package>
+        <Name>qt</Name>
+        <Title>Qt</Title>
+        <Description>Qt</Description>
+        <SortingPriority>0</SortingPriority>
+        <TreeName moveChildren="false"></TreeName>
+        <Version>1.0.19</Version>
+        <LastUpdateDate></LastUpdateDate>
+        <InstallDate>2026-01-31</InstallDate>
+        <Size>0</Size>
+    </Package>
+    <Package>
+        <Name>qt.license.acceptance</Name>
+        <Title>Qt Frame Agreement acceptance</Title>
+        <Description>Additional License Agreement text and accept</Description>
+        <SortingPriority>0</SortingPriority>
+        <TreeName moveChildren="false"></TreeName>
+        <Version>1.0.0</Version>
+        <LastUpdateDate></LastUpdateDate>
+        <InstallDate>2026-01-31</InstallDate>
+        <Size>0</Size>
+        <Virtual>true</Virtual>
+        <Checkable>true</Checkable>
+    </Package>
+    <Package>
+        <Name>qt.license.lgpl</Name>
+        <Title>Qt License LGPL</Title>
+        <Description></Description>
+        <SortingPriority>0</SortingPriority>
+        <TreeName moveChildren="false"></TreeName>
+        <Version>1.0.2-1</Version>
+        <LastUpdateDate></LastUpdateDate>
+        <InstallDate>2026-01-31</InstallDate>
+        <Size>0</Size>
+        <Dependencies>qt.license.acceptance</Dependencies>
+        <Virtual>true</Virtual>
+        <Checkable>true</Checkable>
+    </Package>
+    <Package>
+        <Name>qt.license.thirdparty</Name>
+        <Title>Qt 3rd Party Licenses</Title>
+        <Description></Description>
+        <SortingPriority>0</SortingPriority>
+        <TreeName moveChildren="false"></TreeName>
+        <Version>1.0.0-1</Version>
+        <LastUpdateDate></LastUpdateDate>
+        <InstallDate>2026-01-31</InstallDate>
+        <Size>23056</Size>
+        <Virtual>true</Virtual>
+        <Checkable>true</Checkable>
+    </Package>
+    <Package>
+        <Name>qt.qt5.5152</Name>
+        <Title>Qt 5.15.2</Title>
+        <Description>Qt 5.15.2 &lt;br>&lt;br>sha1: 9b43a43ee96198674060c6b9591e515e2d27c28f</Description>
+        <SortingPriority>5152</SortingPriority>
+        <TreeName moveChildren="false"></TreeName>
+        <Version>5.15.2-0-202011130724</Version>
+        <LastUpdateDate></LastUpdateDate>
+        <InstallDate>2026-01-31</InstallDate>
+        <Size>2311</Size>
+        <Dependencies>qt.qt5.5152.doc,qt.qt5.5152.examples,qt.license.thirdparty,qt.license.lgpl</Dependencies>
+        <Checkable>true</Checkable>
+    </Package>
+    <Package>
+        <Name>qt.qt5.5152.doc</Name>
+        <Title>Qt 5.15.2 Documentation</Title>
+        <Description>Qt 5.15.2 documentation</Description>
+        <SortingPriority>1</SortingPriority>
+        <TreeName moveChildren="false"></TreeName>
+        <Version>5.15.2-0-202011130724</Version>
+        <LastUpdateDate></LastUpdateDate>
+        <InstallDate>2026-01-31</InstallDate>
+        <Size>402906410</Size>
+        <Dependencies>qt.tools</Dependencies>
+        <Virtual>true</Virtual>
+        <Checkable>true</Checkable>
+    </Package>
+    <Package>
+        <Name>qt.qt5.5152.doc.qtcharts</Name>
+        <Title>Documentation for Qt 5.15.2 GPLv3 components (QtCharts)</Title>
+        <Description>Documentation for Qt 5.15.2 GPLv3 components (QtCharts)</Description>
+        <SortingPriority>1</SortingPriority>
+        <TreeName moveChildren="false"></TreeName>
+        <Version>5.15.2-0-202011130724</Version>
+        <LastUpdateDate></LastUpdateDate>
+        <InstallDate>2026-01-31</InstallDate>
+        <Size>16802053</Size>
+        <Virtual>true</Virtual>
+        <Checkable>true</Checkable>
+    </Package>
+    <Package>
+        <Name>qt.qt5.5152.doc.qtdatavis3d</Name>
+        <Title>Documentation for Qt 5.15.2 GPLv3 components (QtDataVisualization)</Title>
+        <Description>Documentation for Qt 5.15.2 GPLv3 components (QtDataVisualization)</Description>
+        <SortingPriority>1</SortingPriority>
+        <TreeName moveChildren="false"></TreeName>
+        <Version>5.15.2-0-202011130724</Version>
+        <LastUpdateDate></LastUpdateDate>
+        <InstallDate>2026-01-31</InstallDate>
+        <Size>12639590</Size>
+        <Virtual>true</Virtual>
+        <Checkable>true</Checkable>
+    </Package>
+    <Package>
+        <Name>qt.qt5.5152.doc.qtnetworkauth</Name>
+        <Title>Documentation for Qt Networkauth (Technology Preview)</Title>
+        <Description>Documentation for Qt Networkauth (Technology Preview)</Description>
+        <SortingPriority>1</SortingPriority>
+        <TreeName moveChildren="false"></TreeName>
+        <Version>5.15.2-0-202011130724</Version>
+        <LastUpdateDate></LastUpdateDate>
+        <InstallDate>2026-01-31</InstallDate>
+        <Size>948777</Size>
+        <Virtual>true</Virtual>
+        <Checkable>true</Checkable>
+    </Package>
+    <Package>
+        <Name>qt.qt5.5152.examples</Name>
+        <Title>Qt 5.15.2 Examples</Title>
+        <Description>Qt 5.15.2 Examples</Description>
+        <SortingPriority>1</SortingPriority>
+        <TreeName moveChildren="false"></TreeName>
+        <Version>5.15.2-0-202011130724</Version>
+        <LastUpdateDate></LastUpdateDate>
+        <InstallDate>2026-01-31</InstallDate>
+        <Size>150199927</Size>
+        <Dependencies>qt.tools</Dependencies>
+        <Virtual>true</Virtual>
+        <Checkable>true</Checkable>
+    </Package>
+    <Package>
+        <Name>qt.qt5.5152.examples.qtcharts</Name>
+        <Title>Examples for Qt 5.15.2 GPLv3 components (QtCharts)</Title>
+        <Description>Examples for Qt 5.15.2 GPLv3 components (QtCharts)</Description>
+        <SortingPriority>1</SortingPriority>
+        <TreeName moveChildren="false"></TreeName>
+        <Version>5.15.2-0-202011130724</Version>
+        <LastUpdateDate></LastUpdateDate>
+        <InstallDate>2026-01-31</InstallDate>
+        <Size>529204</Size>
+        <Virtual>true</Virtual>
+        <Checkable>true</Checkable>
+    </Package>
+    <Package>
+        <Name>qt.qt5.5152.examples.qtdatavis3d</Name>
+        <Title>Examples for Qt 5.15.2 GPLv3 components (QtDataVisualization)</Title>
+        <Description>Examples for Qt 5.15.2 GPLv3 components (QtDataVisualization)</Description>
+        <SortingPriority>1</SortingPriority>
+        <TreeName moveChildren="false"></TreeName>
+        <Version>5.15.2-0-202011130724</Version>
+        <LastUpdateDate></LastUpdateDate>
+        <InstallDate>2026-01-31</InstallDate>
+        <Size>5877518</Size>
+        <Virtual>true</Virtual>
+        <Checkable>true</Checkable>
+    </Package>
+    <Package>
+        <Name>qt.qt5.5152.examples.qtnetworkauth</Name>
+        <Title>Examples for Qt Networkauth (Technology Preview)</Title>
+        <Description>Examples for Qt Networkauth (Technology Preview)</Description>
+        <SortingPriority>1</SortingPriority>
+        <TreeName moveChildren="false"></TreeName>
+        <Version>5.15.2-0-202011130724</Version>
+        <LastUpdateDate></LastUpdateDate>
+        <InstallDate>2026-01-31</InstallDate>
+        <Size>116153</Size>
+        <Virtual>true</Virtual>
+        <Checkable>true</Checkable>
+    </Package>
+    <Package>
+        <Name>qt.qt5.5152.qtcharts</Name>
+        <Title>Qt Charts</Title>
+        <Description>The Qt Charts API lets you easily create interactive and dynamic 2D charts using C++ and/or Qt Quick.&lt;br>&lt;br>This component is available under commercial licenses from The Qt Company, or under GPL v3. For open source use, please note the additional requirements compared to LGPL v3.</Description>
+        <SortingPriority>89</SortingPriority>
+        <TreeName moveChildren="false"></TreeName>
+        <Version>5.15.2-0-202011130740</Version>
+        <LastUpdateDate></LastUpdateDate>
+        <InstallDate>2026-01-31</InstallDate>
+        <Size>0</Size>
+        <Dependencies>qt.qt5.5152.doc.qtcharts,qt.qt5.5152.examples.qtcharts</Dependencies>
+        <Checkable>true</Checkable>
+    </Package>
+    <Package>
+        <Name>qt.qt5.5152.qtcharts.win32_msvc2019</Name>
+        <Title>Qt Charts for MSVC 2019 32-bit</Title>
+        <Description></Description>
+        <SortingPriority>0</SortingPriority>
+        <TreeName moveChildren="false"></TreeName>
+        <Version>5.15.2-0-202011130602</Version>
+        <LastUpdateDate></LastUpdateDate>
+        <InstallDate>2026-01-31</InstallDate>
+        <Size>9094040</Size>
+        <Dependencies>qt.qt5.5152.win32_msvc2019</Dependencies>
+        <AutoDependOn>qt.qt5.5152.qtcharts,qt.qt5.5152.win32_msvc2019</AutoDependOn>
+        <Virtual>true</Virtual>
+        <Checkable>true</Checkable>
+    </Package>
+    <Package>
+        <Name>qt.qt5.5152.qtcharts.win64_msvc2019_64</Name>
+        <Title>Qt Charts for MSVC 2019 64-bit</Title>
+        <Description></Description>
+        <SortingPriority>0</SortingPriority>
+        <TreeName moveChildren="false"></TreeName>
+        <Version>5.15.2-0-202011130602</Version>
+        <LastUpdateDate></LastUpdateDate>
+        <InstallDate>2026-01-31</InstallDate>
+        <Size>10321702</Size>
+        <Dependencies>qt.qt5.5152.win64_msvc2019_64</Dependencies>
+        <AutoDependOn>qt.qt5.5152.qtcharts,qt.qt5.5152.win64_msvc2019_64</AutoDependOn>
+        <Virtual>true</Virtual>
+        <Checkable>true</Checkable>
+    </Package>
+    <Package>
+        <Name>qt.qt5.5152.qtdatavis3d</Name>
+        <Title>Qt Data Visualization</Title>
+        <Description>Qt Data Visualization is a module which provides a way to visualize data in 3D. There are C++ classes and QML types for displaying bar graphs, scatter graphs, surface graphs and ways of manipulating the 3D scene. In addition, the graphs are fully customizable with different themes.&lt;br>&lt;br>This component is available under commercial licenses from The Qt Company, or under GPL v3. For open source use, please note the additional requirements compared to LGPL v3.</Description>
+        <SortingPriority>88</SortingPriority>
+        <TreeName moveChildren="false"></TreeName>
+        <Version>5.15.2-0-202011130740</Version>
+        <LastUpdateDate></LastUpdateDate>
+        <InstallDate>2026-01-31</InstallDate>
+        <Size>0</Size>
+        <Dependencies>qt.qt5.5152.doc.qtdatavis3d,qt.qt5.5152.examples.qtdatavis3d</Dependencies>
+        <Checkable>true</Checkable>
+    </Package>
+    <Package>
+        <Name>qt.qt5.5152.qtdatavis3d.win32_msvc2019</Name>
+        <Title>Qt Data Visualization for MSVC 2019 32-bit</Title>
+        <Description></Description>
+        <SortingPriority>0</SortingPriority>
+        <TreeName moveChildren="false"></TreeName>
+        <Version>5.15.2-0-202011130602</Version>
+        <LastUpdateDate></LastUpdateDate>
+        <InstallDate>2026-01-31</InstallDate>
+        <Size>6178673</Size>
+        <Dependencies>qt.qt5.5152.win32_msvc2019</Dependencies>
+        <AutoDependOn>qt.qt5.5152.qtdatavis3d,qt.qt5.5152.win32_msvc2019</AutoDependOn>
+        <Virtual>true</Virtual>
+        <Checkable>true</Checkable>
+    </Package>
+    <Package>
+        <Name>qt.qt5.5152.qtdatavis3d.win64_msvc2019_64</Name>
+        <Title>Qt Data Visualization for MSVC 2019 64-bit</Title>
+        <Description></Description>
+        <SortingPriority>0</SortingPriority>
+        <TreeName moveChildren="false"></TreeName>
+        <Version>5.15.2-0-202011130602</Version>
+        <LastUpdateDate></LastUpdateDate>
+        <InstallDate>2026-01-31</InstallDate>
+        <Size>7010737</Size>
+        <Dependencies>qt.qt5.5152.win64_msvc2019_64</Dependencies>
+        <AutoDependOn>qt.qt5.5152.qtdatavis3d,qt.qt5.5152.win64_msvc2019_64</AutoDependOn>
+        <Virtual>true</Virtual>
+        <Checkable>true</Checkable>
+    </Package>
+    <Package>
+        <Name>qt.qt5.5152.qtnetworkauth</Name>
+        <Title>Qt Network Authorization</Title>
+        <Description>Qt Network Authorization is an add-on library that enables Qt applications to use different web authentication systems.</Description>
+        <SortingPriority>10</SortingPriority>
+        <TreeName moveChildren="false"></TreeName>
+        <Version>5.15.2-0-202011130740</Version>
+        <LastUpdateDate></LastUpdateDate>
+        <InstallDate>2026-01-31</InstallDate>
+        <Size>0</Size>
+        <Dependencies>qt.qt5.5152.doc.qtnetworkauth,qt.qt5.5152.examples.qtnetworkauth</Dependencies>
+        <Checkable>true</Checkable>
+    </Package>
+    <Package>
+        <Name>qt.qt5.5152.qtnetworkauth.win32_msvc2019</Name>
+        <Title>Qt Network Authorization for MSVC 2019 32-bit</Title>
+        <Description></Description>
+        <SortingPriority>0</SortingPriority>
+        <TreeName moveChildren="false"></TreeName>
+        <Version>5.15.2-0-202011130602</Version>
+        <LastUpdateDate></LastUpdateDate>
+        <InstallDate>2026-01-31</InstallDate>
+        <Size>685537</Size>
+        <Dependencies>qt.qt5.5152.win32_msvc2019</Dependencies>
+        <AutoDependOn>qt.qt5.5152.qtnetworkauth,qt.qt5.5152.win32_msvc2019</AutoDependOn>
+        <Virtual>true</Virtual>
+        <Checkable>true</Checkable>
+    </Package>
+    <Package>
+        <Name>qt.qt5.5152.qtnetworkauth.win64_msvc2019_64</Name>
+        <Title>Qt Network Authentication for MSVC 2019_64-bit</Title>
+        <Description></Description>
+        <SortingPriority>0</SortingPriority>
+        <TreeName moveChildren="false"></TreeName>
+        <Version>5.15.2-0-202011130602</Version>
+        <LastUpdateDate></LastUpdateDate>
+        <InstallDate>2026-01-31</InstallDate>
+        <Size>813645</Size>
+        <Dependencies>qt.qt5.5152.win64_msvc2019_64</Dependencies>
+        <AutoDependOn>qt.qt5.5152.qtnetworkauth,qt.qt5.5152.win64_msvc2019_64</AutoDependOn>
+        <Virtual>true</Virtual>
+        <Checkable>true</Checkable>
+    </Package>
+    <Package>
+        <Name>qt.qt5.5152.win32_msvc2019</Name>
+        <Title>MSVC 2019 32-bit</Title>
+        <Description>Qt 5.15.2 Prebuilt Components for MSVC 2019 32-bit</Description>
+        <SortingPriority>590</SortingPriority>
+        <TreeName moveChildren="false"></TreeName>
+        <Version>5.15.2-0-202011130602</Version>
+        <LastUpdateDate></LastUpdateDate>
+        <InstallDate>2026-01-31</InstallDate>
+        <Size>530956858</Size>
+        <Dependencies>qt.tools.qtcreator,qt.qt5.5152.doc,qt.qt5.5152.examples</Dependencies>
+        <Checkable>true</Checkable>
+    </Package>
+    <Package>
+        <Name>qt.qt5.5152.win64_msvc2019_64</Name>
+        <Title>MSVC 2019 64-bit</Title>
+        <Description>Qt 5.15.2 Prebuilt Components for MSVC 2019 64-bit</Description>
+        <SortingPriority>590</SortingPriority>
+        <TreeName moveChildren="false"></TreeName>
+        <Version>5.15.2-0-202011130602</Version>
+        <LastUpdateDate></LastUpdateDate>
+        <InstallDate>2026-01-31</InstallDate>
+        <Size>617563234</Size>
+        <Dependencies>qt.tools.qtcreator,qt.qt5.5152.doc,qt.qt5.5152.examples</Dependencies>
+        <Checkable>true</Checkable>
+    </Package>
+    <Package>
+        <Name>qt.tools</Name>
+        <Title>Build Tools</Title>
+        <Description>Additional development and environment management tools.</Description>
+        <SortingPriority>40</SortingPriority>
+        <TreeName moveChildren="false"></TreeName>
+        <Version>1.2.2-0-202412051107</Version>
+        <LastUpdateDate></LastUpdateDate>
+        <InstallDate>2026-01-31</InstallDate>
+        <Size>0</Size>
+        <Dependencies>qt.license.thirdparty,qt.license.lgpl</Dependencies>
+        <Checkable>true</Checkable>
+    </Package>
+    <Package>
+        <Name>qt.tools.cmake</Name>
+        <Title>CMake 3.30.5</Title>
+        <Description>CMake tools 3.30.5</Description>
+        <SortingPriority>0</SortingPriority>
+        <TreeName moveChildren="false"></TreeName>
+        <Version>3.30.5-202502251255</Version>
+        <LastUpdateDate></LastUpdateDate>
+        <InstallDate>2026-01-31</InstallDate>
+        <Size>117592408</Size>
+        <Dependencies>qt.tools.qtcreator</Dependencies>
+        <Checkable>true</Checkable>
+    </Package>
+    <Package>
+        <Name>qt.tools.maintenance</Name>
+        <Title>Qt Maintenance Tool</Title>
+        <Description>The tool to maintain and update the existing installation, located in the root directory of the installation.</Description>
+        <SortingPriority>0</SortingPriority>
+        <TreeName moveChildren="false"></TreeName>
+        <Version>4.10.0-202506090627</Version>
+        <LastUpdateDate></LastUpdateDate>
+        <InstallDate>2026-01-31</InstallDate>
+        <Size>53933093</Size>
+        <ForcedInstallation>true</ForcedInstallation>
+    </Package>
+    <Package>
+        <Name>qt.tools.ninja</Name>
+        <Title>Ninja 1.12.1</Title>
+        <Description>Ninja 1.12.1</Description>
+        <SortingPriority>0</SortingPriority>
+        <TreeName moveChildren="false"></TreeName>
+        <Version>1.12.1-202502251256</Version>
+        <LastUpdateDate></LastUpdateDate>
+        <InstallDate>2026-01-31</InstallDate>
+        <Size>569896</Size>
+        <Dependencies>qt.tools.qtcreator</Dependencies>
+        <Checkable>true</Checkable>
+    </Package>
+    <Package>
+        <Name>qt.tools.qtcreator</Name>
+        <Title>SDKTool</Title>
+        <Description>SDKTool</Description>
+        <SortingPriority>0</SortingPriority>
+        <TreeName moveChildren="false"></TreeName>
+        <Version>18.0.2-0-202601230421</Version>
+        <LastUpdateDate></LastUpdateDate>
+        <InstallDate>2026-01-31</InstallDate>
+        <Size>3567144</Size>
+        <Dependencies>qt.tools.vcredist_msvc2019_x86,qt.tools.vcredist_msvc2022_x64</Dependencies>
+        <ForcedInstallation>true</ForcedInstallation>
+        <Virtual>true</Virtual>
+    </Package>
+    <Package>
+        <Name>qt.tools.qtcreator_gui</Name>
+        <Title>Qt Creator 18.0.2</Title>
+        <Description>IDE for Qt application development</Description>
+        <SortingPriority>1000</SortingPriority>
+        <TreeName moveChildren="true">qtcreator.release_node</TreeName>
+        <Version>18.0.2-0-202601230724</Version>
+        <LastUpdateDate></LastUpdateDate>
+        <InstallDate>2026-01-31</InstallDate>
+        <Size>667301256</Size>
+        <Dependencies>qt.tools.vcredist_msvc2019_x86,qt.tools.vcredist_msvc2022_x64,qt.tools.qtcreator</Dependencies>
+        <Checkable>true</Checkable>
+    </Package>
+    <Package>
+        <Name>qt.tools.vcredist_msvc2019_x86</Name>
+        <Title>VCRedist for MSVC 2019 32bit</Title>
+        <Description>Visual C++ Redistributable Packages for Visual Studio 2019 32 bit</Description>
+        <SortingPriority>0</SortingPriority>
+        <TreeName moveChildren="false"></TreeName>
+        <Version>2025-11-26</Version>
+        <LastUpdateDate></LastUpdateDate>
+        <InstallDate>2026-01-31</InstallDate>
+        <Size>6876248</Size>
+        <Virtual>true</Virtual>
+        <Checkable>true</Checkable>
+    </Package>
+    <Package>
+        <Name>qt.tools.vcredist_msvc2022_x64</Name>
+        <Title>VCRedist for MSVC 2022 64bit</Title>
+        <Description>Visual C++ Redistributable Packages for Visual Studio 2022 64 bit</Description>
+        <SortingPriority>0</SortingPriority>
+        <TreeName moveChildren="false"></TreeName>
+        <Version>2025-11-26</Version>
+        <LastUpdateDate></LastUpdateDate>
+        <InstallDate>2026-01-31</InstallDate>
+        <Size>18558984</Size>
+        <Virtual>true</Virtual>
+        <Checkable>true</Checkable>
+    </Package>
+    <Package>
+        <Name>qtcreator</Name>
+        <Title>Qt Creator</Title>
+        <Description>IDE for Qt application development</Description>
+        <SortingPriority>0</SortingPriority>
+        <TreeName moveChildren="true">qtcreator</TreeName>
+        <Version>2.0.0-202601230724</Version>
+        <LastUpdateDate></LastUpdateDate>
+        <InstallDate>2026-01-31</InstallDate>
+        <Size>0</Size>
+    </Package>
+</Packages>

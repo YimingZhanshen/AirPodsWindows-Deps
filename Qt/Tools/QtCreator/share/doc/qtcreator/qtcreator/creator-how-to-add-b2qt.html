@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- b2qtdev.qdoc -->
+  <title>Add Boot to Qt devices | Qt Creator Documentation</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="index.html">Qt Creator Documentation</a></li>
+<li>Add Boot to Qt devices</li>
+<li id="buildversion"><a href="index.html">Qt Creator 18.0.2</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+  <link rel="prev" href="creator-how-to-uvision.html" />
+  <link rel="next" href="creator-how-to-connect-b2qt.html" />
+<p class="naviNextPrevious headerNavi">
+<a class="prevPage" href="creator-how-to-uvision.html">Set up the uVision IDE</a>
+<span class="naviSeparator">  &#9702;  </span>
+<a class="nextPage" href="creator-how-to-connect-b2qt.html">Connect Boot to Qt devices</a>
+</p>
+<div class="sidebar">
+<div class="toc">
+<h3 id="toc">Contents</h3>
+<ul>
+<li class="level1"><a href="#reboot-devices">Reboot devices</a></li>
+<li class="level1"><a href="#restore-default-applications">Restore default applications</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Add Boot to Qt devices</h1>
+<!-- $$$creator-how-to-add-b2qt.html-description -->
+<div class="descr" id="details">
+<div class="admonition note">
+<p><b>Note: </b>Enable the Boot to Qt plugin to use it.</p>
+</div>
+<p>If Qt Creator does not automatically detect a Boot to Qt device you connect with USB, check that you followed the instructions in the <a href="https://doc.qt.io/Boot2Qt/index.html">Quick Start Guide</a> for the device.</p>
+<p>If that does not help, but you can reach the IP address of the device, create a network connection to it:</p>
+<ol class="1" type="1"><li>Go to <a href="creator-how-to-find-preferences.html">Preferences</a> &gt; <b translate="no">Devices</b> &gt; <b translate="no">Devices</b>.<p class="centerAlign"><img src="images/qtcreator-boot2qt-device-configurations.webp" alt="Devices tab in Devices preferences" /></p></li>
+<li>Select <b translate="no">Add</b> &gt; <b translate="no">Boot2Qt Device</b> to create a network connection to the device.<p class="centerAlign"><img src="images/qtcreator-devices-boot2qt.png" alt="Boot to Qt Network Device Setup wizard" /></p></li>
+<li>In <b translate="no">Device name</b>, enter a name for the connection.</li>
+<li>In <b translate="no">Device address</b>, enter the host name or IP address of the device. This value becomes the value of the <code translate="no">%{Device:HostAddress}</code> variable.</li>
+<li>Select <b translate="no">Finish</b> to test the connection and add the device.</li>
+</ol>
+<p>The wizard does not show parameters that have sensible default values, such as the SSH port number. It is available in the variable <code translate="no">%{Device:SshPort}</code>.</p>
+<p>To add a device without using a wizard, select <b translate="no">Boot2Qt Device</b> in the pull-down menu of the <b translate="no">Add</b> button.</p>
+<div class="admonition note">
+<p><b>Note: </b>On Ubuntu Linux, the development user account must have access to the plugged-in devices. To grant them access to the device via USB, create a new <code translate="no">udev</code> rule, as described in <a href="https://doc.qt.io/Boot2Qt/b2qt-requirements-x11.html#setting-up-usb-access-to-embedded-devices">Boot to Qt: Setting Up USB Access to Embedded Devices</a>.</p>
+</div>
+<h2 id="reboot-devices">Reboot devices</h2>
+<p>To reboot the selected device, select <b translate="no">Reboot Device</b>.</p>
+<h2 id="restore-default-applications">Restore default applications</h2>
+<p>To restore the default application to the device, select <b translate="no">Restore Default App</b>.</p>
+</div>
+<p><b>See also </b><a href="creator-how-to-enable-plugins.html">Enable and disable plugins</a>, <a href="creator-how-tos.html">How To: Develop for Boot to Qt</a>, <a href="creator-debugging.html#remote-debugging">Remote Debugging</a>, <a href="creator-developing-b2qt.html">Developing for Boot to Qt Devices</a>, and <a href="https://doc.qt.io/Boot2Qt/b2qt-requirements-x11.html#setting-up-usb-access-to-embedded-devices">Boot to Qt: Setting Up USB Access to Embedded Devices</a>.</p>
+<!-- @@@creator-how-to-add-b2qt.html -->
+<p class="naviNextPrevious footerNavi">
+<a class="prevPage" href="creator-how-to-uvision.html">Set up the uVision IDE</a>
+<span class="naviSeparator">  &#9702;  </span>
+<a class="nextPage" href="creator-how-to-connect-b2qt.html">Connect Boot to Qt devices</a>
+</p>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   Copyright <acronym title="Copyright">&copy;</acronym> The Qt Company Ltd. and other contributors.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

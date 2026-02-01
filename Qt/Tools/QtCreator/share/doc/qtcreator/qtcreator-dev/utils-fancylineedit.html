@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- fancylineedit.cpp -->
+  <meta name="description" content="The FancyLineEdit class is an enhanced line edit with several opt-in features.">
+  <title>Utils::FancyLineEdit Class | Extending Qt Creator Manual</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="index.html">Extending Qt Creator Manual</a></li>
+<li><a href="qtcreator-module.html" translate="no">QtCreator</a></li>
+<li>FancyLineEdit</li>
+<li id="buildversion"><a href="index.html">Extending Qt Creator Manual 18.0.2</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar">
+<div class="toc">
+<h3 id="toc">Contents</h3>
+<ul>
+<li class="level1"><a href="#public-functions">Public Functions</a></li>
+<li class="level1"><a href="#static-public-members">Static Public Members</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title" translate="no">Utils::FancyLineEdit Class</h1>
+<span class="small-subtitle" translate="no">class <a href="utils.html" translate="no">Utils</a>::FancyLineEdit</span>
+<!-- $$$FancyLineEdit-brief -->
+<p>The FancyLineEdit class is an enhanced line edit with several opt-in features. <a href="#details">More...</a></p>
+<!-- @@@FancyLineEdit -->
+<div class="table"><table class="alignedsummary requisites" translate="no">
+<tr><td class="memItemLeft rightAlign topAlign"> Header:</td><td class="memItemRight bottomAlign"> <code translate="no">#include &lt;FancyLineEdit&gt;</code></td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> Inherits:</td><td class="memItemRight bottomAlign"> Utils::CompletingLineEdit</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> Inherited By:</td><td class="memItemRight bottomAlign"> <p><a href="utils-classnamevalidatinglineedit.html" translate="no">Utils::ClassNameValidatingLineEdit</a> and <a href="utils-filenamevalidatinglineedit.html" translate="no">Utils::FileNameValidatingLineEdit</a></p>
+</td></tr>
+</table></div>
+<ul>
+<li><a href="utils-fancylineedit-members.html">List of all members, including inherited members</a></li>
+</ul>
+<h2 id="public-functions">Public Functions</h2>
+<div class="table"><table class="alignedsummary" translate="no">
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="utils-fancylineedit.html#setValidationFunction" translate="no">setValidationFunction</a></b>(const Utils::FancyLineEdit::ValidationFunction &amp;<i>fn</i>)</td></tr>
+</table></div>
+<h2 id="static-public-members">Static Public Members</h2>
+<div class="table"><table class="alignedsummary" translate="no">
+<tr><td class="memItemLeft rightAlign topAlign"> Utils::FancyLineEdit::ValidationFunction </td><td class="memItemRight bottomAlign"><b><a href="utils-fancylineedit.html#defaultValidationFunction" translate="no">defaultValidationFunction</a></b>()</td></tr>
+</table></div>
+<!-- $$$FancyLineEdit-description -->
+<div class="descr">
+<h2 id="details">Detailed Description</h2>
+<p>A FancyLineEdit instance can have:</p>
+<ul>
+<li>An embedded pixmap on one side that is connected to a menu.</li>
+<li>A grayed hintText (like &quot;Type Here to&quot;) when not focused and empty. When connecting to the changed signals and querying text, one has to be aware that the text is set to that hint text if isShowingHintText() returns true (that is, does not contain valid user input).</li>
+<li>A history completer.</li>
+<li>The ability to validate the contents of the text field by setting the <i translate="no">validationFunction</i>.</li>
+</ul>
+<p>When invalid, the text color will turn red and a tooltip will contain the error message. This approach is less intrusive than a <a href="https://doc.qt.io/qt/qvalidator.html" translate="no">QValidator</a> which will prevent the user from entering certain characters.</p>
+<p>A visible hint text results validation to be in state 'DisplayingInitialText', which is not valid, but is not marked red.</p>
+</div>
+<!-- @@@FancyLineEdit -->
+<div class="func">
+<h2>Member Function Documentation</h2>
+<!-- $$$defaultValidationFunction[overload1]$$$defaultValidationFunction -->
+<h3 class="fn" translate="no" id="defaultValidationFunction"><code class="details extra" translate="no">[static]</code> <span class="type">Utils::FancyLineEdit::ValidationFunction</span> FancyLineEdit::<span class="name">defaultValidationFunction</span>()</h3>
+<p>Returns the default validation function, which synchonously executes the line edit's validator.</p>
+<p><b>See also </b><a href="utils-fancylineedit.html#setValidationFunction" translate="no">setValidationFunction</a>().</p>
+<!-- @@@defaultValidationFunction -->
+<!-- $$$setValidationFunction[overload1]$$$setValidationFunctionconstUtils::FancyLineEdit::ValidationFunction& -->
+<h3 class="fn" translate="no" id="setValidationFunction"><span class="type">void</span> FancyLineEdit::<span class="name">setValidationFunction</span>(const <span class="type">Utils::FancyLineEdit::ValidationFunction</span> &amp;<i>fn</i>)</h3>
+<p>Set a synchronous or asynchronous validation function <i translate="no">fn</i>. Asynchronous validation functions can continue to run after destruction of the <a href="utils-fancylineedit.html" translate="no">FancyLineEdit</a> instance. During shutdown asynchronous validation functions can continue to run until before the plugin instances are deleted (at that point the plugin manager waits for them to finish before continuing).</p>
+<p><b>See also </b><a href="utils-fancylineedit.html#defaultValidationFunction" translate="no">defaultValidationFunction</a>().</p>
+<!-- @@@setValidationFunction -->
+</div>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <abbr title="Copyright">&copy;</abbr> 2025 <span translate="no">The Qt Company Ltd.</span>
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br/>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the <span translate="no">Free Software Foundation</span>.<br/>    <span translate="no">Qt</span> and respective logos are <a href="https://doc.qt.io/qt/trademarks.html">    trademarks</a> of <span translate="no">The Qt Company Ltd.</span> in Finland and/or other countries
+   worldwide. All other trademarks are property of their respective owners. </p>
+</div>
+</body>
+</html>

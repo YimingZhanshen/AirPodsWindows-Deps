@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- creator-debugger.qdoc -->
+  <title>Debug remotely with CDB | Qt Creator Documentation</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="index.html">Qt Creator Documentation</a></li>
+<li>Debug remotely with CDB</li>
+<li id="buildversion"><a href="index.html">Qt Creator 18.0.2</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+  <link rel="prev" href="creator-how-to-debug-android.html" />
+  <link rel="next" href="creator-how-to-debug-remotely-gdb.html" />
+<p class="naviNextPrevious headerNavi">
+<a class="prevPage" href="creator-how-to-debug-android.html">Debug on Android devices</a>
+<span class="naviSeparator">  &#9702;  </span>
+<a class="nextPage" href="creator-how-to-debug-remotely-gdb.html">Debug remotely with GDB</a>
+</p>
+<div class="sidebar"><div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Debug remotely with CDB</h1>
+<!-- $$$creator-how-to-debug-remotely-cdb.html-description -->
+<div class="descr" id="details">
+<p>If your remote machine or container runs Windows and your application was compiled using MSVC, you can use CDB for remote debugging.</p>
+<p>If remote execution of an application is already set up and works by selecting the <b translate="no">Run</b> button (or <b>Ctrl+R</b>), you can start remote debugging by selecting the <b translate="no">Debug</b> button (or <b>F5</b>).</p>
+<p>In remote mode, the local CDB process talks to a CDB process that runs on the remote machine. The process is started with special command-line options that switch it into server mode. The remote CDB process must load the Qt Creator CDB extension library that is shipped with Qt Creator:</p>
+<ol class="1" type="1"><li>Install the <i>Debugging Tools for Windows</i> on the remote machine. The installation folder has the CDB command-line executable (<code translate="no">cdb.exe</code>).</li>
+<li>Copy the Qt Creator CDB extension library and the dependencies from the Qt installation directory to a new folder on the remote machine (32 or 64 bit version depending on the version of the Debugging Tools for Windows used):<ul>
+<li><code translate="no">\lib\qtcreatorcdbext32</code> (32 bit)</li>
+<li><code translate="no">\lib\qtcreatorcdbext64</code> (64 bit)</li>
+</ul>
+</li>
+<li>Set the _NT_DEBUGGER_EXTENSION_PATH environment variable to point to that folder.</li>
+<li>To use TCP/IP as communication protocol, launch remote CDB as follows:<pre class="cpp" translate="no">
+ cdb<span class="operator">.</span>exe <span class="operator">-</span>server tcp:port<span class="operator">=</span><span class="number">1234</span> <span class="operator">&lt;</span>executable<span class="operator">&gt;</span>
+</pre>
+</li>
+<li>On the local machine running Qt Creator, select <b translate="no">Debug</b> &gt; <b translate="no">Start Debugging</b> &gt; <b translate="no">Attach to Remote CDB Session</b>.</li>
+<li>In the <b translate="no">Connection</b> field enter the connection parameters. For example, for TCP/IP:<pre class="cpp" translate="no">
+ Server:Port
+</pre>
+<p>If you chose some other protocol, specify one of the alternative formats:</p>
+<pre class="cpp" translate="no">
+ tcp:server<span class="operator">=</span>Server<span class="operator">,</span>port<span class="operator">=</span>Port<span class="operator">[</span><span class="operator">,</span>password<span class="operator">=</span>Password<span class="operator">]</span><span class="operator">[</span><span class="operator">,</span>ipversion<span class="operator">=</span><span class="number">6</span><span class="operator">]</span>
+ tcp:clicon<span class="operator">=</span>Server<span class="operator">,</span>port<span class="operator">=</span>Port<span class="operator">[</span><span class="operator">,</span>password<span class="operator">=</span>Password<span class="operator">]</span><span class="operator">[</span><span class="operator">,</span>ipversion<span class="operator">=</span><span class="number">6</span><span class="operator">]</span>
+ npipe:server<span class="operator">=</span>Server<span class="operator">,</span>pipe<span class="operator">=</span>PipeName<span class="operator">[</span><span class="operator">,</span>password<span class="operator">=</span>Password<span class="operator">]</span>
+ com:port<span class="operator">=</span>COMPort<span class="operator">,</span>baud<span class="operator">=</span>BaudRate<span class="operator">,</span>channel<span class="operator">=</span>COMChannel<span class="operator">[</span><span class="operator">,</span>password<span class="operator">=</span>Password<span class="operator">]</span>
+ spipe:proto<span class="operator">=</span>Protocol<span class="operator">,</span>{certuser<span class="operator">=</span>Cert<span class="operator">|</span>machuser<span class="operator">=</span>Cert}<span class="operator">,</span>server<span class="operator">=</span>Server<span class="operator">,</span>pipe<span class="operator">=</span>PipeName<span class="operator">[</span><span class="operator">,</span>password<span class="operator">=</span>Password<span class="operator">]</span>
+ ssl:proto<span class="operator">=</span>Protocol<span class="operator">,</span>{certuser<span class="operator">=</span>Cert<span class="operator">|</span>machuser<span class="operator">=</span>Cert}<span class="operator">,</span>server<span class="operator">=</span>Server<span class="operator">,</span>port<span class="operator">=</span>Socket<span class="operator">[</span><span class="operator">,</span>password<span class="operator">=</span>Password<span class="operator">]</span>
+ ssl:proto<span class="operator">=</span>Protocol<span class="operator">,</span>{certuser<span class="operator">=</span>Cert<span class="operator">|</span>machuser<span class="operator">=</span>Cert}<span class="operator">,</span>clicon<span class="operator">=</span>Server<span class="operator">,</span>port<span class="operator">=</span>Socket<span class="operator">[</span><span class="operator">,</span>password<span class="operator">=</span>Password<span class="operator">]</span>
+</pre>
+</li>
+<li>Select <b translate="no">OK</b> to start debugging.</li>
+</ol>
+<p>To specify settings for managing the CDB process, go to <a href="creator-how-to-find-preferences.html">Preferences</a> &gt; <b translate="no">Debugger</b> &gt; <b translate="no">CDB</b>.</p>
+</div>
+<p><b>See also </b><a href="creator-how-tos.html#debug">How To: Debug</a>, <a href="creator-preferences-debugger-cdb.html">CDB</a>, <a href="creator-debugging.html">Debugging</a>, <a href="creator-reference.html#debuggers">Debuggers</a>, and <a href="creator-reference.html#debugger">Debugger</a>.</p>
+<!-- @@@creator-how-to-debug-remotely-cdb.html -->
+<p class="naviNextPrevious footerNavi">
+<a class="prevPage" href="creator-how-to-debug-android.html">Debug on Android devices</a>
+<span class="naviSeparator">  &#9702;  </span>
+<a class="nextPage" href="creator-how-to-debug-remotely-gdb.html">Debug remotely with GDB</a>
+</p>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   Copyright <acronym title="Copyright">&copy;</acronym> The Qt Company Ltd. and other contributors.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

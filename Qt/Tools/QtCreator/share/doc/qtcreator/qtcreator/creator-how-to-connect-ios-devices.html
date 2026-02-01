@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- creator-ios-dev.qdoc -->
+  <title>Connect iOS devices | Qt Creator Documentation</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="index.html">Qt Creator Documentation</a></li>
+<li>Connect iOS devices</li>
+<li id="buildversion"><a href="index.html">Qt Creator 18.0.2</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+  <link rel="prev" href="creator-preferences-docker.html" />
+  <link rel="next" href="creator-how-to-test-on-ios-simulator.html" />
+<p class="naviNextPrevious headerNavi">
+<a class="prevPage" href="creator-preferences-docker.html">Set preferences for Docker devices</a>
+<span class="naviSeparator">  &#9702;  </span>
+<a class="nextPage" href="creator-how-to-test-on-ios-simulator.html">Test on iOS Simulator</a>
+</p>
+<div class="sidebar">
+<div class="toc">
+<h3 id="toc">Contents</h3>
+<ul>
+<li class="level1"><a href="#create-a-connection-to-an-ios-device">Create a connection to an iOS device</a></li>
+<li class="level1"><a href="#view-device-connection-status">View device connection status</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Connect iOS devices</h1>
+<!-- $$$creator-how-to-connect-ios-devices.html-description -->
+<div class="descr" id="details">
+<p>The connections between Qt Creator and an iOS device are protected by using a certificate that you receive from Apple when you <a href="https://developer.apple.com/programs/enroll/">enroll in the Apple Developer Program</a>. The certificate is copied to the device when you configure the device.</p>
+<p>The first time you connect the device to your local machine, you are asked to enable developer mode on the device. The next time you connect the device, Qt Creator detects it automatically. To disable automatic connections to a device that you do not use for development, go to <a href="creator-how-to-find-preferences.html">Preferences</a> &gt; <b translate="no">iOS</b> and clear <b translate="no">Ask about devices not in developer mode</b>.</p>
+<div class="admonition note">
+<p><b>Note: </b>The process of configuring devices and the UI varies slightly depending on the Xcode version that you use. We recommend that you use the latest available Xcode version.</p>
+</div>
+<h2 id="create-a-connection-to-an-ios-device">Create a connection to an iOS device</h2>
+<p>To configure connections between Qt Creator and an iOS device:</p>
+<ol class="1" type="1"><li>Check that you installed Xcode and <a href="https://doc.qt.io/qt/ios.html">Qt for iOS</a>.</li>
+<li>Connect the device to your local machine with a USB cable.</li>
+<li>Start Xcode to configure the device.<p>For example, in Xcode version 15, go to <b translate="no">Window</b> &gt; <b translate="no">Devices and Simulators</b> &gt; <b translate="no">Devices</b>, and select <b translate="no">+</b> to add the connected device.</p>
+</li>
+<li>To specify build settings:<ol class="1" type="1"><li>Open a project for an application you want to develop for the device.</li>
+<li>Go to <b translate="no">Projects</b> &gt; <b translate="no">Build &amp; Run</b> to select the kit for building applications for and running them on iOS.<p class="centerAlign"><img src="images/qtcreator-ios-add-kit.png" alt="iOS kit selected for a project in Build &amp; Run" /></p></li>
+<li>Go to <b translate="no">Build Settings</b>.</li>
+<li>In <b translate="no">iOS Settings</b>, select the development team to use for signing and provisioning applications. You must configure development teams and provisioning profiles in Xcode using an Apple developer account.<p class="centerAlign"><img src="images/qtcreator-build-settings-ios.png" alt="iOS build settings" /></p></li>
+<li>Select <b translate="no">Automatically manage signing</b> to automatically select the provisioning profile and signing certificate on your local machine that matches the entitlements and the bundle identifier of the iOS device.</li>
+</ol>
+</li>
+<li>Go to <b translate="no">Run Settings</b> to specify run settings.<p>Usually, you can use the default settings.</p>
+<p>When you run the project, Qt Creator uses Xcode to deploy the application to the device.</p>
+<p>Your signing certificate is used to sign application packages for deployment to the device.</p>
+</li>
+</ol>
+<div class="admonition note">
+<p><b>Note: </b>If you cannot deploy applications because a provisioning profile is missing, check that provisioning profiles are listed in Xcode by going to <b translate="no">Xcode</b> &gt; <b translate="no">Preferences</b> &gt; <b translate="no">Accounts</b>. For more information about how to acquire and install a provisioning profile, see <a href="https://developer.apple.com/help/account/provisioning-profiles/create-a-development-provisioning-profile/">Apple documentation: Create a development provisioning profile</a>.</p>
+</div>
+<h2 id="view-device-connection-status">View device connection status</h2>
+<p>When you connect an iOS device to your local machine with USB, Qt Creator automatically detects the device if you have configured it by using Xcode. To view information about the connected device, go to <b translate="no">Preferences</b> &gt; <b translate="no">Devices</b>.</p>
+<p class="centerAlign"><img src="images/qtcreator-ios-device-configurations.png" alt="Devices tab in Devices preferences" /></p><p>If the current device state is <b translate="no">Connected</b>, (the traffic light icon is orange), you need to configure the device using Xcode.</p>
+</div>
+<p><b>See also </b><a href="creator-how-to-activate-kits.html">Activate kits for a project</a>, <a href="creator-how-tos.html#ios">How To: Develop for iOS</a>, and <a href="creator-developing-ios.html">Developing for iOS</a>.</p>
+<!-- @@@creator-how-to-connect-ios-devices.html -->
+<p class="naviNextPrevious footerNavi">
+<a class="prevPage" href="creator-preferences-docker.html">Set preferences for Docker devices</a>
+<span class="naviSeparator">  &#9702;  </span>
+<a class="nextPage" href="creator-how-to-test-on-ios-simulator.html">Test on iOS Simulator</a>
+</p>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   Copyright <acronym title="Copyright">&copy;</acronym> The Qt Company Ltd. and other contributors.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

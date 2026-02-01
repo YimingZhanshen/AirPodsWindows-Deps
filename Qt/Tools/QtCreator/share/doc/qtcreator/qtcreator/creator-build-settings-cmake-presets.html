@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- creator-projects-cmake-presets.qdoc -->
+  <meta name="description" content="Examples of supported CMake presets.">
+  <title>CMake Presets | Qt Creator Documentation</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="index.html">Qt Creator Documentation</a></li>
+<li>CMake Presets</li>
+<li id="buildversion"><a href="index.html">Qt Creator 18.0.2</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+  <link rel="prev" href="creator-build-settings-cmake.html" />
+  <link rel="next" href="creator-build-settings-cmake-presets-qt-vendor.html" />
+<p class="naviNextPrevious headerNavi">
+<a class="prevPage" href="creator-build-settings-cmake.html">CMake Build Configuration</a>
+<span class="naviSeparator">  &#9702;  </span>
+<a class="nextPage" href="creator-build-settings-cmake-presets-qt-vendor.html">CMake Qt Vendor Presets</a>
+</p>
+<div class="sidebar">
+<div class="toc">
+<h3 id="toc">Contents</h3>
+<ul>
+<li class="level1"><a href="#configure-presets">Configure Presets</a></li>
+<li class="level1"><a href="#mingw-example">MinGW Example</a></li>
+<li class="level1"><a href="#ninja-generator-example">Ninja Generator Example</a></li>
+<li class="level1"><a href="#msvc-example">MSVC Example</a></li>
+<li class="level1"><a href="#cross-compilation-example">Cross-Compilation Example</a></li>
+<li class="level1"><a href="#using-conditions">Using Conditions</a></li>
+<li class="level1"><a href="#test-presets">Test Presets</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">CMake Presets</h1>
+<!-- $$$creator-build-settings-cmake-presets.html-description -->
+<div class="descr" id="details">
+<p><code translate="no">CMakePresets.json</code> has options for project-wide builds, whereas <code translate="no">CMakeUserPresets.json</code> has options for your local builds.</p>
+<p>Create the presets files in the format described in <a href="https://cmake.org/cmake/help/v3.24/manual/cmake-presets.7.html">cmake-presets(7)</a> and store them in the project's root directory. You can then see them in the <a href="creator-projects-view.html">Projects</a> view.</p>
+<p>Qt Creator supports <i>configure</i>, <i>build</i>, and <i>test</i> presets up to version 5 (introduced in CMake 3.24), but does not enforce version checking. It reads and uses all the fields from version 5 if present.</p>
+<p>You can import the presets the first time you <a href="creator-project-opening.html">open a project</a>, when no <code translate="no">CMakeLists.txt.user</code> file exists or you have disabled all kits in the project.</p>
+<p class="centerAlign"><img src="images/qtcreator-cmake-presets-configure.webp" alt="Opening a project that has CMake presets" /></p><p>You can view the presets in the <b translate="no">Initial Configuration</b> field and in the environment configuration field below it.</p>
+<p class="centerAlign"><img src="images/qtcreator-cmake-presets-environment.webp" alt="CMake environment configuration" /></p><p>To update changes to the <code translate="no">CMakePresets.json</code> file, go to <b translate="no">Build</b>, select <b translate="no">Reload CMake Presets</b>, and then select the presets file to load.</p>
+<h2 id="configure-presets">Configure Presets</h2>
+<p>The following configure presets instruct CMake to use the default generator on the platform and specify the build directory for all build types. <code translate="no">NOT_COMMON_VALUE</code> is displayed in <b translate="no">Initial Parameters</b> and <code translate="no">AN_ENVIRONMENT_FLAG</code> in the environment configuration field.</p>
+<pre class="cpp" translate="no">
+ {
+   <span class="string">&quot;version&quot;</span>: <span class="number">1</span><span class="operator">,</span>
+   <span class="string">&quot;configurePresets&quot;</span>: <span class="operator">[</span>
+     {
+       <span class="string">&quot;name&quot;</span>: <span class="string">&quot;preset&quot;</span><span class="operator">,</span>
+       <span class="string">&quot;displayName&quot;</span>: <span class="string">&quot;preset&quot;</span><span class="operator">,</span>
+       <span class="string">&quot;binaryDir&quot;</span>: <span class="string">&quot;${sourceDir}/build/preset&quot;</span><span class="operator">,</span>
+       <span class="string">&quot;cacheVariables&quot;</span>: {
+         <span class="string">&quot;NOT_COMMON_VALUE&quot;</span>: <span class="string">&quot;NOT_COMMON_VALUE&quot;</span>
+         }<span class="operator">,</span>
+       <span class="string">&quot;environment&quot;</span>: {
+         <span class="string">&quot;AN_ENVIRONMENT_FLAG&quot;</span>: <span class="string">&quot;1&quot;</span>
+         }
+       }<span class="operator">,</span>
+       <span class="string">&quot;vendor&quot;</span>: {
+         <span class="string">&quot;qt.io/QtCreator/1.0&quot;</span>: {
+            <span class="string">&quot;AskBeforePresetsReload&quot;</span>: <span class="keyword">false</span><span class="operator">,</span>
+            <span class="string">&quot;AskReConfigureInitialParams&quot;</span>: <span class="keyword">false</span><span class="operator">,</span>
+            <span class="string">&quot;AutorunCMake&quot;</span>: <span class="keyword">false</span><span class="operator">,</span>
+            <span class="string">&quot;PackageManagerAutoSetup&quot;</span>: <span class="keyword">false</span><span class="operator">,</span>
+            <span class="string">&quot;ShowAdvancedOptionsByDefault&quot;</span>: <span class="keyword">true</span><span class="operator">,</span>
+            <span class="string">&quot;ShowSourceSubFolders&quot;</span>: <span class="keyword">false</span><span class="operator">,</span>
+            <span class="string">&quot;UseJunctionsForSourceAndBuildDirectories&quot;</span>: <span class="keyword">true</span>
+            }
+       }
+   <span class="operator">]</span>
+ }
+</pre>
+<p>For more information about the CMake project settings in the <code translate="no">vendor</code> section, see <a href="creator-build-settings-cmake-presets-qt-vendor.html">CMake Qt Vendor Presets</a>.</p>
+<h2 id="mingw-example">MinGW Example</h2>
+<p>The following example configures a Qt project with:</p>
+<ul>
+<li>MinGW compiler</li>
+<li>build directory &ndash; <code translate="no">&lt;sourceDir&gt;/build-release</code></li>
+<li>build type &ndash; <code translate="no">CMAKE_BUILD_TYPE</code> as <code translate="no">Release</code></li>
+<li>generator &ndash; MinGW Makefiles</li>
+<li>path to a CMake executable</li>
+<li>path to the Qt installation via <code translate="no">CMAKE_PREFIX_PATH</code></li>
+<li>GNU gdb 11.2.0 for MinGW 11.2.0 64-bit debugger</li>
+</ul>
+<pre class="cpp" translate="no">
+ {
+   <span class="string">&quot;version&quot;</span>: <span class="number">1</span><span class="operator">,</span>
+   <span class="string">&quot;configurePresets&quot;</span>: <span class="operator">[</span>
+     {
+       <span class="string">&quot;name&quot;</span>: <span class="string">&quot;mingw&quot;</span><span class="operator">,</span>
+       <span class="string">&quot;displayName&quot;</span>: <span class="string">&quot;MinGW 11.2.0&quot;</span><span class="operator">,</span>
+       <span class="string">&quot;generator&quot;</span>: <span class="string">&quot;MinGW Makefiles&quot;</span><span class="operator">,</span>
+       <span class="string">&quot;binaryDir&quot;</span>: <span class="string">&quot;${sourceDir}/build-release&quot;</span><span class="operator">,</span>
+       <span class="string">&quot;cmakeExecutable&quot;</span>: <span class="string">&quot;C:/Qt/Tools/CMake_64/bin/cmake.exe&quot;</span><span class="operator">,</span>
+       <span class="string">&quot;cacheVariables&quot;</span>: {
+         <span class="string">&quot;CMAKE_BUILD_TYPE&quot;</span>: <span class="string">&quot;Release&quot;</span><span class="operator">,</span>
+         <span class="string">&quot;CMAKE_PREFIX_PATH&quot;</span>: <span class="string">&quot;C:/Qt/6.4.0/mingw_64&quot;</span>
+       }<span class="operator">,</span>
+       <span class="string">&quot;environment&quot;</span>: {
+         <span class="string">&quot;PATH&quot;</span>: <span class="string">&quot;C:/Qt/Tools/mingw1120_64/bin;$penv{PATH}&quot;</span>
+       }<span class="operator">,</span>
+       <span class="string">&quot;vendor&quot;</span>: {
+         <span class="string">&quot;qt.io/QtCreator/1.0&quot;</span>: {
+           <span class="string">&quot;debugger&quot;</span>: {
+             <span class="string">&quot;DisplayName&quot;</span>: <span class="string">&quot;GNU gdb 11.2.0 for MinGW 11.2.0 64-bit&quot;</span><span class="operator">,</span>
+             <span class="string">&quot;Abis&quot;</span>: <span class="operator">[</span><span class="string">&quot;x86-windows-msys-pe-64bit&quot;</span><span class="operator">]</span><span class="operator">,</span>
+             <span class="string">&quot;Binary&quot;</span>: <span class="string">&quot;C:/Qt/Tools/mingw1120_64/bin/gdb.exe&quot;</span><span class="operator">,</span>
+             <span class="string">&quot;EngineType&quot;</span>: <span class="number">1</span><span class="operator">,</span>
+             <span class="string">&quot;Version&quot;</span>: <span class="string">&quot;11.2.0&quot;</span>
+           }
+         }
+       }
+   <span class="operator">]</span>
+ }
+</pre>
+<p>To speed up the process on Windows, specify the <code translate="no">CMAKE_C_COMPILER</code> and <code translate="no">CMAKE_CXX_COMPILER</code> in the <code translate="no">cacheVariables</code> section.</p>
+<p>For possible values of some of the <code translate="no">debugger</code> preferences, see <a href="creator-build-settings-cmake-presets-qt-vendor.html">CMake Qt Vendor Presets</a>.</p>
+<h2 id="ninja-generator-example">Ninja Generator Example</h2>
+<p>The following configure and build presets set Ninja Multi-Config as the generator, add <code translate="no">Debug</code> and <code translate="no">Release</code> build steps, and specify the path to <code translate="no">ninja.exe</code> as a value of the <code translate="no">CMAKE_MAKE_PROGRAM</code> variable:</p>
+<pre class="cpp" translate="no">
+ {
+   <span class="string">&quot;version&quot;</span>: <span class="number">2</span><span class="operator">,</span>
+   <span class="string">&quot;configurePresets&quot;</span>: <span class="operator">[</span>
+     {
+       <span class="string">&quot;name&quot;</span>: <span class="string">&quot;ninja-nmc&quot;</span><span class="operator">,</span>
+       <span class="string">&quot;displayName&quot;</span>: <span class="string">&quot;Ninja Multi-Config MinGW&quot;</span><span class="operator">,</span>
+       <span class="string">&quot;generator&quot;</span>: <span class="string">&quot;Ninja Multi-Config&quot;</span><span class="operator">,</span>
+       <span class="string">&quot;binaryDir&quot;</span>: <span class="string">&quot;${sourceDir}/build&quot;</span><span class="operator">,</span>
+       <span class="string">&quot;cacheVariables&quot;</span>: {
+         <span class="string">&quot;CMAKE_CONFIGURATION_TYPES&quot;</span>: <span class="string">&quot;Debug;Release&quot;</span><span class="operator">,</span>
+         <span class="string">&quot;CMAKE_PREFIX_PATH&quot;</span>: <span class="string">&quot;C:/Qt/6.4.0/mingw_64&quot;</span><span class="operator">,</span>
+         <span class="string">&quot;CMAKE_MAKE_PROGRAM&quot;</span>: <span class="string">&quot;C:/Qt/Tools/Ninja/ninja.exe&quot;</span>
+       }<span class="operator">,</span>
+       <span class="string">&quot;environment&quot;</span>: {
+         <span class="string">&quot;PATH&quot;</span>: <span class="string">&quot;c:/Qt/Tools/mingw1120_64/bin;$penv{PATH}&quot;</span>
+       }
+     }
+   <span class="operator">]</span><span class="operator">,</span>
+   <span class="string">&quot;buildPresets&quot;</span>: <span class="operator">[</span>
+     {
+       <span class="string">&quot;name&quot;</span>: <span class="string">&quot;release&quot;</span><span class="operator">,</span>
+       <span class="string">&quot;displayName&quot;</span>: <span class="string">&quot;Ninja Release&quot;</span><span class="operator">,</span>
+       <span class="string">&quot;configurePreset&quot;</span>: <span class="string">&quot;ninja-nmc&quot;</span><span class="operator">,</span>
+       <span class="string">&quot;configuration&quot;</span>: <span class="string">&quot;Release&quot;</span>
+     }<span class="operator">,</span>
+     {
+       <span class="string">&quot;name&quot;</span>: <span class="string">&quot;debug&quot;</span><span class="operator">,</span>
+       <span class="string">&quot;displayName&quot;</span>: <span class="string">&quot;Ninja Debug&quot;</span><span class="operator">,</span>
+       <span class="string">&quot;configurePreset&quot;</span>: <span class="string">&quot;ninja-nmc&quot;</span><span class="operator">,</span>
+       <span class="string">&quot;configuration&quot;</span>: <span class="string">&quot;Debug&quot;</span>
+     }
+   <span class="operator">]</span>
+ }
+</pre>
+<p>This example assumes that the CMake executable path is set in <a href="creator-how-to-find-preferences.html">Preferences</a> &gt; <b translate="no">CMake</b> &gt; <b translate="no">Tools</b>.</p>
+<h2 id="msvc-example">MSVC Example</h2>
+<p>When using MSVC compilers with NMAKE Makefiles, Ninja, or Ninja Multi-Config generators, you can use the <code translate="no">external</code> strategy for the <code translate="no">architecture</code> and <code translate="no">toolset</code> fields. This lets Qt Creator set up the Visual C++ environment before invoking CMake.</p>
+<p>For example:</p>
+<pre class="cpp" translate="no">
+ <span class="string">&quot;generator&quot;</span>: <span class="string">&quot;Ninja Multi-Config&quot;</span><span class="operator">,</span>
+ <span class="string">&quot;toolset&quot;</span>: {
+   <span class="string">&quot;value&quot;</span>: <span class="string">&quot;v142,host=x64&quot;</span><span class="operator">,</span>
+   <span class="string">&quot;strategy&quot;</span>: <span class="string">&quot;external&quot;</span>
+ }<span class="operator">,</span>
+ <span class="string">&quot;architecture&quot;</span>: {
+   <span class="string">&quot;value&quot;</span>: <span class="string">&quot;x64&quot;</span><span class="operator">,</span>
+   <span class="string">&quot;strategy&quot;</span>: <span class="string">&quot;external&quot;</span>
+ }<span class="operator">,</span>
+</pre>
+<p>If you use MSVC compilers with non-VS generators and have several compilers in the <code translate="no">PATH</code>, you might also have to specify the compiler to use in <code translate="no">cacheVariables</code> or <code translate="no">environmentVariables</code>:</p>
+<pre class="cpp" translate="no">
+ <span class="string">&quot;generator&quot;</span>: <span class="string">&quot;Ninja Multi-Config&quot;</span><span class="operator">,</span>
+ <span class="string">&quot;toolset&quot;</span>: {
+   <span class="string">&quot;value&quot;</span>: <span class="string">&quot;v142,host=x64&quot;</span><span class="operator">,</span>
+   <span class="string">&quot;strategy&quot;</span>: <span class="string">&quot;external&quot;</span>
+ }<span class="operator">,</span>
+ <span class="string">&quot;architecture&quot;</span>: {
+   <span class="string">&quot;value&quot;</span>: <span class="string">&quot;x64&quot;</span><span class="operator">,</span>
+   <span class="string">&quot;strategy&quot;</span>: <span class="string">&quot;external&quot;</span>
+ }<span class="operator">,</span>
+ <span class="string">&quot;cacheVariables&quot;</span>: {
+   <span class="string">&quot;CMAKE_C_COMPILER&quot;</span>: <span class="string">&quot;cl.exe&quot;</span><span class="operator">,</span>
+   <span class="string">&quot;CMAKE_CXX_COMPILER&quot;</span>: <span class="string">&quot;cl.exe&quot;</span>
+ }
+</pre>
+<h2 id="cross-compilation-example">Cross-Compilation Example</h2>
+<p>The following example configures a Qt project for cross-compilation on macOS for Windows and running with the <code translate="no">wine</code> emulator on macOS:</p>
+<ul>
+<li>generator &ndash; Ninja</li>
+<li>build directory &ndash; <code translate="no">&lt;sourceDir&gt;/build-release</code></li>
+<li>LLVM/MinGW toolchain</li>
+<li>configuration type &ndash; <code translate="no">CMAKE_BUILD_TYPE</code> as <code translate="no">Release</code></li>
+<li>LLDB 18.1.6 debugger</li>
+<li><code translate="no">wine</code> emulator</li>
+</ul>
+<pre class="cpp" translate="no">
+ {
+   <span class="string">&quot;version&quot;</span>: <span class="number">4</span><span class="operator">,</span>
+   <span class="string">&quot;configurePresets&quot;</span>: <span class="operator">[</span>
+     {
+       <span class="string">&quot;name&quot;</span>: <span class="string">&quot;llvm-mingw&quot;</span><span class="operator">,</span>
+       <span class="string">&quot;displayName&quot;</span>: <span class="string">&quot;LLVM-MinGW 18.1.6&quot;</span><span class="operator">,</span>
+       <span class="string">&quot;generator&quot;</span>: <span class="string">&quot;Ninja&quot;</span><span class="operator">,</span>
+       <span class="string">&quot;binaryDir&quot;</span>: <span class="string">&quot;${sourceDir}/build-release&quot;</span><span class="operator">,</span>
+       <span class="string">&quot;toolchainFile&quot;</span>: <span class="string">&quot;llvm-mingw.cmake&quot;</span><span class="operator">,</span>
+       <span class="string">&quot;cacheVariables&quot;</span>: {
+         <span class="string">&quot;CMAKE_BUILD_TYPE&quot;</span>: <span class="string">&quot;Release&quot;</span><span class="operator">,</span>
+         <span class="string">&quot;CMAKE_CROSSCOMPILING_EMULATOR&quot;</span>: <span class="string">&quot;/opt/homebrew/bin/wine&quot;</span>
+       }<span class="operator">,</span>
+       <span class="string">&quot;vendor&quot;</span>: {
+         <span class="string">&quot;qt.io/QtCreator/1.0&quot;</span>: {
+           <span class="string">&quot;debugger&quot;</span>: {
+             <span class="string">&quot;DisplayName&quot;</span>: <span class="string">&quot;LLDB 18.1.6 (CMake Preset)&quot;</span><span class="operator">,</span>
+             <span class="string">&quot;Abis&quot;</span>: <span class="operator">[</span><span class="string">&quot;x86-darwin-generic-mach_o-64bit&quot;</span><span class="operator">,</span> <span class="string">&quot;arm-darwin-generic-mach_o-64bit&quot;</span><span class="operator">]</span><span class="operator">,</span>
+             <span class="string">&quot;Binary&quot;</span>: <span class="string">&quot;/Users/jdoe/llvm-mingw/bin/lldb&quot;</span><span class="operator">,</span>
+             <span class="string">&quot;EngineType&quot;</span>: <span class="number">256</span><span class="operator">,</span>
+             <span class="string">&quot;Version&quot;</span>: <span class="string">&quot;18.1.6&quot;</span>
+           }
+         }
+       }
+     }
+   <span class="operator">]</span>
+ }
+</pre>
+<h2 id="using-conditions">Using Conditions</h2>
+<p>The following configure presets are used if they match <code translate="no">condition</code>. That is, if the <code translate="no">hostSystemName</code> equals <code translate="no">Linux</code>, the <code translate="no">linux</code> presets are used and if it equals <code translate="no">Windows</code>, the <code translate="no">windows</code> presets are used.</p>
+<pre class="cpp" translate="no">
+ {
+   <span class="string">&quot;version&quot;</span>: <span class="number">3</span><span class="operator">,</span>
+   <span class="string">&quot;configurePresets&quot;</span>: <span class="operator">[</span>
+     {
+       <span class="string">&quot;name&quot;</span>: <span class="string">&quot;linux&quot;</span><span class="operator">,</span>
+       <span class="string">&quot;displayName&quot;</span>: <span class="string">&quot;Linux GCC&quot;</span><span class="operator">,</span>
+       <span class="string">&quot;binaryDir&quot;</span>: <span class="string">&quot;${sourceDir}/build&quot;</span><span class="operator">,</span>
+       <span class="string">&quot;cacheVariables&quot;</span>: {
+         <span class="string">&quot;CMAKE_PREFIX_PATH&quot;</span>: <span class="string">&quot;$env{HOME}/Qt/6.4.0/gcc_64&quot;</span>
+       }<span class="operator">,</span>
+       <span class="string">&quot;condition&quot;</span>: {
+         <span class="string">&quot;type&quot;</span>: <span class="string">&quot;equals&quot;</span><span class="operator">,</span>
+         <span class="string">&quot;lhs&quot;</span>: <span class="string">&quot;${hostSystemName}&quot;</span><span class="operator">,</span>
+         <span class="string">&quot;rhs&quot;</span>: <span class="string">&quot;Linux&quot;</span>
+       }
+     }<span class="operator">,</span>
+     {
+       <span class="string">&quot;name&quot;</span>: <span class="string">&quot;windows&quot;</span><span class="operator">,</span>
+       <span class="string">&quot;displayName&quot;</span>: <span class="string">&quot;Windows MSVC&quot;</span><span class="operator">,</span>
+       <span class="string">&quot;binaryDir&quot;</span>: <span class="string">&quot;${sourceDir}/build&quot;</span><span class="operator">,</span>
+       <span class="string">&quot;cacheVariables&quot;</span>: {
+         <span class="string">&quot;CMAKE_PREFIX_PATH&quot;</span>: <span class="string">&quot;$env{SYSTEMDRIVE}/Qt/6.4.0/msvc2019_64&quot;</span>
+       }<span class="operator">,</span>
+       <span class="string">&quot;condition&quot;</span>: {
+         <span class="string">&quot;type&quot;</span>: <span class="string">&quot;equals&quot;</span><span class="operator">,</span>
+         <span class="string">&quot;lhs&quot;</span>: <span class="string">&quot;${hostSystemName}&quot;</span><span class="operator">,</span>
+         <span class="string">&quot;rhs&quot;</span>: <span class="string">&quot;Windows&quot;</span>
+       }
+     }
+   <span class="operator">]</span>
+ }
+</pre>
+<h2 id="test-presets">Test Presets</h2>
+<p>The following test presets instruct CMake to stop test execution and print output from the test program upon failure, as well as display an error if the test cannot be found.</p>
+<pre class="cpp plain" translate="no">
+ {
+   &quot;version&quot;: 3,
+   &quot;testPresets&quot;: [
+   {
+     &quot;name&quot;: &quot;default&quot;,
+     &quot;configurePreset&quot;: &quot;default&quot;,
+     &quot;output&quot;: {&quot;outputOnFailure&quot;: true},
+     &quot;execution&quot;: {&quot;noTestsAction&quot;: &quot;error&quot;, &quot;stopOnFailure&quot;: true}
+     }
+   ],
+ }
+</pre>
+</div>
+<p><b>See also </b><a href="creator-build-settings-cmake.html">CMake Build Configuration</a>, <a href="creator-project-cmake.html">CMake</a>, <a href="creator-build-settings-cmake-presets-qt-vendor.html">CMake Qt Vendor Presets</a>, and <a href="creator-sdk-tool.html">SDK Tool</a>.</p>
+<!-- @@@creator-build-settings-cmake-presets.html -->
+<p class="naviNextPrevious footerNavi">
+<a class="prevPage" href="creator-build-settings-cmake.html">CMake Build Configuration</a>
+<span class="naviSeparator">  &#9702;  </span>
+<a class="nextPage" href="creator-build-settings-cmake-presets-qt-vendor.html">CMake Qt Vendor Presets</a>
+</p>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   Copyright <acronym title="Copyright">&copy;</acronym> The Qt Company Ltd. and other contributors.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

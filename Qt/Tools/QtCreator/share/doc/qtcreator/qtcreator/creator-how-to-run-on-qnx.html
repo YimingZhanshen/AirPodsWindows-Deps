@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- creator-projects-how-to-run-qnx.qdoc -->
+  <title>Run on QNX devices | Qt Creator Documentation</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="index.html">Qt Creator Documentation</a></li>
+<li>Run on QNX devices</li>
+<li id="buildversion"><a href="index.html">Qt Creator 18.0.2</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+  <link rel="prev" href="creator-how-to-debug-remotely-gdb.html" />
+  <link rel="next" href="creator-how-to-add-remote-linux.html" />
+<p class="naviNextPrevious headerNavi">
+<a class="prevPage" href="creator-how-to-debug-remotely-gdb.html">Debug remotely with GDB</a>
+<span class="naviSeparator">  &#9702;  </span>
+<a class="nextPage" href="creator-how-to-add-remote-linux.html">Add remote Linux devices</a>
+</p>
+<div class="sidebar">
+<div class="toc">
+<h3 id="toc">Contents</h3>
+<ul>
+<li class="level1"><a href="#troubleshoot-errors">Troubleshoot errors</a></li>
+<li class="level2"><a href="#debug-output-cannot-be-shown">Debug output cannot be shown</a></li>
+<li class="level2"><a href="#cannot-run-debug-or-stop-applications">Cannot run, debug, or stop applications</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Run on QNX devices</h1>
+<!-- $$$creator-how-to-run-on-qnx.html-description -->
+<div class="descr" id="details">
+<p>To build an application and run it on a device:</p>
+<ol class="1" type="1"><li>Connect the device to the computer or to a network.</li>
+<li>Go to <a href="creator-how-to-find-preferences.html">Preferences</a> &gt; <b translate="no">Devices</b> &gt; <b translate="no">Devices</b>, and add a QNX device.<p class="centerAlign"><img src="images/qtcreator-devices-qnx.webp" alt="QNX device in the Devices tab in Devices preferences" /></p></li>
+<li>Make sure that your kit has your QNX device set.</li>
+<li>Select <img src="images/run_small.png" alt="Run" /> (<b translate="no">Run</b>).</li>
+</ol>
+<p>Qt Creator uses the compiler specified in the QNX toolchain to build the application.</p>
+<div class="admonition note">
+<p><b>Note: </b>Debugging is currently only fully supported on Linux and macOS. It is not possible to insert breakpoints during runtime on Windows.</p>
+</div>
+<h2 id="troubleshoot-errors">Troubleshoot errors</h2>
+<p>To support running, debugging, and stopping applications from Qt Creator, the QNX Neutrino RTOS has additional command-line tools and services, as described in <a href="https://doc.qt.io/qt/qnx.html">Qt for QNX</a>.</p>
+<h3 id="debug-output-cannot-be-shown">Debug output cannot be shown</h3>
+<p>For the command-line output to show up in <a href="creator-reference-application-output-view.html">Application Output</a>, Qt Creator has to create an SSH connection to the device. This is only possible if QNX Momentics is not running, and the SSH key configured for the device is a 4096-bit key.</p>
+<p>If these conditions are not met, you will get an error message saying debug output cannot be shown.</p>
+<h3 id="cannot-run-debug-or-stop-applications">Cannot run, debug, or stop applications</h3>
+<p>The board support package (BSP) for the QNX device might be missing some of the following applications that Qt Creator needs to run, debug, and stop applications on QNX devices: <code translate="no">awk</code>, <code translate="no">grep</code>, <code translate="no">kill</code>, <code translate="no">netstat</code>, <code translate="no">print</code>, <code translate="no">printf</code>, <code translate="no">ps</code>, <code translate="no">read</code>, <code translate="no">sed</code>, <code translate="no">sleep</code>, <code translate="no">uname</code>, <code translate="no">slog2info</code>, and <code translate="no">cat</code>.</p>
+</div>
+<p><b>See also </b><a href="creator-how-tos.html#qnx-neutrino">How To: Develop for QNX</a>, <a href="creator-running-targets.html">Run on many platforms</a>, <a href="creator-preferences-kits-compilers.html">Compilers</a>, and <a href="creator-preferences-kits.html#kit-preferences">Kits</a>.</p>
+<!-- @@@creator-how-to-run-on-qnx.html -->
+<p class="naviNextPrevious footerNavi">
+<a class="prevPage" href="creator-how-to-debug-remotely-gdb.html">Debug remotely with GDB</a>
+<span class="naviSeparator">  &#9702;  </span>
+<a class="nextPage" href="creator-how-to-add-remote-linux.html">Add remote Linux devices</a>
+</p>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   Copyright <acronym title="Copyright">&copy;</acronym> The Qt Company Ltd. and other contributors.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

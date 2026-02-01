@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- creator-language-server.qdoc -->
+  <title>Configure language servers for projects | Qt Creator Documentation</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="index.html">Qt Creator Documentation</a></li>
+<li>Configure language servers for projects</li>
+<li id="buildversion"><a href="index.html">Qt Creator 18.0.2</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+  <link rel="prev" href="creator-how-to-cpp-code-model.html" />
+  <link rel="next" href="creator-how-to-create-vcs-repositories.html" />
+<p class="naviNextPrevious headerNavi">
+<a class="prevPage" href="creator-how-to-cpp-code-model.html">Configure C++ code model</a>
+<span class="naviSeparator">  &#9702;  </span>
+<a class="nextPage" href="creator-how-to-create-vcs-repositories.html">Create VCS repositories for new projects</a>
+</p>
+<div class="sidebar">
+<div class="toc">
+<h3 id="toc">Contents</h3>
+<ul>
+<li class="level1"><a href="#turn-on-and-off-language-servers">Turn on and off language servers</a></li>
+<li class="level1"><a href="#configure-language-server-workspace">Configure language server workspace</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Configure language servers for projects</h1>
+<!-- $$$creator-how-to-configure-lsp-workspace.html-description -->
+<div class="descr" id="details">
+<p>To configure language servers for the current project, go to <b translate="no">Projects</b> &gt; <b translate="no">Project Settings</b> &gt; <b translate="no">Language Server</b>.</p>
+<p class="centerAlign"><img src="images/qtcreator-projects-settings-language-server.webp" alt="Language Server settings for a project" /></p><p>To add language servers and change their preferences, select <b translate="no">Global settings</b>.</p>
+<h2 id="turn-on-and-off-language-servers">Turn on and off language servers</h2>
+<p>To turn on and off language servers, select <b translate="no">Enabled</b> or <b translate="no">Disabled</b> in <b translate="no">Project Specific Language Servers</b>.</p>
+<h2 id="configure-language-server-workspace">Configure language server workspace</h2>
+<p>The language client sends the contents of the <b translate="no">Workspace Configuration</b> field as a JSON file to all language servers that have files open that belong to the project. The contents of the JSON file must be valid JSON. The available settings depend on the language server.</p>
+<p>In <b translate="no">Workspace Configuration</b>, specify language server settings using valid JSON format.</p>
+</div>
+<p><b>See also </b><a href="creator-how-tos.html#manage-language-servers">How To: Manage Language Servers</a>, <a href="creator-language-servers.html">Language Servers</a>, and <a href="creator-configuring-projects.html">Configuring Projects</a>.</p>
+<!-- @@@creator-how-to-configure-lsp-workspace.html -->
+<p class="naviNextPrevious footerNavi">
+<a class="prevPage" href="creator-how-to-cpp-code-model.html">Configure C++ code model</a>
+<span class="naviSeparator">  &#9702;  </span>
+<a class="nextPage" href="creator-how-to-create-vcs-repositories.html">Create VCS repositories for new projects</a>
+</p>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   Copyright <acronym title="Copyright">&copy;</acronym> The Qt Company Ltd. and other contributors.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

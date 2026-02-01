@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- creator-vcs-git.qdoc -->
+  <title>Commit your first change | Qt Creator Documentation</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="index.html">Qt Creator Documentation</a></li>
+<li>Commit your first change</li>
+<li id="buildversion"><a href="index.html">Qt Creator 18.0.2</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+  <link rel="prev" href="creator-how-to-select-squish-auts.html" />
+  <link rel="next" href="creator-how-to-create-vcs-repositories.html" />
+<p class="naviNextPrevious headerNavi">
+<a class="prevPage" href="creator-how-to-select-squish-auts.html">Select Squish AUTs</a>
+<span class="naviSeparator">  &#9702;  </span>
+<a class="nextPage" href="creator-how-to-create-vcs-repositories.html">Create VCS repositories for new projects</a>
+</p>
+<div class="sidebar">
+<div class="toc">
+<h3 id="toc">Contents</h3>
+<ul>
+<li class="level1"><a href="#commit-to-a-new-repository">Commit to a new repository</a></li>
+<li class="level1"><a href="#commit-to-an-existing-repository">Commit to an existing repository</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Commit your first change</h1>
+<!-- $$$creator-how-to-git-first-commit.html-description -->
+<div class="descr" id="details">
+<p>When working with Git, you typically check and stage you local changes, commit them to the local repository, and then push them to a remote repository (<i>origin</i>).</p>
+<p>Before you start, set up Git in <a href="creator-how-to-find-preferences.html">Preferences</a> &gt; <b translate="no">Version Control</b> &gt; <b translate="no">General</b>.</p>
+<h2 id="commit-to-a-new-repository">Commit to a new repository</h2>
+<p>To commit and push your first change to a new repository:</p>
+<ol class="1" type="1"><li>To start tracking changes, go to <b translate="no">Tools</b> &gt; <b translate="no">Git</b>, and then select <b translate="no">Create Repository</b>.</li>
+<li>To view local changes, go to <b translate="no">Tools</b> &gt; <b translate="no">Git</b> &gt; <b translate="no">Local Repository</b> and select <b translate="no">Diff</b>.<p class="centerAlign"><img src="images/qtcreator-git-diff-repository.webp" alt="Git Diff Repository view" /></p><p class="figCaption">Git Diff Repository view</p>
+</li>
+<li>Right-click a changed line and select <b translate="no">Stage Chunk</b> to add the <i>chunk</i> to the staging area or <b translate="no">Stage Selection</b> to add the selected lines there.</li>
+<li>To commit the staged changes to the local repository, go to <b translate="no">Tools</b> &gt; <b translate="no">Git</b> &gt; <b translate="no">Local Repository</b> and select <b translate="no">Commit</b>.<p class="centerAlign"><img src="images/qtcreator-git-commit.webp" alt="Git Commit view" /></p><p class="figCaption">Git Commit view</p>
+</li>
+<li>Select the files to commit, and then select <b translate="no">Commit &lt;n/m&gt; File(s)</b> to commit the changes to the local repository.</li>
+<li>To push the committed changes to a remote repository, go to <b translate="no">Tools</b> &gt; <b translate="no">Git</b> &gt; <b translate="no">Remote Repository</b> and select <b translate="no">Push</b>.<p>If the local branch does not have an upstream branch in the remote repository, Qt Creator prompts you to create it and set it as <i>origin</i>.</p>
+</li>
+</ol>
+<h2 id="commit-to-an-existing-repository">Commit to an existing repository</h2>
+<p>To commit and push your first change to an existing repository:</p>
+<ol class="1" type="1"><li>To pull changes from a remote repository, go to <b translate="no">Tools</b> &gt; <b translate="no">Git</b> &gt; <b translate="no">Remote Repository</b> and select <b translate="no">Pull</b>.</li>
+<li>Select <b translate="no">Stash &amp; Pop</b> to stash all local changes before pulling and to apply your stash on top of the pulled working tree state.</li>
+<li>To commit the changes to the local repository, go to <b translate="no">Tools</b> &gt; <b translate="no">Git</b> &gt; <b translate="no">Local Repository</b> and select <b translate="no">Commit</b>.</li>
+<li>To push the committed changes to a remote repository, go to <b translate="no">Tools</b> &gt; <b translate="no">Git</b> &gt; <b translate="no">Remote Repository</b> and select <b translate="no">Push</b>.</li>
+</ol>
+</div>
+<p><b>See also </b><a href="creator-how-tos.html#use-git">How To: Use Git</a> and <a href="creator-vcs-git.html">Git</a>.</p>
+<!-- @@@creator-how-to-git-first-commit.html -->
+<p class="naviNextPrevious footerNavi">
+<a class="prevPage" href="creator-how-to-select-squish-auts.html">Select Squish AUTs</a>
+<span class="naviSeparator">  &#9702;  </span>
+<a class="nextPage" href="creator-how-to-create-vcs-repositories.html">Create VCS repositories for new projects</a>
+</p>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   Copyright <acronym title="Copyright">&copy;</acronym> The Qt Company Ltd. and other contributors.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

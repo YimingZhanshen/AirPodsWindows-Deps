@@ -1,0 +1,125 @@
+{
+    "version": 1,
+    "supportedProjectTypes": [ "MesonProjectManager.MesonProject", "CMakeProjectManager.CMakeProject", "Qbs.QbsProject", "Qt4ProjectManager.Qt4Project" ],
+    "id": "A.Plain C Application",
+    "category": "I.Projects",
+    "trDescription": "Creates a simple C application with no dependencies.",
+    "trDisplayName": "Plain C Application",
+    "trDisplayCategory": "Non-Qt Project",
+    "icon": "../../global/consoleapplication.png",
+    "iconKind": "Themed",
+    "enabled": "%{JS: isPluginRunning('cppeditor') && isAnyPluginRunning(['qmakeprojectmanager', 'qbsprojectmanager', 'cmakeprojectmanager', 'mesonprojectmanager'])}",
+
+    "options":
+    [
+        { "key": "ProjectFile", "value": "%{JS: value('BuildSystem') === 'qmake' ? value('ProFile') : (value('BuildSystem') === 'cmake' ? value('CMakeFile') : ( value('BuildSystem') === 'meson' ? value('MesonFile') : value('QbsFile')))}" },
+        { "key": "ProFile", "value": "%{JS: Util.fileName(value('ProjectDirectory') + '/' + value('ProjectName'), 'pro')}" },
+        { "key": "QbsFile", "value": "%{JS: Util.fileName(value('ProjectDirectory') + '/' + value('ProjectName'), 'qbs')}" },
+        { "key": "CMakeFile", "value": "%{ProjectDirectory}/CMakeLists.txt" },
+        { "key": "MesonFile", "value": "%{ProjectDirectory}/meson.build" },
+        { "key": "CFileName", "value": "%{JS: 'main.' + Util.preferredSuffix('text/x-csrc')}" }
+    ],
+
+    "pages":
+    [
+        {
+            "trDisplayName": "Project Location",
+            "trShortTitle": "Location",
+            "typeId": "Project"
+        },
+        {
+            "trDisplayName": "Define Build System",
+            "trShortTitle": "Build System",
+            "typeId": "Fields",
+            "skipForSubprojects": true,
+            "data":
+            [
+                {
+                    "name": "BuildSystem",
+                    "trDisplayName": "Build system:",
+                    "type": "ComboBox",
+                    "persistenceKey": "BuildSystemType",
+                    "data":
+                    {
+                        "index": 1,
+                        "items":
+                        [
+                            {
+                                "trKey": "qmake",
+                                "value": "qmake",
+                                "condition": "%{JS: isPluginRunning('qmakeprojectmanager')}"
+                            },
+                            {
+                                "trKey": "CMake",
+                                "value": "cmake",
+                                "condition": "%{JS: isPluginRunning('cmakeprojectmanager')}"
+                            },
+                            {
+                                "trKey": "Qbs",
+                                "value": "qbs",
+                                "condition": "%{JS: isPluginRunning('qbsprojectmanager')}"
+                            },
+                            {
+                                "trKey": "Meson",
+                                "value": "meson",
+                                "condition": "%{JS: isPluginRunning('mesonprojectmanager')}"
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "trDisplayName": "Kit Selection",
+            "trShortTitle": "Kits",
+            "typeId": "Kits",
+            "data": { "projectFilePath": "%{ProjectFile}" }
+        },
+        {
+            "trDisplayName": "Project Management",
+            "trShortTitle": "Summary",
+            "typeId": "Summary"
+        }
+    ],
+    "generators":
+    [
+        {
+            "typeId": "File",
+            "data":
+            [
+                {
+                    "source": "file.pro",
+                    "target": "%{ProFile}",
+                    "openAsProject": true,
+                    "condition": "%{JS: value('BuildSystem') === 'qmake'}"
+                },
+                {
+                    "source": "CMakeLists.txt",
+                    "openAsProject": true,
+                    "condition": "%{JS: value('BuildSystem') === 'cmake'}"
+                },
+                {
+                    "source": "file.qbs",
+                    "target": "%{QbsFile}",
+                    "openAsProject": true,
+                    "condition": "%{JS: value('BuildSystem') === 'qbs'}"
+                },
+                {
+                    "source": "meson.build",
+                    "openAsProject": true,
+                    "condition": "%{JS: value('BuildSystem') === 'meson'}"
+                },
+                {
+                    "source": "main.c",
+                    "target": "%{CFileName}",
+                    "openInEditor": true
+                },
+                {
+                    "source": "../git.ignore",
+                    "target": ".gitignore",
+                    "condition": "%{JS: !value('IsSubproject') && value('VersionControl') === 'G.Git'}"
+                }
+            ]
+        }
+    ]
+}

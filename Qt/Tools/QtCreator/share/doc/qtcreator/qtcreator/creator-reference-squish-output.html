@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- creator-squish.qdoc -->
+  <meta name="description" content="View Squish test, runner, and server logs.">
+  <title>Squish | Qt Creator Documentation</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="index.html">Qt Creator Documentation</a></li>
+<li>Squish</li>
+<li id="buildversion"><a href="index.html">Qt Creator 18.0.2</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+  <link rel="prev" href="creator-reference-search-results-view.html" />
+  <link rel="next" href="creator-reference-terminal-view.html" />
+<p class="naviNextPrevious headerNavi">
+<a class="prevPage" href="creator-reference-search-results-view.html">Search Results View</a>
+<span class="naviSeparator">  &#9702;  </span>
+<a class="nextPage" href="creator-reference-terminal-view.html">Terminal</a>
+</p>
+<div class="sidebar">
+<div class="toc">
+<h3 id="toc">Contents</h3>
+<ul>
+<li class="level1"><a href="#view-squish-test-log">View Squish test log</a></li>
+<li class="level1"><a href="#view-squish-runner-and-server-logs">View Squish runner and server logs</a></li>
+<li class="level1"><a href="#squish-view-toolbar">Squish view toolbar</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Squish</h1>
+<!-- $$$creator-reference-squish-output.html-description -->
+<div class="descr" id="details">
+<p>Squish uses compare, verify, and exception functions to record the results of tests applied to a running application under test (AUT) in the test log as <i>passes</i> or <i>fails</i>. In addition, any kind of test results can be recorded in the test log.</p>
+<h2 id="view-squish-test-log">View Squish test log</h2>
+<p>To view the test log, go to the <b translate="no">Squish</b> output, <b translate="no">Test Results</b> tab.</p>
+<p class="centerAlign"><img src="images/qtcreator-squish-output-test-results.png" alt="Test Results output" /></p><p>The <b translate="no">Result</b> column displays the time when each test run started and finished, log information and warnings, and test result status:</p>
+<ul>
+<li><b translate="no">Pass</b> - The test passed.</li>
+<li><b translate="no">Fail</b> - The test failed.</li>
+<li><b translate="no">ExpectedFail</b> - The test failed, as expected. For example, a known bug in the AUT caused a comparison or verification to fail.</li>
+<li><b translate="no">UnexpectedPass</b> - The test passed unexpectedly. For example, a comparison or verification succeeded even though it was expected to fail.</li>
+</ul>
+<p>The <b translate="no">Message</b> column displays log messages and information about the type of the operation that was performed: comparison, verification, or exception.</p>
+<h2 id="view-squish-runner-and-server-logs">View Squish runner and server logs</h2>
+<p>To view the Squish Runner and Server logs, go to the <b translate="no">Squish</b> output, <b translate="no">Runner/Server Log</b> tab.</p>
+<p class="centerAlign"><img src="images/qtcreator-squish-output-runner-server-log.webp" alt="Runner and Server Log output" /></p><h2 id="squish-view-toolbar">Squish view toolbar</h2>
+<p>Select options on the view toolbar to perform the following actions:</p>
+<ul>
+<li>To clear the view, select <img src="images/clean_pane_small.png" alt="Clear" /> (<b translate="no">Clear</b>).</li>
+<li>To move between test results or log entries, select <img src="images/arrowdown.png" alt="Next Item" /> (<b translate="no">Next Item</b>) and <img src="images/arrowup.png" alt="Previous Item" /> (<b translate="no">Previous Item</b>).</li>
+<li>To filter test results or log entries, select <img src="images/filtericon.png" alt="Filter Tree" /> (<b translate="no">Filter Tree</b>).</li>
+<li>To expand or collapse the test results or log entries, select <img src="images/expand.png" alt="Expand All" /> (<b translate="no">Expand All</b>) or <img src="images/collapse.png" alt="Collapse All" /> (<b translate="no">Collapse All</b>).</li>
+</ul>
+</div>
+<p><b>See also </b><a href="creator-how-to-connect-squish-server.html">Connect to Squish Server</a>, <a href="creator-how-to-create-squish-test-suites.html">Create Squish test suites</a>, <a href="creator-how-to-enable-plugins.html">Enable and disable plugins</a>, <a href="creator-how-to-manage-squish-test-suites.html">Manage Squish test suites and cases</a>, <a href="creator-how-to-select-squish-auts.html">Select Squish AUTs</a>, and <a href="creator-how-to-view-output.html">View output</a>.</p>
+<!-- @@@creator-reference-squish-output.html -->
+<p class="naviNextPrevious footerNavi">
+<a class="prevPage" href="creator-reference-search-results-view.html">Search Results View</a>
+<span class="naviSeparator">  &#9702;  </span>
+<a class="nextPage" href="creator-reference-terminal-view.html">Terminal</a>
+</p>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   Copyright <acronym title="Copyright">&copy;</acronym> The Qt Company Ltd. and other contributors.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

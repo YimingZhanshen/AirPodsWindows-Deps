@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- linuxdev.qdoc -->
+  <title>Add remote Linux devices | Qt Creator Documentation</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="index.html">Qt Creator Documentation</a></li>
+<li>Add remote Linux devices</li>
+<li id="buildversion"><a href="index.html">Qt Creator 18.0.2</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+  <link rel="prev" href="creator-how-to-run-on-qnx.html" />
+  <link rel="next" href="creator-how-to-build-on-remote-linux.html" />
+<p class="naviNextPrevious headerNavi">
+<a class="prevPage" href="creator-how-to-run-on-qnx.html">Run on QNX devices</a>
+<span class="naviSeparator">  &#9702;  </span>
+<a class="nextPage" href="creator-how-to-build-on-remote-linux.html">Build applications on remote Linux devices</a>
+</p>
+<div class="sidebar">
+<div class="toc">
+<h3 id="toc">Contents</h3>
+<ul>
+<li class="level1"><a href="#use-a-wizard-to-add-a-device">Use a wizard to add a device</a></li>
+<li class="level1"><a href="#manually-add-a-device">Manually add a device</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Add remote Linux devices</h1>
+<!-- $$$creator-how-to-add-remote-linux.html-description -->
+<div class="descr" id="details">
+<p>Create connections between generic Linux devices and Qt Creator to run, debug, and analyze applications on them.</p>
+<p class="centerAlign"><img src="images/qtcreator-preferences-devices-remote-linux.webp" alt="Remote Linux device in the Devices tab in Devices preferences" /></p><p class="figCaption">Remote Linux Device preferences</p>
+<h2 id="use-a-wizard-to-add-a-device">Use a wizard to add a device</h2>
+<p>To use a wizard to add <b translate="no">Remote Linux Device</b>:</p>
+<ol class="1" type="1"><li>Go to <a href="creator-how-to-find-preferences.html">Preferences</a> &gt; <b translate="no">Devices</b> &gt; <b translate="no">Devices</b>.</li>
+<li>Select <b translate="no">Add</b> &gt; <b translate="no">Remote Linux Device</b> &gt; <b translate="no">Start Wizard</b>.<p class="centerAlign"><img src="images/qtcreator-preferences-devices-remote-linux-connection.webp" alt="Connection Data wizard" /></p></li>
+<li>In <b translate="no">The name to identify this configuration</b>, enter a name for the connection.</li>
+<li>In <b translate="no">The device's host name or IP address</b>, enter the host name or IP address of the device. This becomes the value of the <code translate="no">%{Device:HostAddress}</code> variable.</li>
+<li>In <b translate="no">The device's SSH port number</b>, enter the port number for SSH connections. This becomes the value of the <code translate="no">%{Device:SshPort}</code> variable.</li>
+<li>In <b translate="no">The username to log into the device</b>, enter the username to log into the device and run the application. This becomes the value of the <code translate="no">%{Device:UserName}</code> variable.</li>
+<li>Select <b translate="no">Next</b> to open the <b translate="no">Key Deployment</b> dialog.<p class="centerAlign"><img src="images/qtcreator-preferences-devices-remote-linux-key-deployment.webp" alt="Key Deployment dialog" /></p></li>
+<li>In <b translate="no">Private key file</b>, select a private key file for authentication. This becomes the value of the <code translate="no">%{Device:PrivateKeyFile}</code> variable.</li>
+<li>If you don't have a public-private key pair, select <b translate="no">Create New Key Pair</b>. For more information, see <a href="creator-how-to-generate-ssh-keys.html">Generate SSH keys</a>.</li>
+<li>Select <b translate="no">Deploy Public Key</b> to copy the public key to the device.</li>
+<li>Select <b translate="no">Next</b> to create the connection.</li>
+</ol>
+<p>To change device preferences, go to <a href="creator-how-to-find-preferences.html">Preferences</a> &gt; <b translate="no">Devices</b> &gt; <b translate="no">Devices</b> and select a device in <b translate="no">Device</b>.</p>
+<h2 id="manually-add-a-device">Manually add a device</h2>
+<p>To add a device without using the wizard, select <b translate="no">Remote Linux Device</b> in the pull-down menu of the <b translate="no">Add</b> button.</p>
+</div>
+<p><b>See also </b><a href="creator-how-tos.html#remote-linux">How To: Develop for remote Linux</a>, <a href="creator-debugging.html#remote-debugging">Remote Debugging</a>, <a href="creator-developing-generic-linux.html">Developing for Remote Linux Devices</a>, and <a href="creator-deployment-embedded-linux.html">Remote Linux Deploy Configuration</a>.</p>
+<!-- @@@creator-how-to-add-remote-linux.html -->
+<p class="naviNextPrevious footerNavi">
+<a class="prevPage" href="creator-how-to-run-on-qnx.html">Run on QNX devices</a>
+<span class="naviSeparator">  &#9702;  </span>
+<a class="nextPage" href="creator-how-to-build-on-remote-linux.html">Build applications on remote Linux devices</a>
+</p>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   Copyright <acronym title="Copyright">&copy;</acronym> The Qt Company Ltd. and other contributors.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

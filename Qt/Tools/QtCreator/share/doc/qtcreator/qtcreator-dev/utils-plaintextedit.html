@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- plaintextedit.cpp -->
+  <meta name="description" content="The PlainTextEdit class provides a widget that is used to edit and display plain text.">
+  <title>Utils::PlainTextEdit Class | Extending Qt Creator Manual</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="index.html">Extending Qt Creator Manual</a></li>
+<li><a href="qtcreator-module.html" translate="no">QtCreator</a></li>
+<li>PlainTextEdit</li>
+<li id="buildversion"><a href="index.html">Extending Qt Creator Manual 18.0.2</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar">
+<div class="toc">
+<h3 id="toc">Contents</h3>
+<ul>
+<li class="level1"><a href="#public-types">Public Types</a></li>
+<li class="level1"><a href="#properties">Properties</a></li>
+<li class="level1"><a href="#public-functions">Public Functions</a></li>
+<li class="level1"><a href="#public-slots">Public Slots</a></li>
+<li class="level1"><a href="#signals">Signals</a></li>
+<li class="level1"><a href="#protected-functions">Protected Functions</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+<li class="level2"><a href="#using-plaintextedit-as-a-display-widget">Using PlainTextEdit as a Display Widget</a></li>
+<li class="level2"><a href="#using-plaintextedit-as-an-editor">Using PlainTextEdit as an Editor</a></li>
+<li class="level2"><a href="#differences-to-qtextedit">Differences to QTextEdit</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title" translate="no">Utils::PlainTextEdit Class</h1>
+<span class="small-subtitle" translate="no">class <a href="utils.html" translate="no">Utils</a>::PlainTextEdit</span>
+<!-- $$$PlainTextEdit-brief -->
+<p>The PlainTextEdit class provides a widget that is used to edit and display plain text. <a href="#details">More...</a></p>
+<!-- @@@PlainTextEdit -->
+<div class="table"><table class="alignedsummary requisites" translate="no">
+<tr><td class="memItemLeft rightAlign topAlign"> Header:</td><td class="memItemRight bottomAlign"> <code translate="no">#include &lt;PlainTextEdit&gt;</code></td></tr>
+</table></div>
+<ul>
+<li><a href="utils-plaintextedit-members.html">List of all members, including inherited members</a></li>
+</ul>
+<h2 id="public-types">Public Types</h2>
+<div class="table"><table class="alignedsummary" translate="no">
+<tr><td class="memItemLeft rightAlign topAlign"> enum </td><td class="memItemRight bottomAlign"><b><a href="utils-plaintextedit.html#LineWrapMode-enum" translate="no">LineWrapMode</a></b> { NoWrap, WidgetWidth }</td></tr>
+</table></div>
+<h2 id="properties">Properties</h2>
+<div class="table"><table class="propsummary" translate="no">
+<tr><td class="topAlign"><ul>
+<li class="fn" translate="no"><b><a href="utils-plaintextedit.html#backgroundVisible-prop" translate="no">backgroundVisible</a></b> : bool</li>
+<li class="fn" translate="no"><b><a href="utils-plaintextedit.html#blockCount-prop" translate="no">blockCount</a></b> : const int</li>
+<li class="fn" translate="no"><b><a href="utils-plaintextedit.html#centerOnScroll-prop" translate="no">centerOnScroll</a></b> : bool</li>
+<li class="fn" translate="no"><b><a href="utils-plaintextedit.html#cursorWidth-prop" translate="no">cursorWidth</a></b> : int</li>
+<li class="fn" translate="no"><b><a href="utils-plaintextedit.html#documentTitle-prop" translate="no">documentTitle</a></b> : QString</li>
+<li class="fn" translate="no"><b><a href="utils-plaintextedit.html#lineWrapMode-prop" translate="no">lineWrapMode</a></b> : LineWrapMode</li>
+<li class="fn" translate="no"><b><a href="utils-plaintextedit.html#maximumBlockCount-prop" translate="no">maximumBlockCount</a></b> : int</li>
+<li class="fn" translate="no"><b><a href="utils-plaintextedit.html#overwriteMode-prop" translate="no">overwriteMode</a></b> : bool</li>
+</ul></td><td class="topAlign"><ul>
+<li class="fn" translate="no"><b><a href="utils-plaintextedit.html#placeholderText-prop" translate="no">placeholderText</a></b> : QString</li>
+<li class="fn" translate="no"><b><a href="utils-plaintextedit.html#plainText-prop" translate="no">plainText</a></b> : QString</li>
+<li class="fn" translate="no"><b><a href="utils-plaintextedit.html#readOnly-prop" translate="no">readOnly</a></b> : bool</li>
+<li class="fn" translate="no"><b><a href="utils-plaintextedit.html#tabChangesFocus-prop" translate="no">tabChangesFocus</a></b> : bool</li>
+<li class="fn" translate="no"><b><a href="utils-plaintextedit.html#tabStopDistance-prop" translate="no">tabStopDistance</a></b> : qreal</li>
+<li class="fn" translate="no"><b><a href="utils-plaintextedit.html#textInteractionFlags-prop" translate="no">textInteractionFlags</a></b> : Qt::TextInteractionFlags</li>
+<li class="fn" translate="no"><b><a href="utils-plaintextedit.html#undoRedoEnabled-prop" translate="no">undoRedoEnabled</a></b> : bool</li>
+<li class="fn" translate="no"><b><a href="utils-plaintextedit.html#wordWrapMode-prop" translate="no">wordWrapMode</a></b> : QTextOption::WrapMode</li>
+</ul>
+</td></tr>
+</table></div>
+<h2 id="public-functions">Public Functions</h2>
+<div class="table"><table class="alignedsummary" translate="no">
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="utils-plaintextedit.html#PlainTextEdit" translate="no">PlainTextEdit</a></b>(QWidget *<i>parent</i> = nullptr)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="utils-plaintextedit.html#PlainTextEdit-1" translate="no">PlainTextEdit</a></b>(const QString &amp;<i>text</i>, QWidget *<i>parent</i> = nullptr)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> virtual </td><td class="memItemRight bottomAlign"><b><a href="utils-plaintextedit.html#dtor.PlainTextEdit" translate="no">~PlainTextEdit</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="utils-plaintextedit.html#anchorAt" translate="no">anchorAt</a></b>(const QPoint &amp;<i>pos</i>) const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="utils-plaintextedit.html#backgroundVisible-prop" translate="no">backgroundVisible</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> int </td><td class="memItemRight bottomAlign"><b><a href="utils-plaintextedit.html#blockCount-prop" translate="no">blockCount</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="utils-plaintextedit.html#canPaste" translate="no">canPaste</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="utils-plaintextedit.html#centerOnScroll-prop" translate="no">centerOnScroll</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QMenu *</td><td class="memItemRight bottomAlign"><b><a href="utils-plaintextedit.html#createStandardContextMenu" translate="no">createStandardContextMenu</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QMenu *</td><td class="memItemRight bottomAlign"><b><a href="utils-plaintextedit.html#createStandardContextMenu-1" translate="no">createStandardContextMenu</a></b>(const QPoint &amp;<i>position</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QTextCharFormat </td><td class="memItemRight bottomAlign"><b><a href="utils-plaintextedit.html#currentCharFormat" translate="no">currentCharFormat</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QTextCursor </td><td class="memItemRight bottomAlign"><b><a href="utils-plaintextedit.html#cursorForPosition" translate="no">cursorForPosition</a></b>(const QPoint &amp;<i>pos</i>) const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QRect </td><td class="memItemRight bottomAlign"><b><a href="utils-plaintextedit.html#cursorRect" translate="no">cursorRect</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QRect </td><td class="memItemRight bottomAlign"><b><a href="utils-plaintextedit.html#cursorRect-1" translate="no">cursorRect</a></b>(const QTextCursor &amp;<i>cursor</i>) const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> int </td><td class="memItemRight bottomAlign"><b><a href="utils-plaintextedit.html#cursorWidth-prop" translate="no">cursorWidth</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QTextDocument *</td><td class="memItemRight bottomAlign"><b><a href="utils-plaintextedit.html#document" translate="no">document</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="utils-plaintextedit.html#documentTitle-prop" translate="no">documentTitle</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="utils-plaintextedit.html#ensureCursorVisible" translate="no">ensureCursorVisible</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> int </td><td class="memItemRight bottomAlign"><b><a href="utils-plaintextedit.html#extraSelections" translate="no">extraSelections</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="utils-plaintextedit.html#readOnly-prop" translate="no">isReadOnly</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="utils-plaintextedit.html#undoRedoEnabled-prop" translate="no">isUndoRedoEnabled</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> Utils::PlainTextEdit::LineWrapMode </td><td class="memItemRight bottomAlign"><b><a href="utils-plaintextedit.html#lineWrapMode-prop" translate="no">lineWrapMode</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> virtual QVariant </td><td class="memItemRight bottomAlign"><b><a href="utils-plaintextedit.html#loadResource" translate="no">loadResource</a></b>(int <i>type</i>, const QUrl &amp;<i>name</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> int </td><td class="memItemRight bottomAlign"><b><a href="utils-plaintextedit.html#maximumBlockCount-prop" translate="no">maximumBlockCount</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="utils-plaintextedit.html#mergeCurrentCharFormat" translate="no">mergeCurrentCharFormat</a></b>(const QTextCharFormat &amp;<i>modifier</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="utils-plaintextedit.html#overwriteMode-prop" translate="no">overwriteMode</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="utils-plaintextedit.html#placeholderText-prop" translate="no">placeholderText</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="utils-plaintextedit.html#backgroundVisible-prop" translate="no">setBackgroundVisible</a></b>(bool <i>visible</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="utils-plaintextedit.html#centerOnScroll-prop" translate="no">setCenterOnScroll</a></b>(bool <i>enabled</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="utils-plaintextedit.html#setCurrentCharFormat" translate="no">setCurrentCharFormat</a></b>(const QTextCharFormat &amp;<i>format</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="utils-plaintextedit.html#cursorWidth-prop" translate="no">setCursorWidth</a></b>(int <i>width</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="utils-plaintextedit.html#setDocument" translate="no">setDocument</a></b>(QTextDocument *<i>document</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="utils-plaintextedit.html#documentTitle-prop" translate="no">setDocumentTitle</a></b>(const QString &amp;<i>title</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="utils-plaintextedit.html#setExtraSelections" translate="no">setExtraSelections</a></b>(const int &amp;<i>selections</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="utils-plaintextedit.html#lineWrapMode-prop" translate="no">setLineWrapMode</a></b>(Utils::PlainTextEdit::LineWrapMode <i>mode</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="utils-plaintextedit.html#maximumBlockCount-prop" translate="no">setMaximumBlockCount</a></b>(int <i>maximum</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="utils-plaintextedit.html#overwriteMode-prop" translate="no">setOverwriteMode</a></b>(bool <i>overwrite</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="utils-plaintextedit.html#placeholderText-prop" translate="no">setPlaceholderText</a></b>(const QString &amp;<i>placeholderText</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="utils-plaintextedit.html#readOnly-prop" translate="no">setReadOnly</a></b>(bool <i>ro</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="utils-plaintextedit.html#tabChangesFocus-prop" translate="no">setTabChangesFocus</a></b>(bool <i>b</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="utils-plaintextedit.html#tabStopDistance-prop" translate="no">setTabStopDistance</a></b>(qreal <i>distance</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="utils-plaintextedit.html#setTextCursor" translate="no">setTextCursor</a></b>(const QTextCursor &amp;<i>cursor</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="utils-plaintextedit.html#textInteractionFlags-prop" translate="no">setTextInteractionFlags</a></b>(Qt::TextInteractionFlags <i>flags</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="utils-plaintextedit.html#undoRedoEnabled-prop" translate="no">setUndoRedoEnabled</a></b>(bool <i>enable</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="utils-plaintextedit.html#wordWrapMode-prop" translate="no">setWordWrapMode</a></b>(int <i>policy</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="utils-plaintextedit.html#tabChangesFocus-prop" translate="no">tabChangesFocus</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> qreal </td><td class="memItemRight bottomAlign"><b><a href="utils-plaintextedit.html#tabStopDistance-prop" translate="no">tabStopDistance</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QTextCursor </td><td class="memItemRight bottomAlign"><b><a href="utils-plaintextedit.html#textCursor" translate="no">textCursor</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> Qt::TextInteractionFlags </td><td class="memItemRight bottomAlign"><b><a href="utils-plaintextedit.html#textInteractionFlags-prop" translate="no">textInteractionFlags</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="utils-plaintextedit.html#toPlainText" translate="no">toPlainText</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> int </td><td class="memItemRight bottomAlign"><b><a href="utils-plaintextedit.html#wordWrapMode-prop" translate="no">wordWrapMode</a></b>() const</td></tr>
+</table></div>
+<h2 id="public-slots">Public Slots</h2>
+<div class="table"><table class="alignedsummary" translate="no">
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="utils-plaintextedit.html#appendHtml" translate="no">appendHtml</a></b>(const QString &amp;<i>html</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="utils-plaintextedit.html#appendPlainText" translate="no">appendPlainText</a></b>(const QString &amp;<i>text</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="utils-plaintextedit.html#centerCursor" translate="no">centerCursor</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="utils-plaintextedit.html#clear" translate="no">clear</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="utils-plaintextedit.html#copy" translate="no">copy</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="utils-plaintextedit.html#cut" translate="no">cut</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="utils-plaintextedit.html#insertPlainText" translate="no">insertPlainText</a></b>(const QString &amp;<i>text</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="utils-plaintextedit.html#paste" translate="no">paste</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="utils-plaintextedit.html#redo" translate="no">redo</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="utils-plaintextedit.html#selectAll" translate="no">selectAll</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="utils-plaintextedit.html#setPlainText" translate="no">setPlainText</a></b>(const QString &amp;<i>text</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="utils-plaintextedit.html#undo" translate="no">undo</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="utils-plaintextedit.html#zoomIn" translate="no">zoomIn</a></b>(int <i>range</i> = 1)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="utils-plaintextedit.html#zoomOut" translate="no">zoomOut</a></b>(int <i>range</i> = 1)</td></tr>
+</table></div>
+<h2 id="signals">Signals</h2>
+<div class="table"><table class="alignedsummary" translate="no">
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="utils-plaintextedit.html#blockCountChanged" translate="no">blockCountChanged</a></b>(int <i>newBlockCount</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="utils-plaintextedit.html#copyAvailable" translate="no">copyAvailable</a></b>(bool <i>yes</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="utils-plaintextedit.html#cursorPositionChanged" translate="no">cursorPositionChanged</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="utils-plaintextedit.html#modificationChanged" translate="no">modificationChanged</a></b>(bool <i>changed</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="utils-plaintextedit.html#redoAvailable" translate="no">redoAvailable</a></b>(bool <i>available</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="utils-plaintextedit.html#selectionChanged" translate="no">selectionChanged</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="utils-plaintextedit.html#textChanged" translate="no">textChanged</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="utils-plaintextedit.html#undoAvailable" translate="no">undoAvailable</a></b>(bool <i>available</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="utils-plaintextedit.html#updateRequest" translate="no">updateRequest</a></b>(const QRect &amp;<i>rect</i>, int <i>dy</i>)</td></tr>
+</table></div>
+<h2 id="protected-functions">Protected Functions</h2>
+<div class="table"><table class="alignedsummary" translate="no">
+<tr><td class="memItemLeft rightAlign topAlign"> virtual bool </td><td class="memItemRight bottomAlign"><b><a href="utils-plaintextedit.html#canInsertFromMimeData" translate="no">canInsertFromMimeData</a></b>(const QMimeData *<i>source</i>) const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QPointF </td><td class="memItemRight bottomAlign"><b><a href="utils-plaintextedit.html#contentOffset" translate="no">contentOffset</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> virtual QMimeData *</td><td class="memItemRight bottomAlign"><b><a href="utils-plaintextedit.html#createMimeDataFromSelection" translate="no">createMimeDataFromSelection</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> int </td><td class="memItemRight bottomAlign"><b><a href="utils-plaintextedit.html#firstVisibleBlock" translate="no">firstVisibleBlock</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> virtual bool </td><td class="memItemRight bottomAlign"><b><a href="utils-plaintextedit.html#focusNextPrevChild" translate="no">focusNextPrevChild</a></b>(bool <i>next</i>) override</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> int </td><td class="memItemRight bottomAlign"><b><a href="utils-plaintextedit.html#getPaintContext" translate="no">getPaintContext</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> virtual void </td><td class="memItemRight bottomAlign"><b><a href="utils-plaintextedit.html#insertFromMimeData" translate="no">insertFromMimeData</a></b>(const QMimeData *<i>source</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> virtual void </td><td class="memItemRight bottomAlign"><b><a href="utils-plaintextedit.html#keyPressEvent" translate="no">keyPressEvent</a></b>(QKeyEvent *<i>e</i>) override</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> virtual void </td><td class="memItemRight bottomAlign"><b><a href="utils-plaintextedit.html#keyReleaseEvent" translate="no">keyReleaseEvent</a></b>(QKeyEvent *<i>e</i>) override</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> virtual void </td><td class="memItemRight bottomAlign"><b><a href="utils-plaintextedit.html#mouseDoubleClickEvent" translate="no">mouseDoubleClickEvent</a></b>(QMouseEvent *<i>e</i>) override</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> virtual void </td><td class="memItemRight bottomAlign"><b><a href="utils-plaintextedit.html#mouseMoveEvent" translate="no">mouseMoveEvent</a></b>(QMouseEvent *<i>e</i>) override</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> virtual void </td><td class="memItemRight bottomAlign"><b><a href="utils-plaintextedit.html#mousePressEvent" translate="no">mousePressEvent</a></b>(QMouseEvent *<i>e</i>) override</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> virtual void </td><td class="memItemRight bottomAlign"><b><a href="utils-plaintextedit.html#mouseReleaseEvent" translate="no">mouseReleaseEvent</a></b>(QMouseEvent *<i>e</i>) override</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> virtual void </td><td class="memItemRight bottomAlign"><b><a href="utils-plaintextedit.html#paintEvent" translate="no">paintEvent</a></b>(QPaintEvent *<i>e</i>) override</td></tr>
+</table></div>
+<!-- $$$PlainTextEdit-description -->
+<div class="descr">
+<h2 id="details">Detailed Description</h2>
+<p>PlainTextEdit is an advanced viewer/editor supporting plain text. It is optimized to handle large documents and to respond quickly to user input.</p>
+<p>QPlainText uses very much the same technology and concepts as <a href="https://doc.qt.io/qt/qtextedit.html" translate="no">QTextEdit</a>, but is optimized for plain text handling.</p>
+<p>PlainTextEdit works on paragraphs and characters. A paragraph is a formatted string which is word-wrapped to fit into the width of the widget. By default when reading plain text, one newline signifies a paragraph. A document consists of zero or more paragraphs. Paragraphs are separated by hard line breaks. Each character within a paragraph has its own attributes, for example, font and color.</p>
+<p>The shape of the mouse cursor on a PlainTextEdit is <a href="https://doc.qt.io/qt/qt.html#CursorShape-enum" translate="no">Qt::IBeamCursor</a> by default. It can be changed through the <code translate="no">viewport()</code> cursor property.</p>
+<h3 id="using-plaintextedit-as-a-display-widget">Using PlainTextEdit as a Display Widget</h3>
+<p>The text is set or replaced using <a href="utils-plaintextedit.html#setPlainText" translate="no">setPlainText</a>() which deletes the existing text and replaces it with the text passed to <a href="utils-plaintextedit.html#setPlainText" translate="no">setPlainText</a>().</p>
+<p>Text can be inserted using the <a href="https://doc.qt.io/qt/qtextcursor.html" translate="no">QTextCursor</a> class or using the convenience functions <a href="utils-plaintextedit.html#insertPlainText" translate="no">insertPlainText</a>(), <a href="utils-plaintextedit.html#appendPlainText" translate="no">appendPlainText</a>() or <a href="utils-plaintextedit.html#paste" translate="no">paste</a>().</p>
+<p>By default, the text edit wraps words at whitespace to fit within the text edit widget. The <a href="utils-plaintextedit.html#lineWrapMode-prop" translate="no">setLineWrapMode</a>() function is used to specify the kind of line wrap you want, <a href="utils-plaintextedit.html#LineWrapMode-enum" translate="no">WidgetWidth</a> or <a href="utils-plaintextedit.html#LineWrapMode-enum" translate="no">NoWrap</a> if you don't want any wrapping. If you use word wrap to the widget's width <a href="utils-plaintextedit.html#LineWrapMode-enum" translate="no">WidgetWidth</a>, you can specify whether to break on whitespace or anywhere with <a href="utils-plaintextedit.html#wordWrapMode-prop" translate="no">setWordWrapMode</a>().</p>
+<p>The <code translate="no">find()</code> function can be used to find and select a given string within the text.</p>
+<p>If you want to limit the total number of paragraphs in a PlainTextEdit, as it is for example useful in a log viewer, then you can use the <a href="utils-plaintextedit.html#maximumBlockCount-prop" translate="no">maximumBlockCount</a> property. The combination of <a href="utils-plaintextedit.html#maximumBlockCount-prop" translate="no">setMaximumBlockCount</a>() and <a href="utils-plaintextedit.html#appendPlainText" translate="no">appendPlainText</a>() turns PlainTextEdit into an efficient viewer for log text. The scrolling can be reduced with the <a href="utils-plaintextedit.html#centerOnScroll-prop" translate="no">centerOnScroll</a>() property, making the log viewer even faster. Text can be formatted in a limited way, either using a syntax highlighter (see below), or by appending html-formatted text with <a href="utils-plaintextedit.html#appendHtml" translate="no">appendHtml</a>(). While PlainTextEdit does not support complex rich text rendering with tables and floats, it does support limited paragraph-based formatting that you may need in a log viewer.</p>
+<h4 id="read-only-key-bindings">Read-only Key Bindings</h4>
+<p>When PlainTextEdit is used read-only the key bindings are limited to navigation, and text may only be selected with the mouse:</p>
+<div class="table"><table class="generic">
+ <thead><tr class="qt-style"><th >Keypresses</th><th >Action</th></tr></thead>
+<tr valign="top" class="odd"><td ><a href="https://doc.qt.io/qt/qt.html#ArrowType-enum" translate="no">Qt::UpArrow</a></td><td >Moves one line up.</td></tr>
+<tr valign="top" class="even"><td ><a href="https://doc.qt.io/qt/qt.html#ArrowType-enum" translate="no">Qt::DownArrow</a></td><td >Moves one line down.</td></tr>
+<tr valign="top" class="odd"><td ><a href="https://doc.qt.io/qt/qt.html#ArrowType-enum" translate="no">Qt::LeftArrow</a></td><td >Moves one character to the left.</td></tr>
+<tr valign="top" class="even"><td ><a href="https://doc.qt.io/qt/qt.html#ArrowType-enum" translate="no">Qt::RightArrow</a></td><td >Moves one character to the right.</td></tr>
+<tr valign="top" class="odd"><td >PageUp</td><td >Moves one (viewport) page up.</td></tr>
+<tr valign="top" class="even"><td >PageDown</td><td >Moves one (viewport) page down.</td></tr>
+<tr valign="top" class="odd"><td >Home</td><td >Moves to the beginning of the text.</td></tr>
+<tr valign="top" class="even"><td >End</td><td >Moves to the end of the text.</td></tr>
+<tr valign="top" class="odd"><td >Alt+Wheel</td><td >Scrolls the page horizontally (the Wheel is the mouse wheel).</td></tr>
+<tr valign="top" class="even"><td >Ctrl+Wheel</td><td >Zooms the text.</td></tr>
+<tr valign="top" class="odd"><td >Ctrl+A</td><td >Selects all text.</td></tr>
+</table></div>
+<h3 id="using-plaintextedit-as-an-editor">Using PlainTextEdit as an Editor</h3>
+<p>All the information about using PlainTextEdit as a display widget also applies here.</p>
+<p>Selection of text is handled by the <a href="https://doc.qt.io/qt/qtextcursor.html" translate="no">QTextCursor</a> class, which provides functionality for creating selections, retrieving the text contents or deleting selections. You can retrieve the object that corresponds with the user-visible cursor using the <a href="utils-plaintextedit.html#textCursor" translate="no">textCursor</a>() method. If you want to set a selection in PlainTextEdit just create one on a <a href="https://doc.qt.io/qt/qtextcursor.html" translate="no">QTextCursor</a> object and then make that cursor the visible cursor using <code translate="no">setCursor()</code>. The selection can be copied to the clipboard with <a href="utils-plaintextedit.html#copy" translate="no">copy</a>(), or cut to the clipboard with <a href="utils-plaintextedit.html#cut" translate="no">cut</a>(). The entire text can be selected using <a href="utils-plaintextedit.html#selectAll" translate="no">selectAll</a>().</p>
+<p>PlainTextEdit holds a <a href="https://doc.qt.io/qt/qtextdocument.html" translate="no">QTextDocument</a> object which can be retrieved using the <a href="utils-plaintextedit.html#document" translate="no">document</a>() method. You can also set your own document object using <a href="utils-plaintextedit.html#setDocument" translate="no">setDocument</a>(). <a href="https://doc.qt.io/qt/qtextdocument.html" translate="no">QTextDocument</a> emits a <a href="utils-plaintextedit.html#textChanged" translate="no">textChanged</a>() signal if the text changes and it also provides an <code translate="no">isModified()</code> function which will return <code translate="no">true</code> if the text has been modified since it was either loaded or since the last call to setModified with <code translate="no">false</code> as argument. In addition it provides methods for undo and redo.</p>
+<h4 id="syntax-highlighting">Syntax Highlighting</h4>
+<p>Just like <a href="https://doc.qt.io/qt/qtextedit.html" translate="no">QTextEdit</a>, PlainTextEdit works together with <a href="https://doc.qt.io/qt/qsyntaxhighlighter.html" translate="no">QSyntaxHighlighter</a>.</p>
+<h4 id="editing-key-bindings">Editing Key Bindings</h4>
+<p>The list of key bindings which are implemented for editing:</p>
+<div class="table"><table class="generic">
+ <thead><tr class="qt-style"><th >Keypresses</th><th >Action</th></tr></thead>
+<tr valign="top" class="odd"><td >Backspace</td><td >Deletes the character to the left of the cursor.</td></tr>
+<tr valign="top" class="even"><td >Delete</td><td >Deletes the character to the right of the cursor.</td></tr>
+<tr valign="top" class="odd"><td >Ctrl+C</td><td >Copy the selected text to the clipboard.</td></tr>
+<tr valign="top" class="even"><td >Ctrl+Insert</td><td >Copy the selected text to the clipboard.</td></tr>
+<tr valign="top" class="odd"><td >Ctrl+K</td><td >Deletes to the end of the line.</td></tr>
+<tr valign="top" class="even"><td >Ctrl+V</td><td >Pastes the clipboard text into text edit.</td></tr>
+<tr valign="top" class="odd"><td >Shift+Insert</td><td >Pastes the clipboard text into text edit.</td></tr>
+<tr valign="top" class="even"><td >Ctrl+X</td><td >Deletes the selected text and copies it to the clipboard.</td></tr>
+<tr valign="top" class="odd"><td >Shift+Delete</td><td >Deletes the selected text and copies it to the clipboard.</td></tr>
+<tr valign="top" class="even"><td >Ctrl+Z</td><td >Undoes the last operation.</td></tr>
+<tr valign="top" class="odd"><td >Ctrl+Y</td><td >Redoes the last operation.</td></tr>
+<tr valign="top" class="even"><td >LeftArrow</td><td >Moves the cursor one character to the left.</td></tr>
+<tr valign="top" class="odd"><td >Ctrl+LeftArrow</td><td >Moves the cursor one word to the left.</td></tr>
+<tr valign="top" class="even"><td >RightArrow</td><td >Moves the cursor one character to the right.</td></tr>
+<tr valign="top" class="odd"><td >Ctrl+RightArrow</td><td >Moves the cursor one word to the right.</td></tr>
+<tr valign="top" class="even"><td >UpArrow</td><td >Moves the cursor one line up.</td></tr>
+<tr valign="top" class="odd"><td >Ctrl+UpArrow</td><td >Moves the cursor one word up.</td></tr>
+<tr valign="top" class="even"><td >DownArrow</td><td >Moves the cursor one line down.</td></tr>
+<tr valign="top" class="odd"><td >Ctrl+Down Arrow</td><td >Moves the cursor one word down.</td></tr>
+<tr valign="top" class="even"><td >PageUp</td><td >Moves the cursor one page up.</td></tr>
+<tr valign="top" class="odd"><td >PageDown</td><td >Moves the cursor one page down.</td></tr>
+<tr valign="top" class="even"><td >Home</td><td >Moves the cursor to the beginning of the line.</td></tr>
+<tr valign="top" class="odd"><td >Ctrl+Home</td><td >Moves the cursor to the beginning of the text.</td></tr>
+<tr valign="top" class="even"><td >End</td><td >Moves the cursor to the end of the line.</td></tr>
+<tr valign="top" class="odd"><td >Ctrl+End</td><td >Moves the cursor to the end of the text.</td></tr>
+<tr valign="top" class="even"><td >Alt+Wheel</td><td >Scrolls the page horizontally (the Wheel is the mouse wheel).</td></tr>
+<tr valign="top" class="odd"><td >Ctrl+Wheel</td><td >Zooms the text.</td></tr>
+</table></div>
+<p>To select (mark) text hold down the Shift key whilst pressing one of the movement keystrokes, for example, <i>Shift+Right Arrow</i> will select the character to the right, and <i>Shift+Ctrl+Right Arrow</i> will select the word to the right, etc.</p>
+<h3 id="differences-to-qtextedit">Differences to QTextEdit</h3>
+<p>PlainTextEdit is a thin class, implemented by using most of the technology that is behind <a href="https://doc.qt.io/qt/qtextedit.html" translate="no">QTextEdit</a> and <a href="https://doc.qt.io/qt/qtextdocument.html" translate="no">QTextDocument</a>. Its performance benefits over <a href="https://doc.qt.io/qt/qtextedit.html" translate="no">QTextEdit</a> stem mostly from using a different and simplified text layout called <a href="utils-plaintextdocumentlayout.html" translate="no">PlainTextDocumentLayout</a> on the text document (see <a href="https://doc.qt.io/qt/qtextdocument.html#setDocumentLayout" translate="no">QTextDocument::setDocumentLayout</a>()). The plain text document layout does not support tables nor embedded frames, and <i>replaces a pixel-exact height calculation with a line-by-line respectively paragraph-by-paragraph scrolling approach</i>. This makes it possible to handle significantly larger documents, and still resize the editor with line wrap enabled in real time. It also makes for a fast log viewer (see <a href="utils-plaintextedit.html#maximumBlockCount-prop" translate="no">setMaximumBlockCount</a>()).</p>
+</div>
+<p><b>See also </b><a href="https://doc.qt.io/qt/qtextdocument.html" translate="no">QTextDocument</a>, <a href="https://doc.qt.io/qt/qtextcursor.html" translate="no">QTextCursor</a>, <a href="https://doc.qt.io/qt/qtwidgets-richtext-syntaxhighlighter-example.html">Syntax Highlighter Example</a>, and <a href="https://doc.qt.io/qt/richtext.html">Rich Text Processing</a>.</p>
+<!-- @@@PlainTextEdit -->
+<div class="types">
+<h2>Member Type Documentation</h2>
+<!-- $$$LineWrapMode$$$NoWrap$$$WidgetWidth -->
+<h3 class="fn" translate="no" id="LineWrapMode-enum">enum PlainTextEdit::<span class="name">LineWrapMode</span></h3>
+<p>Holds the line wrap mode.</p>
+<div class="table"><table class="valuelist"><tr><th class="tblConst">Constant</th><th class="tblVal">Value</th></tr>
+<tr><td class="topAlign"><code translate="no">Utils::PlainTextEdit::NoWrap</code></td><td class="topAlign tblval"><code translate="no">0</code></td></tr>
+<tr><td class="topAlign"><code translate="no">Utils::PlainTextEdit::WidgetWidth</code></td><td class="topAlign tblval"><code translate="no">1</code></td></tr>
+</table></div>
+<!-- @@@LineWrapMode -->
+</div>
+<div class="prop">
+<h2>Property Documentation</h2>
+<!-- $$$backgroundVisible-prop$$$backgroundVisible$$$setBackgroundVisiblebool -->
+<h3 class="fn" translate="no" id="backgroundVisible-prop"><span class="name">backgroundVisible</span> : <span class="type">bool</span></h3>
+<p>This property holds whether the palette background is visible outside the document area.</p>
+<p>If set to <code translate="no">true</code>, the plain text edit paints the palette background on the viewport area not covered by the text document. Otherwise, if set to <code translate="no">false</code>, it won't. The feature makes it possible for the user to visually distinguish between the area of the document, painted with the base color of the palette, and the empty area not covered by any document.</p>
+<p>The default is <code translate="no">false</code>.</p>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary" translate="no">
+<tr><td class="memItemLeft topAlign rightAlign"> bool </td><td class="memItemRight bottomAlign"><span class="name"><b>backgroundVisible</b></span>() const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><span class="name"><b>setBackgroundVisible</b></span>(bool <i>visible</i>)</td></tr>
+</table></div>
+<!-- @@@backgroundVisible -->
+<!-- $$$blockCount-prop$$$blockCount -->
+<h3 class="fn" translate="no" id="blockCount-prop"><code class="details extra" translate="no">[read-only]</code> <span class="name">blockCount</span> : const <span class="type">int</span></h3>
+<p>This property holds the number of text blocks in the document.</p>
+<p>By default, in an empty document, this property contains a value of 1.</p>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary" translate="no">
+<tr><td class="memItemLeft topAlign rightAlign"> int </td><td class="memItemRight bottomAlign"><span class="name"><b>blockCount</b></span>() const</td></tr>
+</table></div>
+<!-- @@@blockCount -->
+<!-- $$$centerOnScroll-prop$$$centerOnScroll$$$setCenterOnScrollbool -->
+<h3 class="fn" translate="no" id="centerOnScroll-prop"><span class="name">centerOnScroll</span> : <span class="type">bool</span></h3>
+<p>This property holds whether the cursor should be centered on screen.</p>
+<p>If set to <code translate="no">true</code>, the plain text edit scrolls the document vertically to make the cursor visible at the center of the viewport. This also allows the text edit to scroll below the end of the document. Otherwise, if set to <code translate="no">false</code>, the plain text edit scrolls the smallest amount possible to ensure the cursor is visible. The same algorithm is applied to any new line appended through <a href="utils-plaintextedit.html#appendPlainText" translate="no">appendPlainText</a>().</p>
+<p>The default is <code translate="no">false</code>.</p>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary" translate="no">
+<tr><td class="memItemLeft topAlign rightAlign"> bool </td><td class="memItemRight bottomAlign"><span class="name"><b>centerOnScroll</b></span>() const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><span class="name"><b>setCenterOnScroll</b></span>(bool <i>enabled</i>)</td></tr>
+</table></div>
+<p><b>See also </b><a href="utils-plaintextedit.html#centerCursor" translate="no">centerCursor</a>() and <a href="utils-plaintextedit.html#ensureCursorVisible" translate="no">ensureCursorVisible</a>().</p>
+<!-- @@@centerOnScroll -->
+<!-- $$$cursorWidth-prop$$$cursorWidth$$$setCursorWidthint -->
+<h3 class="fn" translate="no" id="cursorWidth-prop"><span class="name">cursorWidth</span> : <span class="type">int</span></h3>
+<p>This property specifies the width of the cursor in pixels. The default value is 1.</p>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary" translate="no">
+<tr><td class="memItemLeft topAlign rightAlign"> int </td><td class="memItemRight bottomAlign"><span class="name"><b>cursorWidth</b></span>() const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><span class="name"><b>setCursorWidth</b></span>(int <i>width</i>)</td></tr>
+</table></div>
+<!-- @@@cursorWidth -->
+<!-- $$$documentTitle-prop$$$documentTitle$$$setDocumentTitleconstQString& -->
+<h3 class="fn" translate="no" id="documentTitle-prop"><span class="name">documentTitle</span> : <span class="type"><a href="https://doc.qt.io/qt/qstring.html" translate="no">QString</a></span></h3>
+<p>This property holds the title of the document parsed from the text.</p>
+<p>By default, this property contains an empty string.</p>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary" translate="no">
+<tr><td class="memItemLeft topAlign rightAlign"> QString </td><td class="memItemRight bottomAlign"><span class="name"><b>documentTitle</b></span>() const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><span class="name"><b>setDocumentTitle</b></span>(const QString &amp;<i>title</i>)</td></tr>
+</table></div>
+<!-- @@@documentTitle -->
+<!-- $$$lineWrapMode-prop$$$lineWrapMode$$$setLineWrapModeUtils::PlainTextEdit::LineWrapMode -->
+<h3 class="fn" translate="no" id="lineWrapMode-prop"><span class="name">lineWrapMode</span> : <span class="type"><a href="utils-plaintextedit.html#LineWrapMode-enum" translate="no">LineWrapMode</a></span></h3>
+<p>This property holds the line wrap mode</p>
+<p>The default mode is <a href="utils-plaintextedit.html#LineWrapMode-enum" translate="no">WidgetWidth</a> which causes words to be wrapped at the right edge of the text edit. Wrapping occurs at whitespace, keeping whole words intact. If you want wrapping to occur within words use <a href="utils-plaintextedit.html#wordWrapMode-prop" translate="no">setWordWrapMode</a>().</p>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary" translate="no">
+<tr><td class="memItemLeft topAlign rightAlign"> Utils::PlainTextEdit::LineWrapMode </td><td class="memItemRight bottomAlign"><span class="name"><b>lineWrapMode</b></span>() const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><span class="name"><b>setLineWrapMode</b></span>(Utils::PlainTextEdit::LineWrapMode <i>mode</i>)</td></tr>
+</table></div>
+<!-- @@@lineWrapMode -->
+<!-- $$$maximumBlockCount-prop$$$maximumBlockCount$$$setMaximumBlockCountint -->
+<h3 class="fn" translate="no" id="maximumBlockCount-prop"><span class="name">maximumBlockCount</span> : <span class="type">int</span></h3>
+<p>This property holds the limit for blocks in the document.</p>
+<p>Specifies the maximum number of blocks the document may have. If there are more blocks in the document that specified with this property blocks are removed from the beginning of the document.</p>
+<p>A negative or zero value specifies that the document may contain an unlimited amount of blocks.</p>
+<p>The default value is 0.</p>
+<p>Note that setting this property will apply the limit immediately to the document contents. Setting this property also disables the undo redo history.</p>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary" translate="no">
+<tr><td class="memItemLeft topAlign rightAlign"> int </td><td class="memItemRight bottomAlign"><span class="name"><b>maximumBlockCount</b></span>() const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><span class="name"><b>setMaximumBlockCount</b></span>(int <i>maximum</i>)</td></tr>
+</table></div>
+<!-- @@@maximumBlockCount -->
+<!-- $$$overwriteMode-prop$$$overwriteMode$$$setOverwriteModebool -->
+<h3 class="fn" translate="no" id="overwriteMode-prop"><span class="name">overwriteMode</span> : <span class="type">bool</span></h3>
+<p>This property holds whether text entered by the user will overwrite existing text</p>
+<p>As with many text editors, the plain text editor widget can be configured to insert or overwrite existing text with new text entered by the user.</p>
+<p>If this property is <code translate="no">true</code>, existing text is overwritten, character-for-character by new text; otherwise, text is inserted at the cursor position, displacing existing text.</p>
+<p>By default, this property is <code translate="no">false</code> (new text does not overwrite existing text).</p>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary" translate="no">
+<tr><td class="memItemLeft topAlign rightAlign"> bool </td><td class="memItemRight bottomAlign"><span class="name"><b>overwriteMode</b></span>() const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><span class="name"><b>setOverwriteMode</b></span>(bool <i>overwrite</i>)</td></tr>
+</table></div>
+<!-- @@@overwriteMode -->
+<!-- $$$placeholderText-prop$$$placeholderText$$$setPlaceholderTextconstQString& -->
+<h3 class="fn" translate="no" id="placeholderText-prop"><span class="name">placeholderText</span> : <span class="type"><a href="https://doc.qt.io/qt/qstring.html" translate="no">QString</a></span></h3>
+<p>This property holds the editor placeholder text</p>
+<p>Setting this property makes the editor display a grayed-out placeholder text as long as the <a href="utils-plaintextedit.html#document" translate="no">document</a>() is empty.</p>
+<p>By default, this property contains an empty string.</p>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary" translate="no">
+<tr><td class="memItemLeft topAlign rightAlign"> QString </td><td class="memItemRight bottomAlign"><span class="name"><b>placeholderText</b></span>() const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><span class="name"><b>setPlaceholderText</b></span>(const QString &amp;<i>placeholderText</i>)</td></tr>
+</table></div>
+<p><b>See also </b><a href="utils-plaintextedit.html#document" translate="no">document</a>().</p>
+<!-- @@@placeholderText -->
+<!-- $$$plainText-prop$$$toPlainText$$$setPlainTextconstQString&$$$textChanged -->
+<h3 class="fn" translate="no" id="plainText-prop"><span class="name">plainText</span> : <span class="type"><a href="https://doc.qt.io/qt/qstring.html" translate="no">QString</a></span></h3>
+<p>This property gets and sets the plain text editor's contents. The previous contents are removed and undo/redo history is reset when this property is set. <a href="utils-plaintextedit.html#currentCharFormat" translate="no">currentCharFormat</a>() is also reset, unless <a href="utils-plaintextedit.html#textCursor" translate="no">textCursor</a>() is already at the beginning of the document.</p>
+<p>By default, for an editor with no contents, this property contains an empty string.</p>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary" translate="no">
+<tr><td class="memItemLeft topAlign rightAlign"> QString </td><td class="memItemRight bottomAlign"><span class="name"><b><a href="utils-plaintextedit.html#toPlainText" translate="no">toPlainText</a></b></span>() const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><span class="name"><b><a href="utils-plaintextedit.html#setPlainText" translate="no">setPlainText</a></b></span>(const QString &amp;<i>text</i>)</td></tr>
+</table></div>
+<p><b>Notifier signal:</b></p>
+<div class="table"><table class="alignedsummary" translate="no">
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><span class="name"><b><a href="utils-plaintextedit.html#textChanged" translate="no">textChanged</a></b></span>()</td></tr>
+</table></div>
+<!-- @@@plainText -->
+<!-- $$$readOnly-prop$$$isReadOnly$$$setReadOnlybool -->
+<h3 class="fn" translate="no" id="readOnly-prop"><span class="name">readOnly</span> : <span class="type">bool</span></h3>
+<p>This property holds whether the text edit is read-only</p>
+<p>In a read-only text edit the user can only navigate through the text and select text; modifying the text is not possible.</p>
+<p>This property's default is <code translate="no">false</code>.</p>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary" translate="no">
+<tr><td class="memItemLeft topAlign rightAlign"> bool </td><td class="memItemRight bottomAlign"><span class="name"><b>isReadOnly</b></span>() const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><span class="name"><b>setReadOnly</b></span>(bool <i>ro</i>)</td></tr>
+</table></div>
+<!-- @@@readOnly -->
+<!-- $$$tabChangesFocus-prop$$$tabChangesFocus$$$setTabChangesFocusbool -->
+<h3 class="fn" translate="no" id="tabChangesFocus-prop"><span class="name">tabChangesFocus</span> : <span class="type">bool</span></h3>
+<p>This property holds whether <b translate="no">Tab</b> changes focus or is accepted as input</p>
+<p>In some occasions text edits should not allow the user to input tabulators or change indentation using the <b translate="no">Tab</b> key, as this breaks the focus chain. The default is <code translate="no">false</code>.</p>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary" translate="no">
+<tr><td class="memItemLeft topAlign rightAlign"> bool </td><td class="memItemRight bottomAlign"><span class="name"><b>tabChangesFocus</b></span>() const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><span class="name"><b>setTabChangesFocus</b></span>(bool <i>b</i>)</td></tr>
+</table></div>
+<!-- @@@tabChangesFocus -->
+<!-- $$$tabStopDistance-prop$$$tabStopDistance$$$setTabStopDistanceqreal -->
+<h3 class="fn" translate="no" id="tabStopDistance-prop"><span class="name">tabStopDistance</span> : <span class="type"><a href="https://doc.qt.io/qt/qttypes.html#qreal-typedef" translate="no">qreal</a></span></h3>
+<p>This property holds the tab stop distance in pixels</p>
+<p>By default, this property contains a value of 80 pixels.</p>
+<p>Do not set a value less than the <a href="https://doc.qt.io/qt/qfontmetrics.html#horizontalAdvance" translate="no">horizontalAdvance</a>() of the <a href="https://doc.qt.io/qt/qchar.html#SpecialCharacter-enum" translate="no">QChar::VisualTabCharacter</a> character, otherwise the tab-character will be drawn incompletely.</p>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary" translate="no">
+<tr><td class="memItemLeft topAlign rightAlign"> qreal </td><td class="memItemRight bottomAlign"><span class="name"><b>tabStopDistance</b></span>() const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><span class="name"><b>setTabStopDistance</b></span>(qreal <i>distance</i>)</td></tr>
+</table></div>
+<p><b>See also </b><a href="https://doc.qt.io/qt/qtextoption.html#Flag-enum" translate="no">QTextOption::ShowTabsAndSpaces</a> and <a href="https://doc.qt.io/qt/qtextdocument.html#defaultTextOption" translate="no">QTextDocument::defaultTextOption</a>.</p>
+<!-- @@@tabStopDistance -->
+<!-- $$$textInteractionFlags-prop$$$textInteractionFlags$$$setTextInteractionFlagsQt::TextInteractionFlags -->
+<h3 class="fn" translate="no" id="textInteractionFlags-prop"><span class="name">textInteractionFlags</span> : <span class="type"><a href="https://doc.qt.io/qt/qt.html#TextInteractionFlag-enum" translate="no">Qt::TextInteractionFlags</a></span></h3>
+<p>Specifies how the label should interact with user input if it displays text.</p>
+<p>If the flags contain either <a href="https://doc.qt.io/qt/qt.html#TextInteractionFlag-enum" translate="no">Qt::LinksAccessibleByKeyboard</a> or <a href="https://doc.qt.io/qt/qt.html#TextInteractionFlag-enum" translate="no">Qt::TextSelectableByKeyboard</a> then the focus policy is also automatically set to <a href="https://doc.qt.io/qt/qt.html#FocusPolicy-enum" translate="no">Qt::ClickFocus</a>.</p>
+<p>The default value depends on whether the <a href="utils-plaintextedit.html" translate="no">PlainTextEdit</a> is read-only or editable.</p>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary" translate="no">
+<tr><td class="memItemLeft topAlign rightAlign"> Qt::TextInteractionFlags </td><td class="memItemRight bottomAlign"><span class="name"><b>textInteractionFlags</b></span>() const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><span class="name"><b>setTextInteractionFlags</b></span>(Qt::TextInteractionFlags <i>flags</i>)</td></tr>
+</table></div>
+<!-- @@@textInteractionFlags -->
+<!-- $$$undoRedoEnabled-prop$$$isUndoRedoEnabled$$$setUndoRedoEnabledbool -->
+<h3 class="fn" translate="no" id="undoRedoEnabled-prop"><span class="name">undoRedoEnabled</span> : <span class="type">bool</span></h3>
+<p>This property holds whether undo and redo are enabled</p>
+<p>Users are only able to undo or redo actions if this property is <code translate="no">true</code>, and if there is an action that can be undone (or redone).</p>
+<p>By default, this property is <code translate="no">true</code>.</p>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary" translate="no">
+<tr><td class="memItemLeft topAlign rightAlign"> bool </td><td class="memItemRight bottomAlign"><span class="name"><b>isUndoRedoEnabled</b></span>() const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><span class="name"><b>setUndoRedoEnabled</b></span>(bool <i>enable</i>)</td></tr>
+</table></div>
+<!-- @@@undoRedoEnabled -->
+<!-- $$$wordWrapMode-prop$$$wordWrapMode$$$setWordWrapModeint -->
+<h3 class="fn" translate="no" id="wordWrapMode-prop"><span class="name">wordWrapMode</span> : <span class="type"><a href="https://doc.qt.io/qt/qtextoption.html#WrapMode-enum" translate="no">QTextOption::WrapMode</a></span></h3>
+<p>This property holds the mode <a href="utils-plaintextedit.html" translate="no">PlainTextEdit</a> will use when wrapping text by words</p>
+<p>By default, this property is set to <a href="https://doc.qt.io/qt/qtextoption.html#WrapMode-enum" translate="no">QTextOption::WrapAtWordBoundaryOrAnywhere</a>.</p>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary" translate="no">
+<tr><td class="memItemLeft topAlign rightAlign"> int </td><td class="memItemRight bottomAlign"><span class="name"><b>wordWrapMode</b></span>() const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><span class="name"><b>setWordWrapMode</b></span>(int <i>policy</i>)</td></tr>
+</table></div>
+<p><b>See also </b><a href="https://doc.qt.io/qt/qtextoption.html#WrapMode-enum" translate="no">QTextOption::WrapMode</a>.</p>
+<!-- @@@wordWrapMode -->
+</div>
+<div class="func">
+<h2>Member Function Documentation</h2>
+<!-- $$$PlainTextEdit[overload1]$$$PlainTextEditQWidget* -->
+<h3 class="fn" translate="no" id="PlainTextEdit"><code class="details extra" translate="no">[explicit]</code> PlainTextEdit::<span class="name">PlainTextEdit</span>(<span class="type"><a href="https://doc.qt.io/qt/qwidget.html" translate="no">QWidget</a></span> *<i>parent</i> = nullptr)</h3>
+<p>Constructs an empty PlainTextEdit with parent <i translate="no">parent</i>.</p>
+<!-- @@@PlainTextEdit -->
+<!-- $$$PlainTextEdit$$$PlainTextEditconstQString&QWidget* -->
+<h3 class="fn" translate="no" id="PlainTextEdit-1"><code class="details extra" translate="no">[explicit]</code> PlainTextEdit::<span class="name">PlainTextEdit</span>(const <span class="type"><a href="https://doc.qt.io/qt/qstring.html" translate="no">QString</a></span> &amp;<i>text</i>, <span class="type"><a href="https://doc.qt.io/qt/qwidget.html" translate="no">QWidget</a></span> *<i>parent</i> = nullptr)</h3>
+<p>Constructs a PlainTextEdit with parent <i translate="no">parent</i>. The text edit will display the plain text <i translate="no">text</i>.</p>
+<!-- @@@PlainTextEdit -->
+<!-- $$$~PlainTextEdit[overload1]$$$~PlainTextEdit -->
+<h3 class="fn" translate="no" id="dtor.PlainTextEdit"><code class="details extra" translate="no">[virtual noexcept]</code> PlainTextEdit::<span class="name">~PlainTextEdit</span>()</h3>
+<p>Destructor.</p>
+<!-- @@@~PlainTextEdit -->
+<!-- $$$anchorAt[overload1]$$$anchorAtconstQPoint& -->
+<h3 class="fn" translate="no" id="anchorAt"><span class="type"><a href="https://doc.qt.io/qt/qstring.html" translate="no">QString</a></span> PlainTextEdit::<span class="name">anchorAt</span>(const <span class="type"><a href="https://doc.qt.io/qt/qpoint.html" translate="no">QPoint</a></span> &amp;<i>pos</i>) const</h3>
+<p>Returns the reference of the anchor at position <i translate="no">pos</i>, or an empty string if no anchor exists at that point.</p>
+<!-- @@@anchorAt -->
+<!-- $$$appendHtml[overload1]$$$appendHtmlconstQString& -->
+<h3 class="fn" translate="no" id="appendHtml"><code class="details extra" translate="no">[slot]</code> <span class="type">void</span> PlainTextEdit::<span class="name">appendHtml</span>(const <span class="type"><a href="https://doc.qt.io/qt/qstring.html" translate="no">QString</a></span> &amp;<i>html</i>)</h3>
+<p>Appends a new paragraph with <i translate="no">html</i> to the end of the text edit.</p>
+<p><a href="utils-plaintextedit.html#appendPlainText" translate="no">appendPlainText</a>()</p>
+<!-- @@@appendHtml -->
+<!-- $$$appendPlainText[overload1]$$$appendPlainTextconstQString& -->
+<h3 class="fn" translate="no" id="appendPlainText"><code class="details extra" translate="no">[slot]</code> <span class="type">void</span> PlainTextEdit::<span class="name">appendPlainText</span>(const <span class="type"><a href="https://doc.qt.io/qt/qstring.html" translate="no">QString</a></span> &amp;<i>text</i>)</h3>
+<p>Appends a new paragraph with <i translate="no">text</i> to the end of the text edit.</p>
+<p><b>See also </b><a href="utils-plaintextedit.html#appendHtml" translate="no">appendHtml</a>().</p>
+<!-- @@@appendPlainText -->
+<!-- $$$blockCountChanged[overload1]$$$blockCountChangedint -->
+<h3 class="fn" translate="no" id="blockCountChanged"><code class="details extra" translate="no">[signal]</code> <span class="type">void</span> PlainTextEdit::<span class="name">blockCountChanged</span>(<span class="type">int</span> <i>newBlockCount</i>)</h3>
+<p>This signal is emitted whenever the block count changes. The new block count is passed in <i translate="no">newBlockCount</i>.</p>
+<!-- @@@blockCountChanged -->
+<!-- $$$canInsertFromMimeData[overload1]$$$canInsertFromMimeDataconstQMimeData* -->
+<h3 class="fn" translate="no" id="canInsertFromMimeData"><code class="details extra" translate="no">[virtual protected]</code> <span class="type">bool</span> PlainTextEdit::<span class="name">canInsertFromMimeData</span>(const <span class="type"><a href="https://doc.qt.io/qt/qmimedata.html" translate="no">QMimeData</a></span> *<i>source</i>) const</h3>
+<p>This function returns <code translate="no">true</code> if the contents of the MIME data object, specified by <i translate="no">source</i>, can be decoded and inserted into the document. It is called for example when during a drag operation the mouse enters this widget and it is necessary to determine whether it is possible to accept the drag.</p>
+<!-- @@@canInsertFromMimeData -->
+<!-- $$$canPaste[overload1]$$$canPaste -->
+<h3 class="fn" translate="no" id="canPaste"><span class="type">bool</span> PlainTextEdit::<span class="name">canPaste</span>() const</h3>
+<p>Returns whether text can be pasted from the clipboard into the text edit.</p>
+<!-- @@@canPaste -->
+<!-- $$$centerCursor[overload1]$$$centerCursor -->
+<h3 class="fn" translate="no" id="centerCursor"><code class="details extra" translate="no">[slot]</code> <span class="type">void</span> PlainTextEdit::<span class="name">centerCursor</span>()</h3>
+<p>Scrolls the document in order to center the cursor vertically.</p>
+<p><b>See also </b><a href="utils-plaintextedit.html#ensureCursorVisible" translate="no">ensureCursorVisible</a>() and <a href="utils-plaintextedit.html#centerOnScroll-prop" translate="no">centerOnScroll</a>.</p>
+<!-- @@@centerCursor -->
+<!-- $$$clear[overload1]$$$clear -->
+<h3 class="fn" translate="no" id="clear"><code class="details extra" translate="no">[slot]</code> <span class="type">void</span> PlainTextEdit::<span class="name">clear</span>()</h3>
+<p>Deletes all the text in the text edit.</p>
+<p>Notes:</p>
+<ul>
+<li>The undo/redo history is also cleared.</li>
+<li><a href="utils-plaintextedit.html#currentCharFormat" translate="no">currentCharFormat</a>() is reset, unless <a href="utils-plaintextedit.html#textCursor" translate="no">textCursor</a>() is already at the beginning of the document.</li>
+</ul>
+<p><b>See also </b><a href="utils-plaintextedit.html#cut" translate="no">cut</a>() and <a href="utils-plaintextedit.html#setPlainText" translate="no">setPlainText</a>().</p>
+<!-- @@@clear -->
+<!-- $$$contentOffset[overload1]$$$contentOffset -->
+<h3 class="fn" translate="no" id="contentOffset"><code class="details extra" translate="no">[protected]</code> <span class="type"><a href="https://doc.qt.io/qt/qpointf.html" translate="no">QPointF</a></span> PlainTextEdit::<span class="name">contentOffset</span>() const</h3>
+<p>Returns the content's origin in viewport coordinates.</p>
+<p>The origin of the content of a plain text edit is always the top left corner of the first visible text block. The content offset is different from (0,0) when the text has been scrolled horizontally, or when the first visible block has been scrolled partially off the screen, i.e. the visible text does not start with the first line of the first visible block, or when the first visible block is the very first block and the editor displays a margin.</p>
+<p><b>See also </b><a href="utils-plaintextedit.html#firstVisibleBlock" translate="no">firstVisibleBlock</a>(), <a href="https://doc.qt.io/qt/qabstractscrollarea.html#horizontalScrollBar" translate="no">QAbstractScrollArea::horizontalScrollBar</a>(), and <a href="https://doc.qt.io/qt/qabstractscrollarea.html#verticalScrollBar" translate="no">QAbstractScrollArea::verticalScrollBar</a>().</p>
+<!-- @@@contentOffset -->
+<!-- $$$copy[overload1]$$$copy -->
+<h3 class="fn" translate="no" id="copy"><code class="details extra" translate="no">[slot]</code> <span class="type">void</span> PlainTextEdit::<span class="name">copy</span>()</h3>
+<p>Copies any selected text to the clipboard.</p>
+<p><b>See also </b><a href="utils-plaintextedit.html#copyAvailable" translate="no">copyAvailable</a>().</p>
+<!-- @@@copy -->
+<!-- $$$copyAvailable[overload1]$$$copyAvailablebool -->
+<h3 class="fn" translate="no" id="copyAvailable"><code class="details extra" translate="no">[signal]</code> <span class="type">void</span> PlainTextEdit::<span class="name">copyAvailable</span>(<span class="type">bool</span> <i>yes</i>)</h3>
+<p>This signal is emitted when text is selected or de-selected in the text edit.</p>
+<p>When text is selected this signal will be emitted with <i translate="no">yes</i> set to <code translate="no">true</code>. If no text has been selected or if the selected text is de-selected this signal is emitted with <i translate="no">yes</i> set to <code translate="no">false</code>.</p>
+<p>If <i translate="no">yes</i> is <code translate="no">true</code> then <a href="utils-plaintextedit.html#copy" translate="no">copy</a>() can be used to copy the selection to the clipboard. If <i translate="no">yes</i> is <code translate="no">false</code> then <a href="utils-plaintextedit.html#copy" translate="no">copy</a>() does nothing.</p>
+<p><b>See also </b><a href="utils-plaintextedit.html#selectionChanged" translate="no">selectionChanged</a>().</p>
+<!-- @@@copyAvailable -->
+<!-- $$$createMimeDataFromSelection[overload1]$$$createMimeDataFromSelection -->
+<h3 class="fn" translate="no" id="createMimeDataFromSelection"><code class="details extra" translate="no">[virtual protected]</code> <span class="type"><a href="https://doc.qt.io/qt/qmimedata.html" translate="no">QMimeData</a></span> *PlainTextEdit::<span class="name">createMimeDataFromSelection</span>() const</h3>
+<p>This function returns a new MIME data object to represent the contents of the text edit's current selection. It is called when the selection needs to be encapsulated into a new <a href="https://doc.qt.io/qt/qmimedata.html" translate="no">QMimeData</a> object; for example, when a drag and drop operation is started, or when data is copied to the clipboard.</p>
+<p>If you reimplement this function, note that the ownership of the returned <a href="https://doc.qt.io/qt/qmimedata.html" translate="no">QMimeData</a> object is passed to the caller. The selection can be retrieved by using the <a href="utils-plaintextedit.html#textCursor" translate="no">textCursor</a>() function.</p>
+<!-- @@@createMimeDataFromSelection -->
+<!-- $$$createStandardContextMenu[overload1]$$$createStandardContextMenu -->
+<h3 class="fn" translate="no" id="createStandardContextMenu"><span class="type"><a href="https://doc.qt.io/qt/qmenu.html" translate="no">QMenu</a></span> *PlainTextEdit::<span class="name">createStandardContextMenu</span>()</h3>
+<p>This function creates the standard context menu which is shown when the user clicks on the text edit with the right mouse button. It is called from the default <code translate="no">contextMenuEvent()</code> handler. The popup menu's ownership is transferred to the caller.</p>
+<p>We recommend that you use the <code translate="no">createStandardContextMenu(QPoint)</code> version instead which will enable the actions that are sensitive to where the user clicked.</p>
+<!-- @@@createStandardContextMenu -->
+<!-- $$$createStandardContextMenu$$$createStandardContextMenuconstQPoint& -->
+<h3 class="fn" translate="no" id="createStandardContextMenu-1"><span class="type"><a href="https://doc.qt.io/qt/qmenu.html" translate="no">QMenu</a></span> *PlainTextEdit::<span class="name">createStandardContextMenu</span>(const <span class="type"><a href="https://doc.qt.io/qt/qpoint.html" translate="no">QPoint</a></span> &amp;<i>position</i>)</h3>
+<p>Creates the standard context menu, which is shown when the user clicks on the text edit with the right mouse button. It is called from the default <code translate="no">contextMenuEvent()</code> handler and it takes the <i translate="no">position</i> in document coordinates where the mouse click was. This can enable actions that are sensitive to the position where the user clicked. The popup menu's ownership is transferred to the caller.</p>
+<!-- @@@createStandardContextMenu -->
+<!-- $$$currentCharFormat[overload1]$$$currentCharFormat -->
+<h3 class="fn" translate="no" id="currentCharFormat"><span class="type"><a href="https://doc.qt.io/qt/qtextcharformat.html" translate="no">QTextCharFormat</a></span> PlainTextEdit::<span class="name">currentCharFormat</span>() const</h3>
+<p>Returns the char format that is used when inserting new text.</p>
+<p><b>See also </b><a href="utils-plaintextedit.html#setCurrentCharFormat" translate="no">setCurrentCharFormat</a>().</p>
+<!-- @@@currentCharFormat -->
+<!-- $$$cursorForPosition[overload1]$$$cursorForPositionconstQPoint& -->
+<h3 class="fn" translate="no" id="cursorForPosition"><span class="type"><a href="https://doc.qt.io/qt/qtextcursor.html" translate="no">QTextCursor</a></span> PlainTextEdit::<span class="name">cursorForPosition</span>(const <span class="type"><a href="https://doc.qt.io/qt/qpoint.html" translate="no">QPoint</a></span> &amp;<i>pos</i>) const</h3>
+<p>Returns a <a href="https://doc.qt.io/qt/qtextcursor.html" translate="no">QTextCursor</a> at position <i translate="no">pos</i> (in viewport coordinates).</p>
+<!-- @@@cursorForPosition -->
+<!-- $$$cursorPositionChanged[overload1]$$$cursorPositionChanged -->
+<h3 class="fn" translate="no" id="cursorPositionChanged"><code class="details extra" translate="no">[signal]</code> <span class="type">void</span> PlainTextEdit::<span class="name">cursorPositionChanged</span>()</h3>
+<p>This signal is emitted whenever the position of the cursor changed.</p>
+<!-- @@@cursorPositionChanged -->
+<!-- $$$cursorRect[overload1]$$$cursorRect -->
+<h3 class="fn" translate="no" id="cursorRect"><code class="details extra" translate="no">[invokable]</code> <span class="type"><a href="https://doc.qt.io/qt/qrect.html" translate="no">QRect</a></span> PlainTextEdit::<span class="name">cursorRect</span>() const</h3>
+<p>Returns a rectangle (in viewport coordinates) that includes the cursor of the text edit.</p>
+<div class="admonition note"><p><b>Note: </b>This function can be invoked via the meta-object system and from QML. See <a href="https://doc.qt.io/qt/qobject.html#Q_INVOKABLE" translate="no">Q_INVOKABLE</a>.</p>
+</div><!-- @@@cursorRect -->
+<!-- $$$cursorRect$$$cursorRectconstQTextCursor& -->
+<h3 class="fn" translate="no" id="cursorRect-1"><span class="type"><a href="https://doc.qt.io/qt/qrect.html" translate="no">QRect</a></span> PlainTextEdit::<span class="name">cursorRect</span>(const <span class="type"><a href="https://doc.qt.io/qt/qtextcursor.html" translate="no">QTextCursor</a></span> &amp;<i>cursor</i>) const</h3>
+<p>Returns a rectangle (in viewport coordinates) that includes the <i translate="no">cursor</i>.</p>
+<!-- @@@cursorRect -->
+<!-- $$$cut[overload1]$$$cut -->
+<h3 class="fn" translate="no" id="cut"><code class="details extra" translate="no">[slot]</code> <span class="type">void</span> PlainTextEdit::<span class="name">cut</span>()</h3>
+<p>Copies the selected text to the clipboard and deletes it from the text edit.</p>
+<p>If there is no selected text nothing happens.</p>
+<p><b>See also </b><a href="utils-plaintextedit.html#copy" translate="no">copy</a>() and <a href="utils-plaintextedit.html#paste" translate="no">paste</a>().</p>
+<!-- @@@cut -->
+<!-- $$$document[overload1]$$$document -->
+<h3 class="fn" translate="no" id="document"><span class="type"><a href="https://doc.qt.io/qt/qtextdocument.html" translate="no">QTextDocument</a></span> *PlainTextEdit::<span class="name">document</span>() const</h3>
+<p>Returns a pointer to the underlying document.</p>
+<p><b>See also </b><a href="utils-plaintextedit.html#setDocument" translate="no">setDocument</a>().</p>
+<!-- @@@document -->
+<!-- $$$ensureCursorVisible[overload1]$$$ensureCursorVisible -->
+<h3 class="fn" translate="no" id="ensureCursorVisible"><span class="type">void</span> PlainTextEdit::<span class="name">ensureCursorVisible</span>()</h3>
+<p>Ensures that the cursor is visible by scrolling the text edit if necessary.</p>
+<p><b>See also </b><a href="utils-plaintextedit.html#centerCursor" translate="no">centerCursor</a>() and <a href="utils-plaintextedit.html#centerOnScroll-prop" translate="no">centerOnScroll</a>.</p>
+<!-- @@@ensureCursorVisible -->
+<!-- $$$extraSelections[overload1]$$$extraSelections -->
+<h3 class="fn" translate="no" id="extraSelections"><span class="type">int</span> PlainTextEdit::<span class="name">extraSelections</span>() const</h3>
+<p>Returns previously set extra selections.</p>
+<p><b>See also </b><a href="utils-plaintextedit.html#setExtraSelections" translate="no">setExtraSelections</a>().</p>
+<!-- @@@extraSelections -->
+<!-- $$$firstVisibleBlock[overload1]$$$firstVisibleBlock -->
+<h3 class="fn" translate="no" id="firstVisibleBlock"><code class="details extra" translate="no">[protected]</code> <span class="type">int</span> PlainTextEdit::<span class="name">firstVisibleBlock</span>() const</h3>
+<p>Returns the first visible block.</p>
+<!-- @@@firstVisibleBlock -->
+<!-- $$$focusNextPrevChild[overload1]$$$focusNextPrevChildbool -->
+<h3 class="fn" translate="no" id="focusNextPrevChild"><code class="details extra" translate="no">[override virtual protected]</code> <span class="type">bool</span> PlainTextEdit::<span class="name">focusNextPrevChild</span>(<span class="type">bool</span> <i>next</i>)</h3>
+<!-- @@@focusNextPrevChild -->
+<!-- $$$getPaintContext[overload1]$$$getPaintContext -->
+<h3 class="fn" translate="no" id="getPaintContext"><code class="details extra" translate="no">[protected]</code> <span class="type">int</span> PlainTextEdit::<span class="name">getPaintContext</span>() const</h3>
+<p>Returns the paint context for the <code translate="no">viewport()</code>, useful only when reimplementing <a href="utils-plaintextedit.html#paintEvent" translate="no">paintEvent</a>().</p>
+<!-- @@@getPaintContext -->
+<!-- $$$insertFromMimeData[overload1]$$$insertFromMimeDataconstQMimeData* -->
+<h3 class="fn" translate="no" id="insertFromMimeData"><code class="details extra" translate="no">[virtual protected]</code> <span class="type">void</span> PlainTextEdit::<span class="name">insertFromMimeData</span>(const <span class="type"><a href="https://doc.qt.io/qt/qmimedata.html" translate="no">QMimeData</a></span> *<i>source</i>)</h3>
+<p>This function inserts the contents of the MIME data object, specified by <i translate="no">source</i>, into the text edit at the current cursor position. It is called whenever text is inserted as the result of a clipboard paste operation, or when the text edit accepts data from a drag and drop operation.</p>
+<!-- @@@insertFromMimeData -->
+<!-- $$$insertPlainText[overload1]$$$insertPlainTextconstQString& -->
+<h3 class="fn" translate="no" id="insertPlainText"><code class="details extra" translate="no">[slot]</code> <span class="type">void</span> PlainTextEdit::<span class="name">insertPlainText</span>(const <span class="type"><a href="https://doc.qt.io/qt/qstring.html" translate="no">QString</a></span> &amp;<i>text</i>)</h3>
+<p>Convenience slot that inserts <i translate="no">text</i> at the current cursor position.</p>
+<p>It is equivalent to:</p>
+<pre class="cpp" translate="no">
+ edit<span class="operator">-</span><span class="operator">&gt;</span>textCursor()<span class="operator">.</span>insertText(text);
+</pre>
+<!-- @@@insertPlainText -->
+<!-- $$$keyPressEvent[overload1]$$$keyPressEventQKeyEvent* -->
+<h3 class="fn" translate="no" id="keyPressEvent"><code class="details extra" translate="no">[override virtual protected]</code> <span class="type">void</span> PlainTextEdit::<span class="name">keyPressEvent</span>(<span class="type"><a href="https://doc.qt.io/qt/qkeyevent.html" translate="no">QKeyEvent</a></span> *<i>e</i>)</h3>
+<!-- @@@keyPressEvent -->
+<!-- $$$keyReleaseEvent[overload1]$$$keyReleaseEventQKeyEvent* -->
+<h3 class="fn" translate="no" id="keyReleaseEvent"><code class="details extra" translate="no">[override virtual protected]</code> <span class="type">void</span> PlainTextEdit::<span class="name">keyReleaseEvent</span>(<span class="type"><a href="https://doc.qt.io/qt/qkeyevent.html" translate="no">QKeyEvent</a></span> *<i>e</i>)</h3>
+<!-- @@@keyReleaseEvent -->
+<!-- $$$loadResource[overload1]$$$loadResourceintconstQUrl& -->
+<h3 class="fn" translate="no" id="loadResource"><code class="details extra" translate="no">[virtual]</code> <span class="type"><a href="https://doc.qt.io/qt/qvariant.html" translate="no">QVariant</a></span> PlainTextEdit::<span class="name">loadResource</span>(<span class="type">int</span> <i>type</i>, const <span class="type"><a href="https://doc.qt.io/qt/qurl.html" translate="no">QUrl</a></span> &amp;<i>name</i>)</h3>
+<p>Loads the resource specified by the given <i translate="no">type</i> and <i translate="no">name</i>.</p>
+<p>This function is an extension of <a href="https://doc.qt.io/qt/qtextdocument.html#loadResource" translate="no">QTextDocument::loadResource</a>().</p>
+<p><b>See also </b><a href="https://doc.qt.io/qt/qtextdocument.html#loadResource" translate="no">QTextDocument::loadResource</a>().</p>
+<!-- @@@loadResource -->
+<!-- $$$mergeCurrentCharFormat[overload1]$$$mergeCurrentCharFormatconstQTextCharFormat& -->
+<h3 class="fn" translate="no" id="mergeCurrentCharFormat"><span class="type">void</span> PlainTextEdit::<span class="name">mergeCurrentCharFormat</span>(const <span class="type"><a href="https://doc.qt.io/qt/qtextcharformat.html" translate="no">QTextCharFormat</a></span> &amp;<i>modifier</i>)</h3>
+<p>Merges the properties specified in <i translate="no">modifier</i> into the current character format by calling <a href="https://doc.qt.io/qt/qtextcursor.html#mergeCharFormat" translate="no">QTextCursor::mergeCharFormat</a> on the editor's cursor. If the editor has a selection then the properties of <i translate="no">modifier</i> are directly applied to the selection.</p>
+<p><b>See also </b><a href="https://doc.qt.io/qt/qtextcursor.html#mergeCharFormat" translate="no">QTextCursor::mergeCharFormat</a>().</p>
+<!-- @@@mergeCurrentCharFormat -->
+<!-- $$$modificationChanged[overload1]$$$modificationChangedbool -->
+<h3 class="fn" translate="no" id="modificationChanged"><code class="details extra" translate="no">[signal]</code> <span class="type">void</span> PlainTextEdit::<span class="name">modificationChanged</span>(<span class="type">bool</span> <i>changed</i>)</h3>
+<p>This signal is emitted whenever the content of the document changes in a way that affects the modification state. If <i translate="no">changed</i> is <code translate="no">true</code>, the document has been modified; otherwise it is <code translate="no">false</code>.</p>
+<p>For example, calling <code translate="no">setModified(false)</code> on a document and then inserting text causes the signal to get emitted. If you undo that operation, causing the document to return to its original unmodified state, the signal will get emitted again.</p>
+<!-- @@@modificationChanged -->
+<!-- $$$mouseDoubleClickEvent[overload1]$$$mouseDoubleClickEventQMouseEvent* -->
+<h3 class="fn" translate="no" id="mouseDoubleClickEvent"><code class="details extra" translate="no">[override virtual protected]</code> <span class="type">void</span> PlainTextEdit::<span class="name">mouseDoubleClickEvent</span>(<span class="type"><a href="https://doc.qt.io/qt/qmouseevent.html" translate="no">QMouseEvent</a></span> *<i>e</i>)</h3>
+<!-- @@@mouseDoubleClickEvent -->
+<!-- $$$mouseMoveEvent[overload1]$$$mouseMoveEventQMouseEvent* -->
+<h3 class="fn" translate="no" id="mouseMoveEvent"><code class="details extra" translate="no">[override virtual protected]</code> <span class="type">void</span> PlainTextEdit::<span class="name">mouseMoveEvent</span>(<span class="type"><a href="https://doc.qt.io/qt/qmouseevent.html" translate="no">QMouseEvent</a></span> *<i>e</i>)</h3>
+<!-- @@@mouseMoveEvent -->
+<!-- $$$mousePressEvent[overload1]$$$mousePressEventQMouseEvent* -->
+<h3 class="fn" translate="no" id="mousePressEvent"><code class="details extra" translate="no">[override virtual protected]</code> <span class="type">void</span> PlainTextEdit::<span class="name">mousePressEvent</span>(<span class="type"><a href="https://doc.qt.io/qt/qmouseevent.html" translate="no">QMouseEvent</a></span> *<i>e</i>)</h3>
+<!-- @@@mousePressEvent -->
+<!-- $$$mouseReleaseEvent[overload1]$$$mouseReleaseEventQMouseEvent* -->
+<h3 class="fn" translate="no" id="mouseReleaseEvent"><code class="details extra" translate="no">[override virtual protected]</code> <span class="type">void</span> PlainTextEdit::<span class="name">mouseReleaseEvent</span>(<span class="type"><a href="https://doc.qt.io/qt/qmouseevent.html" translate="no">QMouseEvent</a></span> *<i>e</i>)</h3>
+<!-- @@@mouseReleaseEvent -->
+<!-- $$$paintEvent[overload1]$$$paintEventQPaintEvent* -->
+<h3 class="fn" translate="no" id="paintEvent"><code class="details extra" translate="no">[override virtual protected]</code> <span class="type">void</span> PlainTextEdit::<span class="name">paintEvent</span>(<span class="type"><a href="https://doc.qt.io/qt/qpaintevent.html" translate="no">QPaintEvent</a></span> *<i>e</i>)</h3>
+<!-- @@@paintEvent -->
+<!-- $$$paste[overload1]$$$paste -->
+<h3 class="fn" translate="no" id="paste"><code class="details extra" translate="no">[slot]</code> <span class="type">void</span> PlainTextEdit::<span class="name">paste</span>()</h3>
+<p>Pastes the text from the clipboard into the text edit at the current cursor position.</p>
+<p>If there is no text in the clipboard nothing happens.</p>
+<p>To change the behavior of this function, i.e. to modify what <a href="utils-plaintextedit.html" translate="no">PlainTextEdit</a> can paste and how it is being pasted, reimplement the virtual <a href="utils-plaintextedit.html#canInsertFromMimeData" translate="no">canInsertFromMimeData</a>() and <a href="utils-plaintextedit.html#insertFromMimeData" translate="no">insertFromMimeData</a>() functions.</p>
+<p><b>See also </b><a href="utils-plaintextedit.html#cut" translate="no">cut</a>() and <a href="utils-plaintextedit.html#copy" translate="no">copy</a>().</p>
+<!-- @@@paste -->
+<!-- $$$redo[overload1]$$$redo -->
+<h3 class="fn" translate="no" id="redo"><code class="details extra" translate="no">[slot]</code> <span class="type">void</span> PlainTextEdit::<span class="name">redo</span>()</h3>
+<p>Redoes the last operation.</p>
+<p>If there is no operation to redo, i.e. there is no redo step in the undo/redo history, nothing happens.</p>
+<p><b>See also </b><a href="utils-plaintextedit.html#undo" translate="no">undo</a>().</p>
+<!-- @@@redo -->
+<!-- $$$redoAvailable[overload1]$$$redoAvailablebool -->
+<h3 class="fn" translate="no" id="redoAvailable"><code class="details extra" translate="no">[signal]</code> <span class="type">void</span> PlainTextEdit::<span class="name">redoAvailable</span>(<span class="type">bool</span> <i>available</i>)</h3>
+<p>This signal is emitted whenever redo operations become available (<i translate="no">available</i> is <code translate="no">true</code>) or unavailable (<i translate="no">available</i> is <code translate="no">false</code>).</p>
+<!-- @@@redoAvailable -->
+<!-- $$$selectAll[overload1]$$$selectAll -->
+<h3 class="fn" translate="no" id="selectAll"><code class="details extra" translate="no">[slot]</code> <span class="type">void</span> PlainTextEdit::<span class="name">selectAll</span>()</h3>
+<p>Selects all text.</p>
+<p><b>See also </b><a href="utils-plaintextedit.html#copy" translate="no">copy</a>(), <a href="utils-plaintextedit.html#cut" translate="no">cut</a>(), and <a href="utils-plaintextedit.html#textCursor" translate="no">textCursor</a>().</p>
+<!-- @@@selectAll -->
+<!-- $$$selectionChanged[overload1]$$$selectionChanged -->
+<h3 class="fn" translate="no" id="selectionChanged"><code class="details extra" translate="no">[signal]</code> <span class="type">void</span> PlainTextEdit::<span class="name">selectionChanged</span>()</h3>
+<p>This signal is emitted whenever the selection changes.</p>
+<p><b>See also </b><a href="utils-plaintextedit.html#copyAvailable" translate="no">copyAvailable</a>().</p>
+<!-- @@@selectionChanged -->
+<!-- $$$setCurrentCharFormat[overload1]$$$setCurrentCharFormatconstQTextCharFormat& -->
+<h3 class="fn" translate="no" id="setCurrentCharFormat"><span class="type">void</span> PlainTextEdit::<span class="name">setCurrentCharFormat</span>(const <span class="type"><a href="https://doc.qt.io/qt/qtextcharformat.html" translate="no">QTextCharFormat</a></span> &amp;<i>format</i>)</h3>
+<p>Sets the char format that is be used when inserting new text to <i translate="no">format</i> by calling <a href="https://doc.qt.io/qt/qtextcursor.html#setCharFormat" translate="no">QTextCursor::setCharFormat</a>() on the editor's cursor. If the editor has a selection then the char format is directly applied to the selection.</p>
+<p><b>See also </b><a href="utils-plaintextedit.html#currentCharFormat" translate="no">currentCharFormat</a>().</p>
+<!-- @@@setCurrentCharFormat -->
+<!-- $$$setDocument[overload1]$$$setDocumentQTextDocument* -->
+<h3 class="fn" translate="no" id="setDocument"><span class="type">void</span> PlainTextEdit::<span class="name">setDocument</span>(<span class="type"><a href="https://doc.qt.io/qt/qtextdocument.html" translate="no">QTextDocument</a></span> *<i>document</i>)</h3>
+<p>Makes <i translate="no">document</i> the new document of the text editor.</p>
+<p>The parent <a href="https://doc.qt.io/qt/qobject.html" translate="no">QObject</a> of the provided document remains the owner of the object. If the current document is a child of the text editor, then it is deleted.</p>
+<p>The document must have a document layout that inherits <a href="utils-plaintextdocumentlayout.html" translate="no">PlainTextDocumentLayout</a> (see <a href="https://doc.qt.io/qt/qtextdocument.html#setDocumentLayout" translate="no">QTextDocument::setDocumentLayout</a>()).</p>
+<p><b>See also </b><a href="utils-plaintextedit.html#document" translate="no">document</a>().</p>
+<!-- @@@setDocument -->
+<!-- $$$setExtraSelections[overload1]$$$setExtraSelectionsconstint& -->
+<h3 class="fn" translate="no" id="setExtraSelections"><span class="type">void</span> PlainTextEdit::<span class="name">setExtraSelections</span>(const <span class="type">int</span> &amp;<i>selections</i>)</h3>
+<p>This function allows temporarily marking certain regions in the document with a given color, specified as <i translate="no">selections</i>. This can be useful for example in a programming editor to mark a whole line of text with a given background color to indicate the existence of a breakpoint.</p>
+<p><b>See also </b><a href="https://doc.qt.io/qt/qtextedit-extraselection.html" translate="no">QTextEdit::ExtraSelection</a> and <a href="utils-plaintextedit.html#extraSelections" translate="no">extraSelections</a>().</p>
+<!-- @@@setExtraSelections -->
+<!-- $$$setPlainText -->
+<h3 class="fn" translate="no" id="setPlainText"><code class="details extra" translate="no">[slot]</code> <span class="type">void</span> PlainTextEdit::<span class="name">setPlainText</span>(const <span class="type"><a href="https://doc.qt.io/qt/qstring.html" translate="no">QString</a></span> &amp;<i>text</i>)</h3>
+<p>Changes the text of the text edit to the string <i translate="no">text</i>. Any previous text is removed.</p>
+<p><i translate="no">text</i> is interpreted as plain text.</p>
+<p>Notes:</p>
+<ul>
+<li>The undo/redo history is also cleared.</li>
+<li><a href="utils-plaintextedit.html#currentCharFormat" translate="no">currentCharFormat</a>() is reset, unless <a href="utils-plaintextedit.html#textCursor" translate="no">textCursor</a>() is already at the beginning of the document.</li>
+</ul>
+<div class="admonition note"><p><b>Note: </b>Setter function for property <a href="utils-plaintextedit.html#plainText-prop" translate="no">plainText</a>. </p>
+</div><p><b>See also </b><a href="utils-plaintextedit.html#toPlainText" translate="no">toPlainText</a>().</p>
+<!-- @@@setPlainText -->
+<!-- $$$setTextCursor[overload1]$$$setTextCursorconstQTextCursor& -->
+<h3 class="fn" translate="no" id="setTextCursor"><span class="type">void</span> PlainTextEdit::<span class="name">setTextCursor</span>(const <span class="type"><a href="https://doc.qt.io/qt/qtextcursor.html" translate="no">QTextCursor</a></span> &amp;<i>cursor</i>)</h3>
+<p>Sets the visible <i translate="no">cursor</i>.</p>
+<p><b>See also </b><a href="utils-plaintextedit.html#textCursor" translate="no">textCursor</a>().</p>
+<!-- @@@setTextCursor -->
+<!-- $$$textChanged -->
+<h3 class="fn" translate="no" id="textChanged"><code class="details extra" translate="no">[signal]</code> <span class="type">void</span> PlainTextEdit::<span class="name">textChanged</span>()</h3>
+<p>This signal is emitted whenever the document's content changes; for example, when text is inserted or deleted, or when formatting is applied.</p>
+<div class="admonition note"><p><b>Note: </b>Notifier signal for property <a href="utils-plaintextedit.html#plainText-prop" translate="no">plainText</a>. </p>
+</div><!-- @@@textChanged -->
+<!-- $$$textCursor[overload1]$$$textCursor -->
+<h3 class="fn" translate="no" id="textCursor"><span class="type"><a href="https://doc.qt.io/qt/qtextcursor.html" translate="no">QTextCursor</a></span> PlainTextEdit::<span class="name">textCursor</span>() const</h3>
+<p>Returns a copy of the <a href="https://doc.qt.io/qt/qtextcursor.html" translate="no">QTextCursor</a> that represents the currently visible cursor. Note that changes on the returned cursor do not affect <a href="utils-plaintextedit.html" translate="no">PlainTextEdit</a>'s cursor; use <a href="utils-plaintextedit.html#setTextCursor" translate="no">setTextCursor</a>() to update the visible cursor.</p>
+<p><b>See also </b><a href="utils-plaintextedit.html#setTextCursor" translate="no">setTextCursor</a>().</p>
+<!-- @@@textCursor -->
+<!-- $$$toPlainText -->
+<h3 class="fn" translate="no" id="toPlainText"><span class="type"><a href="https://doc.qt.io/qt/qstring.html" translate="no">QString</a></span> PlainTextEdit::<span class="name">toPlainText</span>() const</h3>
+<p>Returns the text of the text edit as plain text.</p>
+<div class="admonition note"><p><b>Note: </b>Getter function for property <a href="utils-plaintextedit.html#plainText-prop" translate="no">plainText</a>. </p>
+</div><p><b>See also </b><a href="utils-plaintextedit.html#setPlainText" translate="no">PlainTextEdit::setPlainText</a>().</p>
+<!-- @@@toPlainText -->
+<!-- $$$undo[overload1]$$$undo -->
+<h3 class="fn" translate="no" id="undo"><code class="details extra" translate="no">[slot]</code> <span class="type">void</span> PlainTextEdit::<span class="name">undo</span>()</h3>
+<p>Undoes the last operation.</p>
+<p>If there is no operation to undo, i.e. there is no undo step in the undo/redo history, nothing happens.</p>
+<p><b>See also </b><a href="utils-plaintextedit.html#redo" translate="no">redo</a>().</p>
+<!-- @@@undo -->
+<!-- $$$undoAvailable[overload1]$$$undoAvailablebool -->
+<h3 class="fn" translate="no" id="undoAvailable"><code class="details extra" translate="no">[signal]</code> <span class="type">void</span> PlainTextEdit::<span class="name">undoAvailable</span>(<span class="type">bool</span> <i>available</i>)</h3>
+<p>This signal is emitted whenever undo operations become available (<i translate="no">available</i> is <code translate="no">true</code>) or unavailable (<i translate="no">available</i> is <code translate="no">false</code>).</p>
+<!-- @@@undoAvailable -->
+<!-- $$$updateRequest[overload1]$$$updateRequestconstQRect&int -->
+<h3 class="fn" translate="no" id="updateRequest"><code class="details extra" translate="no">[signal]</code> <span class="type">void</span> PlainTextEdit::<span class="name">updateRequest</span>(const <span class="type"><a href="https://doc.qt.io/qt/qrect.html" translate="no">QRect</a></span> &amp;<i>rect</i>, <span class="type">int</span> <i>dy</i>)</h3>
+<p>This signal is emitted when the text document needs an update of the specified <i translate="no">rect</i>. If the text is scrolled, <i translate="no">rect</i> will cover the entire viewport area. If the text is scrolled vertically, <i translate="no">dy</i> carries the amount of pixels the viewport was scrolled.</p>
+<p>The purpose of the signal is to support extra widgets in plain text edit subclasses that e.g. show line numbers, breakpoints, or other extra information.</p>
+<!-- @@@updateRequest -->
+<!-- $$$zoomIn[overload1]$$$zoomInint -->
+<h3 class="fn" translate="no" id="zoomIn"><code class="details extra" translate="no">[slot]</code> <span class="type">void</span> PlainTextEdit::<span class="name">zoomIn</span>(<span class="type">int</span> <i>range</i> = 1)</h3>
+<p>Zooms in on the text by making the base font size <i translate="no">range</i> points larger and recalculating all font sizes to be the new size. This does not change the size of any images.</p>
+<p><b>See also </b><a href="utils-plaintextedit.html#zoomOut" translate="no">zoomOut</a>().</p>
+<!-- @@@zoomIn -->
+<!-- $$$zoomOut[overload1]$$$zoomOutint -->
+<h3 class="fn" translate="no" id="zoomOut"><code class="details extra" translate="no">[slot]</code> <span class="type">void</span> PlainTextEdit::<span class="name">zoomOut</span>(<span class="type">int</span> <i>range</i> = 1)</h3>
+<p>Zooms out on the text by making the base font size <i translate="no">range</i> points smaller and recalculating all font sizes to be the new size. This does not change the size of any images.</p>
+<p><b>See also </b><a href="utils-plaintextedit.html#zoomIn" translate="no">zoomIn</a>().</p>
+<!-- @@@zoomOut -->
+</div>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <abbr title="Copyright">&copy;</abbr> 2025 <span translate="no">The Qt Company Ltd.</span>
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br/>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the <span translate="no">Free Software Foundation</span>.<br/>    <span translate="no">Qt</span> and respective logos are <a href="https://doc.qt.io/qt/trademarks.html">    trademarks</a> of <span translate="no">The Qt Company Ltd.</span> in Finland and/or other countries
+   worldwide. All other trademarks are property of their respective owners. </p>
+</div>
+</body>
+</html>

@@ -1,0 +1,5 @@
+import ProjectType
+
+DefaultProject {
+
+}

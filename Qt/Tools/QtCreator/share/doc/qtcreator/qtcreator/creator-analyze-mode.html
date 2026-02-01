@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- creator-analyze.qdoc -->
+  <title>Analyzing Code | Qt Creator Documentation</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="index.html">Qt Creator Documentation</a></li>
+<li>Analyzing Code</li>
+<li id="buildversion"><a href="index.html">Qt Creator 18.0.2</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+  <link rel="prev" href="creator-debugging.html" />
+  <link rel="next" href="creator-tutorials.html" />
+<p class="naviNextPrevious headerNavi">
+<a class="prevPage" href="creator-debugging.html">Debugging</a>
+<span class="naviSeparator">  &#9702;  </span>
+<a class="nextPage" href="creator-tutorials.html">Tutorials</a>
+</p>
+<div class="sidebar">
+<div class="toc">
+<h3 id="toc">Contents</h3>
+<ul>
+<li class="level1"><a href="#improving-qml-performance">Improving QML Performance</a></li>
+<li class="level1"><a href="#finding-issues-in-qml-code">Finding Issues in QML Code</a></li>
+<li class="level1"><a href="#finding-issues-in-c-code-with-clang-tools">Finding Issues in C++ Code with Clang Tools</a></li>
+<li class="level1"><a href="#finding-issues-in-c-code-with-cppcheck">Finding Issues in C++ Code with Cppcheck</a></li>
+<li class="level1"><a href="#checking-code-coverage">Checking Code Coverage</a></li>
+<li class="level1"><a href="#preventing-code-erosion">Preventing Code Erosion</a></li>
+<li class="level1"><a href="#profiling-with-valgrind-tools">Profiling with Valgrind Tools</a></li>
+<li class="level1"><a href="#detecting-memory-leaks-with-heob">Detecting Memory Leaks with Heob</a></li>
+<li class="level1"><a href="#analyzing-cpu-usage">Analyzing CPU Usage</a></li>
+<li class="level1"><a href="#visualizing-chrome-trace-events">Visualizing Chrome Trace Events</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Analyzing Code</h1>
+<!-- $$$creator-analyze-mode.html-description -->
+<div class="descr" id="details">
+<p>To use a code analysis tool, select it in the <b translate="no">Analyze</b> menu or in the pull-down menu of the <img src="images/qtcreator-debug-button.png" alt="Start Debugging of Startup Project" /> (<b translate="no">Start Debugging of Startup Project</b>) button. In the <b translate="no">Debug</b> mode, switch between tools by selecting them in the menu on the debugger toolbar.</p>
+<p class="centerAlign"><img src="images/qtcreator-performance-analyzer-toolbar.webp" alt="Performance Analyzer in Debug mode" /></p><p>Drag the views in the <b translate="no">Debug</b> mode to new positions on the screen. The size and position of views are saved for future sessions. Select <b translate="no">View</b> &gt; <b translate="no">Views</b> &gt; <b translate="no">Reset to Default Layout</b> to reset the views to their original sizes and positions.</p>
+<h2 id="improving-qml-performance">Improving QML Performance</h2>
+<p>Qt Creator comes with the <a href="creator-qml-performance-monitor.html">QML Profiler</a> for inspecting binding evaluations and signal handling when running QML code. This is useful for identifying potential bottlenecks, especially in the evaluation of bindings.</p>
+<h2 id="finding-issues-in-qml-code">Finding Issues in QML Code</h2>
+<p>Run <a href="creator-reference-js-and-qml-error-codes.html">static checks</a> on the QML and JavaScript code in your project to find common problems, similarly to using <a href="http://www.jslint.com">JSLint</a>.</p>
+<h2 id="finding-issues-in-c-code-with-clang-tools">Finding Issues in C++ Code with Clang Tools</h2>
+<p>Qt Creator comes with the following Clang tools for finding problems in C, C++, and Objective-C source code by using static analysis:</p>
+<ul>
+<li><a href="https://clang.llvm.org/extra/clang-tidy/">Clang-Tidy</a>, which has diagnostics and fixes for typical programming errors, such as style violations or interface misuse.</li>
+<li><a href="https://github.com/KDE/clazy/blob/master/README.md">Clazy</a>, which helps Clang understand Qt semantics. It displays Qt-related compiler warnings, ranging from unnecessary memory allocation to misuse of API and has refactoring actions for fixing some of the issues.</li>
+</ul>
+<h2 id="finding-issues-in-c-code-with-cppcheck">Finding Issues in C++ Code with Cppcheck</h2>
+<p>Install the <a href="http://cppcheck.sourceforge.net/">Cppcheck</a> static analysis tool to detect undefined behavior and dangerous coding constructs in C++ code. Cppcheck analyzes the source code without actually running the application.</p>
+<h2 id="checking-code-coverage">Checking Code Coverage</h2>
+<p>Install the <a href="https://doc.qt.io/coco/">Coco</a> code coverage toolchain for Tcl, QML, C# and C/C++ programs on macOS, Linux, or Windows to analyze the way an application runs as part of a test suite, for example. Use the results to make the tests more efficient and complete.</p>
+<p>You can:</p>
+<ul>
+<li>Find untested code sections.</li>
+<li>Find redundant tests which can then be eliminated. Coco can identify portions of the source code that are covered by a test. It can detect whether a new test covers lines in the source code that the existing tests do not cover.</li>
+<li>Find dead code by displaying code that is never executed.</li>
+<li>Calculate the optimum test execution order so as to maximize test coverage for each run. This is particularly useful for manual testing.</li>
+<li>Analyze two separate versions of an application and compare the differences. This makes it possible to see which tests are affected by source code modifications and also to get some measure of the test coverage of a patch or hot fix.</li>
+<li>Measure the execution time of applications and tests.</li>
+</ul>
+<h2 id="preventing-code-erosion">Preventing Code Erosion</h2>
+<p>Install <a href="https://www.axivion.com/en/products/axivion-suite/">Axivion Suite</a> to protect software from erosion. With static code analysis, architecture analysis, and code-smells-detection, you can:</p>
+<ul>
+<li>Check the source code for potential runtime errors.</li>
+<li>Use metrics to generate quantitative information about the internal quality of the source code.</li>
+<li>Run style checks to achieve compliance with coding guidelines.</li>
+<li>Detect both duplicates and similar pieces of code in the source code.</li>
+<li>Recognize cyclical dependencies at different levels.</li>
+<li>Detect unreachable code.</li>
+</ul>
+<h2 id="profiling-with-valgrind-tools">Profiling with Valgrind Tools</h2>
+<p>Install Memcheck and Callgrind from <a href="https://valgrind.org/info/tools.html">Valgrind's Tool Suite</a> to detect memory leaks and profile function execution.</p>
+<p>You can run the Valgrind tools either <i>locally</i> on the development host or <i>remotely</i> on another host. You can use them to analyze both applications for which you set up a project in Qt Creator and applications for which you do not have a project.</p>
+<p>Valgrind tools are supported locally only on Linux and macOS. However, according to Valgrind.org, support on macOS 10.8 and 10.9 is experimental and mostly broken. You can run the tools on a remote Linux machine or device from any development host.</p>
+<p>To run the Valgrind tools to analyze an application for which you have a project, open the project in Qt Creator and select the kit to run the project. The kit specifies whether the Valgrind tools are run locally or remotely.</p>
+<p>For more information about analyzing applications for which you do not have a project, see <a href="creator-running-valgrind-remotely.html">Run Valgrind tools on external applications</a>.</p>
+<p>To set preferences for the Valgrind tools, select <a href="creator-how-to-find-preferences.html">Preferences</a> &gt; <b translate="no">Analyzer</b> &gt; <b translate="no">Valgrind</b>. You can override the general settings for each project in the <b translate="no">Run Settings</b> for the project.</p>
+<h2 id="detecting-memory-leaks-with-heob">Detecting Memory Leaks with Heob</h2>
+<p>On Windows, install the <a href="https://github.com/ssbssa/heob">Heob</a> heap observer to detect buffer overruns and memory leaks.</p>
+<h2 id="analyzing-cpu-usage">Analyzing CPU Usage</h2>
+<p>On Linux, use Perf to analyze the CPU and memory usage of an application on Linux desktop and embedded devices.</p>
+<p><a href="creator-cpu-usage-analyzer.html">Performance Analyzer</a> uses the Perf tool bundled with the Linux kernel to take periodic snapshots of the call chain of an application and visualizes them in a timeline view or as a flame graph.</p>
+<h2 id="visualizing-chrome-trace-events">Visualizing Chrome Trace Events</h2>
+<p>Use the <a href="creator-ctf-visualizer.html">Chrome Trace Format Visualizer</a> to view Chrome trace events. This is especially useful when viewing large trace files that are difficult to visualize using the built-in trace-viewer (<code translate="no">chrome://tracing</code>).</p>
+</div>
+<p><b>See also </b><a href="creator-how-to-activate-kits.html">Activate kits for a project</a>, <a href="creator-how-tos.html#analyze">How To: Analyze</a>, and <a href="creator-reference.html#analyzers">Analyzers</a>.</p>
+<!-- @@@creator-analyze-mode.html -->
+<p class="naviNextPrevious footerNavi">
+<a class="prevPage" href="creator-debugging.html">Debugging</a>
+<span class="naviSeparator">  &#9702;  </span>
+<a class="nextPage" href="creator-tutorials.html">Tutorials</a>
+</p>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   Copyright <acronym title="Copyright">&copy;</acronym> The Qt Company Ltd. and other contributors.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

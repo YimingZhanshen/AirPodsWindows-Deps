@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- creator-valgrind.qdoc -->
+  <meta name="description" content="Set preferences for Valgrind Callgrind.">
+  <title>Valgrind Callgrind | Qt Creator Documentation</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="index.html">Qt Creator Documentation</a></li>
+<li>Valgrind Callgrind</li>
+<li id="buildversion"><a href="index.html">Qt Creator 18.0.2</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+  <link rel="prev" href="creator-preferences-analyzer-clang-tools.html" />
+  <link rel="next" href="creator-preferences-memcheck.html" />
+<p class="naviNextPrevious headerNavi">
+<a class="prevPage" href="creator-preferences-analyzer-clang-tools.html">Clang Tools</a>
+<span class="naviSeparator">  &#9702;  </span>
+<a class="nextPage" href="creator-preferences-memcheck.html">Valgrind Memcheck</a>
+</p>
+<div class="sidebar">
+<div class="toc">
+<h3 id="toc">Contents</h3>
+<ul>
+<li class="level1"><a href="#enabling-full-cache-simulation">Enabling Full Cache Simulation</a></li>
+<li class="level1"><a href="#enabling-branch-prediction-simulation">Enabling Branch Prediction Simulation</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Valgrind Callgrind</h1>
+<!-- $$$creator-preferences-callgrind.html-description -->
+<div class="descr" id="details">
+<p>Set <a href="https://valgrind.org/info/tools.html">Valgrind</a> preferences either globally for all projects or separately for each project in the <a href="creator-configuring-projects.html#specifying-run-settings">run settings</a> of the project.</p>
+<p>To set global preferences for Valgrind, select <a href="creator-how-to-find-preferences.html">Preferences</a> &gt; <b translate="no">Analyzer</b> &gt; <b translate="no">Valgrind</b>. Set Callgrind preferences in <b translate="no">Callgrind Profiling Options</b>.</p>
+<p class="centerAlign"><img src="images/qtcreator-valgrind-callgrind-options.png" alt="Callgrind Profiling Options in the Valgrind tab in Analyzer preferences" /></p><p>In the <b translate="no">KCachegrind executable</b> field, enter the path to the KCachegrind executable to launch.</p>
+<p>In <b translate="no">Extra Callgrind arguments</b>, specify additional arguments for launching the executable.</p>
+<p>In the <b translate="no">Result view: Minimum event cost</b> and <b translate="no">Visualization: Minimum event cost</b> fields, limit the amount of results the profiler presents and visualizes to increase profiler performance.</p>
+<p>To show additional information about events in tooltips, select <b translate="no">Show additional information for events in tooltips</b>.</p>
+<p>To collect information about the system call times, select <b translate="no">Collect system call time</b>. To collect the number of global bus events of the event type <code translate="no">Ge</code> that are executed, select <b translate="no">Collect global bus events</b>.</p>
+<h2 id="enabling-full-cache-simulation">Enabling Full Cache Simulation</h2>
+<p>By default, only instruction read accesses (Ir) are counted. To fully simulate the cache, select <b translate="no">Enable cache simulation</b>. This enables the following additional event counters:</p>
+<ul>
+<li>Cache misses on instruction reads (I1mr/I2mr)</li>
+<li>Data read accesses (Dr) and related cache misses (D1mr/D2mr)</li>
+<li>Data write accesses (Dw) and related cache misses (D1mw/D2mw)</li>
+</ul>
+<h2 id="enabling-branch-prediction-simulation">Enabling Branch Prediction Simulation</h2>
+<p>To enable the following additional event counters, select <b translate="no">Enable branch prediction simulation</b>:</p>
+<ul>
+<li>Number of conditional branches executed and related predictor misses (Bc/Bcm)</li>
+<li>Executed indirect jumps and related misses of the jump address predictor (Bi/Bim)</li>
+</ul>
+</div>
+<p><b>See also </b><a href="creator-analyze-mode.html#analyzing-cpu-usage">Analyzing CPU Usage</a>, <a href="creator-how-to-memcheck.html">Detect memory leaks with Memcheck</a>, <a href="creator-how-to-detach-views.html">Detach views</a>, <a href="creator-running-valgrind-remotely.html">Run Valgrind tools on external applications</a>, <a href="creator-run-settings-valgrind.html">Specify Valgrind settings for a project</a>, and <a href="creator-preferences-memcheck.html">Valgrind Memcheck</a>.</p>
+<!-- @@@creator-preferences-callgrind.html -->
+<p class="naviNextPrevious footerNavi">
+<a class="prevPage" href="creator-preferences-analyzer-clang-tools.html">Clang Tools</a>
+<span class="naviSeparator">  &#9702;  </span>
+<a class="nextPage" href="creator-preferences-memcheck.html">Valgrind Memcheck</a>
+</p>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   Copyright <acronym title="Copyright">&copy;</acronym> The Qt Company Ltd. and other contributors.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- creator-debugger.qdoc -->
+  <title>Start debugging | Qt Creator Documentation</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="index.html">Qt Creator Documentation</a></li>
+<li>Start debugging</li>
+<li id="buildversion"><a href="index.html">Qt Creator 18.0.2</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+  <link rel="prev" href="creator-how-to-debug-external-apps.html" />
+  <link rel="next" href="creator-how-to-start-debugger-from-cli.html" />
+<p class="naviNextPrevious headerNavi">
+<a class="prevPage" href="creator-how-to-debug-external-apps.html">Start and debug an external application</a>
+<span class="naviSeparator">  &#9702;  </span>
+<a class="nextPage" href="creator-how-to-start-debugger-from-cli.html">Start debugging from the command line</a>
+</p>
+<div class="sidebar">
+<div class="toc">
+<h3 id="toc">Contents</h3>
+<ul>
+<li class="level1"><a href="#execute-gdb-or-cdb-commands">Execute GDB or CDB commands</a></li>
+<li class="level1"><a href="#debug-python-projects">Debug Python projects</a></li>
+<li class="level1"><a href="#debug-console-applications">Debug console applications</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Start debugging</h1>
+<!-- $$$creator-how-to-start-debugging.html-description -->
+<div class="descr" id="details">
+<p>You can start an application from an open project under the control of a debugger in the following ways:</p>
+<ul>
+<li>Select <img src="images/qtcreator-debug-button.png" alt="Start Debugging of Startup Project" /> (<b translate="no">Start Debugging of Startup Project</b>).</li>
+<li>Select <b>F5</b>.</li>
+<li>Enter <code translate="no">dr</code> in the locator, and select the project to debug.</li>
+<li>Go to <b translate="no">Debug</b> &gt; <b translate="no">Start Debugging</b> &gt; <b translate="no">Start Debugging of Startup Project</b>.</li>
+</ul>
+<p>Qt Creator checks whether the compiled application is up-to-date, and rebuilds and deploys it if you set <b translate="no">Build before deploying</b> to build the whole project or the application to run and select <b translate="no">Always deploy before running</b> in <a href="creator-how-to-find-preferences.html">Preferences</a> &gt; <b translate="no">Build &amp; Run</b> &gt; <b translate="no">General</b>. To debug the application without deploying it, go to <b translate="no">Debug</b> &gt; <b translate="no">Start Debugging</b> &gt; <b translate="no">Start Debugging Without Deployment</b>.</p>
+<p>The debugger then takes over and starts the application with suitable parameters.</p>
+<p>You can specify breakpoints before or after launching the debugger. For more information, see <a href="creator-breakpoints-view.html">Setting breakpoints</a>.</p>
+<h2 id="execute-gdb-or-cdb-commands">Execute GDB or CDB commands</h2>
+<p>When using GDB or CDB as debug backend, you can specify additional commands to execute before and after the backend and debugged application are started or attached in <a href="creator-how-to-find-preferences.html">Preferences</a> &gt; <b translate="no">Debugger</b> &gt; <a href="creator-preferences-debugger-gdb.html">GDB</a> and <a href="creator-preferences-debugger-cdb.html">CDB</a>.</p>
+<p>To let the debugger read the user's default .gdbinit file when it starts, select <b translate="no">Load .gdbinit file on startup</b> in GDB settings.</p>
+<div class="admonition note">
+<p><b>Note: </b>Starting a C++ application under the control of the debugger can take a long time. Typically, in the range of several seconds to minutes if you use complex features.</p>
+</div>
+<h2 id="debug-python-projects">Debug Python projects</h2>
+<p>For <a href="creator-tutorial-python-application-qt-widgets.html">Python</a> projects, start debugging the <code translate="no">main.py</code> file. If you encounter problems, check the active build target in the <a href="creator-building-targets.html">kit selector</a>.</p>
+<p>Qt Creator does not support mixed-mode debugging, but you can attach GDB to the Python interpreter to debug the C++ implementation of the corresponding Python code. For more information, see <a href="https://doc.qt.io/qtforpython-6/tutorials/debugging/qtcreator/qtcreator.html">Debugging PySide with Qt Creator (Linux)</a>.</p>
+<h2 id="debug-console-applications">Debug console applications</h2>
+<p>If you need a console window to operate your application, for example because it accepts console input from the user, go to <b translate="no">Projects</b> &gt; <b translate="no">Run Settings</b> and select the <b translate="no">Run in terminal</b> check box.</p>
+<p>If a console application does not start up properly in the configured console and the subsequent attach fails, you can diagnose the issue by using the native CDB console. Go to <a href="creator-how-to-find-preferences.html">Preferences</a> &gt; <b translate="no">Debugger</b> &gt; <b translate="no">CDB</b> &gt; <b translate="no">Use CDB console</b> to override the console set in the Windows system environment variables. Note that the native console does not prompt on application exit.</p>
+</div>
+<p><b>See also </b><a href="creator-how-tos.html#debug">How To: Debug</a>, <a href="creator-debugging.html">Debugging</a>, <a href="creator-reference.html#debuggers">Debuggers</a>, and <a href="creator-reference.html#debugger">Debugger</a>.</p>
+<!-- @@@creator-how-to-start-debugging.html -->
+<p class="naviNextPrevious footerNavi">
+<a class="prevPage" href="creator-how-to-debug-external-apps.html">Start and debug an external application</a>
+<span class="naviSeparator">  &#9702;  </span>
+<a class="nextPage" href="creator-how-to-start-debugger-from-cli.html">Start debugging from the command line</a>
+</p>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   Copyright <acronym title="Copyright">&copy;</acronym> The Qt Company Ltd. and other contributors.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

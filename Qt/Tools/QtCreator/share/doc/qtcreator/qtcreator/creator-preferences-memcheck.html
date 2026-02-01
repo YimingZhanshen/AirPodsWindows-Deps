@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- creator-valgrind.qdoc -->
+  <meta name="description" content="Set preferences for Valgrind Memcheck.">
+  <title>Valgrind Memcheck | Qt Creator Documentation</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="index.html">Qt Creator Documentation</a></li>
+<li>Valgrind Memcheck</li>
+<li id="buildversion"><a href="index.html">Qt Creator 18.0.2</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+  <link rel="prev" href="creator-preferences-callgrind.html" />
+  <link rel="next" href="creator-preferences-cpp-code-style.html" />
+<p class="naviNextPrevious headerNavi">
+<a class="prevPage" href="creator-preferences-callgrind.html">Valgrind Callgrind</a>
+<span class="naviSeparator">  &#9702;  </span>
+<a class="nextPage" href="creator-preferences-cpp-code-style.html">C++ Code Style</a>
+</p>
+<div class="sidebar">
+<div class="toc">
+<h3 id="toc">Contents</h3>
+<ul>
+<li class="level1"><a href="#setting-stack-trace-length">Setting Stack Trace Length</a></li>
+<li class="level1"><a href="#tracking-origins-of-uninitialized-memory">Tracking Origins of Uninitialized Memory</a></li>
+<li class="level1"><a href="#viewing-a-summary">Viewing a Summary</a></li>
+<li class="level1"><a href="#showing-reachable-and-indirectly-lost-blocks">Showing Reachable and Indirectly Lost Blocks</a></li>
+<li class="level1"><a href="#suppressing-errors">Suppressing Errors</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Valgrind Memcheck</h1>
+<!-- $$$creator-preferences-memcheck.html-description -->
+<div class="descr" id="details">
+<p>Set <a href="https://valgrind.org/info/tools.html">Valgrind</a> preferences either globally for all projects or separately for each project in the <a href="creator-configuring-projects.html#specifying-run-settings">run settings</a> of the project.</p>
+<p>To set global preferences for Valgrind, select <a href="creator-how-to-find-preferences.html">Preferences</a> &gt; <b translate="no">Analyzer</b>. Set Memcheck preferences in <b translate="no">Memcheck Memory Analysis Options</b>.</p>
+<p class="centerAlign"><img src="images/qtcreator-valgrind-memcheck-options.png" alt="Memcheck Memory Analysis Options in the Valgrind tab in Analyzer preferences" /></p><p>In <b translate="no">Extra Memcheck arguments</b>, specify additional arguments for launching the executable.</p>
+<h2 id="setting-stack-trace-length">Setting Stack Trace Length</h2>
+<p>Stack traces can get quite large and confusing, and therefore, reading them from the bottom up can help. If the stack trace is not big enough or it is too big, select <a href="creator-how-to-find-preferences.html">Preferences</a> &gt; <b translate="no">Analyzer</b> and define the length of the stack trace in the <b translate="no">Backtrace frame count</b> field.</p>
+<h2 id="tracking-origins-of-uninitialized-memory">Tracking Origins of Uninitialized Memory</h2>
+<p>Memcheck also reports uses of uninitialised values, most commonly with the message <b translate="no">Conditional jump or move depends on uninitialised value(s).</b> To determine the root cause of these errors, Memcheck tracks origins of uninitialized memory. Clear <b translate="no">Track origins of uninitialized memory</b> to make Memcheck run faster.</p>
+<h2 id="viewing-a-summary">Viewing a Summary</h2>
+<p>Memcheck searches for memory leaks when the client application finishes. To view the amount of leaks that occurred, select <b translate="no">Summary Only</b> in the <b translate="no">Check for leaks on finish</b> field. To also view details of each leak, select <b translate="no">Full</b>.</p>
+<h2 id="showing-reachable-and-indirectly-lost-blocks">Showing Reachable and Indirectly Lost Blocks</h2>
+<p><i>Reachable</i> blocks are blocks that are pointed at by a pointer or chain of pointers and that might have been freed before the application exited. <i>Indirectly lost</i> blocks are considered lost because all the blocks that point to them are themselves lost. For example, all the children of a lost root node are indirectly lost.</p>
+<p>By default, Memcheck does not report reachable and indirectly lost blocks. To have them reported, select <b translate="no">Show reachable and indirectly lost blocks</b>.</p>
+<h2 id="suppressing-errors">Suppressing Errors</h2>
+<p>Memcheck detects numerous problems in the system libraries, such as the C library, which come pre-installed with your OS. As you cannot easily fix them, you want to suppress them. Valgrind reads a list of errors to suppress at startup. A default suppression file is created by the <code translate="no">./configure</code> script when the system is built.</p>
+<p>You can write your own suppression files if parts of your project have errors you cannot fix and you do not want to be reminded of them. Select <b translate="no">Add</b> in the <b translate="no">MemCheck Memory Analysis</b> dialog to add the suppression files.</p>
+<p>For more information about writing suppression files, see <a href="https://valgrind.org/docs/manual/manual-core.html#manual-core.suppress">Suppressing Errors</a> in the Valgrind documentation.</p>
+</div>
+<p><b>See also </b><a href="creator-how-to-memcheck.html">Detect memory leaks with Memcheck</a>, <a href="creator-cache-profiler.html">Profile function execution</a>, <a href="creator-running-valgrind-remotely.html">Run Valgrind tools on external applications</a>, <a href="creator-run-settings-valgrind.html">Specify Valgrind settings for a project</a>, and <a href="creator-preferences-callgrind.html">Valgrind Callgrind</a>.</p>
+<!-- @@@creator-preferences-memcheck.html -->
+<p class="naviNextPrevious footerNavi">
+<a class="prevPage" href="creator-preferences-callgrind.html">Valgrind Callgrind</a>
+<span class="naviSeparator">  &#9702;  </span>
+<a class="nextPage" href="creator-preferences-cpp-code-style.html">C++ Code Style</a>
+</p>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   Copyright <acronym title="Copyright">&copy;</acronym> The Qt Company Ltd. and other contributors.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

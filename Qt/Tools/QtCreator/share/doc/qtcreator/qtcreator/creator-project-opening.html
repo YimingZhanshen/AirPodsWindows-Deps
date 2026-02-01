@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- creator-projects-opening.qdoc -->
+  <title>Open projects | Qt Creator Documentation</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="index.html">Qt Creator Documentation</a></li>
+<li>Open projects</li>
+<li id="buildversion"><a href="index.html">Qt Creator 18.0.2</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+  <link rel="prev" href="creator-how-to-link-with-gitlab.html" />
+  <link rel="next" href="creator-how-to-configure-cmake-for-project.html" />
+<p class="naviNextPrevious headerNavi">
+<a class="prevPage" href="creator-how-to-link-with-gitlab.html">Link projects with GitLab</a>
+<span class="naviSeparator">  &#9702;  </span>
+<a class="nextPage" href="creator-how-to-configure-cmake-for-project.html">Override CMake settings for a project</a>
+</p>
+<div class="sidebar">
+<div class="toc">
+<h3 id="toc">Contents</h3>
+<ul>
+<li class="level1"><a href="#open-directories-as-projects">Open directories as projects</a></li>
+<li class="level1"><a href="#re-configure-projects">Re-configure projects</a></li>
+<li class="level1"><a href="#import-builds">Import builds</a></li>
+<li class="level1"><a href="#show-progress-information">Show progress information</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Open projects</h1>
+<!-- $$$creator-project-opening.html-description -->
+<div class="descr" id="details">
+<p>To open a project, open the configuration file for the project: <code translate="no">CMakeLists.txt</code> or <code translate="no">CMakeCache.txt</code> (CMake), <code translate="no">.pro</code> (qmake), <code translate="no">.qbs</code> (Qbs), <code translate="no">meson.build</code> (Meson), <code translate="no">pyproject.toml</code> (Python), or <code translate="no">Makefile.am</code> (Autotools, experimental).</p>
+<p>You can open a project in the following ways:</p>
+<ul>
+<li>Select <b translate="no">File</b> &gt; <b translate="no">Open File or Project</b>.</li>
+<li>In the <b translate="no">Welcome</b> mode, <b translate="no">Projects</b> tab, select <b translate="no">Open Project</b> (1).<p class="centerAlign"><img src="images/qtcreator-welcome-open-projects.webp" alt="Ways to open projects in the Welcome mode Projects tab" /></p></li>
+<li>In the <b translate="no">Projects</b> tab, select a project in the list of recently opened projects (2).</li>
+<li>In the <b translate="no">Welcome</b> mode, <b translate="no">Overview</b> tab, select a recently opened project in <b translate="no">Recent Projects</b>.</li>
+<li>In the <a href="creator-projects-view.html">Projects</a> view, right-click to open a context menu and select <b translate="no">Load Project</b> to open the <b translate="no">Open Project</b> dialog, where you can select a project file.<p class="centerAlign"><img src="images/qtcreator-projects-view.webp" alt="CMake project in Projects view" /></p></li>
+<li>Use the following keyboard shortcuts, depending on the mode you are currently in:<ul>
+<li>In all modes, select <b>Ctrl+O</b> (<b>Cmd+O</b> on macOS) to open the <b translate="no">Open File</b> dialog, where you can select a project file.</li>
+<li>On Windows and Linux, in all modes except the <b translate="no">Help</b> mode, select <b>Ctrl+Shift+O</b> to open the <b translate="no">Open Project</b> dialog, where you can select a project file.</li>
+<li>In the <b translate="no">Welcome</b> mode, <b translate="no">Projects</b> tab, select <b>Ctrl+Shift+number</b> (<b>Cmd+Shift+number</b> on macOS), where the number is the number of a project in the list of recently opened projects (3).</li>
+</ul>
+</li>
+</ul>
+<h2 id="open-directories-as-projects">Open directories as projects</h2>
+<p>To open a directory as a project, go to <b translate="no">File</b> &gt; <b translate="no">Open Workspace</b>.</p>
+<p>Qt Creator uses the default kit to automatically add a build configuration for the workspace. It generates the <code translate="no">.qtcreator/project.json</code> project file in the directory for setting a project name and file exclusion filters. You can add build and run settings to the file, as defined by its <a href="https://code.qt.io/cgit/qt-creator/qt-creator.git/tree/share/qtcreator/jsonschemas/project.json">JSON schema</a>.</p>
+<p>You can open either the JSON file or the workspace to open the project the next time.</p>
+<p>Also, you can open <a href="https://doc.rust-lang.org/cargo/commands/cargo-build.html">Cargo build projects</a> when developing <a href="https://www.rust-lang.org/">Rust</a> packages.</p>
+<p>When you add files to the directory or remove them from there, the contents of the <a href="creator-projects-view.html">Projects</a> view are updated automatically.</p>
+<p>To add build configurations to the workspace:</p>
+<ol class="1" type="1"><li>Go to <b translate="no">Projects</b> &gt; <b translate="no">Build Settings</b>.</li>
+<li>Select <b translate="no">Add</b> &gt; <b translate="no">Build</b>.</li>
+<li>Specify build settings.</li>
+</ol>
+<p>To specify deploy settings for the workspace, go to <b translate="no">Projects</b> &gt; <b translate="no">Deploy Settings</b>.</p>
+<p>To specify run settings for the workspace, go to <b translate="no">Projects</b> &gt; <b translate="no">Run Settings</b>.</p>
+<h2 id="re-configure-projects">Re-configure projects</h2>
+<p>Qt Creator stores information that it needs to build projects in a <code translate="no">.user</code> file. If Qt Creator cannot find the file when you open an existing project, it prompts you to enter the information.</p>
+<p>If you used another Qt Creator instance to create the project, Qt Creator asks whether you want to use the old settings. The settings are specific to the development environment, and you should not copy them from one environment to another. Therefore, we recommend that you select <b translate="no">No</b> and enter the information again in the <b translate="no">Configure Project</b> tab.</p>
+<p>To re-configure projects:</p>
+<ol class="1" type="1"><li>In <b translate="no">Configure Project</b>, select <a href="creator-preferences-kits.html">kits</a> for building and running your project.<p class="centerAlign"><img src="images/qtcreator-configure-project.webp" alt="Configure Project view" /></p></li>
+<li>For each kit, select the build configurations to create for the project.</li>
+<li>Select <b translate="no">Configure Project</b>.</li>
+</ol>
+<p><b translate="no">Configure Project</b> shows a list of kits that you install on the computer and configure in <a href="creator-how-to-find-preferences.html">Preferences</a> &gt; <b translate="no">Kits</b>.</p>
+<p>Even if you do not intend to build the project, the C++ and QML code models need a Qt version and compiler to offer code completion. To specify them, select the <b translate="no">Preferences</b> link, or select <a href="creator-how-to-find-preferences.html">Preferences</a> &gt; <b translate="no">Kits</b>.</p>
+<p>Qt for Python projects rely on the <a href="creator-language-servers.html">language server client</a> for code completion, highlighting, and other useful features.</p>
+<p>If Qt Creator cannot find an existing build for a particular kit, it starts out from a clean slate and creates new debug and release build configurations in the specified directory. Qt Creator suggests a name and location for the directory that you can change.</p>
+<h2 id="import-builds">Import builds</h2>
+<p>If you have built the project before, Qt Creator can use the existing build configuration to make the exact same build available to you. To import a build, specify a directory in the <b translate="no">Import Build From</b> section of the <b translate="no">Configure Project</b> tab and select <b translate="no">Import</b>.</p>
+<p>You can edit the build configuration later. For more information, see <a href="creator-build-settings.html#edit-build-configurations">Edit build configurations</a>.</p>
+<h2 id="show-progress-information">Show progress information</h2>
+<p>Qt Creator parses all the source files in the project and performs a semantic analysis to build up the information that it needs for functions such as navigation and finding usages. A progress bar is displayed during parsing.</p>
+<p>To show or hide detailed progress information, select <b translate="no">Toggle Progress Details</b> (1).</p>
+<p class="centerAlign"><img src="images/qtcreator-toggle-progress-bar.webp" alt="Toggle Progress Details" /></p><p>You can drag the progress bar to another position. The position is saved for later. Select <img src="images/pin.png" alt="Pin" /> (<b translate="no">Pin</b>) to pin the progress bar back to the toggle button.</p>
+</div>
+<p><b>See also </b><a href="creator-build-settings.html">Configure projects for building</a>, <a href="creator-run-settings.html">Configure projects for running</a>, <a href="creator-how-tos.html#manage-kits">How To: Manage Kits</a>, and <a href="creator-preferences-kits.html">Kits</a>.</p>
+<!-- @@@creator-project-opening.html -->
+<p class="naviNextPrevious footerNavi">
+<a class="prevPage" href="creator-how-to-link-with-gitlab.html">Link projects with GitLab</a>
+<span class="naviSeparator">  &#9702;  </span>
+<a class="nextPage" href="creator-how-to-configure-cmake-for-project.html">Override CMake settings for a project</a>
+</p>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   Copyright <acronym title="Copyright">&copy;</acronym> The Qt Company Ltd. and other contributors.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- creator-projects-cmake-presets.qdoc -->
+  <meta name="description" content="Summary of CMake Qt vendor presets.">
+  <title>CMake Qt Vendor Presets | Qt Creator Documentation</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="index.html">Qt Creator Documentation</a></li>
+<li>CMake Qt Vendor Presets</li>
+<li id="buildversion"><a href="index.html">Qt Creator 18.0.2</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+  <link rel="prev" href="creator-build-settings-cmake-presets.html" />
+  <link rel="next" href="creator-build-settings-conan.html" />
+<p class="naviNextPrevious headerNavi">
+<a class="prevPage" href="creator-build-settings-cmake-presets.html">CMake Presets</a>
+<span class="naviSeparator">  &#9702;  </span>
+<a class="nextPage" href="creator-build-settings-conan.html">Conan Build Configuration</a>
+</p>
+<div class="sidebar">
+<div class="toc">
+<h3 id="toc">Contents</h3>
+<ul>
+<li class="level1"><a href="#cmake-configuration-presets">CMake configuration presets</a></li>
+<li class="level1"><a href="#debugger-presets">Debugger presets</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">CMake Qt Vendor Presets</h1>
+<!-- $$$creator-build-settings-cmake-presets-qt-vendor.html-description -->
+<div class="descr" id="details">
+<p>Specify Qt Creator preferences in the <code translate="no">vendor</code> section in <code translate="no">CMakePresets.json</code> and <code translate="no">CMakeUserPresets.json</code>.</p>
+<h2 id="cmake-configuration-presets">CMake configuration presets</h2>
+<p>The following table summarizes the available presets.</p>
+<div class="table"><table class="generic">
+ <thead><tr class="qt-style"><th >Preset</th><th >Description</th><th >Read More</th></tr></thead>
+<tr valign="top" class="odd"><td ><code translate="no">AutorunCMake</code></td><td >Runs CMake to refresh project information when you edit a <code translate="no">CMakeLists.txt</code> configuration file in a project. Also, refreshes project information when you build the project.</td><td ><a href="creator-how-to-view-cmake-project-contents.html">View CMake project contents</a></td></tr>
+<tr valign="top" class="even"><td ><code translate="no">AskBeforePresetsReload</code></td><td >Asks before acting when you go to <b translate="no">Build</b> and select <b translate="no">Reload CMake Presets</b>.</td><td ><a href="creator-build-settings-cmake-presets.html">CMake Presets</a></td></tr>
+<tr valign="top" class="odd"><td ><code translate="no">AskReConfigureInitialParams</code></td><td >Asks before acting when you select <b translate="no">Re-configure with Initial Variables</b>.</td><td ><a href="creator-build-settings-cmake.html#re-configuring-with-initial-variables">Re-configuring with Initial Variables</a></td></tr>
+<tr valign="top" class="even"><td ><code translate="no">PackageManagerAutoSetup</code></td><td >Sets up the <a href="creator-project-conan.html">Conan</a> or <a href="creator-vcpkg.html">vcpkg</a> package manager for use with CMake.</td><td ><a href="creator-build-settings-cmake.html#using-cmake-with-package-managers">Using CMake with Package Managers</a></td></tr>
+<tr valign="top" class="odd"><td ><code translate="no">ShowAdvancedOptionsByDefault</code></td><td >Shows all CMake variables by default in <b translate="no">Initial Configuration</b> and <b translate="no">Current Configuration</b>.</td><td ><a href="creator-build-settings-cmake.html#viewing-advanced-variables">Viewing Advanced Variables</a></td></tr>
+<tr valign="top" class="even"><td ><code translate="no">ShowSourceSubfolders</code></td><td >Hides subfolder names and arranges the files according to their source group in the <b translate="no">Projects</b> view.</td><td ><a href="creator-how-to-view-cmake-project-contents.html#hide-subfolder-names-in-projects-view">Hide subfolder names in Projects view</a></td></tr>
+<tr valign="top" class="odd"><td ><code translate="no">UseJunctionsForSourceAndBuildDirectories</code></td><td >On Windows, uses junction points for CMake configure, build, and install operations.</td><td ><a href="creator-build-settings-cmake.html#using-junction-points-on-windows">Using Junction Points on Windows</a></td></tr>
+</table></div>
+<p>An example of CMake configuration presets:</p>
+<pre class="cpp plain" translate="no">
+ &quot;vendor&quot;: {
+   &quot;qt.io/QtCreator/1.0&quot;: {
+     &quot;AskBeforePresetsReload&quot;: false,
+     &quot;AskReConfigureInitialParams&quot;: false,
+     &quot;AutorunCMake&quot;: false,
+     &quot;PackageManagerAutoSetup&quot;: false,
+     &quot;ShowAdvancedOptionsByDefault&quot;: true,
+     &quot;ShowSourceSubFolders&quot;: false,
+     &quot;UseJunctionsForSourceAndBuildDirectories&quot;: true
+   }
+ }
+</pre>
+<h2 id="debugger-presets">Debugger presets</h2>
+<p>The following table summarizes the available presets.</p>
+<p>For more information about debugger preferences, see <a href="creator-debuggers.html">Add debuggers</a>.</p>
+<div class="table"><table class="generic">
+ <thead><tr class="qt-style"><th >Preset</th><th >Description</th></tr></thead>
+<tr valign="top" class="odd"><td ><code translate="no">Abis</code></td><td >Comma-separated list of system architecture definitions.</td></tr>
+<tr valign="top" class="even"><td ><code translate="no">Binary</code></td><td >Path to the debugger executable. Can be an absolute path, the value <code translate="no">auto</code>, or an ABI. Finds the appropriate debugger for MSVC toolchains where Qt Creator does not know the binary path.</td></tr>
+<tr valign="top" class="odd"><td ><code translate="no">DisplayName</code></td><td >Name of the debugger.</td></tr>
+<tr valign="top" class="even"><td ><code translate="no">EngineType</code></td><td >Debugger engine type:<ul>
+<li>1 for GDB</li>
+<li>4 for CDB</li>
+<li>8 for PDB</li>
+<li>256 for LLDB</li>
+<li>512 for GDB DAP</li>
+<li>1024 for LLDB DAP</li>
+<li>4096 for uVision Debugger</li>
+</ul>
+</td></tr>
+<tr valign="top" class="odd"><td ><code translate="no">Version</code></td><td >Version number of the debugger.</td></tr>
+</table></div>
+<p>An example of Qt Creator debugger presets:</p>
+<pre class="cpp plain" translate="no">
+ &quot;vendor&quot;: {
+   &quot;qt.io/QtCreator/1.0&quot;: {
+     &quot;debugger&quot;: {
+       &quot;DisplayName&quot;: &quot;GNU gdb 11.2.0 for MinGW 11.2.0 64-bit&quot;,
+       &quot;Abis&quot;: [&quot;x86-windows-msys-pe-64bit&quot;],
+       &quot;Binary&quot;: &quot;C:/Qt/Tools/mingw1120_64/bin/gdb.exe&quot;,
+       &quot;EngineType&quot;: 1,
+       &quot;Version&quot;: &quot;11.2.0&quot;
+     }
+   }
+ }
+</pre>
+</div>
+<p><b>See also </b><a href="creator-build-settings-cmake.html">CMake Build Configuration</a>, <a href="creator-project-cmake.html">CMake</a>, <a href="creator-build-settings-cmake-presets.html">CMake Presets</a>, and <a href="creator-sdk-tool.html">SDK Tool</a>.</p>
+<!-- @@@creator-build-settings-cmake-presets-qt-vendor.html -->
+<p class="naviNextPrevious footerNavi">
+<a class="prevPage" href="creator-build-settings-cmake-presets.html">CMake Presets</a>
+<span class="naviSeparator">  &#9702;  </span>
+<a class="nextPage" href="creator-build-settings-conan.html">Conan Build Configuration</a>
+</p>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   Copyright <acronym title="Copyright">&copy;</acronym> The Qt Company Ltd. and other contributors.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

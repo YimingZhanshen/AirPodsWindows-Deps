@@ -1,0 +1,82 @@
+SPDXVersion: SPDX-2.3
+DataLicense: CC0-1.0
+SPDXID: SPDXRef-DOCUMENT
+DocumentName: wininterrupt-32-18.0.2
+DocumentNamespace: https://qt.io/spdxdocs/wininterrupt-32-18.0.2
+Creator: Organization: TheQtCompany
+Creator: Tool: Qt Build System
+CreatorComment: <text>This SPDX document was created from CMake 3.30.5, using the qt
+build system from https://code.qt.io/cgit/qt/qtbase.git/tree/cmake/QtPublicSbomHelpers.cmake</text>
+Created: 2026-01-23T01:05:37Z
+
+PackageName: MSVC
+SPDXID: SPDXRef-compiler
+PackageVersion: 19.39.33520.0
+PackageDownloadLocation: NOASSERTION
+PackageLicenseConcluded: NOASSERTION
+PackageLicenseDeclared: NOASSERTION
+PackageCopyrightText: NOASSERTION
+PackageSupplier: Organization: Anonymous
+FilesAnalyzed: false
+PackageSummary: <text>The compiler as identified by CMake, running on Windows (AMD64)</text>
+PrimaryPackagePurpose: APPLICATION
+Relationship: SPDXRef-compiler BUILD_DEPENDENCY_OF SPDXRef-Package-wininterrupt32
+RelationshipComment: <text>SPDXRef-Package-wininterrupt32 is built by compiler MSVC version 19.39.33520.0</text>
+
+PackageName: wininterrupt-32
+SPDXID: SPDXRef-Package-wininterrupt32
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:qt:wininterrupt:18.0.2:*:*:*:*:*:*:*
+ExternalRef: PACKAGE-MANAGER purl pkg:generic/TheQtCompany/wininterrupt-32@18.0.2
+PackageVersion: 18.0.2
+ExternalRef: PACKAGE-MANAGER purl pkg:generic/TheQtCompany/wininterrupt-32@18.0.2
+PackageSupplier: Organization: TheQtCompany
+PackageDownloadLocation: git://code.qt.io/qt-creator/qt-creator.git
+PackageLicenseConcluded: NOASSERTION
+PackageLicenseDeclared: NOASSERTION
+PackageCopyrightText: <text>Copyright (C) The Qt Company Ltd. and other contributors.</text>
+PackageHomePage: https://qt.io
+PackageComment: <text>Built by CMake 3.30.5 with RelWithDebInfo configuration for Windows (AMD64)</text>
+FilesAnalyzed: false
+BuiltDate: 2026-01-23T01:05:37Z
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-Package-wininterrupt32
+
+PackageName: win32interrupt
+SPDXID: SPDXRef-Package-wininterrupt-32-executable-win32interrupt
+PackageDownloadLocation: git://code.qt.io/qt-creator/qt-creator.git
+PackageVersion: 18.0.2
+PackageSupplier: Organization: TheQtCompany
+PackageLicenseConcluded: LicenseRef-Qt-Commercial OR GPL-3.0-only WITH Qt-GPL-exception-1.0
+PackageLicenseDeclared: NOASSERTION
+ExternalRef: PACKAGE-MANAGER purl pkg:github/qt/wininterrupt-win32interrupt?vcs_url=https://code.qt.io/qt-creator/qt-creator.git&library_name=win32interrupt
+ExternalRef: PACKAGE-MANAGER purl pkg:generic/qt/wininterrupt-win32interrupt?vcs_url=https://code.qt.io/qt-creator/qt-creator.git&library_name=win32interrupt
+PackageCopyrightText: <text>Copyright (C) The Qt Company Ltd. and other contributors.</text>
+PrimaryPackagePurpose: APPLICATION
+PackageComment: <text>
+CMake target name: win32interrupt
+</text>
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:qt:wininterrupt:18.0.2:*:*:*:*:*:*:*
+PackageVerificationCode: bf6a49462aabfed7f630a7fb34bcbc2379b7ebd7
+FilesAnalyzed: true
+Relationship: SPDXRef-Package-wininterrupt32 CONTAINS SPDXRef-Package-wininterrupt-32-executable-win32interrupt
+
+FileName: ./bin/win32interrupt.exe
+SPDXID: SPDXRef-PackagedFile-executable-win32interrupt-RelWithDebInfo
+FileType: BINARY
+FileChecksum: SHA1: 554b4de68b4748a995537c0d5f23f050fa8186c0
+LicenseConcluded: LicenseRef-Qt-Commercial OR GPL-3.0-only WITH Qt-GPL-exception-1.0
+FileCopyrightText: <text>Copyright (C) The Qt Company Ltd. and other contributors.</text>
+LicenseInfoInFile: NOASSERTION
+Relationship: SPDXRef-Package-wininterrupt-32-executable-win32interrupt CONTAINS SPDXRef-PackagedFile-executable-win32interrupt-RelWithDebInfo
+Relationship: SPDXRef-PackagedFile-executable-win32interrupt-RelWithDebInfo GENERATED_FROM NOASSERTION
+RelationshipComment: /src_dir/wininterrupt-32/wininterrupt.c
+
+LicenseID: LicenseRef-Qt-Commercial
+ExtractedText: <text>Licensees holding valid commercial Qt licenses may use this software in
+accordance with the the terms contained in a written agreement between
+you and The Qt Company. Alternatively, the terms and conditions that were
+accepted by the licensee when buying and/or downloading the
+software do apply.
+
+For the latest licensing terms and conditions, see https://www.qt.io/terms-conditions.
+For further information use the contact form at https://www.qt.io/contact-us.
+</text>

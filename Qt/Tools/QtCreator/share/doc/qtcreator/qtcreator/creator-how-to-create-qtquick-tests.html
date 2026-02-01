@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- creator-autotest.qdoc -->
+  <title>Create Qt Quick tests | Qt Creator Documentation</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="index.html">Qt Creator Documentation</a></li>
+<li>Create Qt Quick tests</li>
+<li id="buildversion"><a href="index.html">Qt Creator 18.0.2</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+  <link rel="prev" href="creator-how-to-create-google-tests.html" />
+  <link rel="next" href="creator-how-to-create-qt-tests.html" />
+<p class="naviNextPrevious headerNavi">
+<a class="prevPage" href="creator-how-to-create-google-tests.html">Create Google tests</a>
+<span class="naviSeparator">  &#9702;  </span>
+<a class="nextPage" href="creator-how-to-create-qt-tests.html">Create Qt tests</a>
+</p>
+<div class="sidebar"><div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Create Qt Quick tests</h1>
+<!-- $$$creator-how-to-create-qtquick-tests.html-description -->
+<div class="descr" id="details">
+<p>Qt Creator integrates the <a href="https://doc.qt.io/qt/qtquicktest-index.html">Qt Quick Test</a> unit test framework for Qt Quick applications, where you write test cases as JavaScript functions.</p>
+<p>To create a Qt Quick test:</p>
+<ol class="1" type="1"><li>Go to <b translate="no">File</b> &gt; <b translate="no">New Project</b> &gt; <b translate="no">Test Project</b>.</li>
+<li>Select <b translate="no">Qt Quick Test Project</b> &gt; <b translate="no">Choose</b>.</li>
+<li>In the <b translate="no">Project and Test Information</b> dialog, specify settings for the project and test.<p class="centerAlign"><img src="images/qtcreator-new-project-qtquick-test.webp" alt="Project and Test Information dialog in the Qt Quick Test Project wizard" /></p></li>
+<li>In <b translate="no">Test case name</b>, enter a name for the test case.</li>
+<li>Select <b translate="no">Generate setup code</b> to execute C++ code before running any of the QML tests. The testing framework will call slots and invocable functions, as described in <a href="https://doc.qt.io/qt/qtquicktest-index.html#executing-c-before-qml-tests">Executing C++ Before QML Tests</a>.</li>
+<li>Select <b translate="no">Generate initialization and cleanup code</b> to add functions to your test that the testing framework executes to initialize and clean up the test.</li>
+<li>In <b translate="no">Build system</b>, select the build system to use for building the project: CMake, qmake, or Qbs. To build with CMake when developing with Qt 5 or Qt 6.4 or earlier, select <b translate="no">CMake for Qt 5 and Qt 6</b>.</li>
+</ol>
+<p>Qt Creator creates the test in the specified project directory. Edit the <code translate="no">.cpp</code> file to add private slots for each test function in your test.</p>
+<div class="admonition note">
+<p><b>Note: </b>While scanning for tests, the parser takes into account only files that directly or indirectly include QuickTest or its equivalent <code translate="no">QtQuickTest/quicktest.h</code>. If one gets found, it tries to detect statements to create a Qt Quick test application and if it can find any it will parse respective QML files. If the C++ part will not be built with the current configuration, there will be no automatic scanning of QML files.</p>
+</div>
+<div class="admonition note">
+<p><b>Note: </b>If <b translate="no">General</b> &gt; <b translate="no">Process arguments</b> is enabled, you can execute tests and write one or more additional log files in parallel. Use the output format option <code translate="no">-o filename,format</code> to do so. Using standard out for <code translate="no">filename</code> is not supported as Qt Creator is using this output channel.</p>
+</div>
+</div>
+<p><b>See also </b><a href="creator-how-tos.html#test">How To: Test</a>, <a href="creator-how-to-select-build-system.html">Select the build system</a>, <a href="creator-preferences-testing.html">Testing</a>, and <a href="creator-test-results.html">Test Results</a>.</p>
+<!-- @@@creator-how-to-create-qtquick-tests.html -->
+<p class="naviNextPrevious footerNavi">
+<a class="prevPage" href="creator-how-to-create-google-tests.html">Create Google tests</a>
+<span class="naviSeparator">  &#9702;  </span>
+<a class="nextPage" href="creator-how-to-create-qt-tests.html">Create Qt tests</a>
+</p>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   Copyright <acronym title="Copyright">&copy;</acronym> The Qt Company Ltd. and other contributors.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

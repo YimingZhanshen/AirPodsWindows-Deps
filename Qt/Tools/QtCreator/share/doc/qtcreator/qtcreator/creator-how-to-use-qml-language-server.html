@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- creator-language-server.qdoc -->
+  <title>Configure QML Language Server | Qt Creator Documentation</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="index.html">Qt Creator Documentation</a></li>
+<li>Configure QML Language Server</li>
+<li id="buildversion"><a href="index.html">Qt Creator 18.0.2</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+  <link rel="prev" href="creator-how-to-configure-python-language-servers.html" />
+  <link rel="next" href="creator-how-to-configure-lsp-workspace.html" />
+<p class="naviNextPrevious headerNavi">
+<a class="prevPage" href="creator-how-to-configure-python-language-servers.html">Configure Python language servers</a>
+<span class="naviSeparator">  &#9702;  </span>
+<a class="nextPage" href="creator-how-to-configure-lsp-workspace.html">Configure language servers for projects</a>
+</p>
+<div class="sidebar">
+<div class="toc">
+<h3 id="toc">Contents</h3>
+<ul>
+<li class="level1"><a href="#turn-off-qml-language-server-for-all-projects">Turn off QML Language Server for all projects</a></li>
+<li class="level1"><a href="#use-advanced-features">Use advanced features</a></li>
+<li class="level1"><a href="#select-qml-language-server-version">Select QML Language Server version</a></li>
+<li class="level1"><a href="#automatically-configure-new-cmake-projects">Automatically configure new CMake projects</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Configure QML Language Server</h1>
+<!-- $$$creator-how-to-use-qml-language-server.html-description -->
+<div class="descr" id="details">
+<p>Since Qt 6.4, QML Language Server offers code completion and issues warnings for QML.</p>
+<p>To set preferences for QML Language Server, go to <a href="creator-how-to-find-preferences.html">Preferences</a> &gt; <b translate="no">Language Client</b> &gt; <b translate="no">General</b> and select <b translate="no">QML Language Server</b>.</p>
+<p class="centerAlign"><img src="images/qtcreator-preferences-language-client-qmlls.webp" alt="General tab in Language Client preferences" /></p><h2 id="turn-off-qml-language-server-for-all-projects">Turn off QML Language Server for all projects</h2>
+<p>To globally turn off QML Language Server, clear the <b translate="no">QML Language Server</b> checkbox.</p>
+<p>For more information about how to turn on and off language servers for a particular project, see <a href="creator-how-to-configure-lsp-workspace.html">Configure language servers for projects</a>.</p>
+<h2 id="use-advanced-features">Use advanced features</h2>
+<p>By default, QML Language Server issues warning messages and provides code completion, while the embedded code model handles advanced features, such as renaming symbols and finding usages.</p>
+<p>To disable the embedded code model and use QML Language Server for everything, select <b translate="no">Use advanced features</b>.</p>
+<h2 id="select-qml-language-server-version">Select QML Language Server version</h2>
+<p>To use QML Language Server shipped with the Qt version in your current <a href="creator-preferences-kits.html">kit</a>, select <b translate="no">Use qmlls from project Qt kit</b>. This is the default option.</p>
+<p>To always use QML Language Server of the highest registered Qt version, select <b translate="no">Use qmlls from latest Qt kit</b>.</p>
+<p>To use older QML Language Server versions, select <b translate="no">Allow versions below Qt 6.8</b>.</p>
+<p>To use a specific QML Language Server version, set the path to the executable in <b translate="no">Use custom qmlls executable</b>. To download the latest QML Language Server version, select <b translate="no">Download latest standalone qmlls</b>.</p>
+<h2 id="automatically-configure-new-cmake-projects">Automatically configure new CMake projects</h2>
+<p>To automatically configure new CMake projects, select <b translate="no">Create .qmlls.ini files for new projects</b>.</p>
+</div>
+<p><b>See also </b><a href="creator-how-tos.html#manage-language-servers">How To: Manage Language Servers</a>, <a href="creator-reference-js-and-qml-error-codes.html#enabling-and-disabling-messages">Enabling and Disabling Messages</a>, <a href="creator-build-settings-cmake.html">CMake Build Configuration</a>, <a href="creator-preferences-kits.html">Kits</a>, and <a href="creator-language-servers.html">Language Servers</a>.</p>
+<!-- @@@creator-how-to-use-qml-language-server.html -->
+<p class="naviNextPrevious footerNavi">
+<a class="prevPage" href="creator-how-to-configure-python-language-servers.html">Configure Python language servers</a>
+<span class="naviSeparator">  &#9702;  </span>
+<a class="nextPage" href="creator-how-to-configure-lsp-workspace.html">Configure language servers for projects</a>
+</p>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   Copyright <acronym title="Copyright">&copy;</acronym> The Qt Company Ltd. and other contributors.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

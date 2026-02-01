@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- creator-vcs-git.qdoc -->
+  <title>git commit | Qt Creator Documentation</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="index.html">Qt Creator Documentation</a></li>
+<li>git commit</li>
+<li id="buildversion"><a href="index.html">Qt Creator 18.0.2</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+  <link rel="prev" href="creator-how-to-git-clean.html" />
+  <link rel="next" href="creator-how-to-git-diff.html" />
+<p class="naviNextPrevious headerNavi">
+<a class="prevPage" href="creator-how-to-git-clean.html">git clean</a>
+<span class="naviSeparator">  &#9702;  </span>
+<a class="nextPage" href="creator-how-to-git-diff.html">git diff</a>
+</p>
+<div class="sidebar">
+<div class="toc">
+<h3 id="toc">Contents</h3>
+<ul>
+<li class="level1"><a href="#apply-actions-to-files">Apply actions to files</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">git commit</h1>
+<!-- $$$creator-how-to-git-commit.html-description -->
+<div class="descr" id="details">
+<p>To submit your changes to Git:</p>
+<ol class="1" type="1"><li>Go to <b translate="no">Tools</b> &gt; <b translate="no">Git</b> &gt; <b translate="no">Local Repository</b> and select <b translate="no">Commit</b>.<p class="centerAlign"><img src="images/qtcreator-git-commit.webp" alt="Git Commit view" /></p><p><b translate="no">General Information</b> shows the names of the repository and branch for the commit.</p>
+</li>
+<li>In <b translate="no">Commit Information</b>, check and edit information about the author of the changes.</li>
+<li>To bypass pre-commit and commit message hooks, select <b translate="no">Bypass hooks</b>.</li>
+<li>If your project uses signoffs, select <b translate="no">Sign off</b> to add a <i>signed-off-by</i> trailer by the author at the end of the commit log message.</li>
+<li>In <b translate="no">Description</b>, enter a commit message.</li>
+<li>In <b translate="no">Files</b>, select the files to include in the commit.</li>
+<li>Select <b translate="no">Diff Selected Files</b> to open the <a href="creator-how-to-git-diff.html">Git Diff Files</a> view, where you can view the changes and stage them chunk-by-chunk or line-by-line.</li>
+<li>Select <b translate="no">Commit</b> to start committing.</li>
+</ol>
+<p>To view the log of the current branch, select the branch name in <b translate="no">Branch</b>.</p>
+<h2 id="apply-actions-to-files">Apply actions to files</h2>
+<p>Open the context menu in <b translate="no">Files</b> to apply actions to files. Actions like <b translate="no">Open in Editor</b> and <b translate="no">Show in File System</b> are provided for all files. The availability of other actions depends on the state of the selected file.</p>
+<ul>
+<li>To add untracked files to the version control, select <b translate="no">Stage</b>. To delete them, select <b translate="no">Remove</b>. To add them to the ignore list, select <b translate="no">Add to .gitignore</b>.</li>
+<li>To revert modified files to the previous state, select <b translate="no">Revert Unstaged Changes to &lt;file&gt;</b> or <b translate="no">Revert All Changes to &lt;file&gt;</b>. To stage the whole file for commit, select <b translate="no">Stage</b>. To unstage it, select <b translate="no">Unstage</b>.</li>
+<li>Select <b translate="no">Recover &lt;file&gt;</b> to restore files deleted from version control.</li>
+<li>Conflicted files provide actions to <b translate="no">Run Merge Tool</b> for conflict resolution. For deleted files, select <b translate="no">Resolve by Recovering</b> to restore them or <b translate="no">Resolve by Removing</b> to delete the file. To resolve other merge conflicts, select <b translate="no">Resolve Conflicts with Ours</b> to choose <i>our</i> version or <b translate="no">Resolve Conflicts with Theirs</b> to choose <i>their</i> version. If you resolved the conflicts manually, select <b translate="no">Mark Conflicts Resolved</b> to move the file out of conflicted state.</li>
+</ul>
+</div>
+<p><b>See also </b><a href="creator-how-tos.html#use-git">How To: Use Git</a> and <a href="creator-vcs-git.html">Git</a>.</p>
+<!-- @@@creator-how-to-git-commit.html -->
+<p class="naviNextPrevious footerNavi">
+<a class="prevPage" href="creator-how-to-git-clean.html">git clean</a>
+<span class="naviSeparator">  &#9702;  </span>
+<a class="nextPage" href="creator-how-to-git-diff.html">git diff</a>
+</p>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   Copyright <acronym title="Copyright">&copy;</acronym> The Qt Company Ltd. and other contributors.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

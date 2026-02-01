@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- creator-vcs-git.qdoc -->
+  <title>git reset | Qt Creator Documentation</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="index.html">Qt Creator Documentation</a></li>
+<li>git reset</li>
+<li id="buildversion"><a href="index.html">Qt Creator 18.0.2</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+  <link rel="prev" href="creator-how-to-git-reflog.html" />
+  <link rel="next" href="creator-how-to-git-stash.html" />
+<p class="naviNextPrevious headerNavi">
+<a class="prevPage" href="creator-how-to-git-reflog.html">git reflog</a>
+<span class="naviSeparator">  &#9702;  </span>
+<a class="nextPage" href="creator-how-to-git-stash.html">git stash</a>
+</p>
+<div class="sidebar">
+<div class="toc">
+<h3 id="toc">Contents</h3>
+<ul>
+<li class="level1"><a href="#reset-all-uncommitted-changes-in-the-current-file">Reset all uncommitted changes in the current file</a></li>
+<li class="level1"><a href="#reset-changes-in-the-local-repository">Reset changes in the local repository</a></li>
+<li class="level1"><a href="#revert-commits-in-the-editor">Revert commits in the editor</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">git reset</h1>
+<!-- $$$creator-how-to-git-reset.html-description -->
+<div class="descr" id="details">
+<p>Git uses an index to stage changes. The index is committed on the next commit. Git allows you to revert back to the state of the last commit as well as to the state staged in the index.</p>
+<h2 id="reset-all-uncommitted-changes-in-the-current-file">Reset all uncommitted changes in the current file</h2>
+<p>To undo all unstaged changes and reset the current file to the state of the index, go to <b translate="no">Tools</b> &gt; <b translate="no">Git</b> &gt; <b translate="no">Current File</b> and select <b translate="no">Undo Unstaged Changes for &lt;file&gt;</b>.</p>
+<p>To return the current file to the state it was in right after the last commit, select <b translate="no">Undo Uncommitted Changes for &lt;file&gt;</b>. This reverts all changes, discarding the index.</p>
+<h2 id="reset-changes-in-the-local-repository">Reset changes in the local repository</h2>
+<p>To reset changes in the local repository, go to <b translate="no">Tools</b> &gt; <b translate="no">Git</b> &gt; <b translate="no">Local Repository</b> and select <b translate="no">Reset</b>.</p>
+<p>Select the commit to reset the working directory to. This is useful after applying patches for review, for example.</p>
+<p>Select the reset type:</p>
+<ul>
+<li><b translate="no">Hard</b> reset discards all changes to tracked files in the working tree.<p>For more information about how to recover accidently removed commits, see <a href="creator-how-to-git-reflog.html">git reflog</a>.</p>
+</li>
+<li><b translate="no">Mixed</b> reset undoes the selected commits and unstages all changes, but keeps the working tree unchanged.</li>
+<li><b translate="no">Soft</b> reset undoes the selected commits but keeps all staged changes and the working tree unchanged.</li>
+</ul>
+<p>To recover removed files, select <b translate="no">Recover Deleted Files</b>.</p>
+<h2 id="revert-commits-in-the-editor">Revert commits in the editor</h2>
+<p>To revert the commit you are currently hovering over, select <b translate="no">Revert &lt;hash&gt;</b> in the annotation view.</p>
+<p class="centerAlign"><img src="images/qtcreator-git-instant-blame.webp" alt="Instant blame in the code editor" /></p><p class="figCaption">Actions in the annotation view for instant blame</p>
+<p>You are asked to confirm the reversion.</p>
+</div>
+<p><b>See also </b><a href="creator-how-tos.html#use-git">How To: Use Git</a> and <a href="creator-vcs-git.html">Git</a>.</p>
+<!-- @@@creator-how-to-git-reset.html -->
+<p class="naviNextPrevious footerNavi">
+<a class="prevPage" href="creator-how-to-git-reflog.html">git reflog</a>
+<span class="naviSeparator">  &#9702;  </span>
+<a class="nextPage" href="creator-how-to-git-stash.html">git stash</a>
+</p>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   Copyright <acronym title="Copyright">&copy;</acronym> The Qt Company Ltd. and other contributors.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

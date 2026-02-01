@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- creator-vcs-git.qdoc -->
+  <title>git log | Qt Creator Documentation</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="index.html">Qt Creator Documentation</a></li>
+<li>git log</li>
+<li id="buildversion"><a href="index.html">Qt Creator 18.0.2</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+  <link rel="prev" href="creator-how-to-git-diff.html" />
+  <link rel="next" href="creator-how-to-git-merge.html" />
+<p class="naviNextPrevious headerNavi">
+<a class="prevPage" href="creator-how-to-git-diff.html">git diff</a>
+<span class="naviSeparator">  &#9702;  </span>
+<a class="nextPage" href="creator-how-to-git-merge.html">git merge</a>
+</p>
+<div class="sidebar">
+<div class="toc">
+<h3 id="toc">Contents</h3>
+<ul>
+<li class="level1"><a href="#view-log-entry-details">View log entry details</a></li>
+<li class="level1"><a href="#toggle-the-diff-view">Toggle the diff view</a></li>
+<li class="level1"><a href="#use-the-patience-diff-algorithm">Use the patience diff algorithm</a></li>
+<li class="level1"><a href="#ignore-whitespace-changes">Ignore whitespace changes</a></li>
+<li class="level1"><a href="#filter-log-entries">Filter log entries</a></li>
+<li class="level1"><a href="#show-log-for-all-local-branches">Show log for all local branches</a></li>
+<li class="level1"><a href="#follow-only-the-first-parent">Follow only the first parent</a></li>
+<li class="level1"><a href="#toggle-text-and-graph">Toggle text and graph</a></li>
+<li class="level1"><a href="#toggle-colors">Toggle colors</a></li>
+<li class="level1"><a href="#show-log-for-previous-names-of-the-file">Show log for previous names of the file</a></li>
+<li class="level1"><a href="#show-details">Show details</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">git log</h1>
+<!-- $$$creator-how-to-git-log.html-description -->
+<div class="descr" id="details">
+<p>You can view the versioning history of the current file or project directory or local repository.</p>
+<ul>
+<li>To view the versioning history of the current file, go to <b translate="no">Tools</b> &gt; <b translate="no">Git</b> &gt; <b translate="no">Current File</b> and select <b translate="no">Log of &lt;file&gt;</b>.</li>
+<li>To view the versioning history of a selection of the current file, go to <b translate="no">Tools</b> &gt; <b translate="no">Git</b> &gt; <b translate="no">Current File</b> and select <b translate="no">Log of &lt;file&gt; Selection</b>.</li>
+<li>To view the versioning history of the current project directory, go to <b translate="no">Tools</b> &gt; <b translate="no">Git</b> &gt; <b translate="no">Current Project Directory</b> and select <b translate="no">Log of &lt;project directory name&gt;</b>.</li>
+<li>To view the versioning history of the local repository, go to <b translate="no">Tools</b> &gt; <b translate="no">Git</b> &gt; <b translate="no">Local Repository</b> and select <b translate="no">Log</b>.</li>
+<li>To view the log of a directory and its subdirectories, right-click it in <a href="creator-projects-view.html">Projects</a>.</li>
+</ul>
+<p>The <b translate="no">Git Log</b> view shows the commit identifier, author, date, and commit message.</p>
+<p class="centerAlign"><img src="images/qtcreator-git-log.webp" alt="Commit details in Git log" /></p><p>To set the maximum number of log entries to show, go to <a href="creator-how-to-find-preferences.html">Preferences</a> &gt; <b translate="no">Version Control</b> &gt; <b translate="no">Git</b> &gt; <b translate="no">Log count</b>.</p>
+<p>Select <img src="images/reload_gray.png" alt="Reload" /> (<b translate="no">Reload</b>) to rescan the files.</p>
+<h2 id="view-log-entry-details">View log entry details</h2>
+<p>In the <b translate="no">Git Log</b> view, select a commit identifier to view commit details.</p>
+<p>Right-click a commit identifier to apply actions to the commit.</p>
+<div class="table"><table class="generic">
+ <thead><tr class="qt-style"><th >Menu Item</th><th >Description</th><th >Learn More</th></tr></thead>
+<tr valign="top" class="odd"><td ><b translate="no">Add Tag for &lt;hash&gt;</b></td><td >Add a tag reference to the change. You can add an annotation to the tag.</td><td ></td></tr>
+<tr valign="top" class="even"><td ><b translate="no">Checkout &lt;hash&gt;</b></td><td >Check out the commit in a headless state.</td><td ></td></tr>
+<tr valign="top" class="odd"><td ><b translate="no">Cherry-Pick &lt;hash&gt;</b></td><td >Cherry-pick the selected commit to the current branch.</td><td ></td></tr>
+<tr valign="top" class="even"><td ><b translate="no">Create branch from &lt;hash&gt;</b></td><td >Create a branch based on the commit.</td><td ><a href="creator-how-to-git-branch.html">git branch</a></td></tr>
+<tr valign="top" class="odd"><td ><b translate="no">Copy &lt;hash&gt;</b></td><td >Copy the commit &lt;hash&gt; to the clipboard.</td><td ></td></tr>
+<tr valign="top" class="even"><td ><b translate="no">Describe Change &lt;hash&gt;</b></td><td >View a description of the change including the diff in the <b translate="no">Git Show</b> view.</td><td ></td></tr>
+<tr valign="top" class="odd"><td ><b translate="no">Diff Against &lt;hash&gt;</b></td><td >Show the changes between the commit and the current HEAD.</td><td ><a href="creator-how-to-git-diff.html">git diff</a></td></tr>
+<tr valign="top" class="even"><td ><b translate="no">Interactive Rebase from &lt;hash&gt;</b></td><td >Rebase the current branch on top of &lt;hash&gt;, and choose what to do with each commit.</td><td ><a href="creator-how-to-git-interactive-rebase.html">Interactive rebase</a></td></tr>
+<tr valign="top" class="odd"><td ><b translate="no">Log for &lt;hash&gt;</b></td><td >Show the versioning history the commit.</td><td ></td></tr>
+<tr valign="top" class="even"><td ><b translate="no">Reset to Change &lt;hash&gt;</b></td><td >Reset the working directory to the commit.</td><td ><a href="creator-how-to-git-reset.html">git reset</a></td></tr>
+<tr valign="top" class="odd"><td ><b translate="no">Revert &lt;hash&gt;</b></td><td >Revert the changes introduced by this commit. All other commits remain unchanged.</td><td ></td></tr>
+<tr valign="top" class="even"><td ><b translate="no">Save for Diff</b></td><td >Save to the current commit to prepare for <b translate="no">Diff Against Saved &lt;hash&gt;</b>.</td><td ></td></tr>
+<tr valign="top" class="odd"><td ><b translate="no">Diff Against Saved &lt;hash&gt;</b></td><td >Show the changes between the commit and the saved &lt;hash&gt;.</td><td ><a href="creator-how-to-git-diff.html">git diff</a></td></tr>
+</table></div>
+<h2 id="toggle-the-diff-view">Toggle the diff view</h2>
+<p>To toggle the diff view, select <b translate="no">Diff</b>.</p>
+<h2 id="use-the-patience-diff-algorithm">Use the patience diff algorithm</h2>
+<p>To use the patience diff algorithm for calculating the differences, select <b translate="no">Patience</b>.</p>
+<h2 id="ignore-whitespace-changes">Ignore whitespace changes</h2>
+<p>To only show text changes, select <b translate="no">Ignore Whitespace</b>.</p>
+<h2 id="filter-log-entries">Filter log entries</h2>
+<p>To filter log entries by the text in the commit message, by strings that were added or removed, or by author:</p>
+<ol class="1" type="1"><li>In the <b translate="no">Git Log</b> view, select <b translate="no">Filter</b>.</li>
+<li>Enter a search string in <b translate="no">Filter by message</b>, <b translate="no">Filter by content</b>, or <b translate="no">Filter by author</b>.</li>
+<li>Select <b translate="no">Case Sensitive</b> to make filtering consider case.</li>
+</ol>
+<h2 id="show-log-for-all-local-branches">Show log for all local branches</h2>
+<p>To show the log for all local branches (for example, to see all commits that touch a file), select <b translate="no">All</b>.</p>
+<h2 id="follow-only-the-first-parent">Follow only the first parent</h2>
+<p>To follow only the first parent on merge commits, select <b translate="no">First Parent</b>.</p>
+<h2 id="toggle-text-and-graph">Toggle text and graph</h2>
+<p>To toggle between textual and visual representation of the log, select <b translate="no">Graph</b>.</p>
+<h2 id="toggle-colors">Toggle colors</h2>
+<p>To toggle color coding of different parts of the log entries, select <b translate="no">Color</b>.</p>
+<h2 id="show-log-for-previous-names-of-the-file">Show log for previous names of the file</h2>
+<p>To show log also for previous names of the file, select <b translate="no">Follow</b>.</p>
+<h2 id="show-details">Show details</h2>
+<p>To display a description of the change including the diff in the <b translate="no">Git Show</b> view, select <b translate="no">Describe Change &lt;hash&gt;</b> in the context menu.</p>
+<p class="centerAlign"><img src="images/qtcreator-vcs-show.png" alt="Commit description in Git Show" /></p></div>
+<p><b>See also </b><a href="creator-how-tos.html#use-git">How To: Use Git</a> and <a href="creator-vcs-git.html">Git</a>.</p>
+<!-- @@@creator-how-to-git-log.html -->
+<p class="naviNextPrevious footerNavi">
+<a class="prevPage" href="creator-how-to-git-diff.html">git diff</a>
+<span class="naviSeparator">  &#9702;  </span>
+<a class="nextPage" href="creator-how-to-git-merge.html">git merge</a>
+</p>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   Copyright <acronym title="Copyright">&copy;</acronym> The Qt Company Ltd. and other contributors.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- creator-debugger-setup.qdoc -->
+  <meta name="description" content="Summary of supported debugger versions.">
+  <title>Supported Debuggers | Qt Creator Documentation</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="index.html">Qt Creator Documentation</a></li>
+<li>Supported Debuggers</li>
+<li id="buildversion"><a href="index.html">Qt Creator 18.0.2</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+  <link rel="prev" href="creator-debugging-qml.html" />
+  <link rel="next" href="creator-troubleshooting-debugging.html" />
+<p class="naviNextPrevious headerNavi">
+<a class="prevPage" href="creator-debugging-qml.html">Debugging Qt Quick projects</a>
+<span class="naviSeparator">  &#9702;  </span>
+<a class="nextPage" href="creator-troubleshooting-debugging.html">Troubleshooting Debugger</a>
+</p>
+<div class="sidebar">
+<div class="toc">
+<h3 id="toc">Contents</h3>
+<ul>
+<li class="level1"><a href="#gdb-versions">GDB Versions</a></li>
+<li class="level1"><a href="#debugging-tools-for-windows">Debugging Tools for Windows</a></li>
+<li class="level1"><a href="#debugging-tools-for-macos">Debugging Tools for macOS</a></li>
+<li class="level1"><a href="#lldb-versions">LLDB Versions</a></li>
+<li class="level1"><a href="#pdb-versions">PDB Versions</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Supported Debuggers</h1>
+<!-- $$$creator-debugger-engines.html-description -->
+<div class="descr" id="details">
+<p>You can use Qt Creator to debug compiled code. On most supported platforms, you can use the GNU Symbolic Debugger (GDB). On Microsoft Windows, when using the Microsoft toolchain, you need the Microsoft Console Debugger (CDB). On macOS and Linux, you can use the LLDB debugger.</p>
+<p>On all supported platforms, you can use PDB to debug Python source code.</p>
+<div class="admonition note">
+<p><b>Note: </b>You need a debugger version built with Python scripting support.</p>
+</div>
+<p>The following table summarizes the support for debugging C++ code:</p>
+<div class="table"><table class="generic">
+ <thead><tr class="qt-style"><th >Platform</th><th >Compiler</th><th >Debugger</th></tr></thead>
+<tr valign="top" class="odd"><td >Linux</td><td >GCC, ICC</td><td >GDB, LLDB</td></tr>
+<tr valign="top" class="even"><td >Unix</td><td >GCC, ICC</td><td >GDB</td></tr>
+<tr valign="top" class="odd"><td >macOS</td><td >GCC, Clang</td><td >LLDB</td></tr>
+<tr valign="top" class="even"><td >Windows/MinGW</td><td >GCC</td><td >GDB</td></tr>
+<tr valign="top" class="odd"><td >Windows/MSVC</td><td >Microsoft Visual C++ Compiler</td><td >Debugging Tools for Windows/CDB</td></tr>
+</table></div>
+<p>Qt Creator automatically selects a suitable debugger for each <a href="creator-preferences-kits.html">kit</a> from the ones found on the computer. The automatic setup fails if the debugger is not installed on the computer or if Qt Creator does not support the installed version.</p>
+<h2 id="gdb-versions">GDB Versions</h2>
+<p>Use GDB 7.5, or later, with the Python scripting extension and Python version 3.7, or later.</p>
+<p>For remote debugging using GDB and GDB server, the minimum supported version of GDB server on the target <a href="creator-glossary.html#glossary-device">device</a> is 7.0.</p>
+<p>On Windows, use the Python-enabled GDB version that is bundled with the Qt package or comes with recent versions of MinGW. On most Linux distributions, the GDB builds shipped with the system are sufficient.</p>
+<p>You can also build your own GDB, as instructed in <a href="http://wiki.qt.io/QtCreator_Build_Gdb">Building GDB</a>.</p>
+<p>Builds of GDB shipped with Xcode on macOS are no longer supported.</p>
+<h2 id="debugging-tools-for-windows">Debugging Tools for Windows</h2>
+<p>Qt Creator supports all versions of CDB targeting platforms that Qt supports.</p>
+<p>To use the CDB debugger, install the <i>Debugging Tools for Windows</i> when you install Qt Creator either by using Qt Online Installer (in <b translate="no">Qt</b> &gt; <b translate="no">Tools</b> &gt; <b translate="no">Qt Creator</b>) or by using the stand-alone Qt Creator installation packages.</p>
+<p>The 32-bit CDB version can only debug 32-bit executables, whereas the 64-bit version can debug both 64-bit and 32-bit executables. However, interrupting a 32-bit executable with a 64-bit debugger can result in a stack trace of the WOW64 emulator 32-bit emulation layer being displayed.</p>
+<p>Qt Creator extends the command-line debugger by loading the <code translate="no">qtcreatorcdbext.dll</code> extension library into it. The library must be available in the <code translate="no">libs\qtcreatorcdbext64</code> and <code translate="no">libs\qtcreatorcdbext32</code> folder. To install it there, select <b translate="no">Qt Creator CDB Debugger Support</b> when you install Qt Creator.</p>
+<p>When manually building Qt Creator using the Microsoft Visual C++ Compiler, the build process checks for the required files in <code translate="no">&quot;%ProgramFiles%\Debugging Tools for Windows&quot;</code>.</p>
+<h2 id="debugging-tools-for-macos">Debugging Tools for macOS</h2>
+<p>The Qt binary distribution has both debug and release variants of the libraries. However, you have to explicitly tell the runtime linker that you want to use the debug libraries even if your application is compiled as <i>debug</i> because <i>release</i> is the default library.</p>
+<p>If you use a qmake based project in Qt Creator, you can set a flag in your <a href="creator-glossary.html#glossary-run-config">run configuration</a>, in <b translate="no">Projects</b> mode. In the run configuration, select <b translate="no">Use debug version of frameworks</b>.</p>
+<p>For more detailed information about debugging on macOS, see: <a href="http://developer.apple.com/library/mac/#technotes/tn2124/_index.html#//apple_ref/doc/uid/DTS10003391">Mac OS X Debugging Magic</a>.</p>
+<h2 id="lldb-versions">LLDB Versions</h2>
+<p>The LLDB debugger has similar functionality to the GDB debugger. LLDB is the default debugger in Xcode on macOS for C++ on the desktop. LLDB is typically used with the Clang compiler (even though you can use it with GCC, too).</p>
+<p>On macOS you can use the LLDB version delivered with Xcode or build from source. The minimum supported version is LLDB 320.4. You need a LLDB version built with Python support.</p>
+<p>We recommend using the LLDB version that is delivered with the latest Xcode.</p>
+<p>On Linux, the minimum supported version is LLDB 3.8.</p>
+<h2 id="pdb-versions">PDB Versions</h2>
+<p><a href="https://docs.python.org/3/library/pdb.html">PDB</a> is a source code debugger for Python applications. You can use the PDB version installed with Python to debug projects that have a <a href="creator-tutorial-python-application-qt-widgets.html"><code translate="no">pyproject.toml</code></a> configuration file.</p>
+<p>For more information, see <a href="creator-python-development.html#set-up-pyside6">Set up PySide6</a>.</p>
+</div>
+<p><b>See also </b><a href="creator-how-tos.html#debug">How To: Debug</a>, <a href="creator-debugging.html">Debugging</a>, <a href="creator-reference.html#debuggers">Debuggers</a>, <a href="creator-reference.html#debugger">Debugger</a>, and <a href="creator-preferences-kits.html">Kits</a>.</p>
+<!-- @@@creator-debugger-engines.html -->
+<p class="naviNextPrevious footerNavi">
+<a class="prevPage" href="creator-debugging-qml.html">Debugging Qt Quick projects</a>
+<span class="naviSeparator">  &#9702;  </span>
+<a class="nextPage" href="creator-troubleshooting-debugging.html">Troubleshooting Debugger</a>
+</p>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   Copyright <acronym title="Copyright">&copy;</acronym> The Qt Company Ltd. and other contributors.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

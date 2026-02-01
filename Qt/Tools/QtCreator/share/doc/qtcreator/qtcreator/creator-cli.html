@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- creator-cli.qdoc -->
+  <meta name="description" content="Options for starting Qt Creator from the command line.">
+  <title>Command-Line Options | Qt Creator Documentation</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="index.html">Qt Creator Documentation</a></li>
+<li>Command-Line Options</li>
+<li id="buildversion"><a href="index.html">Qt Creator 18.0.2</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+  <link rel="prev" href="creator-reference.html" />
+  <link rel="next" href="creator-project-wizards.html" />
+<p class="naviNextPrevious headerNavi">
+<a class="prevPage" href="creator-reference.html">Reference</a>
+<span class="naviSeparator">  &#9702;  </span>
+<a class="nextPage" href="creator-project-wizards.html">Custom Wizards</a>
+</p>
+<div class="sidebar">
+<div class="toc">
+<h3 id="toc">Contents</h3>
+<ul>
+<li class="level1"><a href="#using-custom-styles">Using Custom Styles</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Command-Line Options</h1>
+<!-- $$$creator-cli.html-description -->
+<div class="descr" id="details">
+<p>To specify command-line options, enter the following command in the directory that contains the Qt Creator executable or specify the path to Qt Creator as a part of the command:</p>
+<pre class="cpp plain" translate="no">
+ qtcreator [option] [filename[:line_number[:column_number]]]
+</pre>
+<p>The following table summarizes the available options:</p>
+<div class="table"><table class="generic">
+ <thead><tr class="qt-style"><th >Option</th><th >Description</th></tr></thead>
+<tr valign="top" class="odd"><td ><code translate="no">-help</code></td><td >Display help on command-line options.</td></tr>
+<tr valign="top" class="even"><td ><code translate="no">-version</code></td><td >Display Qt Creator version.</td></tr>
+<tr valign="top" class="odd"><td ><code translate="no">-client</code></td><td >Attempt to connect to an already running instance of Qt Creator.</td></tr>
+<tr valign="top" class="even"><td ><code translate="no">-pid</code></td><td >Attempt to connect to an already running instance of Qt Creator with the specified process ID.</td></tr>
+<tr valign="top" class="odd"><td ><code translate="no">-block</code></td><td >Open files in editors in a running Qt Creator instance and block the command line until the first editor is closed.</td></tr>
+<tr valign="top" class="even"><td ><code translate="no">-no-crashcheck</code></td><td >Disable the startup check for a previously crashed Qt Creator instance.</td></tr>
+<tr valign="top" class="odd"><td ><code translate="no">-load</code> <i>&lt;plugin-id&gt;</i></td><td >Enable the specified plugin and all plugins that it depends on. You can combine <code translate="no">-load</code> and <code translate="no">-noload</code> options and specify both options multiple times to enable and disable several plugins. The actions are executed in the specified order.</td></tr>
+<tr valign="top" class="even"><td ><code translate="no">-load all</code></td><td >Enable all plugins.</td></tr>
+<tr valign="top" class="odd"><td ><code translate="no">-noload</code> <i>&lt;plugin-id&gt;</i></td><td >Disable the specified plugin and all plugins that depend on it.</td></tr>
+<tr valign="top" class="even"><td ><code translate="no">-noload all</code></td><td >Disable all plugins.</td></tr>
+<tr valign="top" class="odd"><td ><code translate="no">-profile</code></td><td >Output profiling data about plugin startup and shutdown.</td></tr>
+<tr valign="top" class="even"><td ><code translate="no">-pluginpath</code> <i>&lt;path&gt;</i></td><td >Add a path where Qt Creator looks for plugins. To specify several paths, add the <code translate="no">-pluginpath</code> option for each path.</td></tr>
+<tr valign="top" class="odd"><td ><code translate="no">-settingspath</code> <i>&lt;path&gt;</i></td><td >Override the default path where user settings are stored.</td></tr>
+<tr valign="top" class="even"><td ><code translate="no">-installsettingspath</code> <i>&lt;path&gt;</i></td><td >Override the default path from where user-independent settings are read (for example, those written by the installer).</td></tr>
+<tr valign="top" class="odd"><td ><code translate="no">-temporarycleansettings</code>, <code translate="no">-tcs</code></td><td >Use clean settings for debug or testing reasons. The settings will be deleted when Qt Creator exits.</td></tr>
+<tr valign="top" class="even"><td ><code translate="no">-language</code> <i>&lt;locale&gt;</i></td><td >Set the UI language.<p>Use a lowercase, two-letter <a href="https://www.iso.org/iso-639-language-codes.html">ISO 639 language code</a>, such as <i>de</i>, <i>en</i>, or <i>fr</i>.</p>
+</td></tr>
+<tr valign="top" class="odd"><td ><code translate="no">-test</code> <i>&lt;plugin&gt;</i><code translate="no">[,testfunction[:testdata]] ...</code></td><td >For Qt Creator plugin developers: run the plugin's tests using a separate settings path by default.</td></tr>
+<tr valign="top" class="even"><td ><code translate="no">-test all</code></td><td >For Qt Creator plugin developers: run tests from all plugins.</td></tr>
+<tr valign="top" class="odd"><td ><code translate="no">-notest</code> <i>&lt;plugin&gt;</i></td><td >For Qt Creator plugin developers: exclude all of the plugin's tests from the test run.</td></tr>
+<tr valign="top" class="even"><td ><code translate="no">-scenario</code> <i>&lt;scenarioname&gt;</i></td><td >For Qt Creator plugin developers: run the specified scenario.</td></tr>
+<tr valign="top" class="odd"><td ><code translate="no">-color</code> <i>&lt;color&gt;</i></td><td >Core plugin: override the selected UI color.</td></tr>
+<tr valign="top" class="even"><td ><code translate="no">-presentationMode</code></td><td >Core plugin: display keyboard shortcuts as popups when you select them. Mostly useful when presenting Qt Creator to someone else.</td></tr>
+<tr valign="top" class="odd"><td ><code translate="no">-theme &lt;default | dark&gt;</code></td><td >Core plugin: apply a dark color theme to Qt Creator, without using stylesheets.</td></tr>
+<tr valign="top" class="even"><td ><code translate="no">-notour</code></td><td >Welcome plugin: skip the UI tour on startup.</td></tr>
+<tr valign="top" class="odd"><td ><code translate="no">-debug</code> <i>&lt;pid&gt;</i></td><td >Debugger plugin: attach to the process with the given process ID.</td></tr>
+<tr valign="top" class="even"><td ><code translate="no">-debug</code> <i>&lt;executable&gt;</i>[,<code translate="no">kit</code>=<i>&lt;kit&gt;</i>]</td><td >Debugger plugin: launch and debug the executable with the name <code translate="no">executable</code>. A <code translate="no">kit</code> can be specified by ID or name to point to non-default debuggers and sysroots.</td></tr>
+<tr valign="top" class="odd"><td ><code translate="no">-debug</code> [<code translate="no">executable</code>,]<code translate="no">core</code>=<i>&lt;corefile&gt;</i>[,<code translate="no">kit</code>=<i>&lt;kit&gt;</i>]</td><td >Debugger plugin: load the core file named <code translate="no">corefile</code>. The parameter <code translate="no">executable</code> specifies the executable that produced the core file. If this parameter is omitted, Qt Creator will attempt to reconstruct it from the core file itself. This will fail for paths with more than about 80 characters. In such cases the <code translate="no">executable</code> parameter is mandatory. A <code translate="no">kit</code> can be specified by ID or name to point to non-default debuggers and sysroots.</td></tr>
+<tr valign="top" class="even"><td ><code translate="no">-debug</code> <i>&lt;executable&gt;</i>,<code translate="no">server</code>=<i>&lt;server:port&gt;</i>[,<code translate="no">kit</code>=<i>&lt;kit&gt;</i>]</td><td >Debugger plugin: attach to a debug server running on the port <code translate="no">port</code> on the server <code translate="no">server</code>. The parameter <code translate="no">executable</code> specifies a local copy of the executable the remote debug server is manipulating. A <code translate="no">kit</code> can be specified by ID or name to point to non-default debuggers and sysroots.</td></tr>
+<tr valign="top" class="odd"><td ><code translate="no">-wincrashevent</code> <i>&lt;event-handle:pid&gt;</i></td><td >Debugger plugin: attach to crashed processes by using the specified event handle and process ID.</td></tr>
+<tr valign="top" class="even"><td ><code translate="no">-git-show</code> <i>&lt;git commit hash&gt;</i></td><td >Git plugin: show the specified commit hash.</td></tr>
+<tr valign="top" class="odd"><td ><code translate="no">-customwizard-verbose</code></td><td >ProjectExplorer plugin: display additional information when loading custom wizards. For more information about custom wizards, see <a href="creator-project-wizards.html">Custom Wizards</a></td></tr>
+<tr valign="top" class="even"><td ><code translate="no">-ensure-kit-for-binary</code> <i>&lt;path to binary&gt;</i></td><td >ProjectExplorer plugin: create a kit with a toolchain corresponding to the given binary's architecture.</td></tr>
+<tr valign="top" class="odd"><td ><code translate="no">-lastsession</code></td><td >ProjectExplorer plugin: load the last session when Qt Creator starts. Open the projects and files that were open when you last exited Qt Creator.</td></tr>
+<tr valign="top" class="even"><td ><i>&lt;session&gt;</i></td><td >ProjectExplorer plugin: load the given session when Qt Creator starts. Open the projects and files that were open when you last exited Qt Creator.</td></tr>
+</table></div>
+<h2 id="using-custom-styles">Using Custom Styles</h2>
+<p>Qt Creator is a <a href="https://doc.qt.io/qt/qapplication.html" translate="no">Qt application</a>, and therefore, it accepts the command-line options that all Qt applications accept. For example, you can use the <code translate="no">-style</code> and <code translate="no">-stylesheet</code> options to apply custom styles and <a href="https://doc.qt.io/qt/stylesheet.html">stylesheets</a>. The styling is only applied during the current session.</p>
+<p>Exercise caution when applying styles, as overriding the existing styling may make some items difficult to see. Also, setting a stylesheet may affect the <a href="creator-preferences-text-editor-font-colors.html">text editor color scheme</a> and the styling of the integrated Qt Widgets Designer.</p>
+<p>You can also switch to a dark theme to customize the appearance of widgets, colors, and icons without using stylesheets.</p>
+</div>
+<p><b>See also </b><a href="creator-how-to-run-from-cli.html">Run Qt Creator from the command line</a> and <a href="creator-project-managing-sessions.html">Manage sessions</a>.</p>
+<!-- @@@creator-cli.html -->
+<p class="naviNextPrevious footerNavi">
+<a class="prevPage" href="creator-reference.html">Reference</a>
+<span class="naviSeparator">  &#9702;  </span>
+<a class="nextPage" href="creator-project-wizards.html">Custom Wizards</a>
+</p>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   Copyright <acronym title="Copyright">&copy;</acronym> The Qt Company Ltd. and other contributors.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

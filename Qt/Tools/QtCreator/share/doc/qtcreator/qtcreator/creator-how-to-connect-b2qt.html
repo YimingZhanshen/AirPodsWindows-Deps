@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- b2qtdev.qdoc -->
+  <title>Connect Boot to Qt devices | Qt Creator Documentation</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="index.html">Qt Creator Documentation</a></li>
+<li>Connect Boot to Qt devices</li>
+<li id="buildversion"><a href="index.html">Qt Creator 18.0.2</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+  <link rel="prev" href="creator-how-to-add-b2qt.html" />
+  <link rel="next" href="creator-how-to-debug-remotely-gdb.html" />
+<p class="naviNextPrevious headerNavi">
+<a class="prevPage" href="creator-how-to-add-b2qt.html">Add Boot to Qt devices</a>
+<span class="naviSeparator">  &#9702;  </span>
+<a class="nextPage" href="creator-how-to-debug-remotely-gdb.html">Debug remotely with GDB</a>
+</p>
+<div class="sidebar"><div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Connect Boot to Qt devices</h1>
+<!-- $$$creator-how-to-connect-b2qt.html-description -->
+<div class="descr" id="details">
+<p>Create connections between <a href="https://doc.qt.io/Boot2Qt/index.html">Boot to Qt</a> devices and Qt Creator to run, debug, and analyze applications on them.</p>
+<div class="admonition note">
+<p><b>Note: </b>Enable the Boot to Qt plugin to use it.</p>
+</div>
+<p>To configure connections between Qt Creator and a Boot to Qt device:</p>
+<ol class="1" type="1"><li>Check that you can reach the IP address of the device, or use USB to connect it.</li>
+<li>Go to <a href="creator-how-to-find-preferences.html">Preferences</a> &gt; <b translate="no">Kits</b> &gt; <b translate="no">Qt Versions</b>.</li>
+<li>Select <b translate="no">Add</b> to add the Qt version for Boot to Qt.</li>
+<li>Go to <a href="creator-how-to-find-preferences.html">Preferences</a> &gt; <b translate="no">Kits</b> &gt; <b translate="no">Compilers</b>.</li>
+<li>Select <b translate="no">Add</b> to add the compiler for building the applications.</li>
+<li>Go to <b translate="no">Tools</b> &gt; <b translate="no">Flash Boot to Qt</b> to flash the Boot to Qt image to an SD card with Boot to Qt Flashing Wizard.<p class="centerAlign"><img src="images/qtcreator-boot2qt-flashing-wizard.png" alt="Boot to Qt Flashing Wizard" /></p></li>
+<li>Follow the instructions of the wizard to flash the image to the SD card.</li>
+<li>Go to <a href="creator-how-to-find-preferences.html">Preferences</a> &gt; <b translate="no">Devices</b> &gt; <b translate="no">Devices</b>.</li>
+<li>Select <b translate="no">Add</b> to add a Boot to Qt device.<p>Qt Creator automatically detects devices connected with USB.</p>
+</li>
+<li>Go to <a href="creator-how-to-find-preferences.html">Preferences</a> &gt; <b translate="no">Kits</b>.</li>
+<li>Select <b translate="no">Add</b> to add a kit for building for the device.</li>
+<li>Select the Qt version, compiler, and device that you added above.</li>
+<li>In <b translate="no">Run device</b>, select <b translate="no">Boot2Qt Device</b> in <b translate="no">Type</b>, and then select the actual device to run on in <b translate="no">Device</b>.</li>
+<li>To specify build settings:<ol class="1" type="1"><li>Open a project for an application you want to develop for the device.</li>
+<li>Go to <b translate="no">Projects</b> &gt; <b translate="no">Build &amp; Run</b> to activate the kit that you specified above.</li>
+</ol>
+</li>
+<li>Go to <b translate="no">Run Settings</b> to specify run settings. Usually, you can use the default settings.</li>
+<li>When you run the project, Qt Creator deploys the application as specified in <b translate="no">Deploy Settings</b>. By default, Qt Creator copies the application files to the device.</li>
+</ol>
+</div>
+<p><b>See also </b><a href="creator-how-to-configure-ssh.html">Configure SSH connections</a>, <a href="creator-how-to-generate-ssh-keys.html">Generate SSH keys</a>, <a href="creator-how-to-enable-plugins.html">Enable and disable plugins</a>, <a href="creator-how-tos.html">How To: Develop for Boot to Qt</a>, <a href="creator-how-tos.html#manage-kits">How To: Manage Kits</a>, <a href="creator-deployment-b2qt.html">Boot to Qt Deploy Configuration</a>, <a href="creator-run-settings-b2qt.html">Boot to Qt Run Settings</a>, and <a href="creator-developing-b2qt.html">Developing for Boot to Qt Devices</a>.</p>
+<!-- @@@creator-how-to-connect-b2qt.html -->
+<p class="naviNextPrevious footerNavi">
+<a class="prevPage" href="creator-how-to-add-b2qt.html">Add Boot to Qt devices</a>
+<span class="naviSeparator">  &#9702;  </span>
+<a class="nextPage" href="creator-how-to-debug-remotely-gdb.html">Debug remotely with GDB</a>
+</p>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   Copyright <acronym title="Copyright">&copy;</acronym> The Qt Company Ltd. and other contributors.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

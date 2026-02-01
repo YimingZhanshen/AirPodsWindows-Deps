@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- creator-code-indentation.qdoc -->
+  <title>Indent text or code | Qt Creator Documentation</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="index.html">Qt Creator Documentation</a></li>
+<li>Indent text or code</li>
+<li id="buildversion"><a href="index.html">Qt Creator 18.0.2</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+  <link rel="prev" href="creator-how-to-use-code-blocks.html" />
+  <link rel="next" href="creator-how-to-insert-multiple-cursors.html" />
+<p class="naviNextPrevious headerNavi">
+<a class="prevPage" href="creator-how-to-use-code-blocks.html">Highlight code blocks</a>
+<span class="naviSeparator">  &#9702;  </span>
+<a class="nextPage" href="creator-how-to-insert-multiple-cursors.html">Insert multiple cursors</a>
+</p>
+<div class="sidebar">
+<div class="toc">
+<h3 id="toc">Contents</h3>
+<ul>
+<li class="level1"><a href="#don-t-detect-indentation-settings">Don't detect indentation settings</a></li>
+<li class="level1"><a href="#fix-indentation-in-an-open-file">Fix indentation in an open file</a></li>
+<li class="level2"><a href="#indentation-options">Indentation options</a></li>
+<li class="level1"><a href="#automatically-fix-indentation-upon-file-save">Automatically fix indentation upon file save</a></li>
+<li class="level1"><a href="#show-whitespace-in-editor">Show whitespace in editor</a></li>
+<li class="level1"><a href="#display-right-margin">Display right margin</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Indent text or code</h1>
+<!-- $$$creator-indenting-code.html-description -->
+<div class="descr" id="details">
+<p>When you type text or code, it is indented automatically according to the selected text editor or code style preferences. Select a block to indent it when you select <b>Tab</b>. Select <b>Shift+Tab</b> to decrease the indentation.</p>
+<h2 id="don-t-detect-indentation-settings">Don't detect indentation settings</h2>
+<p>When you open a document, the editor tries to automatically detect if it uses tabs or spaces for indentation and the indentation width, by inspecting its contents. If the automatic detection fails, the default setting is used.</p>
+<p>To turn off the automatic detection of indentation settings, go to <a href="creator-how-to-find-preferences.html">Preferences</a> &gt; <b translate="no">Text Editor</b> &gt; <b translate="no">Behavior</b> and clear <b translate="no">Auto detect</b>.</p>
+<p class="centerAlign"><img src="images/qtcreator-preferences-texteditor-behavior-indentation.webp" alt="Indentation in the Behavior tab in Text Editor preferences" /></p><h2 id="fix-indentation-in-an-open-file">Fix indentation in an open file</h2>
+<p>To fix the indentation settings for the file currently open in the editor, select a different setting with <b translate="no">Spaces</b> &gt; <b translate="no">Document Settings</b> or <b translate="no">Tabs</b> &gt; <b translate="no">Document Settings</b> on the editor toolbar.</p>
+<p>To fix the indentation in the file currently open in the editor:</p>
+<ul>
+<li>On the editor toolbar, select <b translate="no">Spaces</b> or <b translate="no">Tabs</b>, and then select <b translate="no">Auto-indent Selection</b> to automatically indent the selected text using the current settings.</li>
+<li>Go to <b translate="no">Edit</b> &gt; <b translate="no">Advanced</b>, and select an indentation option or use <a href="creator-keyboard-shortcuts.html">keyboard shortcuts</a>.</li>
+</ul>
+<h3 id="indentation-options">Indentation options</h3>
+<ul>
+<li>To automatically indent the highlighted text, select <b translate="no">Auto-indent Selection</b> or select <b>Ctrl+I</b>.</li>
+<li>To automatically format the highlighted text, select <b translate="no">Auto-format Selection</b> or select <b>Ctrl+;</b>.</li>
+<li>To adjust the wrapping of the selected paragraph, select <b translate="no">Rewrap Paragraph</b> or select <b>Ctrl+E</b> followed by <b>R</b>.</li>
+<li>To toggle text wrapping, select <b translate="no">Enable Text Wrapping</b> or select <b>Ctrl+E</b> followed by <b>Ctrl+W</b>.</li>
+<li>To visualize whitespace in the editor, select <b translate="no">Visualize Whitespace</b> or select <b>Ctrl+E</b> followed by <b>Ctrl+V</b>.</li>
+<li>To clear all whitespace characters from the currently open file, select <b translate="no">Clean Whitespace</b>.</li>
+</ul>
+<h2 id="automatically-fix-indentation-upon-file-save">Automatically fix indentation upon file save</h2>
+<p>To automatically fix indentation according to the indentation settings when you save the file, go to <a href="creator-how-to-find-preferences.html">Preferences</a> &gt; <b translate="no">Text Editor</b> &gt; <b translate="no">Behavior</b> &gt; <b translate="no">Clean whitespace</b> and select <b translate="no">Clean indentation</b>. Select <b translate="no">Skip clean whitespace for file types</b> to exclude the specified file types.</p>
+<p class="centerAlign"><img src="images/qtcreator-preferences-texteditor-behavior.webp" alt="Behavior tab in Text Editor preferences" /></p><h2 id="show-whitespace-in-editor">Show whitespace in editor</h2>
+<p>To visualize whitespace in the editor, go to <a href="creator-how-to-find-preferences.html">Preferences</a> &gt; <b translate="no">Text Editor</b> &gt; <b translate="no">Display</b> &gt; <b translate="no">Visualize whitespace</b>.</p>
+<p>To visualize indentation, select <b translate="no">Visualize Indent</b>. To adjust the color of the visualization, change the value of the Visual Whitespace setting of the editor color scheme in <b translate="no">Font &amp; Colors</b>.</p>
+<p class="centerAlign"><img src="images/qtcreator-preferences-text-editor-display.webp" alt="Display tab in Text Editor preferences" /></p><h2 id="display-right-margin">Display right margin</h2>
+<p>To help you keep line length at a particular number of characters, set the number of characters in <b translate="no">Display right margin at column</b>. To use a different color for the margin area, select <b translate="no">Tint whole margin area</b>. Clear it to show the margin as a vertical line.</p>
+<p>To use a context-specific margin when available, select <b translate="no">Use context-specific margin</b>. Then, use the <a href="https://clang.llvm.org/docs/ClangFormatStyleOptions.html">ClangFormat</a> <code translate="no">ColumnLimit</code> option to set the margin, for example.</p>
+</div>
+<p><b>See also </b><a href="creator-preferences-cpp-code-style.html">C++ Code Style</a>, <a href="creator-preferences-text-editor-behavior.html">Behavior</a>, <a href="creator-preferences-qtquick-code-style.html">Specify Qt Quick code style</a>, and <a href="creator-keyboard-shortcuts.html">Keyboard Shortcuts</a>.</p>
+<!-- @@@creator-indenting-code.html -->
+<p class="naviNextPrevious footerNavi">
+<a class="prevPage" href="creator-how-to-use-code-blocks.html">Highlight code blocks</a>
+<span class="naviSeparator">  &#9702;  </span>
+<a class="nextPage" href="creator-how-to-insert-multiple-cursors.html">Insert multiple cursors</a>
+</p>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   Copyright <acronym title="Copyright">&copy;</acronym> The Qt Company Ltd. and other contributors.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

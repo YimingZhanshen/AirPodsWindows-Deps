@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- creator-debugger-settings.qdoc -->
+  <meta name="description" content="Manage the GDB process.">
+  <title>GDB | Qt Creator Documentation</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="index.html">Qt Creator Documentation</a></li>
+<li>GDB</li>
+<li id="buildversion"><a href="index.html">Qt Creator 18.0.2</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+  <link rel="prev" href="creator-reference.html" />
+<p class="naviNextPrevious headerNavi">
+<a class="prevPage" href="creator-reference.html">Reference</a>
+</p>
+<div class="sidebar">
+<div class="toc">
+<h3 id="toc">Contents</h3>
+<ul>
+<li class="level1"><a href="#executing-additional-commands">Executing Additional Commands</a></li>
+<li class="level1"><a href="#extended-gdb-preferences">Extended GDB Preferences</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">GDB</h1>
+<!-- $$$creator-preferences-debugger-gdb.html-description -->
+<div class="descr" id="details">
+<p>To specify preferences for managing the GDB process, go to <a href="creator-how-to-find-preferences.html">Preferences</a> &gt; <b translate="no">Debugger</b> &gt; <b translate="no">GDB</b>.</p>
+<p class="centerAlign"><img src="images/qtcreator-preferences-debugger-gdb.webp" alt="GDB tab in Debugger preferences" /></p><p>The following table summarizes the preferences.</p>
+<div class="table"><table class="generic">
+ <thead><tr class="qt-style"><th >Preference</th><th >Value</th></tr></thead>
+<tr valign="top" class="odd"><td ><b translate="no">GDB timeout</b></td><td >The timeout for terminating non-responsive GDB processes in seconds The default value of 40 seconds should be sufficient for most applications, but if loading big libraries or listing source files takes much longer than that on slow machines, increase the value.</td></tr>
+<tr valign="top" class="even"><td ><b translate="no">Skip known frames when stepping</b></td><td >Compresses several steps into one step for less noisy debugging when stepping into code. For example, the atomic reference counting code is skipped, and a single <i>Step Into</i> for a signal emission ends up directly in the slot connected to it.</td></tr>
+<tr valign="top" class="odd"><td ><b translate="no">Show a message box when receiving a signal</b></td><td >Shows a message box as soon as your application receives a signal, such as SIGSEGV, during debugging.</td></tr>
+<tr valign="top" class="even"><td ><b translate="no">Adjust breakpoint locations</b></td><td >GDB allows setting breakpoints on source lines for which no code was generated. In such situations, the breakpoint is shifted to the next source code line for which the code was actually generated. To reflect such temporary changes by moving the breakpoint markers in the source code editor, select this checkbox.</td></tr>
+<tr valign="top" class="odd"><td ><b translate="no">Use dynamic object type for display</b></td><td >Whether the dynamic or the static type of objects will be displayed. Choosing the dynamic type might make debugging slower.</td></tr>
+<tr valign="top" class="even"><td ><b translate="no">Load .gdbinit file on startup</b></td><td >Reads the user's default .gdbinit file on debugger startup.</td></tr>
+<tr valign="top" class="odd"><td ><b translate="no">Load system GDB pretty printers</b></td><td >Uses the default GDB pretty printers installed on the computer or linked to the libraries your application uses.</td></tr>
+<tr valign="top" class="even"><td ><b translate="no">Use Intel style disassembly</b></td><td >Switches from the default AT&amp;T style disassembly to the Intel style.</td></tr>
+<tr valign="top" class="odd"><td ><b translate="no">Use automatic symbol cache</b></td><td >Automatically saves a copy of the GDB symbol index in a cache on disk and retrieves it from there when loading the same binary in the future.</td></tr>
+<tr valign="top" class="even"><td ><b translate="no">Use debug info daemon</b></td><td >Tries to automatically retrieve debug information for system packages.</td></tr>
+</table></div>
+<h2 id="executing-additional-commands">Executing Additional Commands</h2>
+<p>To execute GDB commands after GDB has been started, but before the debugged application is started or attached, and before the debugging helpers are initialized, enter them in <b translate="no">Additional Startup Commands</b>.</p>
+<p>To execute GDB commands after GDB has successfully attached to remote targets, enter them in <b translate="no">Additional Attach Commands</b>. You can add commands to further set up the target here, such as <code translate="no">monitor reset</code> or <code translate="no">load</code>.</p>
+<p>To execute simple Python commands, prefix them with <code translate="no">python</code>. To execute sequences of Python commands spanning multiple lines, prepend the block with <code translate="no">python</code> on a separate line, and append <code translate="no">end</code> on a separate line. To execute arbitrary Python scripts, use <code translate="no">python execfile('/path/to/script.py')</code>.</p>
+<h2 id="extended-gdb-preferences">Extended GDB Preferences</h2>
+<p>The preferences in the <b translate="no">Extended</b> group give access to advanced or experimental functions of GDB. Enabling them may negatively impact your debugging experience, so use them with care.</p>
+<div class="table"><table class="generic">
+ <thead><tr class="qt-style"><th >Preference</th><th >Value</th></tr></thead>
+<tr valign="top" class="odd"><td ><b translate="no">Use asynchronous mode to control the debugged process</b></td><td >Execute commands in the background (asynchronous) mode. GDB immediately opens a command prompt where you can issue other commands while your program runs.</td></tr>
+<tr valign="top" class="even"><td ><b translate="no">Use common locations for debug information</b></td><td >Adds common paths to locations of debug information, such as <code translate="no">/usr/src/debug</code>, when starting GDB.</td></tr>
+<tr valign="top" class="odd"><td ><b translate="no">Stop when <a href="https://doc.qt.io/qt/qdebug.html#qWarning" translate="no">qWarning</a>() is called</b></td><td >Adds a breakpoint on each <code translate="no">qWarning()</code> function.</td></tr>
+<tr valign="top" class="even"><td ><b translate="no">Stop when <a href="https://doc.qt.io/qt/qdebug.html#qFatal" translate="no">qFatal</a>() is called</b></td><td >Adds a breakpoint on each <code translate="no">qFatal()</code> function.</td></tr>
+<tr valign="top" class="odd"><td ><b translate="no">Stop when abort() is called</b></td><td >Adds a breakpoint on each <code translate="no">abort()</code> function.</td></tr>
+<tr valign="top" class="even"><td ><b translate="no">Enable reverse debugging</b></td><td >Enables stepping backwards. This feature is very slow and unstable on the GDB side. It exhibits unpredictable behavior when steapping backwards over system calls and is very likely to destroy your debugging session.</td></tr>
+<tr valign="top" class="odd"><td ><b translate="no">Debug all child processes</b></td><td >Keeps debugging all children after a fork.</td></tr>
+</table></div>
+</div>
+<p><b>See also </b><a href="creator-how-tos.html#debug">How To: Debug</a>, <a href="creator-debugging.html">Debugging</a>, <a href="creator-reference.html#debuggers">Debuggers</a>, and <a href="creator-reference.html#debugger">Debugger</a>.</p>
+<!-- @@@creator-preferences-debugger-gdb.html -->
+<p class="naviNextPrevious footerNavi">
+<a class="prevPage" href="creator-reference.html">Reference</a>
+</p>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   Copyright <acronym title="Copyright">&copy;</acronym> The Qt Company Ltd. and other contributors.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

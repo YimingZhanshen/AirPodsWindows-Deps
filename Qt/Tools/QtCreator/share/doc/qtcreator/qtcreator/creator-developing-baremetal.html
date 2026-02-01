@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- creator-baremetal-dev.qdoc -->
+  <meta name="description" content="Create kits to use Bare Metal toolchains installed on the computer to build applications for and run and debug them on connected Bare Metal devices.">
+  <title>Developing for Bare Metal Devices | Qt Creator Documentation</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="index.html">Qt Creator Documentation</a></li>
+<li>Developing for Bare Metal Devices</li>
+<li id="buildversion"><a href="index.html">Qt Creator 18.0.2</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+  <link rel="prev" href="creator-developing-android.html" />
+  <link rel="next" href="creator-developing-b2qt.html" />
+<p class="naviNextPrevious headerNavi">
+<a class="prevPage" href="creator-developing-android.html">Developing for Android</a>
+<span class="naviSeparator">  &#9702;  </span>
+<a class="nextPage" href="creator-developing-b2qt.html">Developing for Boot to Qt Devices</a>
+</p>
+<div class="sidebar">
+<div class="toc">
+<h3 id="toc">Contents</h3>
+<ul>
+<li class="level1"><a href="#debug-server-providers">Debug Server Providers</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Developing for Bare Metal Devices</h1>
+<!-- $$$creator-developing-baremetal.html-description -->
+<div class="descr" id="details">
+<p>Create kits to use Bare Metal toolchains installed on the computer to build applications for and run and debug them on connected Bare Metal devices.</p>
+<p>Run and debug applications on small devices that are not supported by the remote Linux device plugin by using GDB or a hardware debugger.</p>
+<div class="admonition note">
+<p><b>Note: </b>Enable the Bare Metal plugin to use it.</p>
+</div>
+<p>Install Bare Metal toolchains on the computer to build applications for Bare Metal devices. Connect the devices to the computer to run and debug applications on them.</p>
+<div class="admonition note">
+<p><b>Note: </b>If you use qmake to build the project and the device does not have Qt libraries, you need a Qt installation that meets the requirements in <a href="creator-project-qmake.html#self-built-qt-versions">Self-built Qt versions</a>. In addition, the <code translate="no">mkspecs</code> directory needs to be complete enough to parse <code translate="no">.pro</code> files.</p>
+</div>
+<p>The following toolchains are supported for building applications:</p>
+<ul>
+<li>GCC: Microchip Technology (AVR, AVR32, PIC16, PIC32), NXP Semiconductors (ColdFire, M68K), Texas Instruments (MSP430), National Semiconductor (CR16C), Renesas Electronics (M32R, M32C, RL78, RX, SuperH, V850), Tensilica XTENSA (ESP8266, ESP32), RISC-V, <span translate="no">Arm&#8482;</span></li>
+<li><a href="https://www.iar.com/iar-embedded-workbench/">IAR EW</a>: Microchip Technology (AVR, AVR32), NXP Semiconductors (ColdFire, M68K), Texas Instruments (MSP430), National Semiconductor (CR16C), Renesas Electronics (78K, M16/R8C, M32C, R32C, RH850, RL78, RX, SuperH, V850), STMicroelectronics (STM8), 8051, RISC-V, <span translate="no">Arm</span></li>
+<li><a href="https://www.keil.com/product/">Keil</a>: <span translate="no">Arm</span>, C51 (8051), C251 (80251), C166 (C16x, XC16x)</li>
+<li><a href="http://sdcc.sourceforge.net/">SDCC</a>: STMicroelectronics (STM8), 8051</li>
+</ul>
+<p>The bare metal device type accepts custom GDB commands that you specify in the device preferences. You can specify the commands to execute when connecting using a particular debug server provider.</p>
+<h2 id="debug-server-providers">Debug Server Providers</h2>
+<p>The following debug server providers are supported when using GDB:</p>
+<ul>
+<li><a href="creator-how-to-eblink.html">EBlink</a></li>
+<li><a href="creator-how-to-jlink.html">J-Link</a></li>
+<li><a href="creator-how-to-openocd.html">OpenOCD</a></li>
+<li><a href="creator-how-to-stlink.html">ST-Link</a></li>
+</ul>
+<p>ST-Link and J-Link debug server providers can be used together with the <a href="creator-how-to-uvision.html">uVision IDE</a>.</p>
+<p>To create connections to bare metal devices using a debug server provider, go to <a href="creator-how-to-find-preferences.html">Preferences</a> &gt; <b translate="no">Devices</b> &gt; <b translate="no">Bare Metal</b> and select <b translate="no">Add</b>.</p>
+<p>The available settings depend on the debug server provider.</p>
+</div>
+<p><b>See also </b><a href="creator-targets.html">Add kits</a>, <a href="creator-how-to-enable-plugins.html">Enable and disable plugins</a>, and <a href="creator-how-tos.html#bare-metal">How To: Develop for Bare Metal</a>.</p>
+<!-- @@@creator-developing-baremetal.html -->
+<p class="naviNextPrevious footerNavi">
+<a class="prevPage" href="creator-developing-android.html">Developing for Android</a>
+<span class="naviSeparator">  &#9702;  </span>
+<a class="nextPage" href="creator-developing-b2qt.html">Developing for Boot to Qt Devices</a>
+</p>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   Copyright <acronym title="Copyright">&copy;</acronym> The Qt Company Ltd. and other contributors.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

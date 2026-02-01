@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- creator-how-to-find-settings-files.qdoc -->
+  <title>Reset Qt Creator settings | Qt Creator Documentation</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="index.html">Qt Creator Documentation</a></li>
+<li>Reset Qt Creator settings</li>
+<li id="buildversion"><a href="index.html">Qt Creator 18.0.2</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+  <link rel="prev" href="creator-how-to-record-screens.html" />
+  <link rel="next" href="creator-how-to-run-from-cli.html" />
+<p class="naviNextPrevious headerNavi">
+<a class="prevPage" href="creator-how-to-record-screens.html">Record screens</a>
+<span class="naviSeparator">  &#9702;  </span>
+<a class="nextPage" href="creator-how-to-run-from-cli.html">Run Qt Creator from the command line</a>
+</p>
+<div class="sidebar">
+<div class="toc">
+<h3 id="toc">Contents</h3>
+<ul>
+<li class="level1"><a href="#override-the-default-settings-path">Override the default settings path</a></li>
+<li class="level1"><a href="#start-qt-creator-with-temporary-clean-settings">Start Qt Creator with temporary clean settings</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Reset Qt Creator settings</h1>
+<!-- $$$creator-how-to-find-settings-files.html-description -->
+<div class="descr" id="details">
+<p>To reset all Qt Creator settings, remove the settings files that it creates:</p>
+<ul>
+<li><code translate="no">QtCreator.db</code></li>
+<li><code translate="no">QtCreator.ini</code></li>
+<li><code translate="no">qtversion.xml</code></li>
+<li><code translate="no">qtcreator</code></li>
+</ul>
+<p>The location of the above files and directories depends on the platform:</p>
+<ul>
+<li>On Linux and other Unix platforms, look in <code translate="no">~/.config/QtProject</code> and <code translate="no">~/.local/share/data/QtProject/qtcreator</code>.</li>
+<li>On macOS, look in <code translate="no">~/.config/QtProject</code> and <code translate="no">~/Library/Application Support/QtProject/Qt Creator</code>.</li>
+<li>On Windows, look in <code translate="no">%appdata%\QtProject</code> and <code translate="no">%localappdata%\QtProject</code>.</li>
+</ul>
+<p>To check whether the settings are causing a problem before resetting them, start Qt Creator from the command line with options.</p>
+<h2 id="override-the-default-settings-path">Override the default settings path</h2>
+<p>To override the default path where user settings are stored, enter:</p>
+<pre class="cpp plain" translate="no">
+ qtcreator -settingspath &lt;path&gt;
+</pre>
+<p>To override the default path from where user-independent settings are read (for example, those written by the installer), enter:</p>
+<pre class="cpp plain" translate="no">
+ qtcreator -installsettingspath &lt;path&gt;
+</pre>
+<h2 id="start-qt-creator-with-temporary-clean-settings">Start Qt Creator with temporary clean settings</h2>
+<p>To use clean settings that are deleted when you quit Qt Creator, enter:</p>
+<pre class="cpp plain" translate="no">
+ qtcreator -tcs
+</pre>
+</div>
+<p><b>See also </b><a href="creator-how-to-run-from-cli.html">Run Qt Creator from the command line</a>.</p>
+<!-- @@@creator-how-to-find-settings-files.html -->
+<p class="naviNextPrevious footerNavi">
+<a class="prevPage" href="creator-how-to-record-screens.html">Record screens</a>
+<span class="naviSeparator">  &#9702;  </span>
+<a class="nextPage" href="creator-how-to-run-from-cli.html">Run Qt Creator from the command line</a>
+</p>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   Copyright <acronym title="Copyright">&copy;</acronym> The Qt Company Ltd. and other contributors.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

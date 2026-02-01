@@ -1,0 +1,154 @@
+{
+    "version": 1,
+    "supportedProjectTypes": [ "MesonProjectManager.MesonProject", "CMakeProjectManager.CMakeProject", "Qbs.QbsProject", "Qt4ProjectManager.Qt4Project" ],
+    "id": "E.QtCore",
+    "category": "D.ApplicationQt",
+    "trDescription": "Creates a project containing a single main.cpp file with a stub implementation and no graphical UI.\n\nPreselects a desktop Qt for building the application if available.",
+    "trDisplayName": "Qt Console Application",
+    "trDisplayCategory": "Application (Qt)",
+    "icon": "../../global/consoleapplication.png",
+    "iconKind": "Themed",
+    "featuresRequired": [ "QtSupport.Wizards.FeatureQt" ],
+    "enabled": "%{JS: isAnyPluginRunning(['qmakeprojectmanager', 'qbsprojectmanager', 'cmakeprojectmanager', 'mesonprojectmanager'])}",
+
+    "options":
+    [
+        { "key": "ProjectFile", "value": "%{JS: value(\\{qmake: 'ProFile', cmake: 'CMakeFile', meson: 'MesonFile', qbs: 'QbsFile', 'cmake-qt6': 'CMakeFile'\\}[value('BuildSystem')]) }" },
+        { "key": "ProFile", "value": "%{JS: Util.fileName(value('ProjectDirectory') + '/' + value('ProjectName'), 'pro')}" },
+        { "key": "QbsFile", "value": "%{JS: Util.fileName(value('ProjectDirectory') + '/' + value('ProjectName'), 'qbs')}" },
+        { "key": "CMakeFile", "value": "%{ProjectDirectory}/CMakeLists.txt" },
+        { "key": "MesonFile", "value": "%{ProjectDirectory}/meson.build" },
+        { "key": "HasTranslation", "value": "%{JS: value('TsFileName') !== ''}" },
+        { "key": "CppFileName", "value": "%{JS: 'main.' + Util.preferredSuffix('text/x-c++src')}" },
+        { "key": "FeatureQt", "value": "QtSupport.Wizards.FeatureQt%{JS: value('BuildSystem') === 'cmake-qt6' ? '.6.5' : ''}" }
+    ],
+
+    "pages":
+    [
+        {
+            "trDisplayName": "Project Location",
+            "trShortTitle": "Location",
+            "typeId": "Project",
+            "data": { "trDescription": "This wizard creates a simple Qt-based console application." }
+        },
+        {
+            "trDisplayName": "Define Build System",
+            "trShortTitle": "Build System",
+            "typeId": "Fields",
+            "skipForSubprojects": true,
+            "data":
+            [
+                {
+                    "name": "BuildSystem",
+                    "trDisplayName": "Build system:",
+                    "type": "ComboBox",
+                    "persistenceKey": "BuildSystemType",
+                    "data":
+                    {
+                        "index": 1,
+                        "items":
+                        [
+                            {
+                                "trKey": "qmake",
+                                "value": "qmake",
+                                "condition": "%{JS: isPluginRunning('qmakeprojectmanager')}"
+                            },
+                            {
+                                "trKey": "CMake for Qt 5 and Qt 6",
+                                "value": "cmake",
+                                "condition": "%{JS: isPluginRunning('cmakeprojectmanager')}"
+                            },
+                            {
+                                "trKey": "CMake",
+                                "value": "cmake-qt6",
+                                "condition": "%{JS: isPluginRunning('cmakeprojectmanager')}"
+                            },
+                            {
+                                "trKey": "Qbs",
+                                "value": "qbs",
+                                "condition": "%{JS: isPluginRunning('qbsprojectmanager')}"
+                            },
+                            {
+                                "trKey": "Meson",
+                                "value": "meson",
+                                "condition": "%{JS: isPluginRunning('mesonprojectmanager')}"
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "trDisplayName": "Translation File",
+            "trShortTitle": "Translation",
+            "typeId": "QtTranslation"
+        },
+        {
+            "trDisplayName": "Kit Selection",
+            "trShortTitle": "Kits",
+            "typeId": "Kits",
+            "data": {
+                "projectFilePath": "%{ProjectFile}",
+                "requiredFeatures": [ "%{FeatureQt}"]
+            }
+        },
+        {
+            "trDisplayName": "Project Management",
+            "trShortTitle": "Summary",
+            "typeId": "Summary"
+        }
+    ],
+    "generators":
+    [
+        {
+            "typeId": "File",
+            "data":
+            [
+                {
+                    "source": "file.pro",
+                    "target": "%{ProFile}",
+                    "openAsProject": true,
+                    "condition": "%{JS: value('BuildSystem') === 'qmake'}"
+                },
+                {
+                    "source": "CMakeLists.txt",
+                    "openAsProject": true,
+                    "condition": "%{JS: value('BuildSystem') === 'cmake'}"
+                },
+                {
+                    "source": "CMakeLists-Qt6.txt",
+                    "target": "CMakeLists.txt",
+                    "openAsProject": true,
+                    "condition": "%{JS: value('BuildSystem') === 'cmake-qt6'}"
+                },
+                {
+                    "source": "file.qbs",
+                    "target": "%{QbsFile}",
+                    "openAsProject": true,
+                    "condition": "%{JS: value('BuildSystem') === 'qbs'}"
+                },
+                {
+                    "source": "meson.build",
+                    "target": "%{MesonFile}",
+                    "openAsProject": true,
+                    "condition": "%{JS: value('BuildSystem') === 'meson'}"
+                },
+                {
+                    "source": "main.cpp",
+                    "target": "%{CppFileName}",
+                    "openInEditor": true
+                },
+                {
+                    "source": "../translation.ts",
+                    "target": "%{TsFileName}",
+                    "condition": "%{HasTranslation}"
+                },
+                {
+                    "source": "../git.ignore",
+                    "target": ".gitignore",
+                    "condition": "%{JS: !value('IsSubproject') && value('VersionControl') === 'G.Git'}"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- creator-projects-qtif.qdoc -->
+  <title>Create Qt Interface Framework projects | Qt Creator Documentation</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="index.html">Qt Creator Documentation</a></li>
+<li>Create Qt Interface Framework projects</li>
+<li id="buildversion"><a href="index.html">Qt Creator 18.0.2</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+  <link rel="prev" href="creator-how-to-create-nimble.html" />
+  <link rel="next" href="quick-projects.html" />
+<p class="naviNextPrevious headerNavi">
+<a class="prevPage" href="creator-how-to-create-nimble.html">Create Nimble projects</a>
+<span class="naviSeparator">  &#9702;  </span>
+<a class="nextPage" href="quick-projects.html">Create Qt Quick Applications</a>
+</p>
+<div class="sidebar"><div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Create Qt Interface Framework projects</h1>
+<!-- $$$creator-how-to-create-qtif.html-description -->
+<div class="descr" id="details">
+<p>Use the <a href="https://doc.qt.io/QtInterfaceFramework/interfaceframework-index.html">Qt Interface Framework</a> tools and core APIs to implement middleware APIs, backends, and services. With the Qt Interface Framework Generator, you can use the QFace interface definition language (IDL) to define new APIs and generate Qt C++ classes and QML types.</p>
+<p>Qt Interface Framework consists of:</p>
+<ul>
+<li>The core module, which has base classes and common code for all APIs that you create.</li>
+<li>A front-end API for a <i>feature</i>.</li>
+<li>A backend interface for the feature, and one or more backends that implement it to connect to either the underlying service or to a simulation of it.</li>
+</ul>
+<p>To make it possible to reuse code from previous projects, while incorporating code developed by many teams, Qt Interface Framework feature APIs are split into two layers: a frontend and a backend. You can connect one frontend to many backends, as the core module makes it easy to find the corresponding backend.</p>
+<p>To create a Qt Interface Framework project for a feature with a frontend and a backend:</p>
+<ol class="1" type="1"><li>Go to <b translate="no">File</b> &gt; <b translate="no">New Project</b> &gt; <b translate="no">Other Project</b>, and select <b translate="no">Qt Interface Framework Project</b>.</li>
+<li>Specify the name and location of the application.</li>
+<li>Select <b translate="no">Next</b>.</li>
+<li>In <b translate="no">Project name</b>, type the name of the project.<p class="centerAlign"><img src="images/qtcreator-new-project-qtif.webp" alt="Configure Interface dialog" /></p></li>
+<li>In <b translate="no">Interface name</b>, type the name of the interface that describes the data to exchange between the frontend and backend of the feature.</li>
+<li>Select <b translate="no">Add sample code to the project</b> to generate boilerplate code for the project.</li>
+<li>Select <b translate="no">Generate a zoned interface</b> to create a single API for many points, such as operating the windows, mirrors, and air-conditioning of a car.</li>
+<li>In <b translate="no">Backend setup</b>, select options for generating the backend.</li>
+<li>Select <b translate="no">Next</b> to select a kit for building and running the project.</li>
+<li>Select <b translate="no">Next</b> to create the project.</li>
+</ol>
+<p>Change the boilerplate code in the project to implement a feature.</p>
+</div>
+<p><b>See also </b><a href="creator-how-tos.html#create-projects">How To: Create Projects</a>.</p>
+<!-- @@@creator-how-to-create-qtif.html -->
+<p class="naviNextPrevious footerNavi">
+<a class="prevPage" href="creator-how-to-create-nimble.html">Create Nimble projects</a>
+<span class="naviSeparator">  &#9702;  </span>
+<a class="nextPage" href="quick-projects.html">Create Qt Quick Applications</a>
+</p>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   Copyright <acronym title="Copyright">&copy;</acronym> The Qt Company Ltd. and other contributors.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- creator-preferences-qtquick-code-style.qdoc -->
+  <title>Specify Qt Quick code style | Qt Creator Documentation</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="index.html">Qt Creator Documentation</a></li>
+<li>Specify Qt Quick code style</li>
+<li id="buildversion"><a href="index.html">Qt Creator 18.0.2</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+  <link rel="prev" href="creator-how-to-select-enclosing-block.html" />
+  <link rel="next" href="creator-how-to-split-editor-views.html" />
+<p class="naviNextPrevious headerNavi">
+<a class="prevPage" href="creator-how-to-select-enclosing-block.html">Select the current code block</a>
+<span class="naviSeparator">  &#9702;  </span>
+<a class="nextPage" href="creator-how-to-split-editor-views.html">Split the editor view</a>
+</p>
+<div class="sidebar">
+<div class="toc">
+<h3 id="toc">Contents</h3>
+<ul>
+<li class="level1"><a href="#use-the-built-in-formatter">Use the built-in formatter</a></li>
+<li class="level1"><a href="#use-qmlformat">Use qmlformat</a></li>
+<li class="level1"><a href="#use-a-custom-tool">Use a custom tool</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Specify Qt Quick code style</h1>
+<!-- $$$creator-preferences-qtquick-code-style.html-description -->
+<div class="descr" id="details">
+<p>You can use the built-in code formatter (deprecated) or an external tool, such as <a href="https://doc.qt.io/qt/qtqml-tooling-qmlformat.html">qmlformat</a>, to automatically format QML files according to QML coding conventions.</p>
+<p>To specify QML code style globally:</p>
+<ol class="1" type="1"><li>Go to <a href="creator-how-to-find-preferences.html">Preferences</a> &gt; <b translate="no">Qt Quick</b> &gt; <b translate="no">Code Style</b>.</li>
+<li>In <b translate="no">Custom settings</b>, select the settings to modify, and then select <b translate="no">Copy</b>.<p class="centerAlign"><img src="images/qtcreator-preferences-qtquick-code-style.webp" alt="Code Style tab in Qt Quick preferences" /></p></li>
+<li>Give a name to the settings, and select <b translate="no">OK</b>.</li>
+<li>In <b translate="no">Formatter Selection</b>, select the formatter to use.</li>
+</ol>
+<p>To override the global preferences for a particular project, select <b translate="no">Projects</b> &gt; <b translate="no">Code Style</b>.</p>
+<h2 id="use-the-built-in-formatter">Use the built-in formatter</h2>
+<p>The built-in formatter has been deprecated in favor of the qmlformat tool or a custom formatter.</p>
+<p>To set global preferences for the built-in formatter:</p>
+<ol class="1" type="1"><li>In <b translate="no">Formatter Selection</b>, select <b translate="no">Built-in formatter</b>.</li>
+<li>Specify how to interpret the <b>Tab</b> key presses and how to align continuation lines, as well as set the maximum line length for code lines.</li>
+</ol>
+<h2 id="use-qmlformat">Use qmlformat</h2>
+<p>To set global preferences for the <a href="https://doc.qt.io/qt/qtqml-tooling-qmlformat.html">qmlformat</a> tool:</p>
+<ol class="1" type="1"><li>In <b translate="no">Formatter Selection</b>, select <b translate="no">QMLFormat</b>.<p class="centerAlign"><img src="images/qtcreator-preferences-qtquick-code-style-qmlformat.webp" alt="qmlformatter preferences in the Code Style tab in Qt Quick preferences" /></p></li>
+<li>In <b translate="no">Global qmlformat Configuration</b>, set the code style. This field uses the same format as a <code translate="no">.qmlformat.ini</code> file and overrides the <code translate="no">.qmlformat.ini</code> file in the generic configuration location (<a href="https://doc.qt.io/qt/qstandardpaths.html#StandardLocation-enum" translate="no">QStandardPaths::GenericConfigLocation</a>).</li>
+</ol>
+<p>The <a href="https://doc.qt.io/qt/qtqml-tooling-qmlformat.html">qmlformat</a> tool searches for a <code translate="no">.qmlformat.ini</code> file in the same directory as the file being formatted. If it is not found, it searches the parent directories up to the root directory. If no <code translate="no">.qmlformat.ini</code> file is found, the global preferences are used. For more information, see the <a href="https://doc.qt.io/qt/qtqml-tooling-qmlformat.html">qmlformat configuration settings</a>.</p>
+<div class="admonition note">
+<p><b>Note: </b>If a custom <code translate="no">.qmlformat.ini</code> file exists in the project directory or any parent directory, it takes precedence over the global configuration.</p>
+</div>
+<h2 id="use-a-custom-tool">Use a custom tool</h2>
+<p>To use a custom tool that is compatible with qmlformat:</p>
+<ol class="1" type="1"><li>In <b translate="no">Formatter Selection</b>, select <b translate="no">Custom formatter</b>.<p class="centerAlign"><img src="images/qtcreator-preferences-qtquick-code-style-custom-formatter.webp" alt="Custom formatter preferences in the Code Style tab in Qt Quick preferences" /></p></li>
+<li>In <b translate="no">Command</b>, enter the path to the tool.</li>
+<li>In <b translate="no">Arguments</b>, enter options for running the tool.</li>
+<li>View the code style set in a <code translate="no">.qmlformat.ini</code> file on the right.</li>
+</ol>
+</div>
+<p><b>See also </b><a href="creator-how-to-autoformat-qml-js.html">Automatically format QML/JS files</a>, <a href="creator-indenting-code.html">Indent text or code</a>, <a href="creator-how-to-find-preferences.html">Find preferences</a>, and <a href="creator-code-style-settings.html">Specify code style</a>.</p>
+<!-- @@@creator-preferences-qtquick-code-style.html -->
+<p class="naviNextPrevious footerNavi">
+<a class="prevPage" href="creator-how-to-select-enclosing-block.html">Select the current code block</a>
+<span class="naviSeparator">  &#9702;  </span>
+<a class="nextPage" href="creator-how-to-split-editor-views.html">Split the editor view</a>
+</p>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   Copyright <acronym title="Copyright">&copy;</acronym> The Qt Company Ltd. and other contributors.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- creator-projects-compilers.qdoc -->
+  <meta name="description" content="Lists the registered compilers. You can add custom compilers to the list.">
+  <title>Compilers | Qt Creator Documentation</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="index.html">Qt Creator Documentation</a></li>
+<li>Compilers</li>
+<li id="buildversion"><a href="index.html">Qt Creator 18.0.2</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+  <link rel="prev" href="creator-reference-preferences-cpp-quick-fixes.html" />
+  <link rel="next" href="creator-preferences-kits.html" />
+<p class="naviNextPrevious headerNavi">
+<a class="prevPage" href="creator-reference-preferences-cpp-quick-fixes.html">Quick Fixes</a>
+<span class="naviSeparator">  &#9702;  </span>
+<a class="nextPage" href="creator-preferences-kits.html">Kits</a>
+</p>
+<div class="sidebar"><div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Compilers</h1>
+<!-- $$$creator-preferences-kits-compilers.html-description -->
+<div class="descr" id="details">
+<p>Lists the registered compilers. You can add custom compilers to the list.</p>
+<p>To build an application using GCC, MinGW, Clang, or QCC, specify the path to the directory where the compiler is located and select the application binary interface (ABI) version from the list of available versions. You can also create a custom ABI definition. For QCC, also specify the path to the QNX Software Development Platform (SDP) in <b translate="no">SPD path</b>.</p>
+<p>To enable Microsoft Visual C++ Compilers (MSVC) and clang-cl to find system headers, libraries, and the linker, Qt Creator executes them inside a command prompt where you set up the environment using <code translate="no">vcvarsall.bat</code>. For these compilers, you also specify the path to the script that sets up the command prompt in <b translate="no">Initialization</b>.</p>
+<p>You specify the compiler to use for each kit in <a href="creator-how-to-find-preferences.html">Preferences</a> &gt; <b translate="no">Kits</b>.</p>
+<p>To set compiler preferences according to the compiler type:</p>
+<ol class="1" type="1"><li>Go to <a href="creator-how-to-find-preferences.html">Preferences</a> &gt; <b translate="no">Kits</b> &gt; <b translate="no">Compilers</b>.</li>
+<li>Select a compiler in the list.<ul>
+<li>In <b translate="no">Name</b>, enter a name for the compiler to identify it in Qt Creator.<p class="centerAlign"><img src="images/qtcreator-preferences-compilers-clang-cl.webp" alt="Adding a clang-cl compiler in the Compilers tab in Kits preferences" /></p><p class="figCaption">Adding a clang-cl compiler.</p>
+</li>
+<li>In <b translate="no">C compiler path</b>, enter the path to the directory where the C compiler is located.<p>Select <b translate="no">Remote</b> in the dropdown menu in <b translate="no">Browse</b> (<b translate="no">Choose</b> on macOS) to add the path to the compiler on a remote Linux device or in Docker.</p>
+</li>
+<li>In <b translate="no">C++ compiler path</b>, select <b translate="no">Provide manually</b> to enter the path to the directory where the C++ compiler is located.<p>Select <b translate="no">Remote</b> to add the path to the compiler on a remote Linux device or in Docker.</p>
+</li>
+<li>In <b translate="no">Initialization</b>, select the <code translate="no">vcvarsall.bat</code> file for setting up the command prompt to use.<p class="centerAlign"><img src="images/qtcreator-preferences-compilers-clang.webp" alt="Adding a Clang compiler in the Compilers tab in Kits preferences" /></p><p class="figCaption">Adding a Clang compiler.</p>
+</li>
+<li>In <b translate="no">Platform codegen flags</b>, check the flags passed to the compiler that specify the architecture on the target platform.</li>
+<li>In <b translate="no">Platform linker flags</b>, check the flags passed to the linker that specify the architecture on the target platform.</li>
+<li>In <b translate="no">Target triple</b>, specify the GCC target architecture. If code model services fail because Clang does not understand the target architecture, select <b translate="no">Override for code model</b>.</li>
+<li>In <b translate="no">Parent toolchain</b>, select a MinGW compiler, which is needed because Clang does not have its own standard library.<p class="centerAlign"><img src="images/qtcreator-preferences-compilers-qcc.webp" alt="Adding a QCC compiler in the Compilers tab in Kits preferences" /></p><p class="figCaption">Adding a QCC compiler.</p>
+</li>
+<li>In <b translate="no">SDP path</b>, specify the path to the QNX Software Development Platform (SDP).</li>
+<li>In <b translate="no">ABI</b>, enter an identifier for the target architecture. This is used to warn about ABI mismatches within the kits.</li>
+</ul>
+</li>
+</ol>
+</div>
+<p><b>See also </b><a href="creator-tool-chains.html">Add compilers</a>, <a href="creator-how-to-add-custom-compilers.html">Add custom compilers</a>, <a href="creator-how-to-add-nim-compilers.html">Add Nim compilers</a>, and <a href="creator-os-supported-platforms.html">Supported Platforms</a>.</p>
+<!-- @@@creator-preferences-kits-compilers.html -->
+<p class="naviNextPrevious footerNavi">
+<a class="prevPage" href="creator-reference-preferences-cpp-quick-fixes.html">Quick Fixes</a>
+<span class="naviSeparator">  &#9702;  </span>
+<a class="nextPage" href="creator-preferences-kits.html">Kits</a>
+</p>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   Copyright <acronym title="Copyright">&copy;</acronym> The Qt Company Ltd. and other contributors.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

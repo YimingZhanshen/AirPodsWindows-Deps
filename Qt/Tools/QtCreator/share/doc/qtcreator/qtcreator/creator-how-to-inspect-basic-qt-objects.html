@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- creator-debugger.qdoc -->
+  <title>Inspect basic Qt objects | Qt Creator Documentation</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="index.html">Qt Creator Documentation</a></li>
+<li>Inspect basic Qt objects</li>
+<li id="buildversion"><a href="index.html">Qt Creator 18.0.2</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+  <link rel="prev" href="creator-how-to-examine-complex-values.html" />
+  <link rel="next" href="creator-how-to-load-core-files-to-debugger.html" />
+<p class="naviNextPrevious headerNavi">
+<a class="prevPage" href="creator-how-to-examine-complex-values.html">Examine complex values in Debug views</a>
+<span class="naviSeparator">  &#9702;  </span>
+<a class="nextPage" href="creator-how-to-load-core-files-to-debugger.html">Load core files to the debugger</a>
+</p>
+<div class="sidebar">
+<div class="toc">
+<h3 id="toc">Contents</h3>
+<ul>
+<li class="level1"><a href="#change-value-display-format">Change value display format</a></li>
+<li class="level1"><a href="#change-variable-values">Change variable values</a></li>
+<li class="level1"><a href="#signal-slot-connections">Signal-slot connections</a></li>
+<li class="level1"><a href="#low-level-data">Low-level data</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Inspect basic Qt objects</h1>
+<!-- $$$creator-how-to-inspect-basic-qt-objects.html-description -->
+<div class="descr" id="details">
+<p>The most powerful feature of the debugger is that the <b translate="no">Locals</b> and <b translate="no">Expressions</b> views show the data that belongs to Qt's basic objects. For example, in case of <a href="https://doc.qt.io/qt/qobject.html" translate="no">QObject</a>, instead of a pointer to some private data structure, you see a list of children, signals, and slots.</p>
+<p>Similarly, instead of displaying many pointers and integers, Qt Creator's debugger displays the contents of a <a href="https://doc.qt.io/qt/qhash.html#qhash" translate="no">QHash</a> or <a href="https://doc.qt.io/qt/qmap.html" translate="no">QMap</a> in an orderly manner. Also, the debugger shows access data for <a href="https://doc.qt.io/qt/qfileinfo.html" translate="no">QFileInfo</a> and the <i>real</i> contents of <a href="https://doc.qt.io/qt/qvariant.html" translate="no">QVariant</a>.</p>
+<h2 id="change-value-display-format">Change value display format</h2>
+<p>In the <b translate="no">Locals</b> or the <b translate="no">Expressions</b> view, select <b translate="no">Change Value Display Format</b> in the context menu to change the value display format. The available options depend on the type of the current items, and are provided by <a href="creator-debugging-helpers.html">debugging helpers</a>.</p>
+<p>To force a plain C-like display of structures, go to <a href="creator-how-to-find-preferences.html">Preferences</a> &gt; <b translate="no">Debugger</b> &gt; <b translate="no">Locals &amp; Expressions</b>, and then clear <b translate="no">Use Debugging Helpers</b>.</p>
+<p class="centerAlign"><img src="images/qtcreator-debugging-helper-options.webp" alt="Locals &amp; Expressions tab in Debugger preferences" /></p><p>This still uses the Python scripts, but generates more basic output. To force the plain display for a single object or for all objects of a given type, select <b translate="no">Change Value Display Format</b> &gt; <b translate="no">Raw</b> in the context menu of the <b translate="no">Locals</b> or <b translate="no">Expressions</b> view.</p>
+<p>Typically, you can change the encoding for string-like data, such as <code translate="no">QByteArray</code> and <code translate="no">std::string</code>, or show the data in a full editor window.</p>
+<p>You can select a <i>compact</i> option for map-like data, such as <code translate="no">QMap</code>, <code translate="no">QHash</code>, and <code translate="no">std::map</code>, that uses the <b translate="no">Name</b> column for keys and results in a concise display of containers with short keys, such as numbers or short strings. For example, to expand all the values of <a href="https://doc.qt.io/qt/qmap.html" translate="no">QMap</a>, select <b translate="no">Change Value Display Format</b> &gt; <b translate="no">Compact</b>.</p>
+<p>For strings, you can select <b translate="no">Change Value Display Format</b> &gt; <b translate="no">Separate Window</b> to see string content inside a text edit instead of a single line item in the view. For <a href="https://doc.qt.io/qt/qpixmap.html" translate="no">QPixmap</a>, you can see the pixmap being created pixel-by-pixel when stepping through the code.</p>
+<h2 id="change-variable-values">Change variable values</h2>
+<p>You can use the <b translate="no">Locals</b> and <b translate="no">Expressions</b> view to change the contents of variables of simple data types, for example, <code translate="no">int</code>, <code translate="no">float</code>, <code translate="no">QString</code> and <code translate="no">std::string</code> when the application is interrupted. To do so, select the <b translate="no">Value</b> column, modify the value with the inplace editor, and select <b>Enter</b>.</p>
+<p>To change the complete contents of <a href="https://doc.qt.io/qt/qvector.html" translate="no">QVector</a> or <code translate="no">std::vector</code> values, type all values separated by commas into the <b translate="no">Value</b> column of the main entry. However, Qt Creator does not try to reallocate memory for variables, so it applies the changes only if the new content fits into the old memory and if the debugger supports changing values.</p>
+<h2 id="signal-slot-connections">Signal-slot connections</h2>
+<p>If an instance of a class is derived from <a href="https://doc.qt.io/qt/qobject.html" translate="no">QObject</a>, you can find all other objects connected to this object's slots with Qt's signals and slots mechanism. Go to <a href="creator-how-to-find-preferences.html">Preferences</a> &gt; <b translate="no">Debugger</b> &gt; <b translate="no">Locals &amp; Expressions</b> &gt; <b translate="no">Use Debugging Helpers</b>.</p>
+<p>In the <b translate="no">Locals</b> view, expand the object's entry and open the slot in the <i>slots</i> subitem. The view shows the objects connected to this slot as children of the slot. Similarly, you can show the children of signals.</p>
+<h2 id="low-level-data">Low-level data</h2>
+<p>If you cannot debug Qt objects because their data is corrupted, you can switch off the debugging helpers to make low-level structures visible.</p>
+<p>To switch off the debugging helpers, clear <b translate="no">Use Debugging Helpers</b> in <a href="creator-how-to-find-preferences.html">Preferences</a> &gt; <b translate="no">Debugger</b> &gt; <b translate="no">Locals &amp; Expressions</b>.</p>
+</div>
+<p><b>See also </b><a href="creator-how-tos.html#debug">How To: Debug</a>, <a href="creator-debugging.html">Debugging</a>, <a href="creator-reference.html#debuggers">Debuggers</a>, and <a href="creator-reference.html#debugger">Debugger</a>.</p>
+<!-- @@@creator-how-to-inspect-basic-qt-objects.html -->
+<p class="naviNextPrevious footerNavi">
+<a class="prevPage" href="creator-how-to-examine-complex-values.html">Examine complex values in Debug views</a>
+<span class="naviSeparator">  &#9702;  </span>
+<a class="nextPage" href="creator-how-to-load-core-files-to-debugger.html">Load core files to the debugger</a>
+</p>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   Copyright <acronym title="Copyright">&copy;</acronym> The Qt Company Ltd. and other contributors.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

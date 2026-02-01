@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- creator-developing-vxworks.qdoc -->
+  <title>Create SSH connections to VxWorks devices | Qt Creator Documentation</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="index.html">Qt Creator Documentation</a></li>
+<li>Create SSH connections to VxWorks devices</li>
+<li id="buildversion"><a href="index.html">Qt Creator 18.0.2</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+  <link rel="prev" href="creator-how-to-run-webassembly.html" />
+  <link rel="next" href="creator-how-to-create-vxworks-kits.html" />
+<p class="naviNextPrevious headerNavi">
+<a class="prevPage" href="creator-how-to-run-webassembly.html">Run applications in a web browser</a>
+<span class="naviSeparator">  &#9702;  </span>
+<a class="nextPage" href="creator-how-to-create-vxworks-kits.html">Create kits for VxWorks devices</a>
+</p>
+<div class="sidebar">
+<div class="toc">
+<h3 id="toc">Contents</h3>
+<ul>
+<li class="level1"><a href="#configure-the-vxworks-source-build">Configure the VxWorks source build</a></li>
+<li class="level1"><a href="#configure-the-vxworks-kernel">Configure the VxWorks kernel</a></li>
+<li class="level1"><a href="#create-a-startup-script">Create a startup script</a></li>
+<li class="level1"><a href="#test-the-connection">Test the connection</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Create SSH connections to VxWorks devices</h1>
+<!-- $$$creator-how-to-connect-vxworks-ssh.html-description -->
+<div class="descr" id="details">
+<p>To run an SSH server on the VxWorks device, you need to configure it, as described in the following sections.</p>
+<div class="admonition note">
+<p><b>Note: </b>Enable the VxWorks plugin to use it.</p>
+</div>
+<h2 id="configure-the-vxworks-source-build">Configure the VxWorks source build</h2>
+<p>Set the following keys in the VxWorks Source Build (VSB):</p>
+<pre class="cpp plain" translate="no">
+ &quot;USER_MANAGEMENT&quot;
+ &quot;USER_MANAGEMENT_USER_PRIVILEGES&quot;
+</pre>
+<h2 id="configure-the-vxworks-kernel">Configure the VxWorks kernel</h2>
+<p>Add the following includes to the VxWorks Kernel configuration (VIP):</p>
+<pre class="cpp plain" translate="no">
+ &quot;INCLUDE_IPSSH_CLIENT_CMD&quot;
+ &quot;INCLUDE_SHELL_SECURITY&quot;
+ &quot;INCLUDE_USER_DATABASE&quot;
+ &quot;INCLUDE_USER_IDENTIFICATION&quot;
+ &quot;INCLUDE_USER_PRIVILEGES&quot;
+ &quot;INCLUDE_USER_MGT_SHELL_CMD&quot;
+ &quot;INCLUDE_SEC_KEY_STORE_CMD&quot;
+ &quot;INCLUDE_SHELL&quot;
+ &quot;INCLUDE_SSH&quot;
+ &quot;INCLUDE_IPD_CMD&quot;
+</pre>
+<h2 id="create-a-startup-script">Create a startup script</h2>
+<p>In the startup script, set up user management and starting the SSH server.</p>
+<p>An example startup script:</p>
+<pre class="cpp plain" translate="no">
+ cp &quot;/romfs/ssh/keys/WindRiver.pk2&quot;,&quot;/ram&quot;
+ cmd keyStore import default_rsa /romfs/ssh/keys/default_rsa.pem
+ cmd keyStore import default_dsa /romfs/ssh/keys/default_dsa.pem
+ cmd ipd start ipssh
+ udbReset
+ userAdd &quot;WindRiver&quot;,&quot;vxTarget&quot;
+</pre>
+<h2 id="test-the-connection">Test the connection</h2>
+<p>To test the connection from the terminal, specify the key algorithms for it (because VxWorks uses old keys):</p>
+<pre class="cpp plain" translate="no">
+ ssh -oHostKeyAlgorithms=+ssh-rsa -lWindRiver 192.168.0.3
+</pre>
+</div>
+<p><b>See also </b><a href="creator-how-to-enable-plugins.html">Enable and disable plugins</a>, <a href="creator-how-tos.html#vxworks">How to: VxWorks</a>, <a href="creator-debugging.html">Debugging</a>, and <a href="https://doc.qt.io/qt/vxworks.html">Qt for VxWorks</a>.</p>
+<!-- @@@creator-how-to-connect-vxworks-ssh.html -->
+<p class="naviNextPrevious footerNavi">
+<a class="prevPage" href="creator-how-to-run-webassembly.html">Run applications in a web browser</a>
+<span class="naviSeparator">  &#9702;  </span>
+<a class="nextPage" href="creator-how-to-create-vxworks-kits.html">Create kits for VxWorks devices</a>
+</p>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   Copyright <acronym title="Copyright">&copy;</acronym> The Qt Company Ltd. and other contributors.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

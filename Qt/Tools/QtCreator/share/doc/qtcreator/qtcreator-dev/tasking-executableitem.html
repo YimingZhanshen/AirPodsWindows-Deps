@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- tasktree.cpp -->
+  <meta name="description" content="Base class for executable task items.">
+  <title>Tasking::ExecutableItem Class | Extending Qt Creator Manual</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="index.html">Extending Qt Creator Manual</a></li>
+<li><a href="taskingsolution-module.html" translate="no">TaskingSolution</a></li>
+<li>ExecutableItem</li>
+<li id="buildversion"><a href="index.html">Extending Qt Creator Manual 18.0.2</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar">
+<div class="toc">
+<h3 id="toc">Contents</h3>
+<ul>
+<li class="level1"><a href="#public-functions">Public Functions</a></li>
+<li class="level1"><a href="#related-non-members">Related Non-Members</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title" translate="no">Tasking::ExecutableItem Class</h1>
+<span class="small-subtitle" translate="no">class <a href="tasking.html" translate="no">Tasking</a>::ExecutableItem</span>
+<!-- $$$ExecutableItem-brief -->
+<p>Base class for executable task items. <a href="#details">More...</a></p>
+<!-- @@@ExecutableItem -->
+<div class="table"><table class="alignedsummary requisites" translate="no">
+<tr><td class="memItemLeft rightAlign topAlign"> Header:</td><td class="memItemRight bottomAlign"> <code translate="no">#include &lt;solutions/tasking/tasktree.h&gt;</code></td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> Inherits:</td><td class="memItemRight bottomAlign"> <a href="tasking-groupitem.html" translate="no">Tasking::GroupItem</a></td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> Inherited By:</td><td class="memItemRight bottomAlign"> <p><a href="tasking-customtask.html" translate="no">Tasking::CustomTask</a>, <a href="tasking-group.html" translate="no">Tasking::Group</a>, and <a href="tasking-sync.html" translate="no">Tasking::Sync</a></p>
+</td></tr>
+</table></div>
+<ul>
+<li><a href="tasking-executableitem-members.html">List of all members, including inherited members</a></li>
+</ul>
+<p><b>Note:</b> All functions in this class are <a href="https://doc.qt.io/qt/threads-reentrancy.html">reentrant</a>.</p>
+<h2 id="public-functions">Public Functions</h2>
+<div class="table"><table class="alignedsummary" translate="no">
+<tr><td class="memItemLeft rightAlign topAlign"> Tasking::Group </td><td class="memItemRight bottomAlign"><b><a href="tasking-executableitem.html#withLog" translate="no">withLog</a></b>(const QString &amp;<i>logName</i>) const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> Tasking::Group </td><td class="memItemRight bottomAlign"><b><a href="tasking-executableitem.html#withTimeout" translate="no">withTimeout</a></b>(std::chrono::milliseconds <i>timeout</i>, const std::function&lt;void ()&gt; &amp;<i>handler</i> = {}) const</td></tr>
+</table></div>
+<h2 id="related-non-members">Related Non-Members</h2>
+<div class="table"><table class="alignedsummary" translate="no">
+<tr><td class="memItemLeft rightAlign topAlign"> Tasking::Group </td><td class="memItemRight bottomAlign"><b><a href="tasking-executableitem.html#operator-not" translate="no">operator!</a></b>(const Tasking::ExecutableItem &amp;<i>item</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> Tasking::Group </td><td class="memItemRight bottomAlign"><b><a href="tasking-executableitem.html#operator-and-and" translate="no">operator&amp;&amp;</a></b>(const Tasking::ExecutableItem &amp;<i>first</i>, const Tasking::ExecutableItem &amp;<i>second</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> Tasking::Group </td><td class="memItemRight bottomAlign"><b><a href="tasking-executableitem.html#operator-and-and-1" translate="no">operator&amp;&amp;</a></b>(const Tasking::ExecutableItem &amp;<i>item</i>, Tasking::DoneResult <i>result</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> Tasking::Group </td><td class="memItemRight bottomAlign"><b><a href="tasking-executableitem.html#operator-7c-7c" translate="no">operator||</a></b>(const Tasking::ExecutableItem &amp;<i>first</i>, const Tasking::ExecutableItem &amp;<i>second</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> Tasking::Group </td><td class="memItemRight bottomAlign"><b><a href="tasking-executableitem.html#operator-7c-7c-1" translate="no">operator||</a></b>(const Tasking::ExecutableItem &amp;<i>item</i>, Tasking::DoneResult <i>result</i>)</td></tr>
+</table></div>
+<!-- $$$ExecutableItem-description -->
+<div class="descr">
+<h2 id="details">Detailed Description</h2>
+<p><code translate="no">ExecutableItem</code> provides an additional interface for items containing executable tasks. Use <a href="tasking-executableitem.html#withTimeout" translate="no">withTimeout</a>() to attach a timeout to a task. Use <a href="tasking-executableitem.html#withLog" translate="no">withLog</a>() to include debugging information about the task startup and the execution result.</p>
+</div>
+<!-- @@@ExecutableItem -->
+<div class="func">
+<h2>Member Function Documentation</h2>
+<!-- $$$withLog[overload1]$$$withLogconstQString& -->
+<h3 class="fn" translate="no" id="withLog"><span class="type"><a href="tasking-group.html" translate="no">Tasking::Group</a></span> ExecutableItem::<span class="name">withLog</span>(const <span class="type"><a href="https://doc.qt.io/qt/qstring.html" translate="no">QString</a></span> &amp;<i>logName</i>) const</h3>
+<p>Attaches a custom debug printout to a copy of <code translate="no">this</code> <a href="tasking-executableitem.html" translate="no">ExecutableItem</a>, issued on task startup and after the task is finished, and returns the coupled item.</p>
+<p>The debug printout includes a timestamp of the event (start or finish) and <i translate="no">logName</i> to identify the specific task in the debug log.</p>
+<p>The finish printout contains the additional information whether the execution was synchronous or asynchronous, its result (the value described by the <a href="tasking.html#DoneWith-enum" translate="no">DoneWith</a> enum), and the total execution time in milliseconds.</p>
+<!-- @@@withLog -->
+<!-- $$$withTimeout[overload1]$$$withTimeoutstd::chrono::millisecondsconststd::function<void()>& -->
+<h3 class="fn" translate="no" id="withTimeout"><span class="type"><a href="tasking-group.html" translate="no">Tasking::Group</a></span> ExecutableItem::<span class="name">withTimeout</span>(<span class="type">std::chrono::milliseconds</span> <i>timeout</i>, const <span class="type">std::function</span>&lt;<span class="type">void</span> ()&gt; &amp;<i>handler</i> = {}) const</h3>
+<p>Attaches <code translate="no">TimeoutTask</code> to a copy of <code translate="no">this</code> <a href="tasking-executableitem.html" translate="no">ExecutableItem</a>, elapsing after <i translate="no">timeout</i> in milliseconds, with an optionally provided timeout <i translate="no">handler</i>, and returns the coupled item.</p>
+<p>When the <a href="tasking-executableitem.html" translate="no">ExecutableItem</a> finishes before <i translate="no">timeout</i> passes, the returned item finishes immediately with the task's result. Otherwise, <i translate="no">handler</i> is invoked (if provided), the task is canceled, and the returned item finishes with an error.</p>
+<!-- @@@withTimeout -->
+</div>
+<div class="relnonmem">
+<h2>Related Non-Members</h2>
+<!-- $$$operator![overload1]$$$operator!constTasking::ExecutableItem& -->
+<h3 class="fn" translate="no" id="operator-not"><span class="type"><a href="tasking-group.html" translate="no">Tasking::Group</a></span> <span class="name">operator!</span>(const <span class="type"><a href="tasking-executableitem.html" translate="no">Tasking::ExecutableItem</a></span> &amp;<i>item</i>)</h3>
+<p>Returns a Group with the <a href="tasking.html#DoneResult-enum" translate="no">DoneResult</a> of <i translate="no">item</i> negated.</p>
+<p>If <i translate="no">item</i> reports <a href="tasking.html#DoneResult-enum" translate="no">DoneResult::Success</a>, the returned item reports <a href="tasking.html#DoneResult-enum" translate="no">DoneResult::Error</a>. If <i translate="no">item</i> reports <a href="tasking.html#DoneResult-enum" translate="no">DoneResult::Error</a>, the returned item reports <a href="tasking.html#DoneResult-enum" translate="no">DoneResult::Success</a>.</p>
+<p>The returned item is equivalent to:</p>
+<pre class="cpp" translate="no">
+ Group {
+     item<span class="operator">,</span>
+     onGroupDone(<span class="operator">[</span><span class="operator">]</span>(DoneWith doneWith) { <span class="keyword">return</span> toDoneResult(doneWith <span class="operator">=</span><span class="operator">=</span> DoneWith<span class="operator">::</span>Error); })
+ }
+</pre>
+<p><b>See also </b><a href="tasking-executableitem.html#operator-and-and" translate="no">operator&amp;&amp;</a>() and <a href="tasking-executableitem.html#operator-7c-7c" translate="no">operator||</a>().</p>
+<!-- @@@operator! -->
+<!-- $$$operator&&[overload1]$$$operator&&constTasking::ExecutableItem&constTasking::ExecutableItem& -->
+<h3 class="fn" translate="no" id="operator-and-and"><span class="type"><a href="tasking-group.html" translate="no">Tasking::Group</a></span> <span class="name">operator&amp;&amp;</span>(const <span class="type"><a href="tasking-executableitem.html" translate="no">Tasking::ExecutableItem</a></span> &amp;<i>first</i>, const <span class="type"><a href="tasking-executableitem.html" translate="no">Tasking::ExecutableItem</a></span> &amp;<i>second</i>)</h3>
+<p>Returns a Group with <i translate="no">first</i> and <i translate="no">second</i> tasks merged with conjunction.</p>
+<p>Both <i translate="no">first</i> and <i translate="no">second</i> tasks execute in sequence. If both tasks report <a href="tasking.html#DoneResult-enum" translate="no">DoneResult::Success</a>, the returned item reports <a href="tasking.html#DoneResult-enum" translate="no">DoneResult::Success</a>. Otherwise, the returned item reports <a href="tasking.html#DoneResult-enum" translate="no">DoneResult::Error</a>.</p>
+<p>The returned item is <a href="https://en.wikipedia.org/wiki/Short-circuit_evaluation">short-circuiting</a>: if the <i translate="no">first</i> task reports <a href="tasking.html#DoneResult-enum" translate="no">DoneResult::Error</a>, the <i translate="no">second</i> task is skipped, and the returned item reports <a href="tasking.html#DoneResult-enum" translate="no">DoneResult::Error</a> immediately.</p>
+<p>The returned item is equivalent to:</p>
+<pre class="cpp" translate="no">
+ Group { stopOnError<span class="operator">,</span> first<span class="operator">,</span> second }
+</pre>
+<div class="admonition note">
+<p><b>Note: </b>Parallel execution of conjunction in a short-circuit manner can be achieved with the following code: <code translate="no">Group { parallel, stopOnError, first, second }</code>. In this case: if the <i>first finished</i> task reports <a href="tasking.html#DoneResult-enum" translate="no">DoneResult::Error</a>, the <i>other</i> task is canceled, and the group reports <a href="tasking.html#DoneResult-enum" translate="no">DoneResult::Error</a> immediately.</p>
+</div>
+<p><b>See also </b><a href="tasking-executableitem.html#operator-7c-7c" translate="no">operator||</a>() and <a href="tasking-executableitem.html#operator-not" translate="no">operator!</a>().</p>
+<!-- @@@operator&& -->
+<!-- $$$operator&&$$$operator&&constTasking::ExecutableItem&Tasking::DoneResult -->
+<h3 class="fn" translate="no" id="operator-and-and-1"><span class="type"><a href="tasking-group.html" translate="no">Tasking::Group</a></span> <span class="name">operator&amp;&amp;</span>(const <span class="type"><a href="tasking-executableitem.html" translate="no">Tasking::ExecutableItem</a></span> &amp;<i>item</i>, <span class="type"><a href="tasking.html#DoneResult-enum" translate="no">Tasking::DoneResult</a></span> <i>result</i>)</h3>
+<p>Returns the <i translate="no">item</i> task if the <i translate="no">result</i> is <a href="tasking.html#DoneResult-enum" translate="no">DoneResult::Success</a>; otherwise returns the <i translate="no">item</i> task with its done result tweaked to <a href="tasking.html#DoneResult-enum" translate="no">DoneResult::Error</a>.</p>
+<p>The <code translate="no">task &amp;&amp; DoneResult::Error</code> is an eqivalent to tweaking the task's done result into <a href="tasking.html#DoneResult-enum" translate="no">DoneResult::Error</a> unconditionally.</p>
+<div class="admonition auto"><p>This function overloads <a href="tasking-executableitem.html#operator-and-and" translate="no">ExecutableItem::operator&amp;&amp;</a>().</p>
+</div><!-- @@@operator&& -->
+<!-- $$$operator||[overload1]$$$operator||constTasking::ExecutableItem&constTasking::ExecutableItem& -->
+<h3 class="fn" translate="no" id="operator-7c-7c"><span class="type"><a href="tasking-group.html" translate="no">Tasking::Group</a></span> <span class="name">operator||</span>(const <span class="type"><a href="tasking-executableitem.html" translate="no">Tasking::ExecutableItem</a></span> &amp;<i>first</i>, const <span class="type"><a href="tasking-executableitem.html" translate="no">Tasking::ExecutableItem</a></span> &amp;<i>second</i>)</h3>
+<p>Returns a Group with <i translate="no">first</i> and <i translate="no">second</i> tasks merged with disjunction.</p>
+<p>Both <i translate="no">first</i> and <i translate="no">second</i> tasks execute in sequence. If both tasks report <a href="tasking.html#DoneResult-enum" translate="no">DoneResult::Error</a>, the returned item reports <a href="tasking.html#DoneResult-enum" translate="no">DoneResult::Error</a>. Otherwise, the returned item reports <a href="tasking.html#DoneResult-enum" translate="no">DoneResult::Success</a>.</p>
+<p>The returned item is <a href="https://en.wikipedia.org/wiki/Short-circuit_evaluation">short-circuiting</a>: if the <i translate="no">first</i> task reports <a href="tasking.html#DoneResult-enum" translate="no">DoneResult::Success</a>, the <i translate="no">second</i> task is skipped, and the returned item reports <a href="tasking.html#DoneResult-enum" translate="no">DoneResult::Success</a> immediately.</p>
+<p>The returned item is equivalent to:</p>
+<pre class="cpp" translate="no">
+ Group { stopOnSuccess<span class="operator">,</span> first<span class="operator">,</span> second }
+</pre>
+<div class="admonition note">
+<p><b>Note: </b>Parallel execution of disjunction in a short-circuit manner can be achieved with the following code: <code translate="no">Group { parallel, stopOnSuccess, first, second }</code>. In this case: if the <i>first finished</i> task reports <a href="tasking.html#DoneResult-enum" translate="no">DoneResult::Success</a>, the <i>other</i> task is canceled, and the group reports <a href="tasking.html#DoneResult-enum" translate="no">DoneResult::Success</a> immediately.</p>
+</div>
+<p><b>See also </b><a href="tasking-executableitem.html#operator-and-and" translate="no">operator&amp;&amp;</a>() and <a href="tasking-executableitem.html#operator-not" translate="no">operator!</a>().</p>
+<!-- @@@operator|| -->
+<!-- $$$operator||$$$operator||constTasking::ExecutableItem&Tasking::DoneResult -->
+<h3 class="fn" translate="no" id="operator-7c-7c-1"><span class="type"><a href="tasking-group.html" translate="no">Tasking::Group</a></span> <span class="name">operator||</span>(const <span class="type"><a href="tasking-executableitem.html" translate="no">Tasking::ExecutableItem</a></span> &amp;<i>item</i>, <span class="type"><a href="tasking.html#DoneResult-enum" translate="no">Tasking::DoneResult</a></span> <i>result</i>)</h3>
+<p>Returns the <i translate="no">item</i> task if the <i translate="no">result</i> is <a href="tasking.html#DoneResult-enum" translate="no">DoneResult::Error</a>; otherwise returns the <i translate="no">item</i> task with its done result tweaked to <a href="tasking.html#DoneResult-enum" translate="no">DoneResult::Success</a>.</p>
+<p>The <code translate="no">task || DoneResult::Success</code> is an eqivalent to tweaking the task's done result into <a href="tasking.html#DoneResult-enum" translate="no">DoneResult::Success</a> unconditionally.</p>
+<div class="admonition auto"><p>This function overloads <a href="tasking-executableitem.html#operator-7c-7c" translate="no">ExecutableItem::operator||</a>().</p>
+</div><!-- @@@operator|| -->
+</div>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <abbr title="Copyright">&copy;</abbr> 2025 <span translate="no">The Qt Company Ltd.</span>
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br/>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the <span translate="no">Free Software Foundation</span>.<br/>    <span translate="no">Qt</span> and respective logos are <a href="https://doc.qt.io/qt/trademarks.html">    trademarks</a> of <span translate="no">The Qt Company Ltd.</span> in Finland and/or other countries
+   worldwide. All other trademarks are property of their respective owners. </p>
+</div>
+</body>
+</html>

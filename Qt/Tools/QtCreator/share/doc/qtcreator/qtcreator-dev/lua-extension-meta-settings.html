@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- lua-extensions.qdoc -->
+  <meta name="description" content="Read and write settings.">
+  <title>settings.lua | Extending Qt Creator Manual</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="index.html">Extending Qt Creator Manual</a></li>
+<li>settings.lua</li>
+<li id="buildversion"><a href="index.html">Extending Qt Creator Manual 18.0.2</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar"><div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">settings.lua</h1>
+<!-- $$$lua-extension-meta-settings-description -->
+<div class="descr" id="details">
+<pre class="cpp" translate="no">
+ ---@meta Settings
+
+ ---@module 'Qt'
+ ---@module 'SimpleTypes'
+
+ local settings = {}
+
+ ---The base class of all aspects
+ ---@class BaseAspect
+ settings.BaseAspect = {}
+
+ ---Applies the changes from its volatileValue to its value.
+ function settings.BaseAspect:apply() end
+
+ ---@class AspectCreate
+ ---@field settingsKey? string The settings key of the aspect. If not set, the aspect will not be saved to the settings persistently.
+ ---@field displayName? string The display name of the aspect.
+ ---@field labelText? string The label text of the aspect.
+ ---@field toolTip? string The tool tip of the aspect.
+ ---@field enabler? BoolAspect Enable / Disable this aspect based on the state of the `enabler`.
+ ---@field onValueChanged? function () Called when the value of the aspect changes.
+ ---@field onVolatileValueChanged? function () Called when the volatile value of the aspect changes.
+ ---@field macroExpander? MacroExpander|NullType The macro expander to use, or nil to disable macro expansion.
+ local AspectCreate = {}
+
+ ---The base class of most typed aspects.
+ ---@generic T
+ ---@class TypedAspect&lt;T&gt; : BaseAspect
+ ---@field value `T` The value of the aspect.
+ ---@field volatileValue `T` The temporary value of the aspect.
+ ---@field defaultValue `T` The default value of the aspect.
+ local TypedAspect = {}
+
+ ---@generic T
+ ---@class TypedAspectCreate&lt;T&gt; : AspectCreate
+ ---@field defaultValue `T` The default value of the aspect.
+ local TypedAspectCreate = {}
+
+ ---A container for aspects.
+ ---@class AspectContainer : BaseAspect
+ settings.AspectContainer = {}
+
+ ---Options for creating an AspectContainer.
+ ---@class AspectContainerCreate
+ ---@field autoApply? boolean Whether the aspects should be applied automatically or not.
+ ---@field onApplied? function Called when the aspects are applied.
+ ---@field layouter? function The layouter of the aspect container.
+ ---@field settingsGroup? string The settings group of the aspect container.
+ AspectContainerCreate = {}
+
+ ---Create a new AspectContainer.
+ ---@param options AspectContainerCreate
+ ---@return AspectContainer
+ function settings.AspectContainer.create(options) end
+
+ ---A aspect containing a boolean value.
+ ---@class BoolAspect : TypedAspect&lt;boolean&gt;
+ settings.BoolAspect = {}
+
+ ---@enum LabelPlacement
+ settings.LabelPlacement = {
+     AtCheckBox = 0,
+     Compact = 0,
+     InExtraLabel = 0
+ };
+ ---@class BoolAspectCreate : TypedAspectCreate&lt;boolean&gt;
+ ---@field labelPlacement? LabelPlacement:
+ BoolAspectCreate = {}
+
+ ---Create a new BoolAspect.
+ ---@param options BoolAspectCreate
+ ---@return BoolAspect
+ function settings.BoolAspect.create(options) end
+
+ settings.ColorAspect = {}
+ function settings.ColorAspect.create(options) end
+
+ ---@class SelectionAspect : TypedAspect&lt;int&gt;
+ ---@field stringValue string The string value of the aspect.
+ ---@field dataValue any The data value of the aspect.
+ ---@field volatileValue integer The currently highlighted option index.
+ settings.SelectionAspect = {}
+
+ ---@enum SelectionDisplayStyle
+ settings.SelectionDisplayStyle = {
+     RadioButtons = 0,
+     ComboBox = 0
+ };
+
+ ---@class SelectionOption
+ ---@field name string The name of the option.
+ ---@field toolTip? string The toolTip of the option.
+ ---@field data? any The data of the option.
+ SelectionOption = {}
+
+ ---@class SelectionAspectCreate : TypedAspectCreate&lt;int&gt;
+ ---@field displayStyle? SelectionDisplayStyle The display type of the aspect.
+ ---@field options? string[]|SelectionOption[] The available options.
+ SelectionAspectCreate = {}
+
+ ---Creates a new SelectionAspect
+ ---@param options SelectionAspectCreate
+ ---@return SelectionAspect aspect The Aspect
+ function settings.SelectionAspect.create(options) end
+
+ function settings.SelectionAspect:addOption(option) end
+
+ function settings.SelectionAspect:addOption(option, toolTip) end
+
+ ---Return the data stored for the option at the given index.
+ ---@param index integer
+ ---@return any
+ function settings.SelectionAspect:itemValueForIndex(index) end
+
+ settings.MultiSelectionAspect = {}
+ function settings.MultiSelectionAspect.create(options) end
+
+ ---@enum StringDisplayStyle
+ settings.StringDisplayStyle = {
+     Label = 0,
+     LineEdit = 0,
+     TextEdit = 0,
+     PasswordLineEdit = 0,
+ };
+
+ ---@class StringAspectCreate : TypedAspectCreate&lt;string&gt;
+ ---@field displayStyle? StringDisplayStyle The display type of the aspect.
+ ---@field historyId? string The history id of the aspect.
+ ---@field valueAcceptor? function string (oldvalue: string, newValue: string)
+ ---@field showToolTipOnLabel? boolean
+ ---@field displayFilter? function string (value: string)
+ ---@field placeHolderText? string
+ ---@field acceptRichText? boolean
+ ---@field autoApplyOnEditingFinished? boolean
+ ---@field elideMode? Qt.TextElideMode The elide mode of the aspect.
+ ---@field rightSideIconPath? string Path to the icon
+ ---@field minimumHeight? int
+ ---@field completer QCompleter? A QCompleter object.
+ StringAspectCreate = {}
+
+ ---@class StringAspect : TypedAspect&lt;string&gt;
+ settings.StringAspect = {}
+
+ ---Create a new StringAspect
+ ---@param options StringAspectCreate
+ function settings.StringAspect.create(options) end
+
+ ---@enum Kind
+ settings.Kind = {
+     ExistingDirectory = 0,
+     Directory = 0,
+     File = 0,
+     SaveFile = 0,
+     ExistingCommand = 0,
+     Command = 0,
+     Any = 0
+ };
+
+ ---@class FilePathAspectCreate
+ ---@field expectedKind? Kind The kind of path we want to select.
+ ---@field historyId? string The history id of the aspect.
+ ---@field defaultPath? FilePath The default path of the aspect.
+ ---@field promptDialogFilter? string
+ ---@field promptDialogTitle? string
+ ---@field commandVersionArguments? string[]
+ ---@field allowPathFromDevice? boolean
+ ---@field validatePlaceHolder? boolean
+ ---@field openTerminalHandler? function
+ ---@field environment? Environment
+ ---@field baseFileName? FilePath
+ ---@field valueAcceptor? function string (oldvalue: string, newValue: string)
+ ---@field showToolTipOnLabel?  boolean
+ ---@field autoApplyOnEditingFinished? boolean
+ ---@field validationFunction? function
+ ---@field displayFilter? function string (value: string)
+ ---@field placeHolderText? string
+ FilePathAspectCreate = {}
+
+ ---@class FilePathAspect
+ ---@field expandedValue FilePath The expanded value of the aspect.
+ ---@field defaultPath FilePath The default path of the aspect.
+ settings.FilePathAspect = {}
+
+ ---Create a new FilePathAspect
+ ---@param options FilePathAspectCreate : TypedAspectCreate&lt;string&gt;
+ ---@return FilePathAspect
+ function settings.FilePathAspect.create(options) end
+
+ ---Set the value of the aspect
+ ---@param value string|FilePath The value to set.
+ function settings.FilePathAspect:setValue(value) end
+
+ settings.IntegerAspect = {}
+ function settings.IntegerAspect.create(options) end
+
+ settings.DoubleAspect = {}
+ function settings.DoubleAspect.create(options) end
+
+ settings.StringListAspect = {}
+ function settings.StringListAspect.create(options) end
+
+ settings.FilePathListAspect = {}
+ function settings.FilePathListAspect.create(options) end
+
+ settings.IntegersAspect = {}
+ function settings.IntegersAspect.create(options) end
+
+ settings.StringSelectionAspect = {}
+ function settings.StringSelectionAspect.create(options) end
+
+ ---@class OptionsPage
+ settings.OptionsPage = {}
+
+ ---@class OptionsPageCreate
+ ---@field id string
+ ---@field displayName string
+ ---@field categoryId string
+ ---@field displayCategory string
+ ---@field categoryIconPath string|FilePath
+ ---@field aspectContainer AspectContainer
+ OptionsPageCreate = {}
+
+ ---Creates a new OptionsPage.
+ ---@param options OptionsPageCreate
+ ---@return OptionsPage
+ function settings.OptionsPage.create(options) end
+
+ ---Shows options page.
+ function settings.OptionsPage:show() end
+
+ ---@class ExtensionOptionsPage
+ settings.extensionOptionsPage = {}
+
+ ---Create an ExtensionOptionsPage.
+ ---@param aspectContainer AspectContainer
+ ---@return ExtensionOptionsPage
+ function settings.extensionOptionsPage.create(aspectContainer) end
+
+ ---Show the options page.
+ function settings.extensionOptionsPage:show() end
+ return settings
+</pre>
+</div>
+<!-- @@@lua-extension-meta-settings -->
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <abbr title="Copyright">&copy;</abbr> 2025 <span translate="no">The Qt Company Ltd.</span>
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br/>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the <span translate="no">Free Software Foundation</span>.<br/>    <span translate="no">Qt</span> and respective logos are <a href="https://doc.qt.io/qt/trademarks.html">    trademarks</a> of <span translate="no">The Qt Company Ltd.</span> in Finland and/or other countries
+   worldwide. All other trademarks are property of their respective owners. </p>
+</div>
+</body>
+</html>

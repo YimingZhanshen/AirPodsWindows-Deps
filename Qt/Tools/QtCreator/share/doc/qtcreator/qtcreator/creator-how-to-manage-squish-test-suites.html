@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- creator-squish.qdoc -->
+  <title>Manage Squish test suites and cases | Qt Creator Documentation</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="index.html">Qt Creator Documentation</a></li>
+<li>Manage Squish test suites and cases</li>
+<li id="buildversion"><a href="index.html">Qt Creator 18.0.2</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+  <link rel="prev" href="creator-how-to-create-squish-test-suites.html" />
+  <link rel="next" href="creator-how-to-select-squish-auts.html" />
+<p class="naviNextPrevious headerNavi">
+<a class="prevPage" href="creator-how-to-create-squish-test-suites.html">Create Squish test suites</a>
+<span class="naviSeparator">  &#9702;  </span>
+<a class="nextPage" href="creator-how-to-select-squish-auts.html">Select Squish AUTs</a>
+</p>
+<div class="sidebar">
+<div class="toc">
+<h3 id="toc">Contents</h3>
+<ul>
+<li class="level1"><a href="#record-test-cases">Record test cases</a></li>
+<li class="level1"><a href="#run-test-suites">Run test suites</a></li>
+<li class="level1"><a href="#map-symbolic-names">Map symbolic names</a></li>
+<li class="level1"><a href="#inspect-local-variables">Inspect local variables</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Manage Squish test suites and cases</h1>
+<!-- $$$creator-how-to-manage-squish-test-suites.html-description -->
+<div class="descr" id="details">
+<p>Manage Squish test suites and cases in the <b translate="no">Squish</b> <a href="creator-how-to-show-and-hide-sidebars.html">sidebar view</a>.</p>
+<p class="centerAlign"><img src="images/qtcreator-squish-view.png" alt="Squish sidebar view" /></p><p>To show existing test suites in <b translate="no">Test Suites</b>, select <b translate="no">Open Squish Suites</b> in the context menu.</p>
+<p class="centerAlign"><img src="images/qtcreator-squish-view-open-squish-suites.png" alt="Open Squish Test Suites dialog" /></p><p>To open the <b translate="no">Squish Test Suite</b> wizard for creating a new test suite, select <b translate="no">Create New Test Suite</b> in the context menu.</p>
+<p>To add a test case to a test suite, select it and then select <b translate="no">Add New Test Case</b> in the context menu.</p>
+<p>To close all test suites, select <b translate="no">Close All Test Suites</b> in the context menu.</p>
+<p>To add a shared folder to <b translate="no">Shared Folders</b>, select <b translate="no">Add Shared Folder</b> in the context menu. To remove all shared folders, select <b translate="no">Remove All Shared Folders</b>.</p>
+<p>Double-click a test suite in <b translate="no">Test Suites</b> to open the <code translate="no">suite.conf</code> configuration file for editing.</p>
+<h2 id="record-test-cases">Record test cases</h2>
+<p>Squish records tests using the scripting language that you specified for the test suite. Recordings are made into existing test cases.</p>
+<p>In <b translate="no">Test Suites</b>, select <img src="images/recordfill.png" alt="Record Test Case" /> (<b translate="no">Record Test Case</b>) next to the test case name. The application under test (AUT) that you selected for the test suite is displayed and you can start recording the test case.</p>
+<p class="centerAlign"><img src="images/qtcreator-squish-control-bar-record-test-case.png" alt="Squish control bar for recording test cases" /></p><p>When you are done, select <img src="images/stop_small.png" alt="Stop" /> (<b translate="no">Stop</b>) in <b translate="no">Control Bar</b>.</p>
+<p>Edit recorded test scripts or copy parts of them into manually created test scripts.</p>
+<p class="centerAlign"><img src="images/qtcreator-squish-test-script-edit.png" alt="A test script open in the editor" /></p><h2 id="run-test-suites">Run test suites</h2>
+<p>Run a recorded test case to have Squish repeat all the actions that you applied when recording the test, but without the pauses that humans are prone to but which computers don't need. To run a test case, select <img src="images/run_small.png" alt="Run" /> (<b translate="no">Run</b>) next to the test case in <b translate="no">Test Suites</b>.</p>
+<p class="centerAlign"><img src="images/qtcreator-squish-control-bar-run-test-case.png" alt="Squish control bar for running test cases" /></p><p>While the test is running, you can view test results as well as interrupt and stop tests in the <b translate="no">Control Bar</b>.</p>
+<h2 id="map-symbolic-names">Map symbolic names</h2>
+<p>When Squish records a test, it uses <i>symbolic names</i> to identify the UI elements. Symbolic names are stored in an object map that can be either text-based or script-based. Text-based symbolic names are plain strings starting with a colon (:), whereas script-based symbolic names are script variables.</p>
+<p>Squish generates symbolic names programmatically, but you can use them in hand-written code, or when you edit test cases or use extracts from recorded test cases.</p>
+<p>Symbolic names have one major advantage over real names: if a property that a real name depends on changes in the AUT, the real name becomes invalid, and you must update all occurrences of it in test scripts. When using symbolic names, you only need to update the real name in the object map. You do not need to make any changes to the tests.</p>
+<p>To edit the object map of a test suite, select <img src="images/objectsmap.png" alt="Object Map" /> (<b translate="no">Object Map</b>) next to the test suite in <b translate="no">Test Suites</b>.</p>
+<p class="centerAlign"><img src="images/qtcreator-squish-symbolic-names.png" alt="Symbolic Names view" /></p><p>You can filter the symbolic names in the <b translate="no">Symbolic Names</b> view. To edit a symbolic name or the names or values of its properties, double-click the name or value in the view and enter a new one.</p>
+<p>To add a new symbolic name, select <b translate="no">New</b>. Double-click the placeholder for the name and enter a new name. Then select <b translate="no">New</b> next to <b translate="no">Properties</b> to enter properties for the symbolic name.</p>
+<p>To remove the selected symbolic name or property, select <b translate="no">Remove</b>.</p>
+<p>To jump to the symbolic name associated to the selected property, select <img src="images/jumpto.png" alt="Jump To" />.</p>
+<h2 id="inspect-local-variables">Inspect local variables</h2>
+<p>If you set breakpoints in the test code before running the test, the test execution is automatically interrupted when a breakpoint is hit. You can inspect the contents of local variables in the <b translate="no">Squish Locals</b> view.</p>
+<p class="centerAlign"><img src="images/qtcreator-squish-locals.png" alt="Squish Locals view" /></p><p>Use the <b translate="no">Step Into</b>, <b translate="no">Step Over</b>, and <b translate="no">Step Out</b> buttons in the <b translate="no">Squish</b> debugging view to step through the code.</p>
+<p class="centerAlign"><img src="images/qtcreator-squish-debugging-view.png" alt="Squish debugging view" /></p></div>
+<p><b>See also </b><a href="creator-how-to-connect-squish-server.html">Connect to Squish Server</a>, <a href="creator-how-to-create-squish-test-suites.html">Create Squish test suites</a>, <a href="creator-how-to-enable-plugins.html">Enable and disable plugins</a>, <a href="creator-how-to-select-squish-auts.html">Select Squish AUTs</a>, and <a href="creator-reference-squish-output.html">Squish</a>.</p>
+<!-- @@@creator-how-to-manage-squish-test-suites.html -->
+<p class="naviNextPrevious footerNavi">
+<a class="prevPage" href="creator-how-to-create-squish-test-suites.html">Create Squish test suites</a>
+<span class="naviSeparator">  &#9702;  </span>
+<a class="nextPage" href="creator-how-to-select-squish-auts.html">Select Squish AUTs</a>
+</p>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   Copyright <acronym title="Copyright">&copy;</acronym> The Qt Company Ltd. and other contributors.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

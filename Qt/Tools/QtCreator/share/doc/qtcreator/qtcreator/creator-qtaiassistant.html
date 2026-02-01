@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- creator-aiassistant.qdoc -->
+  <title>Use Qt AI Assistant | Qt Creator Documentation</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="index.html">Qt Creator Documentation</a></li>
+<li>Use Qt AI Assistant</li>
+<li id="buildversion"><a href="index.html">Qt Creator 18.0.2</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+  <link rel="prev" href="creator-copilot.html" />
+  <link rel="next" href="creator-how-to-write-notes.html" />
+<p class="naviNextPrevious headerNavi">
+<a class="prevPage" href="creator-copilot.html">Use GitHub Copilot</a>
+<span class="naviSeparator">  &#9702;  </span>
+<a class="nextPage" href="creator-how-to-write-notes.html">Write down notes</a>
+</p>
+<div class="sidebar">
+<div class="toc">
+<h3 id="toc">Contents</h3>
+<ul>
+<li class="level1"><a href="#install-qt-ai-assistant">Install Qt AI Assistant</a></li>
+<li class="level1"><a href="#enable-code-syntax-highlighting-in-the-inline-chat-window">Enable code syntax highlighting in the inline chat window</a></li>
+<li class="level1"><a href="#install-and-use-ollama">Install and use Ollama</a></li>
+<li class="level2"><a href="#run-models-on-ollama">Run models on Ollama</a></li>
+<li class="level2"><a href="#supported-models-from-ollama">Supported models from Ollama</a></li>
+<li class="level2"><a href="#custom-models">Custom models</a></li>
+<li class="level1"><a href="#connect-to-an-llm">Connect to an LLM</a></li>
+<li class="level1"><a href="#automatic-code-completion">Automatic code-completion</a></li>
+<li class="level1"><a href="#complete-code-from-the-keyboard">Complete code from the keyboard</a></li>
+<li class="level1"><a href="#enter-prompts-and-smart-commands">Enter prompts and smart commands</a></li>
+<li class="level2"><a href="#request-suggestions-using-human-language">Request suggestions using human language</a></li>
+<li class="level2"><a href="#request-code-review">Request code review</a></li>
+<li class="level2"><a href="#request-test-cases-in-qt-test-syntax">Request test cases in Qt Test syntax</a></li>
+<li class="level2"><a href="#request-code-documentation-in-markdown-format">Request code documentation in Markdown format</a></li>
+<li class="level2"><a href="#request-fixing-of-code">Request fixing of code</a></li>
+<li class="level2"><a href="#request-explaining-of-code">Request explaining of code</a></li>
+<li class="level2"><a href="#add-inline-comments">Add inline comments</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Use Qt AI Assistant</h1>
+<!-- $$$creator-qtaiassistant.html-description -->
+<div class="descr" id="details">
+<p>Qt AI Assistant is a coding assistant. When connected to a Large Language Model (LLM), it auto-completes your code, gives expert coding advice, suggests code fixes, as well as writes test cases and code documentation.</p>
+<p class="centerAlign"><img src="images/qtaiassistant-codecompletion.webp" alt="Automatic Code Completion" /></p><p>Qt AI Assistant is available for selected commercial Qt developer license holders. For more information on licensing, select <b translate="no">Compare</b> in <a href="https://www.qt.io/pricing">Qt pricing</a>.</p>
+<p>To learn the basics of Qt AI Assistant, take the <a href="https://www.qt.io/academy/course-catalog#getting-started-with-qt-ai-assistant">Qt Academy: Getting Started With Qt AI Assistant</a> course.</p>
+<div class="admonition note">
+<p><b>Note: </b>The LLM itself is not in scope of the Qt AI Assistant. You need to connect to a third-party LLM and agree to the terms and conditions, as well as to the acceptable use policy of the LLM provider. By using Qt AI Assistant, you agree to <a href="https://www.qt.io/terms-conditions/qt-dev-framework">Terms &amp; Conditions - Qt Development Framework</a>.</p>
+</div>
+<p>Qt AI Assistant is currently experimental and powered by generative AI. Check all suggestions to make sure that they are fit for use in your project.</p>
+<div class="admonition note">
+<p><b>Note: </b>Install and load the Qt AI Assistant extension to use it.</p>
+</div>
+<h2 id="install-qt-ai-assistant">Install Qt AI Assistant</h2>
+<p>To load the Qt AI Assistant extension from the web:</p>
+<ol class="1" type="1"><li>Go to <b translate="no">Extensions</b>.<p class="centerAlign"><img src="images/qtcreator-extension-mode.webp" alt="AI Assistant in Extensions mode" /></p></li>
+<li>Select <b translate="no">Use external repository</b>.</li>
+<li>Select <b translate="no">AI Assistant</b>.</li>
+<li>Select <b translate="no">Install</b>.</li>
+</ol>
+<h2 id="enable-code-syntax-highlighting-in-the-inline-chat-window">Enable code syntax highlighting in the inline chat window</h2>
+<p>To enable code syntax highlighting in the inline chat window, go to <a href="creator-how-to-find-preferences.html">Preferences</a> &gt; <b translate="no">Text Editor</b> &gt; <b translate="no">Generic Highlighter</b>, and then select <b translate="no">Download Definitions</b>.</p>
+<p class="centerAlign"><img src="images/qtcreator-syntax-highlighter.png" alt="Generic Highlighter tab in Text Editor preferences" /></p><p>For more information, see <a href="creator-highlighting.html">Download highlight definitions</a>.</p>
+<h2 id="install-and-use-ollama">Install and use Ollama</h2>
+<p>To use LLMs running locally on your computer with the Qt AI Assistant extension, install Ollama. You can run models available from the Ollama selection as well as custom models that you add to Ollama.</p>
+<h3 id="run-models-on-ollama">Run models on Ollama</h3>
+<p>To run models, enter:</p>
+<pre class="cpp" translate="no">
+ ollama run <span class="operator">&lt;</span>model<span class="operator">-</span>name<span class="operator">&gt;</span>
+</pre>
+<p>For example:</p>
+<pre class="cpp" translate="no">
+ ollama run codellama:<span class="number">7b</span><span class="operator">-</span>code
+</pre>
+<h3 id="supported-models-from-ollama">Supported models from Ollama</h3>
+<p>You can use the following models directly from Ollama:</p>
+<ul>
+<li><code translate="no">codellama:7b-code</code></li>
+<li><code translate="no">deepseek-coder-v2:lite</code></li>
+<li><code translate="no">gpt-oss:20b</code></li>
+<li><code translate="no">theqtcompany/codellama-7b-qml</code></li>
+<li><code translate="no">theqtcompany/codellama-13b-qml</code></li>
+</ul>
+<h3 id="custom-models">Custom models</h3>
+<p>For custom models, follow the specific installation instructions for that mode. You can use the following custom models:</p>
+<ul>
+<li><a href="https://huggingface.co/QtGroup/CodeLlama-7B-QML">codellama:7b-code-qml</a></li>
+<li><a href="https://huggingface.co/QtGroup/CodeLlama-13B-QML">codellama:13b-code-qml</a></li>
+</ul>
+<h2 id="connect-to-an-llm">Connect to an LLM</h2>
+<p>You can connect to the following LLMs:</p>
+<ul>
+<li>Code Llama 13B QML (for Qt 6, running in a cloud deployment of your choice)</li>
+<li>Code Llama 13B (for Qt 5, running in a cloud deployment of your choice)</li>
+<li>Codestral (provided by Mistral)</li>
+<li>Claude 4.0 Sonnet (provided by Anthropic, remember that you need to have a token-based billing payment method configured for your Anthropic account: <a href="https://console.anthropic.com/">console.anthropic.com</a>)</li>
+<li>Claude 4.5 Sonnet (provided by Anthropic, remember that you need to have a token-based billing payment method configured for your Anthropic account: <a href="https://console.anthropic.com/">console.anthropic.com</a>)</li>
+<li>GPT 5 (provided by OpenAI, remember that you need to have a token-based billing payment method configured for your OpenAI account: <a href="https://platform.openai.com/">platform.openai.com</a>)</li>
+<li>DeepSeek V3.2 (provided by DeepSeek)</li>
+<li>Code Llama 13B QML through Ollama (running locally on your computer)</li>
+<li>Code Llama 7B QML through Ollama (running locally on your computer)</li>
+<li>Code Llama 7B through Ollama (running locally on your computer)</li>
+</ul>
+<p>To connect to an LLM:</p>
+<ol class="1" type="1"><li>Go to <a href="creator-how-to-find-preferences.html">Preferences</a> &gt; <b translate="no">AI Assistant</b> &gt; <b translate="no">General</b>.<p class="centerAlign"><img src="images/qtcreator-preferences-qtaiassistant-general.webp" alt="General tab in AI Assistant preferences" /></p></li>
+<li>Select an LLM for each configurable use case.</li>
+<li>Go to <b translate="no">Advanced</b>.<p class="centerAlign"><img src="images/qtcreator-preferences-qtaiassistant-advanced.webp" alt="Advanced tab in AI Assistant preferences" /></p></li>
+<li>Enter the API authentication token and server URL of each LLM. For more information on where to get the access information, see the third-party LLM provider documentation.</li>
+</ol>
+<h2 id="automatic-code-completion">Automatic code-completion</h2>
+<p>Qt AI Assistant can help you write code by suggesting what to write next. It prompts the LLM to make one code suggestion when you stop typing.</p>
+<p>To accept the entire suggestion, select the <b>Tab</b> key.</p>
+<p>To accept parts of the suggestions, select <b>Alt+Right</b>.</p>
+<p>To dismiss the suggestion, select <b>Esc</b> or navigate to another position in the code editor.</p>
+<p>To interact with Qt AI Assistant using the mouse, hover over the suggestion.</p>
+<p class="centerAlign"><img src="images/qtaiassistant-codecompletionbar.webp" alt="Code completion tool bar when hovering over a suggestion" /></p><p>When you hover over a suggestion, you can accept parts of the suggested code snippet word-by-word or line-by-line.</p>
+<p>To close the code completion bar, select the <b>Esc</b> key or move the cursor to another position.</p>
+<p>To select the model for code completion, go to <a href="creator-how-to-find-preferences.html">Preferences</a> &gt; <b translate="no">AI Assistant</b> &gt; <b translate="no">General</b>.</p>
+<p>In <b translate="no">General</b>, you can also turn auto-completion of code on or off globally for all projects. Qt AI Assistant consumes a significant number of tokens from the LLM. To cut costs, turn off the auto-completion feature when not needed, and use keyboard shortcuts for code completion.</p>
+<h2 id="complete-code-from-the-keyboard">Complete code from the keyboard</h2>
+<p>To trigger code suggestions manually, select <b>Ctrl+'</b>.</p>
+<h2 id="enter-prompts-and-smart-commands">Enter prompts and smart commands</h2>
+<p>In an inline prompt window in the text editor, you can prompt the assistant to implement your requests in human language, ask questions, or execute <i>smart commands</i>. To open the chat, select <b>Ctrl+Shift+A</b>. Alternatively, to open the inline prompt window, you can select code and then select <img src="images/ai-assistant.png" alt="AI Assistant" />.</p>
+<p>To close the inline prompt window, select <b>Esc</b> or <img src="images/close.png" alt="Close" />.</p>
+<p>To go to Qt AI Assistant preferences from the inline prompt window, select <img src="images/settings.png" alt="Preferences" />. There, you can set the model to use for prompts and code reviews.</p>
+<h3 id="request-suggestions-using-human-language">Request suggestions using human language</h3>
+<p>To request suggestions using human language, enter your requests into the input field. If you have highlighted code, the AI assistant adds it as context to the prompt. Qt AI Assistant shows a suggestion that you can copy to the clipboard by selecting <b translate="no">Copy</b> in the inline prompt window.</p>
+<h3 id="request-code-review">Request code review</h3>
+<p>To review code with Qt AI Assistant:</p>
+<ol class="1" type="1"><li>Highlight code in the code editor.</li>
+<li>Open the inline prompt window.</li>
+<li>Select the <b translate="no">/review</b> smart command.</li>
+</ol>
+<p>Qt AI Assistant reviews the code and suggests improvements. It uses <a href="https://doc.qt.io/qt/qtqml-tooling-qmllint.html">QML Lint</a> to review QML code if <b translate="no">Enable QML linter</b> is on in <a href="creator-how-to-find-preferences.html">Preferences</a> &gt; <b translate="no">AI Assistant</b> &gt; <b translate="no">General</b>.</p>
+<h3 id="request-test-cases-in-qt-test-syntax">Request test cases in Qt Test syntax</h3>
+<p>To write test cases with Qt AI Assistant:</p>
+<ol class="1" type="1"><li>Highlight code in the code editor.</li>
+<li>Open the inline prompt window.</li>
+<li>Select the <b translate="no">/qtest</b> smart command.</li>
+</ol>
+<p>Qt AI Assistant generates a test case in <a href="https://doc.qt.io/qt/qttest-index.html">Qt Test</a> format that you can copy and paste to your <a href="creator-how-to-create-qt-tests.html">Qt test project</a>.</p>
+<p>To run the generated <a href="https://doc.qt.io/qt/qttest-index.html">Qt Test</a> cases, configure your <code translate="no">CMakeLists.txt</code> files and <code translate="no">main.cpp</code> file.</p>
+<h4 id="configure-the-main-project-cmakelists-op-op-txt">Configure the main project <code translate="no">CMakeLists.txt</code></h4>
+<ol class="1" type="1"><li>Define your module as both a library and a QML module. The URI value determines the import name used in <a href="https://doc.qt.io/qt/qml-qttest-testcase.html" translate="no">TestCase</a> scripts:<pre class="cpp" translate="no">
+ qt_add_library({module_name} STATIC)
+ qt_add_qml_module({module_name}
+     URI {module_name}
+     VERSION <span class="number">1.0</span>
+     QML_FILES
+             Main<span class="operator">.</span>qml
+ )
+</pre>
+</li>
+<li>Add the auto-generated plugin to your target's link libraries. The plugin name follows the pattern <i>&lt;module_name&gt;plugin</i>:<pre class="cpp" translate="no">
+ target_link_libraries({project}
+     PRIVATE Qt6<span class="operator">::</span>Quick {module_nameplugin}
+ )
+</pre>
+</li>
+<li>Add <code translate="no">QML_IMPORT_PATH</code> at the end of the file to ensure the QML engine can locate your module:<pre class="cpp" translate="no">
+ set(QML_IMPORT_PATH ${CMAKE_BINARY_DIR} CACHE STRING <span class="string">&quot;&quot;</span> FORCE)
+</pre>
+</li>
+</ol>
+<h4 id="configure-the-test-project-cmakelists-op-op-txt">Configure the test project <code translate="no">CMakeLists.txt</code></h4>
+<p>Link the plugin to your test target (<i>test_directory</i>):</p>
+<pre class="cpp" translate="no">
+ target_link_libraries({test_directory} PRIVATE <span class="type"><a href="https://doc.qt.io/qt/qt.html" translate="no">Qt</a></span>${QT_VERSION_MAJOR}<span class="operator">::</span>QuickTest {module_nameplugin})
+</pre>
+<h4 id="configure-the-main-project-main-op-op-cpp">Configure the main project <code translate="no">main.cpp</code></h4>
+<p>To load your QML component from the registered module, use <code translate="no">loadFromModule()</code>:</p>
+<pre class="cpp" translate="no">
+ engine<span class="operator">.</span>loadFromModule(<span class="string">&quot;{module_name}&quot;</span><span class="operator">,</span> <span class="string">&quot;Main&quot;</span>);
+</pre>
+<h4 id="configure-external-test-projects">Configure external test projects</h4>
+<p>If the test project is outside the main project:</p>
+<ol class="1" type="1"><li>Add the main project as a subdirectory in the test project <code translate="no">CMakeLists.txt</code>:<pre class="cpp" translate="no">
+ add_subdirectory(<span class="operator">.</span><span class="operator">.</span><span class="operator">/</span>{main_project_directory} ${CMAKE_BINARY_DIR}<span class="operator">/</span>{main_project_directory})
+</pre>
+</li>
+<li>Set the QML import path so Qt can find the module:<pre class="cpp" translate="no">
+ set_target_properties({test_directory} PROPERTIES
+     QT_QML_IMPORT_PATH <span class="string">&quot;${CMAKE_BINARY_DIR}/{main_project_directory}&quot;</span>
+ )
+</pre>
+</li>
+</ol>
+<p>Rebuild the projects.</p>
+<h3 id="request-code-documentation-in-markdown-format">Request code documentation in Markdown format</h3>
+<p>To create code documentation:</p>
+<ol class="1" type="1"><li>Highlight code in the code editor.</li>
+<li>Open the inline prompt window.</li>
+<li>Select the <b translate="no">/doc</b> smart command.</li>
+</ol>
+<p>Qt AI Assistant generates code documentation in a format that you can copy and paste to your documentation file.</p>
+<h3 id="request-fixing-of-code">Request fixing of code</h3>
+<p>To request a fix to your code:</p>
+<ol class="1" type="1"><li>Highlight code in the code editor.</li>
+<li>Open the inline prompt window.</li>
+<li>Select the <b translate="no">/fix</b> smart command.</li>
+<li>Optionally, apply the changes to the code.</li>
+</ol>
+<p>Qt AI Assistant suggests a fix that you can apply to your code.</p>
+<h3 id="request-explaining-of-code">Request explaining of code</h3>
+<p>To request an explanation of existing code:</p>
+<ol class="1" type="1"><li>Highlight code in the code editor.</li>
+<li>Open the inline prompt window.</li>
+<li>Select the <b translate="no">/explain</b> smart command.</li>
+</ol>
+<p>Qt AI Assistant provides an explanation of the highlighted code.</p>
+<h3 id="add-inline-comments">Add inline comments</h3>
+<p>To add inline comments to existing code with Qt AI Assistant:</p>
+<ol class="1" type="1"><li>Highlight code in the code editor.</li>
+<li>Open the inline prompt window.</li>
+<li>Select the <b translate="no">/inlinecomments</b> smart command.</li>
+<li>Optionally, apply the comments to your code.</li>
+</ol>
+<p>Qt AI Assistant adds inline comments that you can apply to your code.</p>
+</div>
+<p><b>See also </b><a href="creator-how-to-install-extensions.html">Install extensions</a> and <a href="creator-how-to-load-extensions.html">Activate extensions</a>.</p>
+<!-- @@@creator-qtaiassistant.html -->
+<p class="naviNextPrevious footerNavi">
+<a class="prevPage" href="creator-copilot.html">Use GitHub Copilot</a>
+<span class="naviSeparator">  &#9702;  </span>
+<a class="nextPage" href="creator-how-to-write-notes.html">Write down notes</a>
+</p>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   Copyright <acronym title="Copyright">&copy;</acronym> The Qt Company Ltd. and other contributors.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

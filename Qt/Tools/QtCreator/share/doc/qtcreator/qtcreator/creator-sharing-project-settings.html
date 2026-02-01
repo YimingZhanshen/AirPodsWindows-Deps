@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- creator-projects-settings-sharing.qdoc -->
+  <title>Share project settings | Qt Creator Documentation</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="index.html">Qt Creator Documentation</a></li>
+<li>Share project settings</li>
+<li id="buildversion"><a href="index.html">Qt Creator 18.0.2</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+  <link rel="prev" href="creator-how-to-configure-cmake-for-project.html" />
+  <link rel="next" href="creator-how-to-override-clang-tools-preferences.html" />
+<p class="naviNextPrevious headerNavi">
+<a class="prevPage" href="creator-how-to-configure-cmake-for-project.html">Override CMake settings for a project</a>
+<span class="naviSeparator">  &#9702;  </span>
+<a class="nextPage" href="creator-how-to-override-clang-tools-preferences.html">Specify Clang tools settings</a>
+</p>
+<div class="sidebar">
+<div class="toc">
+<h3 id="toc">Contents</h3>
+<ul>
+<li class="level1"><a href="#create-a-shared-settings-file">Create a shared settings file</a></li>
+<li class="level1"><a href="#update-shared-settings">Update shared settings</a></li>
+<li class="level1"><a href="#share-cmake-project-settings">Share CMake project settings</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Share project settings</h1>
+<!-- $$$creator-sharing-project-settings.html-description -->
+<div class="descr" id="details">
+<p>Qt Creator stores user-specific project settings in a <code translate="no">.user</code> file located in a directory <i>.qtcreator/</i> under the project directory. You can share these settings between several projects as a <code translate="no">.shared</code> file (such as, <code translate="no">CMakeLists.txt.shared</code>, <code translate="no">qtcreator.pro.shared</code>, or <code translate="no">qtcreator.qbs.shared</code>). It has the same XML structure as a <code translate="no">.user</code> file, but only has the settings to share.</p>
+<p>To share CMake project settings, use <a href="creator-build-settings-cmake-presets.html">CMake Presets</a> or a <code translate="no">CMakeLists.txt.shared</code> file.</p>
+<h2 id="create-a-shared-settings-file">Create a shared settings file</h2>
+<p>The easiest way to create a <code translate="no">.shared</code> file is to copy settings from the <code translate="no">.user</code> file. Typically, you would share some of the values in the <code translate="no">ProjectExplorer.Project.EditorSettings</code> section.</p>
+<div class="admonition note">
+<p><b>Note: </b>You must always specify the <code translate="no">ProjectExplorer.Project.Updater.FileVersion</code> variable and use the same value for it as in the <code translate="no">.user</code> file.</p>
+</div>
+<p>You can then deliver the <code translate="no">.shared</code> file to other developers or copy it to other development PCs.</p>
+<p>The following is an example of a <code translate="no">.shared</code> file:</p>
+<pre class="cpp" translate="no">
+ <span class="operator">&lt;</span><span class="operator">?</span>xml version<span class="operator">=</span><span class="string">&quot;1.0&quot;</span> encoding<span class="operator">=</span><span class="string">&quot;UTF-8&quot;</span><span class="operator">?</span><span class="operator">&gt;</span>
+ <span class="operator">&lt;</span><span class="operator">!</span>DOCTYPE <span class="type">QtCreatorProject</span><span class="operator">&gt;</span>
+ <span class="operator">&lt;</span>qtcreator<span class="operator">&gt;</span>
+     <span class="operator">&lt;</span>data<span class="operator">&gt;</span>
+         <span class="operator">&lt;</span>variable<span class="operator">&gt;</span>ProjectExplorer<span class="operator">.</span>Project<span class="operator">.</span>EditorSettings<span class="operator">&lt;</span><span class="operator">/</span>variable<span class="operator">&gt;</span>
+         <span class="operator">&lt;</span>valuemap type<span class="operator">=</span><span class="string">&quot;QVariantMap&quot;</span><span class="operator">&gt;</span>
+             <span class="operator">&lt;</span>value type<span class="operator">=</span><span class="string">&quot;bool&quot;</span> key<span class="operator">=</span><span class="string">&quot;EditorConfiguration.SpacesForTabs&quot;</span><span class="operator">&gt;</span><span class="keyword">true</span><span class="operator">&lt;</span><span class="operator">/</span>value<span class="operator">&gt;</span>
+             <span class="operator">&lt;</span>value type<span class="operator">=</span><span class="string">&quot;bool&quot;</span> key<span class="operator">=</span><span class="string">&quot;EditorConfiguration.AutoSpacesForTabs&quot;</span><span class="operator">&gt;</span><span class="keyword">false</span><span class="operator">&lt;</span><span class="operator">/</span>value<span class="operator">&gt;</span>
+             <span class="operator">&lt;</span>value type<span class="operator">=</span><span class="string">&quot;int&quot;</span> key<span class="operator">=</span><span class="string">&quot;EditorConfiguration.TabSize&quot;</span><span class="operator">&gt;</span><span class="number">14</span><span class="operator">&lt;</span><span class="operator">/</span>value<span class="operator">&gt;</span>
+             <span class="operator">&lt;</span>value type<span class="operator">=</span><span class="string">&quot;int&quot;</span> key<span class="operator">=</span><span class="string">&quot;EditorConfiguration.IndentSize&quot;</span><span class="operator">&gt;</span><span class="number">4</span><span class="operator">&lt;</span><span class="operator">/</span>value<span class="operator">&gt;</span>
+         <span class="operator">&lt;</span><span class="operator">/</span>valuemap<span class="operator">&gt;</span>
+     <span class="operator">&lt;</span><span class="operator">/</span>data<span class="operator">&gt;</span>
+     <span class="operator">&lt;</span>data<span class="operator">&gt;</span>
+         <span class="operator">&lt;</span>variable<span class="operator">&gt;</span>ProjectExplorer<span class="operator">.</span>Project<span class="operator">.</span>Updater<span class="operator">.</span>FileVersion<span class="operator">&lt;</span><span class="operator">/</span>variable<span class="operator">&gt;</span>
+         <span class="operator">&lt;</span>value type<span class="operator">=</span><span class="string">&quot;int&quot;</span><span class="operator">&gt;</span><span class="number">10</span><span class="operator">&lt;</span><span class="operator">/</span>value<span class="operator">&gt;</span>
+     <span class="operator">&lt;</span><span class="operator">/</span>data<span class="operator">&gt;</span>
+ <span class="operator">&lt;</span><span class="operator">/</span>qtcreator<span class="operator">&gt;</span>
+</pre>
+<h2 id="update-shared-settings">Update shared settings</h2>
+<p>The first time Qt Creator loads the project after you add shared settings, it overwrites the user settings with them. If you open the project for the first time and Qt Creator has not created a <code translate="no">.user</code> file, the settings in the <code translate="no">.shared</code> file take effect immediately.</p>
+<p>If you receive a <code translate="no">.shared</code> file and do not want to use a particular setting in it, you can change it. Qt Creator marks it a <i>sticky</i> setting. The next time you open a project, the setting is not updated. Qt Creator tracks sticky settings in the <code translate="no">.user</code> file and removes the mark if the values in the user and shared files eventually become identical. This is to avoid a permanent sticky setting that was created just because you wanted to try something out.</p>
+<h2 id="share-cmake-project-settings">Share CMake project settings</h2>
+<p>The following is an example of a <code translate="no">CMakeLists.txt.shared</code> file:</p>
+<pre class="cpp plain" translate="no">
+ &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+ &lt;!DOCTYPE QtCreatorProject&gt;
+ &lt;qtcreator&gt;
+  &lt;data&gt;
+   &lt;variable&gt;ProjectExplorer.Project.PluginSettings&lt;/variable&gt;
+    &lt;valuemap type=&quot;QVariantMap&quot;&gt;
+     &lt;valuemap type=&quot;QVariantMap&quot; key=&quot;CMakeSpecificSettings&quot;&gt;
+       &lt;value type=&quot;bool&quot; key=&quot;AskBeforePresetsReload&quot;&gt;false&lt;/value&gt;
+       &lt;value type=&quot;bool&quot; key=&quot;AskReConfigureInitialParams&quot;&gt;false&lt;/value&gt;
+       &lt;value type=&quot;bool&quot; key=&quot;AutorunCMake&quot;&gt;false&lt;/value&gt;
+       &lt;value type=&quot;bool&quot; key=&quot;PackageManagerAutoSetup&quot;&gt;false&lt;/value&gt;
+       &lt;value type=&quot;bool&quot; key=&quot;ShowAdvancedOptionsByDefault&quot;&gt;true&lt;/value&gt;
+       &lt;value type=&quot;bool&quot; key=&quot;ShowSourceSubFolders&quot;&gt;false&lt;/value&gt;
+       &lt;value type=&quot;bool&quot; key=&quot;UseGlobalSettings&quot;&gt;false&lt;/value&gt;
+       &lt;value type=&quot;bool&quot; key=&quot;UseJunctionsForSourceAndBuildDirectories&quot;&gt;true&lt;/value&gt;
+     &lt;/valuemap&gt;
+   &lt;/valuemap&gt;
+  &lt;/data&gt;
+  &lt;data&gt;
+   &lt;variable&gt;Version&lt;/variable&gt;
+   &lt;value type=&quot;int&quot;&gt;22&lt;/value&gt;
+  &lt;/data&gt;
+ &lt;/qtcreator&gt;
+</pre>
+<p>For more information about the settings, see <a href="creator-how-to-configure-cmake-for-project.html">Override CMake settings for a project</a>.</p>
+</div>
+<p><b>See also </b><a href="creator-configuring-projects.html">Configuring Projects</a> and <a href="creator-build-settings-cmake-presets.html">CMake Presets</a>.</p>
+<!-- @@@creator-sharing-project-settings.html -->
+<p class="naviNextPrevious footerNavi">
+<a class="prevPage" href="creator-how-to-configure-cmake-for-project.html">Override CMake settings for a project</a>
+<span class="naviSeparator">  &#9702;  </span>
+<a class="nextPage" href="creator-how-to-override-clang-tools-preferences.html">Specify Clang tools settings</a>
+</p>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   Copyright <acronym title="Copyright">&copy;</acronym> The Qt Company Ltd. and other contributors.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

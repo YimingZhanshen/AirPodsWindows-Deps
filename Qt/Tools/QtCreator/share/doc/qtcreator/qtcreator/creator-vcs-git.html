@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- creator-vcs-git.qdoc -->
+  <meta name="description" content="Additional Git functions. Git is a fast decentralized version control system. Git is available for Windows, Linux, and macOS.">
+  <title>Git | Qt Creator Documentation</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="index.html">Qt Creator Documentation</a></li>
+<li>Git</li>
+<li id="buildversion"><a href="index.html">Qt Creator 18.0.2</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+  <link rel="prev" href="creator-vcs-fossil.html" />
+  <link rel="next" href="creator-vcs-gitlab.html" />
+<p class="naviNextPrevious headerNavi">
+<a class="prevPage" href="creator-vcs-fossil.html">Fossil</a>
+<span class="naviSeparator">  &#9702;  </span>
+<a class="nextPage" href="creator-vcs-gitlab.html">GitLab</a>
+</p>
+<div class="sidebar">
+<div class="toc">
+<h3 id="toc">Contents</h3>
+<ul>
+<li class="level1"><a href="#getting-started-with-git">Getting started with Git</a></li>
+<li class="level1"><a href="#working-with-the-current-file">Working with the current file</a></li>
+<li class="level1"><a href="#working-with-the-current-project">Working with the current project</a></li>
+<li class="level1"><a href="#working-with-local-repositories">Working with local repositories</a></li>
+<li class="level1"><a href="#working-with-remote-repositories">Working with remote repositories</a></li>
+<li class="level2"><a href="#managing-remote-repositories">Managing remote repositories</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Git</h1>
+<!-- $$$creator-vcs-git.html-description -->
+<div class="descr" id="details">
+<p>You can use the <a href="https://www.gerritcodereview.com/">Gerrit Code Review</a> tool for projects that use Git.</p>
+<h2 id="getting-started-with-git">Getting started with Git</h2>
+<ul>
+<li translate="no"><a href="creator-how-to-git-first-commit.html">Commit your first change</a></li>
+<li translate="no"><a href="creator-how-to-create-vcs-repositories.html">Create VCS repositories for new projects</a></li>
+<li translate="no"><a href="creator-how-to-git-tools.html">Git Tools</a></li>
+<li translate="no"><a href="creator-how-to-initialize-git-repo.html">Initialize Git repositories</a></li>
+<li translate="no"><a href="creator-how-to-set-up-vcs.html">Set up version control systems</a></li>
+<li translate="no"><a href="creator-how-to-use-git-on-windows.html">Use Git for Windows</a></li>
+<li translate="no"><a href="creator-how-to-git-with-subversion.html">Use Git with Subversion</a></li>
+<li translate="no"><a href="creator-how-to-use-common-vcs-functions.html">Use common VCS functions</a></li>
+</ul>
+<h2 id="working-with-the-current-file">Working with the current file</h2>
+<p>To work with the current file, go to <b translate="no">Tools</b> &gt; <b translate="no">Git</b> &gt; <b translate="no">Current File</b>.</p>
+<ul>
+<li translate="no"><a href="creator-how-to-git-instant-blame.html">Show instant blame</a></li>
+<li translate="no"><a href="creator-how-to-git-stage-changes.html">Stage changes</a></li>
+<li translate="no"><a href="creator-how-to-git-blame.html">git blame</a></li>
+<li translate="no"><a href="creator-how-to-git-diff.html">git diff</a></li>
+<li translate="no"><a href="creator-how-to-git-log.html">git log</a></li>
+<li translate="no"><a href="creator-how-to-git-reset.html">git reset</a></li>
+</ul>
+<h2 id="working-with-the-current-project">Working with the current project</h2>
+<p>To work with the current project, go to <b translate="no">Tools</b> &gt; <b translate="no">Git</b> &gt; <b translate="no">Current Project Directory</b>.</p>
+<ul>
+<li translate="no"><a href="creator-how-to-git-stage-changes.html">Stage changes</a></li>
+<li translate="no"><a href="creator-how-to-git-clean.html">git clean</a></li>
+<li translate="no"><a href="creator-how-to-git-diff.html">git diff</a></li>
+<li translate="no"><a href="creator-how-to-git-log.html">git log</a></li>
+</ul>
+<h2 id="working-with-local-repositories">Working with local repositories</h2>
+<p>To work with the local repository, go to <b translate="no">Tools</b> &gt; <b translate="no">Git</b> &gt; <b translate="no">Local Repository</b>.</p>
+<ul>
+<li translate="no"><a href="creator-how-to-git-apply-patch.html">Create and apply patches</a></li>
+<li translate="no"><a href="creator-how-to-git-interactive-rebase.html">Interactive rebase</a></li>
+<li translate="no"><a href="creator-how-to-git-am.html">git am</a></li>
+<li translate="no"><a href="creator-how-to-git-branch.html">git branch</a></li>
+<li translate="no"><a href="creator-how-to-git-clean.html">git clean</a></li>
+<li translate="no"><a href="creator-how-to-git-commit.html">git commit</a></li>
+<li translate="no"><a href="creator-how-to-git-diff.html">git diff</a></li>
+<li translate="no"><a href="creator-how-to-git-log.html">git log</a></li>
+<li translate="no"><a href="creator-how-to-git-merge.html">git merge</a></li>
+<li translate="no"><a href="creator-how-to-git-reflog.html">git reflog</a></li>
+<li translate="no"><a href="creator-how-to-git-reset.html">git reset</a></li>
+<li translate="no"><a href="creator-how-to-git-stash.html">git stash</a></li>
+<li translate="no"><a href="creator-how-to-git-status.html">git status</a></li>
+</ul>
+<h2 id="working-with-remote-repositories">Working with remote repositories</h2>
+<p>To work with remote repositories, go to <b translate="no">Tools</b> &gt; <b translate="no">Git</b> &gt; <b translate="no">Remote Repository</b>.</p>
+<ul>
+<li translate="no"><a href="creator-how-to-gerrit.html">Review code with Gerrit</a></li>
+<li translate="no"><a href="creator-how-to-git-fetch.html">git fetch</a></li>
+<li translate="no"><a href="creator-how-to-git-pull.html">git pull</a></li>
+<li translate="no"><a href="creator-how-to-git-push.html">git push</a></li>
+</ul>
+<h3 id="managing-remote-repositories">Managing remote repositories</h3>
+<p>To manage remote repositories available in Git, go to <b translate="no">Tools</b> &gt; <b translate="no">Git</b> &gt; <b translate="no">Remote Repository</b> &gt; <b translate="no">Manage Remotes</b>. Double-click the names and URLs of the remote repositories to edit them.</p>
+<p>The following operations are supported:</p>
+<div class="table"><table class="generic">
+ <thead><tr class="qt-style"><th >Menu Item</th><th >Description</th></tr></thead>
+<tr valign="top" class="odd"><td ><b translate="no">Refresh</b></td><td >Refresh the list of remote repositories.</td></tr>
+<tr valign="top" class="even"><td ><b translate="no">Add</b></td><td >Add a new remote repository.</td></tr>
+<tr valign="top" class="odd"><td ><b translate="no">Fetch</b></td><td >Fetch all the branches and change information from a remote repository.</td></tr>
+<tr valign="top" class="even"><td ><b translate="no">Push</b></td><td >Push committed changes to the remote repository.</td></tr>
+<tr valign="top" class="odd"><td ><b translate="no">Remove</b></td><td >Remove a remote repository.</td></tr>
+</table></div>
+</div>
+<p><b>See also </b><a href="creator-how-tos.html#use-git">How To: Use Git</a>, <a href="creator-diff-editor.html">Compare files</a>, <a href="creator-how-to-set-up-vcs.html">Set up version control systems</a>, and <a href="creator-version-control.html">Version Control Systems</a>.</p>
+<!-- @@@creator-vcs-git.html -->
+<p class="naviNextPrevious footerNavi">
+<a class="prevPage" href="creator-vcs-fossil.html">Fossil</a>
+<span class="naviSeparator">  &#9702;  </span>
+<a class="nextPage" href="creator-vcs-gitlab.html">GitLab</a>
+</p>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   Copyright <acronym title="Copyright">&copy;</acronym> The Qt Company Ltd. and other contributors.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

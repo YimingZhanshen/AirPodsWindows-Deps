@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- creator-debug-views.qdoc -->
+  <meta name="description" content="Set breakpoints to interrupt the application.">
+  <title>Setting breakpoints | Qt Creator Documentation</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="index.html">Qt Creator Documentation</a></li>
+<li>Setting breakpoints</li>
+<li id="buildversion"><a href="index.html">Qt Creator 18.0.2</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+  <link rel="prev" href="creator-peripheral-registers-view.html" />
+  <link rel="next" href="creator-disassembler-view.html" />
+<p class="naviNextPrevious headerNavi">
+<a class="prevPage" href="creator-peripheral-registers-view.html">Peripheral Registers</a>
+<span class="naviSeparator">  &#9702;  </span>
+<a class="nextPage" href="creator-disassembler-view.html">Viewing Disassembled Code</a>
+</p>
+<div class="sidebar">
+<div class="toc">
+<h3 id="toc">Contents</h3>
+<ul>
+<li class="level1"><a href="#unclaimed-and-claimed-breakpoints">Unclaimed and claimed breakpoints</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Setting breakpoints</h1>
+<!-- $$$creator-breakpoints-view.html-description -->
+<div class="descr" id="details">
+<p>You can associate breakpoints with:</p>
+<ul>
+<li>Source code files and lines</li>
+<li>Functions</li>
+<li>Addresses</li>
+<li>Throwing and catching exceptions</li>
+<li>Executing and forking processes</li>
+<li>Executing some system calls</li>
+<li>Changes in a block of memory at a particular address when an application is running</li>
+<li>Emitting QML signals</li>
+<li>Throwing JavaScript exceptions</li>
+</ul>
+<p>A breakpoint interrupts the application every time the application reaches its location unless you specify a boolean condition for it. The breakpoint evaluates the expression each time the application passes it, and the application stops only if the condition evaluates to <code translate="no">true</code>.</p>
+<h2 id="unclaimed-and-claimed-breakpoints">Unclaimed and claimed breakpoints</h2>
+<p>Breakpoints come in two varieties: <code translate="no">unclaimed</code> and <code translate="no">claimed</code>. An unclaimed breakpoint represents a task to interrupt the debugged application and passes the control to you later. It has two states: <code translate="no">pending</code> and <code translate="no">implanted</code>.</p>
+<p>Unclaimed breakpoints are stored as a part of a session and exist independently of whether an application is being debugged or not. They are listed in the <b translate="no">Breakpoint Preset</b> view and in the editor using the <img src="images/qtcreator-unclaimed-breakpoint-icon.png" alt="Unclaimed Breakpoint" /> (<b translate="no">Unclaimed Breakpoint</b>) icon, when they refer to a position in code.</p>
+<p class="centerAlign"><img src="images/qtcreator-debugger-breakpoint-preset.webp" alt="Breakpoint Preset view" /></p><p>When a debugger starts, the debugging backend identifies breakpoints from the set of unclaimed breakpoints that might be handled by the debugged application and claims them for its own exclusive use. Claimed breakpoints are listed in the <b translate="no">Breakpoints</b> view of the running debugger. This view only exists while the debugger is running.</p>
+<p>When a debugger claims a breakpoint, the unclaimed breakpoint disappears from the <b translate="no">Breakpoint Preset</b> view, to appear as a pending breakpoint in the <b translate="no">Breakpoints</b> view.</p>
+<p>At various times, attempts are made to implant pending breakpoints into the debugged process. Successful implantation might create one or more implanted breakpoints, each associated with an actual address in the debugged breakpoint. The implantation might also move a breakpoint marker in the editor from an empty line to the next line for which the actual code was generated, for example. Implanted breakpoint icons don't have the hourglass overlay.</p>
+<p>When the debugger ends, its claimed breakpoints, both pending and implanted, will return to the unclaimed state and re-appear in the <b translate="no">Breakpoint Preset</b> view.</p>
+<p>When an implanted breakpoint is hit during the execution of the debugged application, control is passed back to you. You can then examine the state of the interrupted application, or continue execution either line-by-line or continuously.</p>
+<p class="centerAlign"><img src="images/qtcreator-debug-breakpoints.webp" alt="Breakpoints view" /></p></div>
+<p><b>See also </b><a href="creator-how-to-add-breakpoints.html">Add breakpoints</a>, <a href="creator-how-tos.html#debug">How To: Debug</a>, <a href="creator-debugging.html">Debugging</a>, <a href="creator-reference.html#debuggers">Debuggers</a>, and <a href="creator-reference.html#debugger">Debugger</a>.</p>
+<!-- @@@creator-breakpoints-view.html -->
+<p class="naviNextPrevious footerNavi">
+<a class="prevPage" href="creator-peripheral-registers-view.html">Peripheral Registers</a>
+<span class="naviSeparator">  &#9702;  </span>
+<a class="nextPage" href="creator-disassembler-view.html">Viewing Disassembled Code</a>
+</p>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   Copyright <acronym title="Copyright">&copy;</acronym> The Qt Company Ltd. and other contributors.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

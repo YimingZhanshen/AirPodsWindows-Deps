@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- linuxdev-keys.qdoc -->
+  <title>Configure SSH connections | Qt Creator Documentation</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="index.html">Qt Creator Documentation</a></li>
+<li>Configure SSH connections</li>
+<li id="buildversion"><a href="index.html">Qt Creator 18.0.2</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+  <link rel="prev" href="creator-how-to-build-on-remote-linux.html" />
+  <link rel="next" href="creator-how-to-configure-tools-on-devices.html" />
+<p class="naviNextPrevious headerNavi">
+<a class="prevPage" href="creator-how-to-build-on-remote-linux.html">Build applications on remote Linux devices</a>
+<span class="naviSeparator">  &#9702;  </span>
+<a class="nextPage" href="creator-how-to-configure-tools-on-devices.html">Configure development tools</a>
+</p>
+<div class="sidebar"><div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Configure SSH connections</h1>
+<!-- $$$creator-how-to-configure-ssh.html-description -->
+<div class="descr" id="details">
+<p>To protect the connections between Qt Creator and a device, install the <a href="https://www.openssh.com/">OpenSSH</a> suite, which includes the <code translate="no">ssh</code>, <code translate="no">sftp</code>, and <code translate="no">ssh-keygen</code> tools on the computer.</p>
+<p>SSH connections are established via an OpenSSH client running in master mode, if possible. By default, multiple sessions are shared over a single SSH onnection. Establishing a connection once and then re-using it for subsequent run and deploy procedures reduces connection setup overhead particularly with embedded devices. Because connection sharing is not supported on Windows, a new SSH connection is created for each deploy or run procedure.</p>
+<p>To set the paths to the directories where the tools are installed:</p>
+<ol class="1" type="1"><li>Go to <a href="creator-how-to-find-preferences.html">Preferences</a> &gt; <b translate="no">Devices</b> &gt; <b translate="no">SSH</b>.<p class="centerAlign"><img src="images/qtcreator-ssh-options.png" alt="SSH tab in Devices preferences" /></p></li>
+<li>Clear <b translate="no">Enable connection sharing</b> to create a new SSH connection for each deploy and run procedure. This option is grayed on Windows, where connection sharing is not supported.</li>
+<li>In <b translate="no">Connection sharing timeout</b>, specify the timeout for reusing the SSH connection in minutes.</li>
+<li>In <b translate="no">Path to ssh executable</b>, enter the path to the directory where the OpenSSH executable is installed.</li>
+<li>In <b translate="no">Path to sftp executable</b>, enter the path to the directory where the SFTP executable is installed.</li>
+<li>In <b translate="no">Path to ssh-askpass executable</b>, enter the path to the directory where the ssh-askpass executable is installed. Usually, you can use the default path that points to the implementation of the tool delivered with Qt Creator, qtc-askpass.</li>
+<li>In <b translate="no">Path to ssh-keygen executable</b>, enter the path to the directory where the ssh-keygen executable is installed.</li>
+</ol>
+</div>
+<p><b>See also </b><a href="creator-how-tos.html#remote-linux">How To: Develop for remote Linux</a> and <a href="creator-developing-generic-linux.html">Developing for Remote Linux Devices</a>.</p>
+<!-- @@@creator-how-to-configure-ssh.html -->
+<p class="naviNextPrevious footerNavi">
+<a class="prevPage" href="creator-how-to-build-on-remote-linux.html">Build applications on remote Linux devices</a>
+<span class="naviSeparator">  &#9702;  </span>
+<a class="nextPage" href="creator-how-to-configure-tools-on-devices.html">Configure development tools</a>
+</p>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   Copyright <acronym title="Copyright">&copy;</acronym> The Qt Company Ltd. and other contributors.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

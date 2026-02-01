@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- cpu-usage-analyzer.qdoc -->
+  <title>Analyze CPU usage | Qt Creator Documentation</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="index.html">Qt Creator Documentation</a></li>
+<li>Analyze CPU usage</li>
+<li id="buildversion"><a href="index.html">Qt Creator 18.0.2</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+  <link rel="prev" href="creator-how-tos.html" />
+  <link rel="next" href="creator-clang-tools.html" />
+<p class="naviNextPrevious headerNavi">
+<a class="prevPage" href="creator-how-tos.html">How To</a>
+<span class="naviSeparator">  &#9702;  </span>
+<a class="nextPage" href="creator-clang-tools.html">Analyze code with Clang-Tidy and Clazy</a>
+</p>
+<div class="sidebar">
+<div class="toc">
+<h3 id="toc">Contents</h3>
+<ul>
+<li class="level1"><a href="#collect-data">Collect data</a></li>
+<li class="level1"><a href="#profile-memory-usage-on-devices">Profile memory usage on devices</a></li>
+<li class="level1"><a href="#generate-separate-debug-info-for-qmake-projects">Generate separate debug info for qmake projects</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Analyze CPU usage</h1>
+<!-- $$$creator-how-to-analyze-cpu-usage.html-description -->
+<div class="descr" id="details">
+<p>With Perf, you can analyze the CPU and memory usage of an application on Linux desktop and embedded devices. <a href="creator-cpu-usage-analyzer.html">Performance Analyzer</a> uses the Perf tool bundled with the Linux kernel to take periodic snapshots of the call chain of an application and visualizes them in a timeline view or as a flame graph.</p>
+<p>Usually, Performance Analyzer needs debug symbols for the profiled binaries. Profile builds produce optimized binaries with separate debug symbols, so use them for profiling.</p>
+<h2 id="collect-data">Collect data</h2>
+<p>Start Performance Analyzer in the following ways to collect data:</p>
+<ul>
+<li>Go to <b translate="no">Analyze</b> &gt; <b translate="no">Performance Analyzer</b> to profile the current application.</li>
+<li>Select <img src="images/qtcreator-analyze-start-button.png" alt="Start a performance analysis" /> (<b translate="no">Start</b>) to start the application from the <b translate="no">Performance Analyzer</b>.<p class="centerAlign"><img src="images/qtcreator-performance-analyzer-toolbar.webp" alt="Performance Analyzer toolbar" /></p></li>
+</ul>
+<div class="admonition note">
+<p><b>Note: </b>If data collection does not start automatically, select <img src="images/recordfill.png" alt="Start collecting profile data" /> (<b translate="no">Collect profile data</b>).</p>
+</div>
+<p>When you start analyzing an application, the application is launched, and Performance Analyzer immediately begins to collect data. This is indicated by the time running in <b translate="no">Recorded</b>. However, as the data is passed through the Perf tool and an extra helper program bundled with Qt Creator, and both buffer and process it on the fly, data may arrive in Qt Creator several seconds after it was generated. <b translate="no">Processing delay</b> shows an estimate of the delay.</p>
+<p>Data is collected until you select <img src="images/recordfill.png" alt="Stop collecting profile data" /> (<b translate="no">Stop collecting profile data</b>) or close the application.</p>
+<p>Select <b translate="no">Stop collecting profile data</b> to turn off the automatic start of the data collection when an application is launched. Profile data is still generated, but Qt Creator discards it until you select the button again.</p>
+<h2 id="profile-memory-usage-on-devices">Profile memory usage on devices</h2>
+<p>To create trace points for profiling memory usage on a target device:</p>
+<ul>
+<li>Go to <b translate="no">Analyze</b> &gt; <b translate="no">Performance Analyzer Options</b> &gt; <b translate="no">Create Memory Trace Points</b>.</li>
+<li>Select <img src="images/create-tracepoint.png" alt="Create trace points for memory profiling on the target device" /> on the <b translate="no">Performance Analyzer</b> toolbar.</li>
+</ul>
+<p>In the <b translate="no">Create Memory Trace Points</b> dialog, modify the script to run.</p>
+<p class="centerAlign"><img src="images/qtcreator-performance-analyzer-create-memory-trace-points.png" alt="Create Memory Trace Points dialog" /></p><p>If you need root privileges to run scripts as root, select the privileges to use in <b translate="no">Elevate privileges using</b>.</p>
+<p>Select <b translate="no">OK</b> to run the script.</p>
+<p>To add events for the trace points, see <a href="creator-cpu-usage-analyzer.html#choosing-event-types">Choosing Event Types</a>.</p>
+<p>Record a memory trace to view usage graphs in the samples rows of the timeline and to view memory allocations, peaks, and releases in the flame graph.</p>
+<h2 id="generate-separate-debug-info-for-qmake-projects">Generate separate debug info for qmake projects</h2>
+<p>To manually set up a build configuration that generates debug symbols also for applications compiled for release, edit the build settings of a qmake project:</p>
+<ol class="1" type="1"><li>Go to <b translate="no">Projects</b> &gt; <b translate="no">Build Settings</b>.</li>
+<li>In <b translate="no">Separate debug info</b>, select <b translate="no">Enable</b>.</li>
+<li>Select <b translate="no">Yes</b> to recompile the project.</li>
+</ol>
+</div>
+<p><b>See also </b><a href="creator-how-tos.html#analyze">How To: Analyze</a>, <a href="creator-reference.html#analyzers">Analyzers</a>, <a href="creator-cpu-usage-analyzer.html">Performance Analyzer</a>, and <a href="creator-analyze-mode.html">Analyzing Code</a>.</p>
+<!-- @@@creator-how-to-analyze-cpu-usage.html -->
+<p class="naviNextPrevious footerNavi">
+<a class="prevPage" href="creator-how-tos.html">How To</a>
+<span class="naviSeparator">  &#9702;  </span>
+<a class="nextPage" href="creator-clang-tools.html">Analyze code with Clang-Tidy and Clazy</a>
+</p>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   Copyright <acronym title="Copyright">&copy;</acronym> The Qt Company Ltd. and other contributors.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- creator-coco.qdoc -->
+  <title>Set up code coverage from Coco | Qt Creator Documentation</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="index.html">Qt Creator Documentation</a></li>
+<li>Set up code coverage from Coco</li>
+<li id="buildversion"><a href="index.html">Qt Creator 18.0.2</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+  <link rel="prev" href="creator-running-valgrind-remotely.html" />
+  <link rel="next" href="creator-run-settings-valgrind.html" />
+<p class="naviNextPrevious headerNavi">
+<a class="prevPage" href="creator-running-valgrind-remotely.html">Run Valgrind tools on external applications</a>
+<span class="naviSeparator">  &#9702;  </span>
+<a class="nextPage" href="creator-run-settings-valgrind.html">Specify Valgrind settings for a project</a>
+</p>
+<div class="sidebar">
+<div class="toc">
+<h3 id="toc">Contents</h3>
+<ul>
+<li class="level1"><a href="#set-coco-installation-directory">Set Coco installation directory</a></li>
+<li class="level1"><a href="#create-a-build-configuration-for-coco">Create a build configuration for Coco</a></li>
+<li class="level1"><a href="#set-code-coverage-for-a-project">Set code coverage for a project</a></li>
+<li class="level2"><a href="#qmake-projects">qmake projects</a></li>
+<li class="level2"><a href="#cmake-projects">CMake projects</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Set up code coverage from Coco</h1>
+<!-- $$$creator-coco.html-description -->
+<div class="descr" id="details">
+<p>With Coco, you can measure and analyze the code coverage of tests. The following sections describe how to set up a project for code coverage. For more information about viewing the results in Qt Creator, see <a href="creator-how-to-view-code-coverage-with-coco.html">View code coverage reports from Coco</a>.</p>
+<p>To use the plugin, you must download and install Coco version 6.0 or later.</p>
+<div class="admonition note">
+<p><b>Note: </b>Enable the Coco plugin to use it.</p>
+</div>
+<h2 id="set-coco-installation-directory">Set Coco installation directory</h2>
+<p>Go to <a href="creator-how-to-find-preferences.html">Preferences</a> &gt; <b translate="no">Coco</b> to set the Coco installation directory. Usually, you don't need to change the default value.</p>
+<h2 id="create-a-build-configuration-for-coco">Create a build configuration for Coco</h2>
+<p>To create a build configuration for Qt Creator projects that you build with qmake or CMake:</p>
+<ol class="1" type="1"><li>Go to <b translate="no">Projects</b> &gt; <b translate="no">Build Settings</b>.</li>
+<li>Select an existing build configuration, such as <i>Debug</i>, and then select <b translate="no">Clone</b> to clone it with a new name, such as <i>DebugCoverage</i>.</li>
+<li>Configure the clone for use with Coco.</li>
+</ol>
+<p>Do not switch back and forth between coverage and normal builds using the same build configuration.</p>
+<p><b translate="no">Build Settings</b> &gt; <b translate="no">Build Steps</b> &gt; <b translate="no">Coco code coverage</b> shows whether code coverage is on or off for the build configuration. Select <b translate="no">Enable Coverage</b> or <b translate="no">Disable Coverage</b> to turn on or off code coverage.</p>
+<p class="centerAlign"><img src="images/qtcreator-projects-settings-build-coco.webp" alt="Setting code coverage from a build step" /></p><h2 id="set-code-coverage-for-a-project">Set code coverage for a project</h2>
+<p>To specify code coverage settings for a project, go to <b translate="no">Projects</b> &gt; <b translate="no">Project Settings</b> &gt; <b translate="no">Coco Code Coverage</b>.</p>
+<p class="centerAlign"><img src="images/qtcreator-projects-settings-coco.webp" alt="Coco Code Coverage settings" /></p><div class="table"><table class="generic">
+ <thead><tr class="qt-style"><th >Setting</th><th >Purpose</th></tr></thead>
+<tr valign="top" class="odd"><td ><b translate="no">Enable code coverage for build configuration &lt;name&gt;</b></td><td >Turns on and off code coverage for a build configuration.</td></tr>
+<tr valign="top" class="even"><td ><b translate="no">CoverageScanner Options</b></td><td >Code coverage options (optional).</td></tr>
+<tr valign="top" class="odd"><td ><b translate="no">Exclude File</b></td><td >Excludes a file from instrumentation.</td></tr>
+<tr valign="top" class="even"><td ><b translate="no">Exclude Directory</b></td><td >Excludes a directory from instrumentation.</td></tr>
+<tr valign="top" class="odd"><td ><b translate="no">Override</b></td><td >Enter commands to add them to the end of the settings file. Use this option when the usual configuration flags are not enough.</td></tr>
+<tr valign="top" class="even"><td ><b translate="no">Changed Build Settings</b></td><td >Lists the changed project build settings.</td></tr>
+<tr valign="top" class="odd"><td ><b translate="no">Revert</b></td><td >Reloads the coverage settings from the current settings file.</td></tr>
+<tr valign="top" class="even"><td ><b translate="no">Save</b> and <b translate="no">Save &amp; Re-configure</b></td><td >Write the settings to the settings file and reconfigure the project if necessary.</td></tr>
+</table></div>
+<p>If code coverage is on, the plugin generates a <i>settings</i> file that the build tool reads first. It changes the build process to use Coco compiler wrappers instead of the original compiler. The settings file is always located in the root directory of the project sources. It also has the coverage flags and possible overrides. Check it into version control to preserve the settings.</p>
+<h3 id="qmake-projects">qmake projects</h3>
+<p>For qmake projects, the settings file is the <code translate="no">cocoplugin.prf</code> <i>feature file</i>.</p>
+<p>For a command-line build, run <code translate="no">qmake</code> with the additional options:</p>
+<pre class="cpp plain" translate="no">
+ CONFIG+=cocoplugin COCOPATH=&lt;Coco directory&gt;
+</pre>
+<p>Also, set the environment variable <code translate="no">QMAKEFEATURES</code> to the directory where <code translate="no">cocoplugin.prf</code> is located.</p>
+<h3 id="cmake-projects">CMake projects</h3>
+<p>For CMake projects, the settings file is the <code translate="no">cocoplugin.cmake</code> CMake cache preload script. Also, the <i>compiler files</i> <code translate="no">cocoplugin-gcc.cmake</code>, <code translate="no">cocoplugin-clang.cmake</code>, and <code translate="no">cocoplugin-visualstudio.cmake</code> are created in the same directory. They are needed for a command-line build.</p>
+<p>To build the project from the command line (when compiling with GCC), enter:</p>
+<pre class="cpp plain" translate="no">
+ cmake &lt;other options&gt; -C &lt;project dir&gt;/cocoplugin-gcc.cmake
+</pre>
+<p>The file <code translate="no">cocoplugin-gcc.cmake</code> includes <code translate="no">cocoplugin.cmake</code>.</p>
+<p>If you use some other compiler than GCC, Clang, or MSVC, modify one of the compiler files for that compiler.</p>
+</div>
+<p><b>See also </b><a href="creator-build-settings.html">Configure projects for building</a>, <a href="creator-how-to-enable-plugins.html">Enable and disable plugins</a>, <a href="creator-how-to-view-code-coverage-with-coco.html">View code coverage reports from Coco</a>, <a href="creator-preferences-text-editor-font-colors.html">Font &amp; Colors</a>, and <a href="creator-analyze-mode.html">Analyzing Code</a>.</p>
+<!-- @@@creator-coco.html -->
+<p class="naviNextPrevious footerNavi">
+<a class="prevPage" href="creator-running-valgrind-remotely.html">Run Valgrind tools on external applications</a>
+<span class="naviSeparator">  &#9702;  </span>
+<a class="nextPage" href="creator-run-settings-valgrind.html">Specify Valgrind settings for a project</a>
+</p>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   Copyright <acronym title="Copyright">&copy;</acronym> The Qt Company Ltd. and other contributors.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- creator-vcs-git.qdoc -->
+  <title>git pull | Qt Creator Documentation</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="index.html">Qt Creator Documentation</a></li>
+<li>git pull</li>
+<li id="buildversion"><a href="index.html">Qt Creator 18.0.2</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+  <link rel="prev" href="creator-how-to-git-fetch.html" />
+  <link rel="next" href="creator-how-to-git-push.html" />
+<p class="naviNextPrevious headerNavi">
+<a class="prevPage" href="creator-how-to-git-fetch.html">git fetch</a>
+<span class="naviSeparator">  &#9702;  </span>
+<a class="nextPage" href="creator-how-to-git-push.html">git push</a>
+</p>
+<div class="sidebar">
+<div class="toc">
+<h3 id="toc">Contents</h3>
+<ul>
+<li class="level1"><a href="#manage-uncommitted-changes">Manage uncommitted changes</a></li>
+<li class="level1"><a href="#pull-with-rebase">Pull with rebase</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">git pull</h1>
+<!-- $$$creator-how-to-git-pull.html-description -->
+<div class="descr" id="details">
+<p>To pull changes from a remote repository, go to <b translate="no">Tools</b> &gt; <b translate="no">Git</b> &gt; <b translate="no">Remote Repository</b> and select <b translate="no">Pull</b>.</p>
+<p>If you have modified files, you are asked how to handle them.</p>
+<h2 id="manage-uncommitted-changes">Manage uncommitted changes</h2>
+<p class="centerAlign"><img src="images/qtcreator-git-uncommitted-changes-found.webp" alt="Uncommitted Changes Found dialog" /></p><p>You can apply the following actions to uncommitted changes:</p>
+<div class="table"><table class="generic">
+ <thead><tr class="qt-style"><th >Menu Item</th><th >Description</th></tr></thead>
+<tr valign="top" class="odd"><td ><b translate="no">Diff &amp; Cancel</b></td><td >View a diff of the changes and cancel <code translate="no">git pull</code>.</td></tr>
+<tr valign="top" class="even"><td ><b translate="no">Discard</b></td><td >Reset local changes and execute <code translate="no">git pull</code>. The changes will be lost.</td></tr>
+<tr valign="top" class="odd"><td ><b translate="no">Ignore</b></td><td >Execute <code translate="no">git pull</code> with local changes in the working directory.</td></tr>
+<tr valign="top" class="even"><td ><b translate="no">Show/Hide Details</b></td><td >Show or hide details of the local changes.</td></tr>
+<tr valign="top" class="odd"><td ><b translate="no">Stash</b></td><td >Stash the local changes and execute <code translate="no">git pull</code>.</td></tr>
+<tr valign="top" class="even"><td ><b translate="no">Stash &amp; Pop</b></td><td >Stash the local changes, execute <code translate="no">git pull</code>, and then pop the changes.</td></tr>
+</table></div>
+<h2 id="pull-with-rebase">Pull with rebase</h2>
+<p>Go to <a href="creator-how-to-find-preferences.html">Preferences</a> &gt; <b translate="no">Version Control</b> &gt; <b translate="no">Git</b>, and then select <b translate="no">Pull with rebase</b> to perform a rebase operation while pulling.</p>
+</div>
+<p><b>See also </b><a href="creator-how-tos.html#use-git">How To: Use Git</a> and <a href="creator-vcs-git.html">Git</a>.</p>
+<!-- @@@creator-how-to-git-pull.html -->
+<p class="naviNextPrevious footerNavi">
+<a class="prevPage" href="creator-how-to-git-fetch.html">git fetch</a>
+<span class="naviSeparator">  &#9702;  </span>
+<a class="nextPage" href="creator-how-to-git-push.html">git push</a>
+</p>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   Copyright <acronym title="Copyright">&copy;</acronym> The Qt Company Ltd. and other contributors.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>
